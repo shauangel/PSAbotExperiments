@@ -1,0 +1,368 @@
+[
+  {
+    "link": "https://stackoverflow.com/questions/6838255/python-class-function-default-variables-are-class-objects",
+    "keywords": [],
+    "tags": [
+      "python"
+    ],
+    "question": {
+      "id": 6838255,
+      "title": "Python class function default variables are class objects?",
+      "content": "I was writing some code this afternoon, and stumbled across a bug in my code. I noticed that the default values for one of my newly created objects was carrying over from another object! For example: So I know it can be solved by doing this: What I would like to know is... Why? Why are Python classes structured so that the default values are saved across instances of the class?",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 6838605,
+        "score": 4,
+        "vote": 0,
+        "content": "Several others have pointed out that this is an instance of the \"mutable default argument\" issue in Python. The basic reason is that the default arguments have to exist \"outside\" the function in order to be passed into it. But the real root of this as a problem has nothing to do with default arguments. Any time it would be bad if a mutable default value was modified, you really need to ask yourself: would it be bad if an explicitly provided value was modified? Unless someone is extremely familiar with the guts of your class, the following behaviour would also be very surprising (and therefore lead to bugs): 9 times out of 10, if you discover yourself reaching for the \"pattern\" of using None as the default value and using if value is None: value = default, you shouldn't be. You should be just not modifying your arguments! Arguments should not be treated as owned by the called code unless it is explicitly documented as taking ownership of them. In this case (especially because you're initialising a class instance, so the mutable variable is going to live a long time and be used by other methods and potentially other code that retrieves it from the instance) I would do the following: Now you're initialising the data of your class from a list provided as input, rather than taking ownership of a pre-existing list. There's no danger that two separate instances end up sharing the same list, nor that the list is shared with a variable in the caller which the caller may want to continue using. It also has the nice effect that your callers can provide tuples, generators, strings, sets, dictionaries, home-brewed custom iterable classes, etc, and you know you can still count on self.my_list having an append method, because you made it yourself. There's still a potential problem here, if the elements contained in the list are themselves mutable then the caller and this instance can still accidentally interfere with each other. I find it not to very often be a problem in practice in my code (so I don't automatically take a deep copy of everything), but you have to be aware of it. Another issue is that if my_list can be very large, the copy can be expensive. There you have to make a trade-off. In that case, maybe it is better to just use the passed-in list after all, and use the if my_list is None: my_list = [] pattern to prevent all default instances sharing the one list. But if you do that you need to make it clear, either in documentation or the name of the class, that callers are relinquishing ownership of the lists they use to initialise the instance. Or, if you really want to be constructing a list solely for the purpose of wrapping up in an instance of One, maybe you should figure out how to encapsulate the creation of the list inside the initialisation of One, rather than constructing it first; after all, it's really part of the instance, not an initialising value. Sometimes this isn't flexible enough though. And sometimes you really honestly do want to have aliasing going on, and have code communicating by mutating values they both have access to. I think very hard before I commit to such a design, however. And it will surprise others (and you when you come back to the code in X months), so again documentation is your friend! In my opinion, educating new Python programmers about the \"mutable default argument\" gotcha is actually (slightly) harmful. We should be asking them \"Why are you modifying your arguments?\" (and then pointing out the way default arguments work in Python). The very fact of a function having a sensible default argument is often a good indicator that it isn't intended as something that receives ownership of a pre-existing value, so it probably shouldn't be modifying the argument whether or not it got the default value.",
+        "abstract": ""
+      },
+      {
+        "id": 6840648,
+        "score": 1,
+        "vote": 0,
+        "content": "Not an answer, but it's worth noting this is also true for class variables defined outside any class functions. Example: Note that not only does the value of myList persist, but every instance of myList points to the same list. I ran into this bug/feature myself, and spent something like 3 hours trying to figure out what was going on. It's rather challenging to debug when you are getting valid data, but it's not from the local computations, but previous ones. It's made worse since this is not just a default argument. You can't just put myList in the class definition, it has to be set equal to something, although whatever it is set equal to is only evaluated once. The solution, at least for me, was to simply create all the class variable inside __init__.",
+        "abstract": ""
+      },
+      {
+        "id": 6838271,
+        "score": 10,
+        "vote": 0,
+        "content": "This is a known behaviour of the way Python default values work, which is often surprising to the unwary. The empty array object [] is created at the time of definition of the function, rather than at the time it is called. To fix it, try:",
+        "abstract": ""
+      },
+      {
+        "id": 6838280,
+        "score": 3,
+        "vote": 0,
+        "content": "This is standard behavior of default arguments anywhere in Python, not just in classes.\nFor more explanation, see Mutable defaults for function/method arguments.",
+        "abstract": ""
+      },
+      {
+        "id": 6838283,
+        "score": 3,
+        "vote": 0,
+        "content": "Basically, python function objects store a tuple of default arguments, which is fine for immutable things like integers, but lists and other mutable objects are often modified in-place, resulting in the behavior you observed.",
+        "abstract": ""
+      },
+      {
+        "id": 6838275,
+        "score": 2,
+        "vote": 0,
+        "content": "Python functions are objects. Default arguments of a function are attributes of that function. So if the default value of an argument is mutable and it's modified inside your function, the changes are reflected in subsequent calls to that function.",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/67959864/how-to-have-an-object-output-a-default-value",
+    "keywords": [],
+    "tags": [
+      "python"
+    ],
+    "question": {
+      "id": 67959864,
+      "title": "How to have an object output a default value",
+      "content": "I have a class called myClass. I have a variable which is an instance of myClass How do I have it so that when I call myObject, it returns a set value instead of <__main__.myClass object at 0x100816580>. For example,",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 67959907,
+        "score": 7,
+        "vote": 0,
+        "content": "You can use the __repr__() dunder method: Output: The __str__() dunder method would work too. See What is the difference between __str__ and __repr__?",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/65780014/why-cant-i-change-the-default-value-of-a-function-after-it-was-defined",
+    "keywords": [],
+    "tags": [
+      "python"
+    ],
+    "question": {
+      "id": 65780014,
+      "title": "Why can&#39;t I change the default value of a function after it was defined?",
+      "content": "I am learning Python from the official documentation. There I find the above piece of code which I am unable to understand as to why 5 is printed instead of 6. I am relatively new to Python. Can somebody help me understand the concept?",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 65867534,
+        "score": 1,
+        "vote": 0,
+        "content": "What others have said is true...the default is evaluated at the time of function creation, but it is not that it takes the \"value of i\" at the time of creation.  The default is assigned the object referred to by \"i\" at the time of creation.  This is an important point, because if that object is mutable, the default can be changed! Here's what happens: Output: Now see the results of a mutable default: Output: This can have strange side effects if not understood well: Above, b refers to the original default list object.  Appending to it mutates the default list.  Returning it makes x refer to the same object.  The default list now contains [1] so appending in the 2nd call make it [1,2].  y refers to the same default object as x so both names refer see the same object content. To fix, make the default immutable and create a new list when the default is seen:",
+        "abstract": ""
+      },
+      {
+        "id": 65780484,
+        "score": 1,
+        "vote": 0,
+        "content": "This is the difference between something being handled by reference vs by value. When you defined the function f you told it to set the argument's default value to i this is done by value, not by reference, so it took whatever the value of i was at that time and set the default for the function to that. Changing the value of i after that point does not change the value of arg. If you want it to work that way you could do this: This lets you pass a value for arg into the function as normal, but if you don't (or you explicitly pass None) it updates arg to the current value of i if arg is still None (Python's version of NULL if you're familiar with other languages) Something similar can be done using the or operator, arg = arg or i,but that will check if arg is falsy, and when using integers like you are in your example, 0 will be caught by the check.",
+        "abstract": ""
+      },
+      {
+        "id": 65780209,
+        "score": 0,
+        "vote": 0,
+        "content": "This is because you are assigning the value when the function is created. arg at the time of creation will be defaulted to what i is in that moment. Since at the time of the function being created the value of i is 5 then that's what the default value of that argument becomes. After the initial creation of the function i in the function argument is no longer linked to i in the body.",
+        "abstract": ""
+      },
+      {
+        "id": 65780089,
+        "score": 5,
+        "vote": 0,
+        "content": "The i is evaluated at the time of definition, so the code above has the same meaning as the code below: This means that, when the function is called without arguments, arg will have the value 5, no matter what the value of i is now. In order to get what you want, just do the following:",
+        "abstract": ""
+      },
+      {
+        "id": 65780083,
+        "score": 2,
+        "vote": 0,
+        "content": "Because the function takes its default value on the first declaration of 'i'. Change to i=6 on the first line if you want you code to print 6. Hope I helped !",
+        "abstract": ""
+      },
+      {
+        "id": 65780080,
+        "score": 10,
+        "vote": 0,
+        "content": "def f(arg=i) says \"make me a function f where the default value for arg is whatever i is right now\". At the time of defining the function, i=5.",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/63602917/how-to-set-default-parameter-inside-a-class",
+    "keywords": [],
+    "tags": [
+      "python",
+      "class",
+      "oop",
+      "default-parameters"
+    ],
+    "question": {
+      "id": 63602917,
+      "title": "How to set default parameter inside a class?",
+      "content": "I'm creating a Binary Search Tree and I want to implement inorder traversal using recursion for which I need to pass in root value which in this case is self.root. How do I pass root's default value to be equal to self.root?\nIf I use: It shows error that self is not defined.",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 63603063,
+        "score": 2,
+        "vote": 0,
+        "content": "Even if this were possible, it would not be a good idea. The objects used as default arguments are set when the code is first interpreted, not each time the method is called. That means self.root must exist when the code is first interpreted, and every time the default argument is used, it would be referencing the original self.root object; not whatever self.root happened to be when the method was called. It is for this reason that you should really never have a mutable object as a default argument. Multiple calls to a functions all using the same mutable default argument leads to wonky, erroneous behavior. The typical workaround option is to default to None, then check on that: Unfortunately, that won't work here because None has a special meaning in your function. You could instead use a sentinel object: Or, you could alter your program so that None is not a valid argument into that method, then use None instead of sentinel.",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/2681243/how-should-i-declare-default-values-for-instance-variables-in-python",
+    "keywords": [],
+    "tags": [
+      "python",
+      "class",
+      "oop"
+    ],
+    "question": {
+      "id": 2681243,
+      "title": "How should I declare default values for instance variables in Python?",
+      "content": "Should I give my class members default values like this: or like this? In this question I discovered that in both cases, is a well-defined operation. I understand that the first method will give me a class variable while the second one will not. However, if I do not require a class variable, but only need to set a default value for my instance variables, are both methods equally good? Or one of them more 'pythonic' than the other? One thing I've noticed is that in the Django tutorial, they use the second method to declare Models. Personally I think the second method is more elegant, but I'd like to know what the 'standard' way is.",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 62758003,
+        "score": 4,
+        "vote": 0,
+        "content": "With dataclasses, a feature added in Python 3.7, there is now yet another (quite convenient) way to achieve setting default values on class instances. The decorator dataclass will automatically generate a few methods on your class, such as the constructor. As the documentation linked above notes, \"[t]he member variables to use in these generated methods are defined using PEP 526 type annotations\". Considering OP's example, we could implement it like this: When constructing an object of this class's type we could optionally overwrite the value.",
+        "abstract": ""
+      },
+      {
+        "id": 2681286,
+        "score": 68,
+        "vote": 0,
+        "content": "The two snippets do different things, so it's not a matter of taste but a matter of what's the right behaviour in your context. Python documentation explains the difference, but here are some examples: This binds num to the Foo instances. Change to this field is not propagated to other instances. Thus: This binds num to the Bar class. Changes are propagated! If I do not require a class variable, but only need to set a default value for my instance variables, are both methods equally good? Or one of them more 'pythonic' than the other? The code in exhibit B is plain wrong for this: why would you want to bind a class attribute (default value on instance creation) to the single instance? The code in exhibit A is okay. If you want to give defaults for instance variables in your constructor I would however do this: ...or even: ...or even: (preferrable, but if and only if you are dealing with immutable types!) This way you can do:",
+        "abstract": ""
+      },
+      {
+        "id": 2681507,
+        "score": 169,
+        "vote": 0,
+        "content": "Extending bp's answer, I wanted to show you what he meant by immutable types. First, this is okay: However, this only works for immutable (unchangable) types. If the default value was mutable (meaning it can be replaced), this would happen instead: Note that both a and b have a shared attribute. This is often unwanted. This is the Pythonic way of defining default values for instance variables, when the type is mutable: The reason my first snippet of code works is because, with immutable types, Python creates a new instance of it whenever you want one. If you needed to add 1 to 1, Python makes a new 2 for you, because the old 1 cannot be changed. The reason is mostly for hashing, I believe.",
+        "abstract": ""
+      },
+      {
+        "id": 30515149,
+        "score": 2,
+        "vote": 0,
+        "content": "You can also declare class variables as None which will prevent propagation. This is useful when you need a well defined class and want to prevent AttributeErrors.\nFor example: Also if you need defaults: Of course still follow the info in the other answers about using mutable vs immutable types as the default in __init__.",
+        "abstract": ""
+      },
+      {
+        "id": 2681363,
+        "score": 7,
+        "vote": 0,
+        "content": "Using class members to give default values works very well just so long as you are careful only to do it with immutable values. If you try to do it with a list or a dict that would be pretty deadly. It also works where the instance attribute is a reference to a class just so long as the default value is None. I've seen this technique used very successfully in repoze which is a framework that runs on top of Zope. The advantage here is not just that when your class is persisted to the database only the non-default attributes need to be saved, but also when you need to add a new field into the schema all the existing objects see the new field with its default value without any need to actually change the stored data. I find it also works well in more general coding, but it's a style thing. Use whatever you are happiest with.",
+        "abstract": ""
+      },
+      {
+        "id": 2681303,
+        "score": 3,
+        "vote": 0,
+        "content": "Using class members for default values of instance variables is not a good idea, and it's the first time I've seen this idea mentioned at all. It works in your example, but it may fail in a lot of cases. E.g., if the value is mutable, mutating it on an unmodified instance will alter the default:",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/61756422/creating-new-object-keeps-data-even-with-default-value",
+    "keywords": [],
+    "tags": [
+      "python-3.x",
+      "default-value",
+      "instance-variables",
+      "class-variables"
+    ],
+    "question": {
+      "id": 61756422,
+      "title": "Creating new object keeps data even with default value",
+      "content": "I am struggling to understand why instance C keeps data of instance B, even though I initialized the instance variable var with the default empty list. Why is the default argument \"var = []\" ignored?. The print retuns Even stranger is this: prints How can the statement self.var = var append to the  list from the front?",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 61756644,
+        "score": 0,
+        "vote": 0,
+        "content": "According to what's given here A Python variable is a symbolic name that is a reference or pointer to an object. Once an object is assigned to a variable, you can refer to the object by that name. But the data itself is still contained within the object. Here, A's reference is passed to B. So they point to the same data, but are just called by different names. So whatever operation you perform on B, you also perform on A. Hence, later when you assign A to C, the same data is referenced by C. If you don't want that to happen, use deepcopy:",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/61424737/default-values-in-functions",
+    "keywords": [],
+    "tags": [
+      "python"
+    ],
+    "question": {
+      "id": 61424737,
+      "title": "Default Values in Functions",
+      "content": "The following warning is in the Default Values in Function Arguments section in Python Docs. Important warning: The default value is evaluated only once. This makes a difference when the default is a mutable object such as a list, dictionary, or instances of most classes. For example, the following function accumulates the arguments passed to it on subsequent calls: This will print [1] [1, 2] [1, 2, 3] If you don’t want the default to be shared between subsequent calls, you can write the function like this instead: I didn't quite understand how the L=None part of code solves this problem. Can you help me understand. Thanks",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 61424917,
+        "score": 1,
+        "vote": 0,
+        "content": "Let's talk about the solution first than we will investigate the problem a little! When you call without passing L, a new list is being created everytime the function is called. passed value for a is appended to L and newly created L is returned. This is pretty straightforward. Let's look at what is happening when L has a default value of [] In Python default values for function parameters are evaluated at the time def is evaluated. You can see that using <function_name>.__defaults__ You can see that defaults in the beginning (before calling function is empty list)\nAfter few calls -  This ofcourse surprises every Python developer!",
+        "abstract": ""
+      },
+      {
+        "id": 61424805,
+        "score": 1,
+        "vote": 0,
+        "content": "Like the documentation mentions, when you put L=[] in an argument, the value for the argument is evaluated only one, so the list that L has is created only once and shared between invocations. So, if what you want is to create a new list every time the function is called, you have to create the list inside the function with a statement like L = []. But if the caller passes a list, you don't want to create a new empty one, you just want to use the one the caller gave you. That's where the None here comes in, it's just a signal that you want an empty list. That's why you do the if to check if the argument is None and create an empty list only when that's true. An since None is just a value that's immutable, it will not be shared between calls.",
+        "abstract": ""
+      },
+      {
+        "id": 61424772,
+        "score": 2,
+        "vote": 0,
+        "content": "None is immutable, meaning it cannot be changed. So if None is set to be the default value of the parameter, it is always the same on every function call, and a new empty list is set to L (because it is evaluated every time, not just the first time the function is called). Further reading: http://effbot.org/zone/default-values.htm",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/56878667/setting-default-values-in-a-class",
+    "keywords": [],
+    "tags": [
+      "python",
+      "class",
+      "default"
+    ],
+    "question": {
+      "id": 56878667,
+      "title": "Setting default values in a class",
+      "content": "I am creating a class in Python, and I am unsure how to properly set default values. My goal is to set default values for all class instances, which can also be modified by a class method. However, I would like to have the initial default values restored after calling a method. I have been able to make it work with the code shown below. It isn't very \"pretty\", so I suspect that are better approaches to this problem. When I use this class, I would do something like my_instance = plots() and my_instance.method1(), my_instance.method1(b = 5), and my_instance.method1(). When calling method1 the third time, b would be 5 if I don't reset the default values at the end of the method definition, but I would like it to be 2 again.  Note: the code above is just an example. The real class has dozens of default values, and using all of them as input arguments would be considered an antipattern. Any suggestion on how to properly address this issue?",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 56880524,
+        "score": 0,
+        "vote": 0,
+        "content": "You can use a context manager or a decorator to apply and reset the values without having to type the same code on each method. Rather than having self.default_attr, I'd just return to the previous state. Using a decorator you could get: IMHO this is a bad idea, and would at least suggest not mutating plots. You can do this by making a new object and passing that to method1 as self.",
+        "abstract": ""
+      },
+      {
+        "id": 56883874,
+        "score": 2,
+        "vote": 0,
+        "content": "There is a whole bunch of ways to solve this problem, but if you have python 3.7 installed (or have 3.6 and install the backport), dataclasses might be a good fit for a nice solution. First of all, it lets you define the default values in a readable and compact manner, and also allows all the mutation operations you need: You also get the option to define default factories instead of default values for free with the dataclass field definition. It might not be a problem yet, but it avoids the mutable default value gotcha, which every python programmer runs into sooner or later. Last but not least, writing a reset function is quite easy given an existing dataclass, because it keeps track of all the default values already in its __dataclass_fields__ attribute: So now you can write some function do_stuff(...) that updates the fields in a Plot instance, and as long as you execute reset() the changes won't persist. ",
+        "abstract": ""
+      },
+      {
+        "id": 56879961,
+        "score": 2,
+        "vote": 0,
+        "content": "You can use class variables, and property to achieve your goal to set default values for all class instances. The instances values can be modified directly, and the initial default values restored after calling a method. In view of the context that \"the real class has dozens of default values\", another approach that you may consider, is to set up a configuration file containing the default values, and using this file to initialize, or reset the defaults. Here is a short example of the first approach using one class variable: output:",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/54132749/python-putting-an-object-property-as-default-value-for-one-of-his-functions",
+    "keywords": [],
+    "tags": [
+      "python"
+    ],
+    "question": {
+      "id": 54132749,
+      "title": "Python - Putting an object property as default value for one of his functions",
+      "content": "I would like to know what is the cleanest way to attain this in python: Of course the above gives me: \"NameError: name 'self' is not defined\"",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 54132750,
+        "score": 3,
+        "vote": 0,
+        "content": "I think that the solution is this: It works, and is probably the most pythonic way",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/32939159/create-object-with-attributes-that-have-default-values-python",
+    "keywords": [],
+    "tags": [
+      "python",
+      "object",
+      "attributes",
+      "default"
+    ],
+    "question": {
+      "id": 32939159,
+      "title": "Create object with attributes that have default values Python",
+      "content": "I need create an object with attributes that have default values. This object would eventually be populated with tax data. Here is a sample of what I have so far: class taxReturn: I'm not sure what I can enter to produce default values, or if this form is sufficient to be populated with data. ",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 32939277,
+        "score": 3,
+        "vote": 0,
+        "content": "You set default values for classes the same as you would for any other function in Python. So when you use it you get: By the way, never use mutables in your function header.  They will not behave as you expect.  Use None as shown above.",
+        "abstract": ""
+      }
+    ]
+  }
+]

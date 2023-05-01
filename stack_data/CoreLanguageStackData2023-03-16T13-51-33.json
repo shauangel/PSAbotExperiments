@@ -1,0 +1,704 @@
+[
+  {
+    "link": "https://stackoverflow.com/questions/18425225/getting-the-name-of-a-variable-as-a-string",
+    "keywords": [],
+    "tags": [
+      "python",
+      "variables"
+    ],
+    "question": {
+      "id": 18425225,
+      "title": "Getting the name of a variable as a string",
+      "content": "I already read How to get a function name as a string?. How can I do the same for a variable? As opposed to functions, Python variables do not have the __name__ attribute. In other words, if I have a variable such as: I am looking for a function/attribute, e.g. retrieve_name() in order to create a DataFrame in Pandas from this list, where the column names are given by the names of the actual dictionaries:",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 58451182,
+        "score": 250,
+        "vote": 0,
+        "content": "With Python 3.8 one can simply use f-string debugging feature: One drawback of this method is that in order to get 'foo' printed you have to add f'{foo=}' yourself. In other words, you already have to know the name of the variable. In other words, the above code snippet is exactly the same as just",
+        "abstract": ""
+      },
+      {
+        "id": 75046191,
+        "score": 0,
+        "vote": 0,
+        "content": "",
+        "abstract": ""
+      },
+      {
+        "id": 73495512,
+        "score": 0,
+        "vote": 0,
+        "content": "If you already have a list of dataframes, as is stated in the comments, then it is easy enough to make that list into a list of strings.\nInstead of going from list of variables to strings, go the other way, a list of strings to variables with the builtin exec function combined with f-strings (assuming that the variables are already assigned, i.e. vel, vol, and area are variable names of existing pandas dataframes): If: This iterates through the list and uses each dataframe to write to excel, and defines the sheetname:",
+        "abstract": ""
+      },
+      {
+        "id": 72890920,
+        "score": 0,
+        "vote": 0,
+        "content": "How can I do the same for a variable? As opposed to functions, Python variables do not have the __name__ attribute. The problem comes up because you are confused about terminology, semantics or both. \"variables\" don't belong in the same category as \"functions\". A \"variable\" is not a thing that takes up space in memory while the code is running. It is just a name that exists in your source code - so that when you're writing the code, you can explain which thing you're talking about. Python uses names in the source code to refer to (i.e., give a name to) values. (In many languages, a variable is more like a name for a specific location in memory where the value will be stored. But Python's names actually name the thing in question.) In Python, a function is a value. (In some languages, this is not the case; although there are bytes of memory used to represent the actual executable code, it isn't a discrete chunk of memory that your program logic gets to interact with directly.) In Python, every value is an object, meaning that you can assign names to it freely, pass it as an argument, return it from a function, etc. (In many languages, this is not the case.) Objects in Python have attributes, which are the things you access using the . syntax. Functions in Python have a __name__ attribute, which is assigned when the function is created. Specifically, when a def statement is executed (in most languages, creation of a function works quite differently), the name that appears after def is used as a value for the __name__ attribute, and also, independently, as a variable name that will get the function object assigned to it. But most objects don't have an attribute like that. In other words, if I have a variable such as: That's the thing: you don't \"have\" the variable in the sense that you're thinking of. You have the object that is named by that variable. Anything else depends on the information incidentally being stored in some other object - such as the locals() of the enclosing function. But it would be better to store the information yourself. Instead of relying on a variable name to carry information for you, explicitly build the mapping between the string name you want to use for the object, and the object itself.",
+        "abstract": ""
+      },
+      {
+        "id": 71962669,
+        "score": 1,
+        "vote": 0,
+        "content": "You can get your variable as kwargs and return it as string: Note: variable name must be equal to itself.",
+        "abstract": ""
+      },
+      {
+        "id": 71712672,
+        "score": 0,
+        "vote": 0,
+        "content": "It's totally possible to get the name of an instance variable, so long as it is the property of a class. I got this from Effective Python by Brett Slatkin. Hope it helps someone: The class must implement the get, set, and set_name dunder methods, which are part of the \"Descriptor Protocol\" This worked when I ran it: You can then add methods and or extend your datatype as you like. As a bonus, the set_name(self, owner, name) dunder also passes the parent instance, so the Field class instance can register itself with the parent. I got this from Effective Python by Brett Slatkin. It took a while to figure out how to implement.",
+        "abstract": ""
+      },
+      {
+        "id": 59364138,
+        "score": 93,
+        "vote": 0,
+        "content": "Use the Wrapper helper from python-varname: For list comprehension part, you can do: I am the author of the python-varname package. Please let me know if you have any questions or you can submit issues on Github. Yes and No. We are retrieving the variable names at runtime, so we need a function to be called to enable us to access the previous frames to retrieve the variable names. That's why we need a Wrapper there. In that function, at runtime, we are parsing the source code/AST nodes in the previous frames to get the exact variable name. However, the source code/AST nodes in the previous frames are not always available, or they could be modified by other environments (e.g: pytest's assert statement). One simple example is that the codes run via exec().  Even though we are still able to retrieve some information from the bytecode, it needs too much effort and it is also error-prone. First of all, we need to identify which frame the variable is given. It's not always simply the direct previous frame. For example, we may have another wrapper for the function: In the above example, we have to skip the frame inside wrapped to get to the right frame x = wrapped() so that we are able to locate x. The arguments frame and ignore of varname allow us to skip some of these intermediate frames. See more details in the README file and the API docs of the package. Then we need to parse the AST node to locate where the variable is assigned value (function call) to. It's not always just a simple assignment. Sometimes there could be complex AST nodes, for example, x = [wrapped()]. We need to identify the correct assignment by traversing the AST tree. Once we identify the assignment node, it is reliable. varname is all depending on executing package to look for the node. The node executing detects is ensured to be the correct one (see also this). It partially works with environments where other AST magics apply, including pytest, ipython, macropy, birdseye, reticulate with R, etc. Neither executing nor varname is 100% working with those environments. Well, yes and no, again. If your scenario is simple, the code provided by @juan Isaza or @scohe001 probably is enough for you to work with the case where a variable is defined at the direct previous frame and the AST node is a simple assignment. You just need to go one frame back and retrieve the information there. However, if the scenario becomes complicated, or we need to adopt different application scenarios, you probably need a package like python-varname, to handle them. These scenarios may include to: How about the f-string? Like the answer provided by @Aivar Paalberg. It's definitely fast and reliable. However, it's not at runtime, meaning that you have to know it's foo before you print the name out. But with varname, you don't have to know that variable is coming: python-varname is not only able to detect the variable name from an assignment, but also: Read more from its documentation. However, the final word I want to say is that, try to avoid using it whenever you can. Because you can't make sure that the client code will run in an environment where the source node is available or AST node is accessible. And of course, it costs resources to parse the source code, identify the environment, retrieve the AST nodes and evaluate them when needed.",
+        "abstract": ""
+      },
+      {
+        "id": 69960020,
+        "score": 1,
+        "vote": 0,
+        "content": "Some of the previous cases would fail if there are two variables with the same value. So it is convenient to alert it: Defining function: Use: If you have 2 variables with the same value like var_1 = 8 and var_2 = 8, then a warning will appear.",
+        "abstract": ""
+      },
+      {
+        "id": 18425523,
+        "score": 151,
+        "vote": 0,
+        "content": "Even if variable values don't point back to the name, you have access to the list of every assigned variable and its value, so I'm astounded that only one person suggested looping through there to look for your var name. Someone mentioned on that answer that you might have to walk the stack and check everyone's locals and globals to find foo, but if foo is assigned in the scope where you're calling this retrieve_name function, you can use inspect's current frame to get you all of those local variables. My explanation might be a little bit too wordy (maybe I should've used a \"foo\" less words), but here's how it would look in code (Note that if there is more than one variable assigned to the same value, you will get both of those variable names): If you're calling this function from another function, something like: And you want the baz instead of bar, you'll just need to go back a scope further. This can be done by adding an extra .f_back in the caller_local_vars initialization. See an example here: ideone",
+        "abstract": ""
+      },
+      {
+        "id": 69496355,
+        "score": 0,
+        "vote": 0,
+        "content": "Compressed version of iDilip's answer:",
+        "abstract": ""
+      },
+      {
+        "id": 67419557,
+        "score": 2,
+        "vote": 0,
+        "content": "As you see and is noted here, there can be multiple variables with the same value or even address, so using a wrapper to keep the names with the data is best.",
+        "abstract": ""
+      },
+      {
+        "id": 54423514,
+        "score": 3,
+        "vote": 0,
+        "content": "just another way to do this based on the content of input variable: (it returns the name of the first variable that matches to the input variable, otherwise None. One can modify it to get all variable names which are having the same content as input variable)",
+        "abstract": ""
+      },
+      {
+        "id": 66833271,
+        "score": 0,
+        "vote": 0,
+        "content": "When finding the name of a variable from its value,\nyou may have several variables equal to the same value,\nfor example var1 = 'hello' and var2 = 'hello'. My solution: Outputs",
+        "abstract": ""
+      },
+      {
+        "id": 65678960,
+        "score": 2,
+        "vote": 0,
+        "content": "Whenever I have to do it, mostly while communicating json schema and constants with the frontend I define a class as follows Then define the variable with name and value. Now you can access the name and value using the object.",
+        "abstract": ""
+      },
+      {
+        "id": 59804094,
+        "score": 16,
+        "vote": 0,
+        "content": "In case you get an error if myvar points to another variable, try this (suggested by @mherzog)- locals() - Return a dictionary containing the current scope's local variables.\nby iterating through this dictionary we can check the key which has a value equal to the defined variable, just extracting the key will give us the text of variable in string format. from (after a bit changes)\nhttps://www.tutorialspoint.com/How-to-get-a-variable-name-as-a-string-in-Python",
+        "abstract": ""
+      },
+      {
+        "id": 63171710,
+        "score": 4,
+        "vote": 0,
+        "content": "Many of the answers return just one variable name. But that won't work well if more than one variable have the same value. Here's a variation of Amr Sharaki's answer which returns multiple results if more variables have the same value.",
+        "abstract": ""
+      },
+      {
+        "id": 60826880,
+        "score": 6,
+        "vote": 0,
+        "content": "I have a method, and while not the most efficient...it works! (and it doesn't involve any fancy modules). Basically it compares your Variable's ID to globals() Variables' IDs, then returns the match's name.",
+        "abstract": ""
+      },
+      {
+        "id": 59721785,
+        "score": 1,
+        "vote": 0,
+        "content": "Following method will not return the name of variable but using this method you can create data frame easily if variable is available in global scope.",
+        "abstract": ""
+      },
+      {
+        "id": 59079732,
+        "score": 2,
+        "vote": 0,
+        "content": "Maybe this could be useful: The function goes through the list of IDs of values from the global scope (the namespace could be edited), finds the index of the wanted/required var or function based on its ID, and then returns the name from the list of global names based on the acquired index.  ",
+        "abstract": ""
+      },
+      {
+        "id": 54999371,
+        "score": 9,
+        "vote": 0,
+        "content": "This function will print variable name with its value:",
+        "abstract": ""
+      },
+      {
+        "id": 57503767,
+        "score": 0,
+        "vote": 0,
+        "content": "You can try the following to retrieve the name of a function you defined (does not work for built-in functions though):",
+        "abstract": ""
+      },
+      {
+        "id": 18425312,
+        "score": 8,
+        "vote": 0,
+        "content": "If you wanted to write your own function, it could be done such that you could check for a variable defined in locals then check globals. If nothing is found you could compare on id() to see if the variable points to the same location in memory. If your variable is in a class, you could use className.dict.keys() or vars(self) to see if your variable has been defined.",
+        "abstract": ""
+      },
+      {
+        "id": 54033089,
+        "score": 2,
+        "vote": 0,
+        "content": "If the goal is to help you keep track of your variables, you can write a simple function that labels the variable and returns its value and type. For example, suppose i_f=3.01 and you round it to an integer called i_n to use in a code, and then need a string i_s  that will go into a report.  This prints to the window at each call for debugging purposes and also yields a string for the written report.  The only downside is that you have to type the variable twice each time you call the function. I am a Python newbie and found this very useful way to log my efforts as I program and try to cope with all the objects in Python.  One flaw is that whatis() fails if it calls a function described outside the procedure where it is used.  For example, int(i_f) was a valid function call only because the int function is known to Python.  You could call whatis() using int(i_f**2), but if for some strange reason you choose to define a function called int_squared it must be declared inside the procedure where whatis() is used.",
+        "abstract": ""
+      },
+      {
+        "id": 53684586,
+        "score": 0,
+        "vote": 0,
+        "content": "I try to get name from inspect locals, but it cann't process var likes a[1], b.val.\nAfter it, I got a new idea --- get var name from the code, and I try it succ!\ncode like below: ",
+        "abstract": ""
+      },
+      {
+        "id": 18425285,
+        "score": 32,
+        "vote": 0,
+        "content": "I don't believe this is possible. Consider the following example: The a and b point to the same object, but the object can't know what variables point to it.",
+        "abstract": ""
+      },
+      {
+        "id": 51347986,
+        "score": 14,
+        "vote": 0,
+        "content": "I wrote the package sorcery to do this kind of magic robustly. You can write: and pass that to the dataframe constructor. It's equivalent to:",
+        "abstract": ""
+      },
+      {
+        "id": 46471018,
+        "score": 4,
+        "vote": 0,
+        "content": "I think it's so difficult to do this in Python because of the simple fact that you never will not know the name of the variable you're using. So, in his example, you could do: Instead of:",
+        "abstract": ""
+      },
+      {
+        "id": 40536047,
+        "score": 49,
+        "vote": 0,
+        "content": "On python3, this function will get the outer most name in the stack: It is useful anywhere on the code. Traverses the reversed stack looking for the first match.",
+        "abstract": ""
+      },
+      {
+        "id": 18425275,
+        "score": 136,
+        "vote": 0,
+        "content": "The only objects in Python that have canonical names are modules, functions, and classes, and of course there is no guarantee that this canonical name has any meaning in any namespace after the function or class has been defined or the module imported. These names can also be modified after the objects are created so they may not always be particularly trustworthy. What you want to do is not possible without recursively walking the tree of named objects; a name is a one-way reference to an object. A common or garden-variety Python object contains no references to its names. Imagine if every integer, every dict, every list, every Boolean needed to maintain a list of strings that represented names that referred to it! It would be an implementation nightmare, with little benefit to the programmer.",
+        "abstract": ""
+      },
+      {
+        "id": 30922184,
+        "score": 9,
+        "vote": 0,
+        "content": "Here's one approach. I wouldn't recommend this for anything important, because it'll be quite brittle. But it can be done. Create a function that uses the inspect module to find the source code that called it. Then you can parse the source code to identify the variable names that you want to retrieve. For example, here's a function called autodict that takes a list of variables and returns a dictionary mapping variable names to their values. E.g.: Would give: Inspecting the source code itself is better than searching through the locals() or globals() because the latter approach doesn't tell you which of the variables are the ones you want. At any rate, here's the code: The action happens in the line with inspect.getouterframes, which returns the string within the code that called autodict. The obvious downside to this sort of magic is that it makes assumptions about how the source code is structured. And of course, it won't work at all if it's run inside the interpreter.",
+        "abstract": ""
+      },
+      {
+        "id": 19201952,
+        "score": 16,
+        "vote": 0,
+        "content": "It's used like this:",
+        "abstract": ""
+      },
+      {
+        "id": 18425336,
+        "score": 4,
+        "vote": 0,
+        "content": "In Python, the def and class keywords will bind a specific name to the object they define (function or class). Similarly, modules are given a name by virtue of being called something specific in the filesystem. In all three cases, there's an obvious way to assign a \"canonical\" name to the object in question. However, for other kinds of objects, such a canonical name may simply not exist. For example, consider the elements of a list. The elements in the list are not individually named, and it is entirely possible that the only way to refer to them in a program is by using list indices on the containing list. If such a list of objects was passed into your function, you could not possibly assign meaningful identifiers to the values. Python doesn't save the name on the left hand side of an assignment into the assigned object because: So, for example, functions defined using lambda will always have the \"name\" <lambda>, rather than a specific function name. The best approach would be simply to ask the caller to pass in an (optional) list of names. If typing the '...','...' is too cumbersome, you could accept e.g. a single string containing a comma-separated list of names (like namedtuple does).",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/1538342/how-can-i-get-the-name-of-an-object",
+    "keywords": [],
+    "tags": [
+      "python",
+      "introspection"
+    ],
+    "question": {
+      "id": 1538342,
+      "title": "How can I get the name of an object?",
+      "content": "Suppose I have code like: How can I get the name of each object in Python? That is to say: what could I write instead of name in this code, so that the loop will show handling object x and then handling object y and handling object z? In my actual code, I have a dict of functions that I will call later after looking them up with user input: How can I create fun_dict automatically, without writing the names of the functions twice? I would like to be able to write something like to avoid duplicating the names.",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 1538380,
+        "score": 57,
+        "vote": 0,
+        "content": "Objects do not necessarily have names in Python, so you can't get the name. When you create a variable, like the x, y, z above then those names just act as \"pointers\" or \"references\" to the objects. The object itself does not know what name(s) you are using for it, and you can not easily (if at all) get the names of all references to that object. However, it's not unusual for objects to have a __name__ attribute. Functions do have a __name__ (unless they are lambdas), so we can build fun_dict by doing e.g.",
+        "abstract": ""
+      },
+      {
+        "id": 54349277,
+        "score": 0,
+        "vote": 0,
+        "content": "Python has names which are mapped to objects in a hashmap called a namespace. At any instant in time, a name always refers to exactly one object, but a single object can be referred to by any arbitrary number of names. Given a name, it is very efficient for the hashmap to look up the single object which that name refers to. However given an object, which as mentioned can be referred to by multiple names, there is no efficient way to look up the names which refer to it. What you have to do is iterate through all the names in the namespace and check each one individually and see if it maps to your given object. This can easily be done with a list comprehension: This will evaluate to a list of strings containing the names of all local \"variables\" which are currently mapped to the object  myobj. Of course locals() can be substituted with any dict that you want to search for names that point to a given object. Obviously this search can be slow for very large namespaces because they must be traversed in their entirety.",
+        "abstract": ""
+      },
+      {
+        "id": 71715076,
+        "score": -1,
+        "vote": 0,
+        "content": "Hi there is one way to get the variable name that stores an instance of a class\nis to use locals() function, it returns a dictionary that contains the variable name as a string and its value",
+        "abstract": ""
+      },
+      {
+        "id": 68743685,
+        "score": 1,
+        "vote": 0,
+        "content": "I know This is late answer. Ex:. Performance note: don't use it in large modules.",
+        "abstract": ""
+      },
+      {
+        "id": 64053336,
+        "score": 0,
+        "vote": 0,
+        "content": "Based on what it looks like you're trying to do you could use this approach. In your case, your functions would all live in the module foo. Then you could: Or more succinctly:",
+        "abstract": ""
+      },
+      {
+        "id": 16139159,
+        "score": 11,
+        "vote": 0,
+        "content": "This one-liner works, for all types of objects, as long as they are in globals() dict, which they should be: or, equivalently:",
+        "abstract": ""
+      },
+      {
+        "id": 39240374,
+        "score": 0,
+        "vote": 0,
+        "content": "Here is my answer, I am also using globals().items() I added except_word because I want to filter off some word used in for loop. \nIf you didn't add it, the keyword in for loop may confuse this function, sometimes the keyword like \"each_item\" in the following case may show in the function's result, depends on what you have done to your loop. eg. eg. Hope this can help.",
+        "abstract": ""
+      },
+      {
+        "id": 30019808,
+        "score": 0,
+        "vote": 0,
+        "content": "You define a class and add the Unicode private function insert the class like Of course you have to add extra variable self.name which is the name of the object.",
+        "abstract": ""
+      },
+      {
+        "id": 30019630,
+        "score": 10,
+        "vote": 0,
+        "content": "As others have mentioned, this is a really tricky question. Solutions to this are not \"one size fits all\", not even remotely. The difficulty (or ease) is really going to depend on your situation. I have come to this problem on several occasions, but most recently while creating a debugging function. I wanted the function to take some unknown objects as arguments and print their declared names and contents. Getting the contents is easy of course, but the declared name is another story. What follows is some of what I have come up with. Determining the name of a function is really easy as it has the __name__ attribute containing the function's declared name. Just as an example, if you create the function def test_function(): pass, then copy_function = test_function, then name_of_function(copy_function), it will return test_function. Check whether the object has a __name__ attribute and return it if so (declared functions only). Note that you may remove this test as the name will still be in globals(). Compare the value of arg with the values of items in globals() and return the name of the first match. Note that I am filtering out names starting with '_'. The result will consist of the name of the first matching object otherwise None. The result will consist of a list (for multiple matches), a string (for a single match), otherwise None. Of course you should adjust this behavior as needed.",
+        "abstract": ""
+      },
+      {
+        "id": 21339843,
+        "score": 8,
+        "vote": 0,
+        "content": "If you are looking to get the names of functions or lambdas or other function-like objects that are defined in the interpreter, you can use dill.source.getname from dill.  It pretty much looks for the __name__ method, but in certain cases it knows other magic for how to find the name... or a name for the object.  I don't want to get into an argument about finding the one true name for a python object, whatever that means.",
+        "abstract": ""
+      },
+      {
+        "id": 23258737,
+        "score": 0,
+        "vote": 0,
+        "content": "I ran into this page while wondering the same question. As others have noted, it's simple enough to just grab the __name__ attribute from a function in order to determine the name of the function. It's marginally trickier with objects that don't have a sane way to determine __name__, i.e. base/primitive objects like basestring instances, ints, longs, etc. Long story short, you could probably use the inspect module to make an educated guess about which one it is, but you would have to probably know what frame you're working in/traverse down the stack to find the right one. But I'd hate to imagine how much fun this would be trying to deal with eval/exec'ed code. whats_my_name_again.py:",
+        "abstract": ""
+      },
+      {
+        "id": 1538399,
+        "score": 17,
+        "vote": 0,
+        "content": "That's not really possible, as there could be multiple variables that have the same value, or a value might have no variable, or a value might have the same value as a variable only by chance. If you really want to do that, you can use However, it would be better if you would iterate over names in the first place:  ",
+        "abstract": ""
+      },
+      {
+        "id": 1539517,
+        "score": 2,
+        "vote": 0,
+        "content": "Use a reverse dict. The reverse dict will map each function reference to the exact name you gave it in fun_dict, which may or may not be the name you used when you defined the function.  And, this technique generalizes to other objects, including integers. For extra fun and insanity, you can store the forward and reverse values in the same dict.  I wouldn't do that if you were mapping strings to strings, but if you are doing something like function references and strings, it's not too crazy.",
+        "abstract": ""
+      },
+      {
+        "id": 1539174,
+        "score": 1,
+        "vote": 0,
+        "content": "And the reason I want to have the name of the function is because I want to create fun_dict without writing the names of the functions twice, since that seems like a good way to create bugs. For this purpose you have a wonderful getattr function, that allows you to get an object by known name. So you could do for example: funcs.py: main.py:",
+        "abstract": ""
+      },
+      {
+        "id": 1539123,
+        "score": 1,
+        "vote": 0,
+        "content": "Here's another way to think about it.  Suppose there were a name() function that returned the name of its argument.  Given the following code: What should name(e[2]) return, and why?",
+        "abstract": ""
+      },
+      {
+        "id": 1539112,
+        "score": 0,
+        "vote": 0,
+        "content": "Generally when you are wanting to do something like this, you create a class to hold all of these functions and name them with some clear prefix cmd_ or the like.  You then take the string from the command, and try to get that attribute from the class with the cmd_ prefixed to it.  Now you only need to add a new function/method to the class, and it's available to your callers.  And you can use the doc strings for automatically creating the help text. As described in other answers, you may be able to do the same approach with globals() and regular functions in your module to more closely match what you asked for. Something like this:",
+        "abstract": ""
+      },
+      {
+        "id": 1538772,
+        "score": 1,
+        "vote": 0,
+        "content": "Note that while, as noted, objects in general do not and cannot know what variables are bound to them, functions defined with def do have names in the __name__ attribute (the name used in def).  Also if the functions are defined in the same module (as in your example) then globals() will contain a superset of the dictionary you want. ",
+        "abstract": ""
+      },
+      {
+        "id": 1538466,
+        "score": 0,
+        "vote": 0,
+        "content": "Variable names can be found in the globals() and locals() dicts. But they won't give you what you're looking for above. \"bla\" will contain the value of each item of my_list, not the variable.",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/71790856/python-how-to-print-the-variable-name-of-an-object",
+    "keywords": [],
+    "tags": [
+      "python"
+    ],
+    "question": {
+      "id": 71790856,
+      "title": "Python - How to print the variable name of an Object",
+      "content": "Thanks for reading. Preface, I don't mean how to make a print(objectA) make python output something other than the <__main__.A object at 0x00000273BC36A5C0> via the redefining the __str__ attribute. I will use the following example to try to explain what I'm doing. I would like the \"the points name\" to be replaced with whatever the variable name assigned to a specific object. So if I instantiated pointA=Point(1,0), I would like to be able to print\npointA has the points: (1,0) I can't seem to find anything like this online, just people having issues that are solved by redefining __str__. I tried to solve this issue by adding a .name attribute, but that made this very unwieldy (especially since I want to make other object classes that inherit Point()). I'm not entirely sure if this is possible from what I know about variable and object names in python, but after wrestling with it for a couple of days I'd figured I'd reach out for ideas.",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 71791073,
+        "score": 1,
+        "vote": 0,
+        "content": "Note that an object may be referred to as multiple names.\nIt is also possible that there is no object name referring to the object. Below is one approach that achieves your goal. It uses globals(), the dictionary that stores mappings from names to objects inside the global environment. Essentially, the __str__ method searches the object in the global listings (so it can be very slow if there are many objects) and keeps the name if matches.\nYou could possibly use locals instead to narrow the search scope. In the example, C is referring to the same object as A. So print(C) tells both A and C are the names.",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/67092187/python-getting-a-class-object-name-based-on-attribute",
+    "keywords": [],
+    "tags": [
+      "python-3.x",
+      "class"
+    ],
+    "question": {
+      "id": 67092187,
+      "title": "Python getting a class object name based on attribute",
+      "content": "How do I get a name of player in seat 3 for example? Thank you! Note that I do not know that p3 in the one.",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 67092520,
+        "score": 3,
+        "vote": 0,
+        "content": "I presume you do not mean to just print the name p3.name. In case you mean to keep track of all the instances of your class, please refer to: Python: Find Instance of a class by value and How to keep track of class instances? If I apply the same logic as mentioned in the two references I have quoted above, your code could look something like this: The get_players_at_seat() function is a class method that returns an iterator containing all players in instances that have their seat property set to the given value of seat. You can then iterate over the iterator and print the names of the players at seat 3.",
+        "abstract": ""
+      },
+      {
+        "id": 67092322,
+        "score": 0,
+        "vote": 0,
+        "content": "The simplest way would be to put all your player objects into a list & loop through the list checking their atributes,",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/8875202/can-an-object-inspect-the-name-of-the-variable-its-been-assigned-to",
+    "keywords": [],
+    "tags": [
+      "python"
+    ],
+    "question": {
+      "id": 8875202,
+      "title": "Can an object inspect the name of the variable it&#39;s been assigned to?",
+      "content": "In Python, is there a way for an instance of an object to see the variable name it's assigned to? Take the following for example: Is it possible for MyObject to see it's been assigned to a variable name x at any point? Like in it's __init__ method?",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 63661634,
+        "score": 0,
+        "vote": 0,
+        "content": "I was independently working on this and have the following. It's not as comprehensive as driax's answer, but efficiently covers the case described and doesn't rely on searching for the object's id in global variables or parsing source code...",
+        "abstract": ""
+      },
+      {
+        "id": 59914969,
+        "score": 0,
+        "vote": 0,
+        "content": "assuming this: then you can search through the environment by the object's id, returning the key when there is a match.",
+        "abstract": ""
+      },
+      {
+        "id": 8875313,
+        "score": 19,
+        "vote": 0,
+        "content": "Yes, it is possible*.  However, the problem is more difficult than it seems upon first glance:  Regardless, knowing how to find the names of an object can sometimes be useful for debugging purposes - and here is how to do it:   If you're ever tempted to base logic around the names of your variables, pause for a moment and consider if redesign/refactor of code could solve the problem.  The need to recover an object's name from the object itself usually means that underlying data structures in your program need a rethink.   * at least in Cpython",
+        "abstract": ""
+      },
+      {
+        "id": 33912052,
+        "score": 2,
+        "vote": 0,
+        "content": "Here is a simple function to achieve what you want, assuming you wish to retrieve the name of the variable where the instance is assigned from a method call : Here is an usage example :",
+        "abstract": ""
+      },
+      {
+        "id": 41586688,
+        "score": 5,
+        "vote": 0,
+        "content": "As many others have said, it can't be done properly. However inspired by jsbueno's, I have an alternative to his solution.  Like his solution, I inspect the callers stack frame, which means it only works properly for Python-implemented callers (see note below). Unlike him, I inspect the bytecode of the caller directly (instead of loading and parsing the source code). Using Python 3.4+'s dis.get_instructions() this can be done with some hope of minimal compatibility. Though this is still some hacky code. Note: C-implemented functions don't show up as Python stack frames and are thus hidden to this script. This will result in false positives. Consider Python function f() which calls a = g(). g() is C-implemented and calls b = f2(). When f2() tries to lookup up the assigned name, it will get a instead of b because the script is oblivious to C functions. (At least this is how I guess it will work :P ) Usage example:",
+        "abstract": ""
+      },
+      {
+        "id": 8875330,
+        "score": 1,
+        "vote": 0,
+        "content": "It can't be ordinarily done, though this can be achieved by using introspection and facilities meant for debugging a program. The code must run from a \".py\" file though, and not from just compiled bytecode, or inside a zipped module - as it relies on the reading of the file source code, from within the method that should find about \"where it is running\". The trick is to access the execution frame where the object was initialized from - with inspect.currentframe - the frame object has a \"f_lineno\"  value which states the line number where the call to the object method (in this case, __init__) has been called. The function inspect.filename allows one to retrieve the source code for the file, and fetch the apropriate line number.  A naive parse then peek the part preeceding an \"=\" sign, and assumes it is the variable that will contain the object. That won't work for multiple assignents, expressions composing with the object before the assignemtn is made, objects being appended to lists or added to dictionaries or sets,  object instantiation in intialization of for loops, and God knows which more situations -- \n And have in mind that after the first attribution, the object could be referenced by any other variable as well. Botton line: it is  possible, but as a toy - it can't be used i production code - \njust have the varibal name to be passed as a string during object initialization, just as one has to do when creating a collections.namedtuple The \"right way\" to do it, if you are needing the name, is to explicitly pass the name to the object initialization, as a string parameter, like in: And still, if absolutely need to type the objects'name only once, there is another way - read on.\nDue to Python's syntax, some special assignments, not using the \"=\" operator do allow an object to know it is assigned name. So, other statemtns that perform assignents in Python are the for, with, def and class keywords - It is possible to abuse this, as specfically a class creation and a function definition are assignment statements that create objects which \"know\" their names. Let's focus on the def statement. It ordinarily creates a function. But using a decorator you can use \"def\" to create any kind of object - and have the name used for the function available to the constructor: (This last way of doing it could be used in production code, unlike the one which resorts to reading the source file)",
+        "abstract": ""
+      },
+      {
+        "id": 8875258,
+        "score": 4,
+        "vote": 0,
+        "content": "No. Objects and names live in separate dimensions. One object can have many names during its lifetime, and it's impossible to determine which one might be the one you want. Even in here: two names denote the same object (self when __init__ runs, x in global scope).",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/57648952/how-to-get-the-name-of-a-created-object-not-the-class-itself-in-python-3-x",
+    "keywords": [],
+    "tags": [
+      "python"
+    ],
+    "question": {
+      "id": 57648952,
+      "title": "How to get the name of a created object (not the class itself) in Python 3.X",
+      "content": "I've always wondered if when you define a variable, you can somehow get the name you defined it with, and manipulate it as a string. I am trying to make some code more efficient in doing this. I looked this up and didn't seem to hit the spot with what I found. I found some code that can retrieve the name of the class itself, but not the name of the created object. I thought I would get a result looking like this:  It being literally the name of the object, not the class. Is there a way of doing this? If there is, I would really appreciate it.  PS: if this question turns out to be a duplicate, sorry, would love it if ya'll point me to the answer :) and not delete this.",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 57649418,
+        "score": 1,
+        "vote": 0,
+        "content": "Actually there is a way to get names of the variables and attributes.\nYou can get the list of all the names without namespace, and their values as a dictionary using the vars function. It printed all the predefined variables without a namespace. (built-in functions such as len and print have __ builtins __ namespace.). But if you defined a variable: Then you can find the a you defined. This also works for object. You'll get all the names of the object's namespace by calling vars with the object as an argument. Using the vars function and dictionary handling you can achieve getting the object's variable name by the variable values, but there can be another value with identical values causing conflicts. Summary:\nUsing the vars built-in function and dictionary handling you can get the variable name of a value, but it has a chance to fail, when the values are not unique in the namespace.",
+        "abstract": ""
+      },
+      {
+        "id": 57648972,
+        "score": 1,
+        "vote": 0,
+        "content": "What you think of as a \"variable\" is in Python nothing more than a reference to an object.\nSee naming and binding in the Python documentation. There is no 1:1 relation between objects and references. There can be more than one reference to an object. The CPython implementation even uses reference counting; an object will be de-allocated when there its reference count drops to 0. The closest thing that an object has to a name is its \"identity\", which you can get by calling the id() function on the object. This is an integer which is unique during the lifetime of the object. There is no universal way to get the the name of a reference/variable as a string.  If the name refers to an object that is subject to garbage collection, there is a roundabout way to get it (with thanks to Iain Shelvington for pointing it out in the comments): This will print out ['test']. Note that this does not apply to atomic objects like integers, strings and floats. It will only work for objects where gc.is_tracked(name) returns True.",
+        "abstract": ""
+      },
+      {
+        "id": 57648979,
+        "score": 1,
+        "vote": 0,
+        "content": "This isn't possible in Python. In theory the language could store down the first assignment name in some form, but it doesn't. Python also doesn't have anything like C#'s nameof() that could approximate this. The main issue here is that the name is just a pointer to the object, you could have multiple names for the same thing (or none at the level you are working at - what would be the name of a value in a list, for example?), so which one would you expect to get? Generally, if you want to do something like this, you want to use a data structure like a dictionary instead, that way you have access to the keys. The best you could do is something where you forgo the manual assignment and construct the object using code that gives the object that name and assigns the variable dynamically. This would still have the issue that the name wouldn't match other references, and would be fragile code. Using a dictionary would be easier in that case. You could also use __setattr__() to do something like this if you were assigning to a class attribute rather than a top-level variable. However, again, I'd argue a dictionary is the better option. ",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/38599015/print-object-instance-name-in-python",
+    "keywords": [],
+    "tags": [
+      "python",
+      "object"
+    ],
+    "question": {
+      "id": 38599015,
+      "title": "print object/instance name in python",
+      "content": "I was wondering if there is a way to print the object name in python as a string.  For example I want to be able to say ENEMY1 has 2 hp left or ENEMY2 has 4 hp left.  Is there a way of doing that?\\",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 49331805,
+        "score": 1,
+        "vote": 0,
+        "content": "I have posted a complete solution here: https://stackoverflow.com/a/49331683/7386061 It works without parameters. For example you could just do:",
+        "abstract": ""
+      },
+      {
+        "id": 38599196,
+        "score": 6,
+        "vote": 0,
+        "content": "A much better design principle is not to rely on the specific name of the object as shown below: This can lead to a whole wealth of issues with assignment binding, referencing, and most importantly does not allow you to name your objects per user or program choice. Instead add an instance variable to your class called self._name (9.6 Classes - Private Variables) or self.name if you want to allow access outside the scope of the class (in this example, you can name it anything). Not only is this more Object-Oriented design, but now you can implement methods like __hash__ to be able to create a hash based on a name for example to use an object as a key (there are many more reasons why this design choice is better!). Sample output:",
+        "abstract": ""
+      },
+      {
+        "id": 38599084,
+        "score": 3,
+        "vote": 0,
+        "content": "You'd have to first give them names. E.g.",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/18983279/how-to-get-the-object-for-a-given-class-name-in-python",
+    "keywords": [],
+    "tags": [
+      "python"
+    ],
+    "question": {
+      "id": 18983279,
+      "title": "How to get the object for a given class name in Python?",
+      "content": "Is there any way to get the object name when the class name is known. If there are multiple objects for a class they also need to be printed. Assume that some one have created objects for class A in some other files. So, I want to look all instances of 'Class A' ",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 19156516,
+        "score": 0,
+        "vote": 0,
+        "content": "Finally found a way to get through. As I know the class name, I would search for the object created for that class in garbage collector(gc) like this... The above code returns an instance of the class which will be like this. Unfortunately,its in String format which doesn't suit the requirement. It should be of 'obj' type. From the above value, parse the id(0x6f55250) and get the object reference based on the id. Hence required_obj will hold the object reference exactly in the 'obj' format. :-)",
+        "abstract": ""
+      },
+      {
+        "id": 18983693,
+        "score": 2,
+        "vote": 0,
+        "content": "If you are the one creating the class you can simply store weak-references when instantiating the class: Using weak-references allow the instances to be deallocated before the class. See the weakref module for details on what it does. Note that you may be able to use this technique even with classes that you didn't write. You simply have to monkey-patch the class.\nFor example: Then you can do: And all instances created after the execution of this statement will be found in ExternalClass.instances. Depending on the class you may have to replace __new__ instead of __init__. You can do this even without any special code in the class, simply using the garbage collector: And you can always obtain the class object since you can find it using object.__subclasses__ method: (assuming there is only a class with that name, otherwise you should try all of them) However I cannot think of a situation where this is the right thing to do, so avoid this code in real applications. I've done some testing and I believe that this solution may not work for built-in classes or classes defined in C extensions. If you are in this case the last resort is to use gc.get_objects() to retrieve all tracked objects. However this will work only if the object support cyclic garbage collection, so there isn't a method that works in every possible situation.",
+        "abstract": ""
+      },
+      {
+        "id": 18983557,
+        "score": 0,
+        "vote": 0,
+        "content": "",
+        "abstract": ""
+      },
+      {
+        "id": 18983535,
+        "score": 1,
+        "vote": 0,
+        "content": "Here the version getting the instances from memory, I wouldn't recommend using this in live code but it can be convenient for debugging:",
+        "abstract": ""
+      },
+      {
+        "id": 18983795,
+        "score": 0,
+        "vote": 0,
+        "content": "You cann get names for all the instances as they may not all have names, or the names they do have may be in scope. You may be able to get the instances. If you are willing to keep track of the instances yourself, use a WeakSet: Note that just deleting a name may not destroy the instance. other still exists until the garbage collected: If you don't want to track them manually, then it is possible to use gc.get_objects() and filter out the instances you want, but that means you have to filter through all the objects in your program every time you do this. Even in the above example that means processing nearly 12,000 objects to find the 3 instances you want.",
+        "abstract": ""
+      },
+      {
+        "id": 18983610,
+        "score": 0,
+        "vote": 0,
+        "content": "Instances are created within a namespace: In this case, some_object is a name inside the \"namespace\" of the function that points at a MyClass instance. Once you leave the namespace (i.e., the function ends), Python's garbage collection cleans up the name and the instance. If there would be some other location that also has a pointer to the object, the cleanup wouldn't happen. So: no, there's no place where a list of instances is maintained. It would be a different case where you to use a database with an ORM (object-relational mapper). In Django's ORM you can do MyClass.objects.all() if MyClass is a database object. Something to look into if you really need the functionality. Update: See Bakuriu's answer. The garbage collector (which I mentioned) knows about all the instances :-) And he suggests the \"weakref\" module that prevents my won't-be-cleaned-up problem.",
+        "abstract": ""
+      },
+      {
+        "id": 18983728,
+        "score": 0,
+        "vote": 0,
+        "content": "Python provides the types module that defined classes for built-in types and the locals() and globals() functions that return a list of local and global variables in the application. One quick way to find objects by type is to do this. It's worth going through the Python library documentation and read the docs for modules that work with the code directly. Some of which are inspect, gc, types, codeop, code, imp, ast. bdb, pdb. The IDLE source code is also very informative.",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/17200117/how-to-get-the-object-name-from-within-the-class",
+    "keywords": [],
+    "tags": [
+      "python",
+      "class",
+      "object"
+    ],
+    "question": {
+      "id": 17200117,
+      "title": "How to get the object name from within the class?",
+      "content": "I've got a simple class from which I create two objects. I now want to print the name of the object from within the class. So something like this: I need this to print: Unfortunately this just prints <myModule.Example instance at 0xb67e77cc> Does anybody know how I can do this?",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 17200177,
+        "score": 4,
+        "vote": 0,
+        "content": "The object does not have a \"name\". A variable which refers to the object is not a \"name\" of the object. The object cannot know about any of the variables which refer to it, not least because variables are not a first-class subject of the language. If you wish to alter the way that object prints, override either __repr__ or __unicode__. If this is for debugging purposes, use a debugger. That's what it's for.",
+        "abstract": ""
+      },
+      {
+        "id": 17200188,
+        "score": 5,
+        "vote": 0,
+        "content": "object1 is just an identifier(or variable) pointing to an instance object, objects don't have names. a,b,c are simply references that allow us to access a same object, when an object has 0 references it is automatically garbage collected. A quick hack will be to pass the name when creating the instance:",
+        "abstract": ""
+      },
+      {
+        "id": 17200322,
+        "score": 1,
+        "vote": 0,
+        "content": "The common way to do this is something along these lines: Prints: However, there is no guarantee that this object remains bound to the original name: Prints object1, as expected, twice. If you want to see things under the hood -- use a debugger. ",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/17196474/getting-object-name-and-function-name",
+    "keywords": [],
+    "tags": [
+      "python"
+    ],
+    "question": {
+      "id": 17196474,
+      "title": "getting object name and function name",
+      "content": "It is actually 2 questions. \n1) Is there a generic way to get the class name of an instance, so if I have a class I would like a built in way that gives me a string 'someClass' 2) Similar with functions. If I have  it would print 'someFunction' The reason why I am looking for this is, that I have a bit of a jungle of classes and subclasses and for debugging I would like to print where I am, so to all methods I would just want to add something along the lines So I am looking for a generic command that know the class and the function where it is, so that I can copy and paste the line in all the methods without having to write a separate line for each of them",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 17196512,
+        "score": 7,
+        "vote": 0,
+        "content": "use the __name__ attribute: Class: Function: A quick hack for classes will be:",
+        "abstract": ""
+      },
+      {
+        "id": 17196943,
+        "score": 3,
+        "vote": 0,
+        "content": "the function part has already been answered at this SO post. The code would be: For the class part, use: A.__name__ or A().__class__.__name (for an instance)",
+        "abstract": ""
+      }
+    ]
+  }
+]

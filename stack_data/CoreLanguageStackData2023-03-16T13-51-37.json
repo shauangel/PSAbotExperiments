@@ -1,0 +1,512 @@
+[
+  {
+    "link": "https://stackoverflow.com/questions/6159900/correct-way-to-write-line-to-file",
+    "keywords": [],
+    "tags": [
+      "python",
+      "file-io"
+    ],
+    "question": {
+      "id": 6159900,
+      "title": "Correct way to write line to file?",
+      "content": "How do I write a line to a file in modern Python? I heard that this is deprecated: Also, does \"\\n\" work on all platforms, or should I use \"\\r\\n\" on Windows?",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 75427193,
+        "score": 0,
+        "vote": 0,
+        "content": "Insert f.write('\\n') at the end",
+        "abstract": ""
+      },
+      {
+        "id": 6159910,
+        "score": 62,
+        "vote": 0,
+        "content": "I do not think there is a \"correct\" way. I would use: In memoriam Tim Toady.",
+        "abstract": ""
+      },
+      {
+        "id": 6159912,
+        "score": 1007,
+        "vote": 0,
+        "content": "You should use the print() function which is available since Python 2.6+ For Python 3 you don't need the import, since the  print() function is the default. The alternative in Python 3 would be to use: Quoting from Python documentation regarding newlines: When writing output to the stream, if newline is None, any '\\n' characters written are translated to the system default line separator, os.linesep. If newline is '' or '\\n', no translation takes place. If newline is any of the other legal values, any '\\n' characters written are translated to the given string. See also: Reading and Writing Files - The Python Tutorial",
+        "abstract": ""
+      },
+      {
+        "id": 6160082,
+        "score": 1504,
+        "vote": 0,
+        "content": "This should be as simple as: From The Documentation: Do not use os.linesep as a line terminator when writing files opened in text mode (the default); use a single '\\n' instead, on all platforms. Some useful reading:",
+        "abstract": ""
+      },
+      {
+        "id": 66576132,
+        "score": 4,
+        "vote": 0,
+        "content": "If you want to insert items in a list with a format per line, a way to start could be:",
+        "abstract": ""
+      },
+      {
+        "id": 65015943,
+        "score": -2,
+        "vote": 0,
+        "content": "since others have answered how to do it, I'll answer how it happens line by line. this is a so-called context manager, anything that comes with a with block is a context manager. so let's see how this happens under the hood. the first method __init__ is (as you all know) the initialization method of an object. whenever an object is created obj.__init__ is definitely called. and that's the place where you put your all the init kinda code. the second method __enter__ is a bit interesting. some of you might not have seen it because it is a specific method for context managers. what it returns is the value to be assigned to the variable after the as keyword. in our case, fp. the last method is the method to run after an error is captured or if the code exits the with block. exc_type, exc_value, exc_traceback variables are the variables that hold the values of the errors that occurred inside with block. for example, from the first two variables, you can get info enough info about the error. honestly, I don't know the use of the third variable, but for me, the first two are enough. if you want to do more research on context managers surely you can do it and note that writing classes are not the only way to write context managers. with contextlib you can write context managers through functions(actually generators) as well. it's totally up to you to have a look at it. you can surely try\ngenerator functions with contextlib but as I see classes are much cleaner.",
+        "abstract": ""
+      },
+      {
+        "id": 63796747,
+        "score": 6,
+        "vote": 0,
+        "content": "If you want to avoid using write() or writelines() and joining the strings with a newline yourself, you can pass all of your lines to print(), and the newline delimiter and your file handle as keyword arguments. This snippet assumes your strings do not have trailing newlines. You don't need to put a special newline character is needed at the end, because print() does that for you. If you have an arbitrary number of lines in a list, you can use list expansion to pass them all to print(). It is OK to use \"\\n\" as the separator on Windows, because print() will also automatically convert it to a Windows CRLF newline (\"\\r\\n\").",
+        "abstract": ""
+      },
+      {
+        "id": 39168994,
+        "score": 8,
+        "vote": 0,
+        "content": "When you said Line it means some serialized characters which are ended to '\\n' characters. Line should be last at some point so we should consider '\\n' at the end of each line. Here is solution: in append mode after each write the cursor move to new line, if you want to use w mode you should add \\n characters at the end of the write() function:",
+        "abstract": ""
+      },
+      {
+        "id": 52290101,
+        "score": 17,
+        "vote": 0,
+        "content": "Since 3.5 you can also use the pathlib for that purpose: Path.write_text(data, encoding=None, errors=None) Open the file pointed to in text mode, write data to it, and close the file:",
+        "abstract": ""
+      },
+      {
+        "id": 12871858,
+        "score": 131,
+        "vote": 0,
+        "content": "The python docs recommend this way: So this is the way I usually do it :) Statement from docs.python.org: It is good practice to use the 'with' keyword when dealing with file\n  objects. This has the advantage that the file is properly closed after\n  its suite finishes, even if an exception is raised on the way. It is\n  also much shorter than writing equivalent try-finally blocks.",
+        "abstract": ""
+      },
+      {
+        "id": 59444846,
+        "score": 1,
+        "vote": 0,
+        "content": "To write text in a file in the flask can be used:",
+        "abstract": ""
+      },
+      {
+        "id": 56901429,
+        "score": 1,
+        "vote": 0,
+        "content": "When I need to write new lines a lot, I define a lambda that uses a print function: This approach has the benefit that it can utilize all the features that are available with the print function. Update: As is mentioned by Georgy in the comment section, it is possible to improve this idea further with the partial function:  IMHO, this is a more functional and less cryptic approach. ",
+        "abstract": ""
+      },
+      {
+        "id": 56594378,
+        "score": 0,
+        "vote": 0,
+        "content": "You can also try filewriter pip install filewriter Writes into my_file.txt Takes an iterable or an object with __str__ support. ",
+        "abstract": ""
+      },
+      {
+        "id": 52080154,
+        "score": 4,
+        "vote": 0,
+        "content": "One can also use the io module as in:",
+        "abstract": ""
+      },
+      {
+        "id": 39474750,
+        "score": 18,
+        "vote": 0,
+        "content": "If you are writing a lot of data and speed is a concern you should probably go with f.write(...). I did a quick speed comparison and it was considerably faster than print(..., file=f) when performing a large number of writes. On average write finished in 2.45s on my machine, whereas print took about 4 times as long (9.76s). That being said, in most real-world scenarios this will not be an issue. If you choose to go with print(..., file=f) you will probably find that you'll want to suppress the newline from time to time, or replace it with something else. This can be done by setting the optional end parameter, e.g.; Whichever way you choose I'd suggest using with since it makes the code much easier to read. Update: This difference in performance is explained by the fact that write is highly buffered and returns before any writes to disk actually take place (see this answer), whereas print (probably) uses line buffering. A simple test for this would be to check performance for long writes as well, where the disadvantages (in terms of speed) for line buffering would be less pronounced. The performance difference now becomes much less pronounced, with an average time of 2.20s for write and 3.10s for print. If you need to concatenate a bunch of strings to get this loooong line performance will suffer, so use-cases where print would be more efficient are a bit rare.",
+        "abstract": ""
+      },
+      {
+        "id": 6165711,
+        "score": 92,
+        "vote": 0,
+        "content": "Regarding os.linesep: Here is an exact unedited Python 2.7.1 interpreter session on Windows: On Windows: As expected, os.linesep does NOT produce the same outcome as '\\n'. There is no way that it could produce the same outcome. 'hi there' + os.linesep is equivalent to 'hi there\\r\\n', which is NOT equivalent to 'hi there\\n'. It's this simple: use \\n which will be translated automatically to os.linesep. And it's been that simple ever since the first port of Python to Windows. There is no point in using os.linesep on non-Windows systems, and it produces wrong results on Windows. DO NOT USE os.linesep!",
+        "abstract": ""
+      },
+      {
+        "id": 6159915,
+        "score": 24,
+        "vote": 0,
+        "content": "In Python 3 it is a function, but in Python 2 you can add this to the top of the source file: Then you do ",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/4005952/is-it-possible-to-write-one-liners-in-python",
+    "keywords": [],
+    "tags": [
+      "python"
+    ],
+    "question": {
+      "id": 4005952,
+      "title": "Is it possible to write one-liners in Python?",
+      "content": "I was going through the code golf question here on Stack Overflow and saw many Perl one-liner solutions. Is something like that possible in Python?",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 4006112,
+        "score": 10,
+        "vote": 0,
+        "content": "I end up wanting to do this fairly often when doing stuff from the shell.  It doesn't end up being more compact, and in many cases it's easier to just write a multi-line shell command than to write everything as a lambda.  You pretty much can't use any Python statement that ends with a colon.  So you end up having to write any for-like code as a genexp or list comprehension.  I Do this anyway for most stuff, but it's annoying to have to import sys and push everything to sys.stdout.writelines in cases where you could otherwise just write lambdas instead of function definitions.  This is often workable and has the useful side effect of forcing you to write very directed functions that really only do one thing.  However, it's not particularly convenient, and doesn't work for anything that mutates a value (e.g., dict.update) and then returns some element. Do not bother doing things properly with context managers Do not do any exception handling. Use a dictionary of lambdas instead of any if/else sections. Use type(name, bases, dict) to declare any classes.  This is pretty fun but only works if you happen to be declaring a class whose methods can all be expressed as lambdas. So for some things it works out but generally it's a big hassle, because you end up having to use a functional style that Python doesn't really support.  Most of the time I just write multiline shell commands like The $' is a bash quoting syntax, an alternative to its '...' and \"...\" quoting constructs.  It's useful, because it works like '...', but let’s you escape contained ' characters with \\'.  You can also embed newlines, so the above code could also be written as python -c $'import some_module\\nfor v in some_module.whatever():\\n    print \"Whatever: \\'{0}\\'\".format(v)'.  However, this is something of an acquired taste. One annoying thing about writing multiline commands in bash is that HOME and END go to the beginning of the command rather than the beginning of the line.  There may be a better way to do this, but I usually just scan back and forth by holding down CTRL and the left/right arrow keys.  Some Emacs user could probably set me straight here, since that's where bash's normal key bindings come from. If you want to insert a line break while editing a multiline command, you can do this with ^V-^J.  That will put in a line break in such a way that you can still scan back to the previous lines, rather than using the setup that you get otherwise, where you can't get back to the previous lines. The trick with ^V-^J works in IPython too, making it useful for editing class or function definitions.  It may also work in the basic Python REPL (probably); I just don't know, because I nearly always use IPython.",
+        "abstract": ""
+      },
+      {
+        "id": 4039268,
+        "score": 2,
+        "vote": 0,
+        "content": "A really nice Python one-liner (as in \"quite useful\"): It creates an instant basic web server in the current directory. (I was just introduced to this today, and it is very handy.)",
+        "abstract": ""
+      },
+      {
+        "id": 4007124,
+        "score": -2,
+        "vote": 0,
+        "content": "Yes, actually it is very common. I use one-liners when I need to write quick code. It just depends on what you want to do. Here is a small line I just used this evening. It is the creation of a Tkinter button in a single line.",
+        "abstract": ""
+      },
+      {
+        "id": 4006001,
+        "score": 4,
+        "vote": 0,
+        "content": "In Bourne shell you can use something called heredoc to get around Python's dependency on indents:",
+        "abstract": ""
+      },
+      {
+        "id": 4039302,
+        "score": 0,
+        "vote": 0,
+        "content": "With this approach, every Python program can be written as a one-liner :)",
+        "abstract": ""
+      },
+      {
+        "id": 4006000,
+        "score": 0,
+        "vote": 0,
+        "content": "Here is my trick to run multiple statements: [stmt1, stmt2, expr1][2]\nif requires lazy evaluation: [lambda(): stmt1; lambda(): stmt2][not not boolExpr]()",
+        "abstract": ""
+      },
+      {
+        "id": 4005967,
+        "score": 17,
+        "vote": 0,
+        "content": "It's possible to write one liners in Python but it's awkward (Python encourages well indented code which is somewhat at odds with the \"one-liner\" concept). It's a bit easier in Python 3 because print() is a function and not a statement. Here's one: Here's how you could write a grep like function (this example prints lines from input containing \"foo\"):",
+        "abstract": ""
+      },
+      {
+        "id": 4005957,
+        "score": 23,
+        "vote": 0,
+        "content": "python -c 'print(\"Yes.\")'",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/70051408/how-do-i-write-a-python-one-liner-to-create-a-list-of-all-words-in-a-file",
+    "keywords": [],
+    "tags": [
+      "python",
+      "list",
+      "file",
+      "word"
+    ],
+    "question": {
+      "id": 70051408,
+      "title": "how do I write a python one-liner to create a list of all words in a file?",
+      "content": "Given an ascii file I'd like a python one-liner to create a list of words in the file. Let tfile contain the following 2 lines There are 8 words in the file and 5 unique words. If I assign the following one-liner will create a set with the 5 unique words in tfile where the output is {'abc', 'mno', 'qrs', 'tuv', 'xyz'} However if I try something similar to get a list of all words in the file, namely I get the following ['abc', 'xyz', 'abc', 'mno\\ntuv', 'xyz', 'qrs', 'abc\\n'] which doesn't quite work because the last word of each line has a newline appended to it. If I add strip() to the statement as in I get the following, which is better, but still contains a newline which is appended to the first word of the next line in the file. ['abc', 'xyz', 'abc', 'mno', '\\ntuv', 'xyz', 'qrs', 'abc'] So 2 questions:\n(1) is there a one-liner which does what I want? and\n(2) why does the set of unique words work so nicely, without getting any newline characters?",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 70051452,
+        "score": 0,
+        "vote": 0,
+        "content": "If you want a list of unique words, you can first create a set and then convert to a list.",
+        "abstract": ""
+      },
+      {
+        "id": 70051424,
+        "score": 0,
+        "vote": 0,
+        "content": "You have added a \" \" as a argument to the split in the second example. At first, you have But then, you do The key is the split(\" \"). Without it Python will just split on anything considered whitespace, but with it it is restricted to spaces. So all you need is",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/69959986/how-do-i-make-this-python-code-a-one-liner",
+    "keywords": [],
+    "tags": [
+      "python",
+      "simplify",
+      "one-liner"
+    ],
+    "question": {
+      "id": 69959986,
+      "title": "How do I make this python code a one liner?",
+      "content": "How do I make this python code a one liner?",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 69960072,
+        "score": 0,
+        "vote": 0,
+        "content": "How about using count()? line.count(\"t\") will return the number of times string \"t\" appear in the line? Note that, the variable t got unpack first so that len(line) - t, which will be assigned to s, can be used at the time of assingment.",
+        "abstract": ""
+      },
+      {
+        "id": 69960088,
+        "score": 1,
+        "vote": 0,
+        "content": "is equivalent to: Test it out: Note: OP, what you probably meant to do was: If that's the case, then all that t does is count the number of \"t\"s and s counts the other characters, which can be done in two lines: It can of course be done in one line, if you don't mind calling line.count(\"t\") twice. Per @kaya3's comment, here's a more compact alternative: FYI, the same test code can be used to verify they are equivalent.",
+        "abstract": ""
+      },
+      {
+        "id": 69960026,
+        "score": 0,
+        "vote": 0,
+        "content": "Try this: Two generator statements that go through line and create a list with the letters that are or are not \"t\", then surrounding each with len and some brackets around both to create a tuple in ts. The variables t and s can be assigned like ts[0] and ts[1].",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/67347822/if-else-one-liner-in-python",
+    "keywords": [],
+    "tags": [
+      "python",
+      "if-statement",
+      "one-liner"
+    ],
+    "question": {
+      "id": 67347822,
+      "title": "if else one liner in python",
+      "content": "this if else I need to write in one line.\nI tried below way it is not working. PLease help me on this",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 67349311,
+        "score": 0,
+        "vote": 0,
+        "content": "You can try using lambda function and then unpack your result from the list output Option 2 output",
+        "abstract": ""
+      },
+      {
+        "id": 67347936,
+        "score": 3,
+        "vote": 0,
+        "content": "if ... else when used as a ternary operator, is a function which doesn't play very well with +=1 -- since the latter works by side effect. If you really wanted to use the ternary operator, you could use: If you are simply looking for a more pythonic solution, drop the loop and use a Counter:",
+        "abstract": ""
+      },
+      {
+        "id": 67347879,
+        "score": 0,
+        "vote": 0,
+        "content": "",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/4172448/is-it-possible-to-break-a-long-line-to-multiple-lines-in-python",
+    "keywords": [],
+    "tags": [
+      "python",
+      "line-breaks"
+    ],
+    "question": {
+      "id": 4172448,
+      "title": "Is it possible to break a long line to multiple lines in Python?",
+      "content": "Just like C, you can break a long line into multiple short lines. But in Python, if I do this, there will be an indent error... Is it possible?",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 36882925,
+        "score": 46,
+        "vote": 0,
+        "content": "If you want to assign a long string to variable, you can do it as below: Do not add any comma, or you will get a tuple which contains many strings!",
+        "abstract": ""
+      },
+      {
+        "id": 4172475,
+        "score": 9,
+        "vote": 0,
+        "content": "As far as I know, it can be done. Python has implicit line continuation (inside parentheses, brackets, and strings) for triple-quoted strings (\"\"\"like this\"\"\") and the indentation of continuation lines is not important. For more information, you may want to read this article on lexical analysis, from python.org.",
+        "abstract": ""
+      },
+      {
+        "id": 4172465,
+        "score": 750,
+        "vote": 0,
+        "content": "From PEP 8 - Style Guide for Python Code: The preferred way of wrapping long lines is by using Python's implied line\ncontinuation inside parentheses, brackets and braces.  If necessary, you\ncan add an extra pair of parentheses around an expression, but sometimes\nusing a backslash looks better.  Make sure to indent the continued line\nappropriately. Example of implicit line continuation: On the topic of line breaks around a binary operator, it goes on to say: For decades the recommended style was to break after binary operators.\nBut this can hurt readability in two ways: the operators tend to get scattered across different columns on the screen, and each operator is moved away from its operand and onto the previous line. In Python code, it is permissible to break before or after a binary operator, as long as the convention is consistent locally. For new code Knuth's style (line breaks before the operator) is suggested. Example of explicit line continuation:",
+        "abstract": ""
+      },
+      {
+        "id": 46326379,
+        "score": 11,
+        "vote": 0,
+        "content": "DB related code looks easier on the eyes in multiple lines, enclosed by a pair of triple quotes: than the following one giant long line:",
+        "abstract": ""
+      },
+      {
+        "id": 38224926,
+        "score": 15,
+        "vote": 0,
+        "content": "When trying to enter continuous text (say, a query) do not put commas at the end of the line or you will get a list of strings instead of one long string: kinda like that. There is a comment like this from acgtyrant, sorry, didn't see that. :/",
+        "abstract": ""
+      },
+      {
+        "id": 4172487,
+        "score": 246,
+        "vote": 0,
+        "content": "There is more than one way to do it. 1). A long statement: 2). Using parenthesis: 3). Using \\ again: Quoting PEP8: The preferred way of wrapping long\n  lines is by using Python's implied\n  line continuation inside parentheses, brackets and braces.  If necessary,\n  you can add an extra pair of parentheses around an expression, but\n  sometimes using a backslash looks better.  Make sure to indent the continued line\n  appropriately. The preferred place to break around a binary\n  operator is after the operator, not before it.",
+        "abstract": ""
+      },
+      {
+        "id": 4172466,
+        "score": 24,
+        "vote": 0,
+        "content": "It works in Python too:",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/58550806/one-liner-with-raise",
+    "keywords": [],
+    "tags": [
+      "python",
+      "list-comprehension",
+      "raise"
+    ],
+    "question": {
+      "id": 58550806,
+      "title": "one liner with raise",
+      "content": "How can I put this on one line if it is even possible? a = [int(i) if i.isdigit() else raise DnDException(\"%s is not a number.\" % i) for i in list_of_strings] I want it to do the folowing:",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 58550959,
+        "score": 1,
+        "vote": 0,
+        "content": "While it is technically possible as @wim demonstrated, it is more readable to write something like the following, which also works with negative and decimal numbers. Update: It looks like you can also do this:",
+        "abstract": ""
+      },
+      {
+        "id": 58550900,
+        "score": 4,
+        "vote": 0,
+        "content": "It is technically possible to one-liner that: Don't tell anyone you heard it from me, though.   Do it like this instead, much more readable: Note: Be careful with negative numbers, the string \"-2\" will return False for str.isdigit.",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/42309810/is-it-possible-in-python-to-make-a-one-liner-with-multiple-if-and-or-after-retur",
+    "keywords": [],
+    "tags": [
+      "python",
+      "return",
+      "conditional-statements"
+    ],
+    "question": {
+      "id": 42309810,
+      "title": "Is it possible in Python to make a one-liner with multiple IF and OR after RETURN statement?",
+      "content": "I hope it's pretty clear what I wanna do with this function: Obviously, it doesn't work (SyntaxError: invalid syntax). Sorry if I duplicate the question. I did my best to find here how to deal with that problem. Also, I appreciate any suggestion how to edit the question if it's not accurate. Thanks.",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 42309846,
+        "score": 2,
+        "vote": 0,
+        "content": "This isn't pretty, but it works: The reason this works is that the boolean statements are equal to either 0 or 1, so multiplying them by the correct expression and summing the correct total will yield the right result. Edit: Actually, this doesn't work as others have pointed out because the division operation may result in an undefined result.",
+        "abstract": ""
+      },
+      {
+        "id": 42309842,
+        "score": 2,
+        "vote": 0,
+        "content": "Yes, but it's ugly. Alternatively:",
+        "abstract": ""
+      },
+      {
+        "id": 42309840,
+        "score": 7,
+        "vote": 0,
+        "content": "Python has a value if condition else default ternary operation, which you could stack for this result. However, it's not very compact, and not very pythonic to be doing what you seem to want to do. Instead, you might try:",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/41772774/python-one-liner-with-if-block",
+    "keywords": [],
+    "tags": [
+      "python",
+      "command-line"
+    ],
+    "question": {
+      "id": 41772774,
+      "title": "Python one-liner with if block",
+      "content": "I have a bash script that receives data from json. I'd like to delegate json parsing to python and operate other things with bash. So I tried the following and it worked: I decided to check the list size: It failed with SyntaxError: invalid syntax. List size check (the code above) works from a separate .py file in general. \nI'd prefer to use one-liner to keep it simple and store together in shell script.  Is it possible to run python one-liner with some logic (like import json) and if block? ",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 41772854,
+        "score": 6,
+        "vote": 0,
+        "content": "A similar question has already been answered here:\nExecuting Python multi-line statements in the one-line command-line. In short, using the funny $'' quoting (which interprets escapes like \\n) should work, at least in bash: From a syntactic POV, the problem is that Python allows to use ; only as a separator of so called simple_stmt. But an if_stmt is not a simple statement. See https://docs.python.org/2/reference/simple_stmts.html#grammar-token-simple_stmt.",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/39067759/python-one-liner-with-if-in-a-loop",
+    "keywords": [],
+    "tags": [
+      "python",
+      "python-2.7",
+      "python-3.x",
+      "list-comprehension"
+    ],
+    "question": {
+      "id": 39067759,
+      "title": "Python one liner with if in a loop",
+      "content": "I'm having a problem . How can I write below one liner using function? I've been on it for hours, I feel I'm getting close but I can't see the solution involving only one line. I'm trying to have a list of numbers with each figure of the number that is even. For example if mylist is [1200,3520,2002,2006,1230] then the line should produce a new list with only [2002,2006] in it.",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 39067866,
+        "score": 0,
+        "vote": 0,
+        "content": "Here's a possible solution:",
+        "abstract": ""
+      },
+      {
+        "id": 39067798,
+        "score": 2,
+        "vote": 0,
+        "content": "Use a generator expression with all(): But it seems that you want to check if all digits of a number are even. Which in that case converting the number to string is not a good idea. Instead you can use following function, which works with integers: The filter your list with it: Demo:",
+        "abstract": ""
+      },
+      {
+        "id": 39068229,
+        "score": 4,
+        "vote": 0,
+        "content": "use sets:",
+        "abstract": ""
+      }
+    ]
+  }
+]

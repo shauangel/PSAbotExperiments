@@ -1,0 +1,600 @@
+[
+  {
+    "link": "https://stackoverflow.com/questions/986006/how-do-i-pass-a-variable-by-reference",
+    "keywords": [],
+    "tags": [
+      "python",
+      "reference",
+      "parameter-passing",
+      "pass-by-reference"
+    ],
+    "question": {
+      "id": 986006,
+      "title": "How do I pass a variable by reference?",
+      "content": "Are parameters passed by reference or by value? How do I pass by reference so that the code below outputs 'Changed' instead of 'Original'? See also: Why can a function modify some arguments as perceived by the caller, but not others?",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 75696407,
+        "score": 0,
+        "vote": 0,
+        "content": "My naive answer:",
+        "abstract": ""
+      },
+      {
+        "id": 73945173,
+        "score": 1,
+        "vote": 0,
+        "content": "There are already many great answers (or let's say opinions) about this and I've read them, but I want to mention a missing one. The one from Python's documentation in the FAQ section. I don't know the date of publishing this page, but this should be our true reference: Remember that arguments are passed by assignment in Python. Since\nassignment just creates references to objects, there’s no alias\nbetween an argument name in the caller and callee, and so no\ncall-by-reference per se. If you have: and you call it like fn(a), you're doing exactly what you do in assignment. So this happens: An additional reference to SOMETHING is created. Variables are just symbols/names/references. They don't \"hold\" anything.",
+        "abstract": ""
+      },
+      {
+        "id": 73913746,
+        "score": -4,
+        "vote": 0,
+        "content": "It can be passed with []:",
+        "abstract": ""
+      },
+      {
+        "id": 72357404,
+        "score": -1,
+        "vote": 0,
+        "content": "I share another fun way for people to comprehend this topic over a handy tool - Python Tutor: Learn Python, JavaScript, C, C++, and Java programming by visualizing code based on the example of passing a mutable list from @Mark Ransom. Just play it around, and then you will figure it out. Passing a String  Passing a List ",
+        "abstract": ""
+      },
+      {
+        "id": 70007855,
+        "score": -1,
+        "vote": 0,
+        "content": "A simple answer: In Python, like C++, when you create an object instance and pass it as a parameter, no copies of the instance itself get made, so you are referencing the same instance from outside and inside the function and are able to modify the component datums of the same object instance, hence changes are visible to the outside. For basic types, Python and C++ also behave the same to each other, in that copies of the instances are now made, so the outside sees/modifies a different instance than the inside of the function. Hence changes from the inside are not visible on the outside. Here comes the real difference between Python and C++: C++ has the concept of address pointers, and C++ allows you to pass pointers instead, which bypasses the copying of basic types, so that the inside of the function can affect the same instances as those outside, so that the changes are also visible to the outside. This has no equivalent in Python, so is not possible without workarounds (such as creating wrapper types). Such pointers can be useful in Python, but it's not as necessary as it is in C++, because in C++, you can only return a single entity, whereas in Python you can return multiple values separated by commas (i.e., a tuple). So in Python, if you have variables a,b, and c, and want a function to modify them persistently (relative to the outside), you would do this: Such syntax is not easily possible in C++, thus in C++ you would do this instead:",
+        "abstract": ""
+      },
+      {
+        "id": 68167731,
+        "score": 1,
+        "vote": 0,
+        "content": "Use dataclasses. Also, it allows you to apply type restrictions (aka \"type hints\"). I agree with folks that in most cases you'd better consider not to use it. And yet, when we're talking about contexts, it's worth to know that way. You can design an explicit context class though. When prototyping, I prefer dataclasses, just because it's easy to serialize them back and forth.",
+        "abstract": ""
+      },
+      {
+        "id": 67891176,
+        "score": -1,
+        "vote": 0,
+        "content": "This might be an elegant object-oriented solution without this functionality in Python.  An even more elegant solution would be to have any class you make subclass from this.  Or you could name it \"MasterClass\".  But instead of having a single variable and a single Boolean, make them a collection of some kind.  I fixed the naming of your instance variables to comply with PEP 8.",
+        "abstract": ""
+      },
+      {
+        "id": 65935869,
+        "score": 2,
+        "vote": 0,
+        "content": "Alternatively, you could use ctypes which would look something like this: As a is a c int and not a Python integer and apparently passed by reference. However, you have to be careful as strange things could happen, and it is therefore not advised.",
+        "abstract": ""
+      },
+      {
+        "id": 62970753,
+        "score": 2,
+        "vote": 0,
+        "content": "I am new to Python, started yesterday (though I have been programming for 45 years). I came here because I was writing a function where I wanted to have two so-called out-parameters. If it would have been only one out-parameter, I wouldn't get hung up right now on checking how reference/value works in Python. I would just have used the return value of the function instead. But since I needed two such out-parameters I felt I needed to sort it out. In this post I am going to show how I solved my situation. Perhaps others coming here can find it valuable, even though it is not exactly an answer to the topic question. Experienced Python programmers of course already know about the solution I used, but it was new to me. From the answers here I could quickly see that Python works a bit like JavaScript in this regard, and that you need to use workarounds if you want the reference functionality. But then I found something neat in Python that I don't think I have seen in other languages before, namely that you can return more than one value from a function, in a simple comma-separated way, like this: and that you can handle that on the calling side similarly, like this That was good enough for me and I was satisfied. There isn't any need to use some workaround. In other languages you can of course also return many values, but then usually in the from of an object, and you need to adjust the calling side accordingly. The Python way of doing it was nice and simple. If you want to mimic by reference even more, you could do as follows: which gives this result",
+        "abstract": ""
+      },
+      {
+        "id": 35260424,
+        "score": 11,
+        "vote": 0,
+        "content": "Aside from all the great explanations on how this stuff works in Python, I don't see a simple suggestion for the problem. As you seem to do create objects and instances, the Pythonic way of handling instance variables and changing them is the following: In instance methods, you normally refer to self to access instance attributes. It is normal to set instance attributes in __init__ and read or change them in instance methods. That is also why you pass self as the first argument to def Change. Another solution would be to create a static method like this:",
+        "abstract": ""
+      },
+      {
+        "id": 25810863,
+        "score": 19,
+        "vote": 0,
+        "content": "There are a lot of insights in answers here, but I think an additional point is not clearly mentioned here explicitly.   Quoting from Python documentation What are the rules for local and global variables in Python? In Python, variables that are only referenced inside a function are implicitly global. If a variable is assigned a new value anywhere within the function’s body, it’s assumed to be a local. If a variable is ever assigned a new value inside the function, the variable is implicitly local, and you need to explicitly declare it as ‘global’.\nThough a bit surprising at first, a moment’s consideration explains this. On one hand, requiring global for assigned variables provides a bar against unintended side-effects. On the other hand, if global was required for all global references, you’d be using global all the time. You’d have to declare as global every reference to a built-in function or to a component of an imported module. This clutter would defeat the usefulness of the global declaration for identifying side-effects. Even when passing a mutable object to a function this still applies. And to me it clearly explains the reason for the difference in behavior between assigning to the object and operating on the object in the function. gives: The assignment to an global variable that is not declared global therefore creates a new local object and breaks the link to the original object.",
+        "abstract": ""
+      },
+      {
+        "id": 54315603,
+        "score": 2,
+        "vote": 0,
+        "content": "Pass-by-reference in Python is quite different from the concept of pass by reference in C++/Java. Java and C#: primitive types (including string) pass by value (copy). A reference type is passed by reference (address copy), so all changes made in the parameter in the called function are visible to the caller. C++: Both pass-by-reference or pass-by-value are allowed. If a parameter is passed by reference, you can either modify it or not depending upon whether the parameter was passed as const or not. However, const or not, the parameter maintains the reference to the object and reference cannot be assigned to point to a different object within the called function. Python:\nPython is “pass-by-object-reference”, of which it is often said: “Object references are passed by value.” (read here). Both the caller and the function refer to the same object, but the parameter in the function is a new variable which is just holding a copy of the object in the caller. Like C++, a parameter can be either modified or not in function. This depends upon the type of object passed. For example, an immutable object type cannot be modified in the called function whereas a mutable object can be either updated or re-initialized. A crucial difference between updating or reassigning/re-initializing the mutable variable is that updated value gets reflected back in the called function whereas the reinitialized value does not. The scope of any assignment of new object to a mutable variable is local to the function in the python. Examples provided by @blair-conrad are great to understand this.",
+        "abstract": ""
+      },
+      {
+        "id": 40345432,
+        "score": 5,
+        "vote": 0,
+        "content": "Given the way Python handles values and references to them, the only way you can reference an arbitrary instance attribute is by name: In real code you would, of course, add error checking on the dict lookup.",
+        "abstract": ""
+      },
+      {
+        "id": 39054982,
+        "score": 3,
+        "vote": 0,
+        "content": "While pass by reference is nothing that fits well into Python and should be rarely used, there are some workarounds that actually can work to get the object currently assigned to a local variable or even reassign a local variable from inside of a called function. The basic idea is to have a function that can do that access and can be passed as object into other functions or stored in a class. One way is to use global (for global variables) or nonlocal (for local variables in a function) in a wrapper function. The same idea works for reading and deleting a variable. For just reading, there is even a shorter way of just using lambda: x which returns a callable that when called returns the current value of x. This is somewhat like \"call by name\" used in languages in the distant past. Passing 3 wrappers to access a variable is a bit unwieldy so those can be wrapped into a class that has a proxy attribute: Pythons \"reflection\" support makes it possible to get a object that is capable of reassigning a name/variable in a given scope without defining functions explicitly in that scope: Here the ByRef class wraps a dictionary access. So attribute access to wrapped is translated to a item access in the passed dictionary. By passing the result of the builtin locals and the name of a local variable, this ends up accessing a local variable. The Python documentation as of 3.5 advises that changing the dictionary might not work, but it seems to work for me.",
+        "abstract": ""
+      },
+      {
+        "id": 38834546,
+        "score": 9,
+        "vote": 0,
+        "content": "I used the following method to quickly convert some Fortran code to Python.  True, it's not pass by reference as the original question was posed, but it is a simple workaround in some cases.",
+        "abstract": ""
+      },
+      {
+        "id": 36775894,
+        "score": 8,
+        "vote": 0,
+        "content": "There is a little trick to pass an object by reference, even though the language doesn't make it possible. It works in Java too; it's the list with one item. ;-) It's an ugly hack, but it works. ;-P",
+        "abstract": ""
+      },
+      {
+        "id": 986495,
+        "score": 272,
+        "vote": 0,
+        "content": "It is neither pass-by-value or pass-by-reference - it is call-by-object. See this, by Fredrik Lundh: Call By Object Here is a significant quote: \"...variables [names] are not objects; they cannot be denoted by other variables or referred to by objects.\" In your example, when the Change method is called--a namespace is created for it; and var becomes a name, within that namespace, for the string object 'Original'. That object then has a name in two namespaces. Next, var = 'Changed' binds var to a new string object, and thus the method's namespace forgets about 'Original'. Finally, that namespace is forgotten, and the string 'Changed' along with it.",
+        "abstract": ""
+      },
+      {
+        "id": 71579032,
+        "score": 0,
+        "vote": 0,
+        "content": "",
+        "abstract": ""
+      },
+      {
+        "id": 71049904,
+        "score": 0,
+        "vote": 0,
+        "content": "Python assigns a unique identifier to each object and this identifier can be found by using Python's built-in id() function.\nIt is ready to verify that actual and formal arguments in a function call have the same id value, which indicates that the dummy argument and actual argument refer to the same object. Note that the actual argument and the corresponding dummy argument are two names referring to the same object. If you re-bind a dummy argument to a new value/object in the function scope, this does not effect the fact that the actual argument still points to the original object because actual argument and dummy argument are two names. The above two facts can be summarized as “arguments are passed by assignment”. i.e., If you re-bind dummy_argument to a new object in the function body, the actual_argument still refers to the original object. If you use dummy_argument[0] = some_thing, then this will also modify actual_argument[0]. Therefore the effect of “pass by reference” can be achieved by modifying the components/attributes of the object reference passed in. Of course, this requires that the object passed is a mutable object.",
+        "abstract": ""
+      },
+      {
+        "id": 69642519,
+        "score": -1,
+        "vote": 0,
+        "content": "Most of the time, the variable to be passed by reference is a class member.\nThe solution I suggest is to use a decorator to add both a field that is mutable and corresponding property. The field is a class wrapper around the variable. The @refproperty adds both self._myvar (mutable) and self.myvar property. It will print 6. Compare this to: In this case, it won't work. It will print 4. The code is the following:",
+        "abstract": ""
+      },
+      {
+        "id": 67988352,
+        "score": -1,
+        "vote": 0,
+        "content": "I solved a similar requirement as follows: To implement a member function that changes a variable, dont pass the variable itself, but pass a functools.partial that contains setattr referring to the variable.\nCalling the functools.partial inside change() will execute settatr and change the actual referenced variable. Note that setattr needs the name of the variable as string.",
+        "abstract": ""
+      },
+      {
+        "id": 55992875,
+        "score": 4,
+        "vote": 0,
+        "content": "Since dictionaries are passed by reference, you can use a dict variable to store any referenced values inside it.",
+        "abstract": ""
+      },
+      {
+        "id": 66819159,
+        "score": 0,
+        "vote": 0,
+        "content": "Most likely not the most reliable method but this works, keep in mind that you are overloading the built-in str function which is typically something you don't want to do:",
+        "abstract": ""
+      },
+      {
+        "id": 21700609,
+        "score": 99,
+        "vote": 0,
+        "content": "The key to understanding parameter passing is to stop thinking about \"variables\". There are names and objects in Python and together they\nappear like variables, but it is useful to always distinguish the three. That is all there is to it. Mutability is irrelevant to this question. Example: This binds the name a to an object of type integer that holds the value 1. This binds the name b to the same object that the name x is currently bound to.\nAfterward, the name b has nothing to do with the name x anymore. See sections 3.1 and 4.2 in the Python 3 language reference. In the code shown in the question, the statement self.Change(self.variable) binds the name var (in the scope of function Change) to the object that holds the value 'Original' and the assignment var = 'Changed' (in the body of function Change) assigns that same name again: to some other object (that happens to hold a string as well but could have been something else entirely). So if the thing you want to change is a mutable object, there is no problem, as everything is effectively passed by reference. If it is an immutable object (e.g. a bool, number, string), the way to go is to wrap it in a mutable object.\nThe quick-and-dirty solution for this is a one-element list (instead of self.variable, pass [self.variable] and in the function modify var[0]).\nThe more pythonic approach would be to introduce a trivial, one-attribute class. The function receives an instance of the class and manipulates the attribute.",
+        "abstract": ""
+      },
+      {
+        "id": 986339,
+        "score": 217,
+        "vote": 0,
+        "content": "Think of stuff being passed by assignment instead of by reference/by value. That way, it is always clear, what is happening as long as you understand what happens during the normal assignment. So, when passing a list to a function/method, the list is assigned to the parameter name. Appending to the list will result in the list being modified. Reassigning the list inside the function will not change the original list, since: Since immutable types cannot be modified, they seem like being passed by value - passing an int into a function means assigning the int to the function's parameter. You can only ever reassign that, but it won't change the original variables value.",
+        "abstract": ""
+      },
+      {
+        "id": 56069248,
+        "score": 5,
+        "vote": 0,
+        "content": "Since it seems to be nowhere mentioned an approach to simulate references as known from e.g. C++ is to use an \"update\" function and pass that instead of the actual variable (or rather, \"name\"): This is mostly useful for \"out-only references\" or in a situation with multiple threads / processes (by making the update function thread / multiprocessing safe). Obviously the above does not allow reading the value, only updating it.",
+        "abstract": ""
+      },
+      {
+        "id": 50157212,
+        "score": 3,
+        "vote": 0,
+        "content": "You can merely use an empty class as an instance to store reference objects because internally object attributes are stored in an instance dictionary. See the example.",
+        "abstract": ""
+      },
+      {
+        "id": 46136730,
+        "score": 4,
+        "vote": 0,
+        "content": "Since your example happens to be object-oriented, you could make the following change to achieve a similar result:",
+        "abstract": ""
+      },
+      {
+        "id": 986145,
+        "score": 3446,
+        "vote": 0,
+        "content": "Arguments are passed by assignment. The rationale behind this is twofold: So: If you pass a mutable object into a method, the method gets a reference to that same object and you can mutate it to your heart's delight, but if you rebind the reference in the method, the outer scope will know nothing about it, and after you're done, the outer reference will still point at the original object.  If you pass an immutable object to a method, you still can't rebind the outer reference, and you can't even mutate the object. To make it even more clear, let's have some examples.  Let's try to modify the list that was passed to a method: Output: Since the parameter passed in is a reference to outer_list, not a copy of it, we can use the mutating list methods to change it and have the changes reflected in the outer scope. Now let's see what happens when we try to change the reference that was passed in as a parameter: Output: Since the the_list parameter was passed by value, assigning a new list to it had no effect that the code outside the method could see. The the_list was a copy of the outer_list reference, and we had the_list point to a new list, but there was no way to change where outer_list pointed. It's immutable, so there's nothing we can do to change the contents of the string Now, let's try to change the reference Output: Again, since the the_string parameter was passed by value, assigning a new string to it had no effect that the code outside the method could see. The the_string was a copy of the outer_string reference, and we had the_string point to a new string, but there was no way to change where outer_string pointed. I hope this clears things up a little. EDIT: It's been noted that this doesn't answer the question that @David originally asked, \"Is there something I can do to pass the variable by actual reference?\". Let's work on that. As @Andrea's answer shows, you could return the new value. This doesn't change the way things are passed in, but does let you get the information you want back out: If you really wanted to avoid using a return value, you could create a class to hold your value and pass it into the function or use an existing class, like a list: Although this seems a little cumbersome.",
+        "abstract": ""
+      },
+      {
+        "id": 8140747,
+        "score": 863,
+        "vote": 0,
+        "content": "The problem comes from a misunderstanding of what variables are in Python. If you're used to most traditional languages, you have a mental model of what happens in the following sequence: You believe that a is a memory location that stores the value 1, then is updated to store the value 2. That's not how things work in Python. Rather, a starts as a reference to an object with the value 1, then gets reassigned as a reference to an object with the value 2. Those two objects may continue to coexist even though a doesn't refer to the first one anymore; in fact they may be shared by any number of other references within the program. When you call a function with a parameter, a new reference is created that refers to the object passed in. This is separate from the reference that was used in the function call, so there's no way to update that reference and make it refer to a new object. In your example: self.variable is a reference to the string object 'Original'. When you call Change you create a second reference var to the object. Inside the function you reassign the reference var to a different string object 'Changed', but the reference self.variable is separate and does not change. The only way around this is to pass a mutable object. Because both references refer to the same object, any changes to the object are reflected in both places.",
+        "abstract": ""
+      },
+      {
+        "id": 21684541,
+        "score": 18,
+        "vote": 0,
+        "content": "As you can state you need to have a mutable object, but let me suggest you to check over the global variables as they can help you or even solve this kind of issue! http://docs.python.org/3/faq/programming.html#what-are-the-rules-for-local-and-global-variables-in-python example:",
+        "abstract": ""
+      },
+      {
+        "id": 12686527,
+        "score": 11,
+        "vote": 0,
+        "content": "Here is the simple (I hope) explanation of the concept pass by object used in Python.\nWhenever you pass an object to the function, the object itself is passed (object in Python is actually what you'd call a value in other programming languages) not the reference to this object. In other words, when you call: The actual object - [0, 1] (which would be called a value in other programming languages) is being passed. So in fact the function change_me will try to do something like: which obviously will not change the object passed to the function. If the function looked like this: Then the call would result in: which obviously will change the object. This answer explains it well.",
+        "abstract": ""
+      },
+      {
+        "id": 25670170,
+        "score": 445,
+        "vote": 0,
+        "content": "I found the other answers rather long and complicated, so I created this simple diagram to explain the way Python treats variables and parameters.\n",
+        "abstract": ""
+      },
+      {
+        "id": 3127336,
+        "score": 39,
+        "vote": 0,
+        "content": "(edit - Blair has updated his enormously popular answer so that it is now accurate) I think it is important to note that the current post with the most votes (by Blair Conrad), while being correct with respect to its result, is misleading and is borderline incorrect based on its definitions.  While there are many languages (like C) that allow the user to either pass by reference or pass by value, Python is not one of them. David Cournapeau's answer points to the real answer and explains why the behavior in Blair Conrad's post seems to be correct while the definitions are not. To the extent that Python is pass by value, all languages are pass by value since some piece of data (be it a \"value\" or a \"reference\") must be sent. However, that does not mean that Python is pass by value in the sense that a C programmer would think of it. If you want the behavior, Blair Conrad's answer is fine.  But if you want to know the nuts and bolts of why Python is neither pass by value or pass by reference, read David Cournapeau's answer.",
+        "abstract": ""
+      },
+      {
+        "id": 29293411,
+        "score": 23,
+        "vote": 0,
+        "content": "Python’s pass-by-assignment scheme isn’t quite the same as C++’s reference parameters option, but it turns out to be very similar to the argument-passing model of the C language (and others) in practice:",
+        "abstract": ""
+      },
+      {
+        "id": 12440140,
+        "score": 66,
+        "vote": 0,
+        "content": "Technically, Python always uses pass by reference values. I am going to repeat my other answer to support my statement. Python always uses pass-by-reference values. There isn't any exception. Any variable assignment means copying the reference value. No exception. Any variable is the name bound to the reference value. Always. You can think about a reference value as the address of the target object. The address is automatically dereferenced when used. This way, working with the reference value, it seems you work directly with the target object. But there always is a reference in between, one step more to jump to the target. Here is the example that proves that Python uses passing by reference:  If the argument was passed by value, the outer lst could not be modified. The green are the target objects (the black is the value stored inside, the red is the object type), the yellow is the memory with the reference value inside -- drawn as the arrow. The blue solid arrow is the reference value that was passed to the function (via the dashed blue arrow path). The ugly dark yellow is the internal dictionary. (It actually could be drawn also as a green ellipse. The colour and the shape only says it is internal.) You can use the id() built-in function to learn what the reference value is (that is, the address of the target object). In compiled languages, a variable is a memory space that is able to capture the value of the type. In Python, a variable is a name (captured internally as a string) bound to the reference variable that holds the reference value to the target object. The name of the variable is the key in the internal dictionary, the value part of that dictionary item stores the reference value to the target. Reference values are hidden in Python. There isn't any explicit user type for storing the reference value. However, you can use a list element (or element in any other suitable container type) as the reference variable, because all containers do store the elements also as references to the target objects. In other words, elements are actually not contained inside the container -- only the references to elements are.",
+        "abstract": ""
+      },
+      {
+        "id": 15697476,
+        "score": 84,
+        "vote": 0,
+        "content": "Effbot (aka Fredrik Lundh) has described Python's variable passing style as call-by-object:  http://effbot.org/zone/call-by-object.htm Objects are allocated on the heap and pointers to them can be passed around anywhere.   When you make an assignment such as x = 1000, a dictionary entry is created that maps the string \"x\" in the current namespace to a pointer to the integer object containing one thousand.    When you update \"x\" with x = 2000, a new integer object is created and the dictionary is updated to point at the new object.  The old one thousand object is unchanged (and may or may not be alive depending on whether anything else refers to the object). When you do a new assignment such as y = x, a new dictionary entry \"y\" is created that points to the same object as the entry for \"x\". Objects like strings and integers are immutable.  This simply means that there are no methods that can change the object after it has been created.  For example, once the integer object one-thousand is created, it will never change.  Math is done by creating new integer objects. Objects like lists are mutable.  This means that the contents of the object can be changed by anything pointing to the object.  For example, x = []; y = x; x.append(10); print y will print [10].  The empty list was created.  Both \"x\" and \"y\" point to the same list.  The append method mutates (updates) the list object (like adding a record to a database) and the result is visible to both \"x\" and \"y\" (just as a database update would be visible to every connection to that database). Hope that clarifies the issue for you. ",
+        "abstract": ""
+      },
+      {
+        "id": 986335,
+        "score": 27,
+        "vote": 0,
+        "content": "You got some really good answers here.",
+        "abstract": ""
+      },
+      {
+        "id": 6963425,
+        "score": 60,
+        "vote": 0,
+        "content": "A simple trick I normally use is to just wrap it in a list: (Yeah I know this can be inconvenient, but sometimes it is simple enough to do this.)",
+        "abstract": ""
+      },
+      {
+        "id": 986044,
+        "score": 22,
+        "vote": 0,
+        "content": "In this case the variable titled var in the method Change is assigned a reference to self.variable, and you immediately assign a string to var. It's no longer pointing to self.variable. The following code snippet shows what would happen if you modify the data structure pointed to by var and self.variable, in this case a list: I'm sure someone else could clarify this further.",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/4702249/is-there-a-way-in-python-to-return-a-value-via-an-output-parameter",
+    "keywords": [],
+    "tags": [
+      "python"
+    ],
+    "question": {
+      "id": 4702249,
+      "title": "Is there a way in Python to return a value via an output parameter?",
+      "content": "Some languages have the feature to return values using parameters also like C#.\nLet’s take a look at an example: So is there anything similar in Python to get a value using parameter, too?",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 74505976,
+        "score": 0,
+        "vote": 0,
+        "content": "Adding to Tark-Tolonen's answer: Please absolutely avoid altering the object reference of the output argument in your function, otherwise the output argument won't work. For instance, I wish to pass an ndarray into a function my_fun and modify it After calling my_fun, array a stills remains all zeros since the function np.ones_like returns a reference to another array full of ones and assigns it to out_arr instead of modifying the object reference passed by out_arr directly. Running this code you will find that two print(id()) gives different memory locations. Also, beware of the array operators from numpy, they usually returns a reference to another array if you write something like this Using the - and = operator might cause similar problems. To prevent having out_arr's memory location altered, you can use the numpy functions that does the exactly same operations but has a out parameter built in. The proceeding code should be rewritten as And the memory location of out_arr remains the same before and after calling my_fun while its values gets modified successfully.",
+        "abstract": ""
+      },
+      {
+        "id": 4702280,
+        "score": 84,
+        "vote": 0,
+        "content": "Python can return a tuple of multiple items: But you can also pass a mutable parameter, and return values via mutation of the object as well:",
+        "abstract": ""
+      },
+      {
+        "id": 4702272,
+        "score": 8,
+        "vote": 0,
+        "content": "You mean like passing by reference? For Python object the default is to pass by reference. However, I don't think you can change the reference in Python (otherwise it won't affect the original object). For example:",
+        "abstract": ""
+      },
+      {
+        "id": 4702442,
+        "score": 1,
+        "vote": 0,
+        "content": "You can do that with mutable objects, but in most cases it does not make sense because you can return multiple values (or a dictionary if you want to change a function's return value without breaking existing calls to it). I can only think of one case where you might need it - that is threading, or more exactly, passing a value between threads.",
+        "abstract": ""
+      },
+      {
+        "id": 4702301,
+        "score": 1,
+        "vote": 0,
+        "content": "In addition, if you feel like reading some code, I think that pywin32 has a way to handle output parameters. In the Windows API it's common practice to rely heavily on output parameters, so I figure they must have dealt with it in some way.",
+        "abstract": ""
+      },
+      {
+        "id": 4702267,
+        "score": 4,
+        "vote": 0,
+        "content": "Pass a list or something like that and put the return value in there.",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/69913843/python-how-to-pass-string-to-function-by-reference",
+    "keywords": [],
+    "tags": [
+      "python",
+      "string",
+      "reference",
+      "arguments"
+    ],
+    "question": {
+      "id": 69913843,
+      "title": "Python How to Pass string to function by reference",
+      "content": "And I still get \"\" in arg3 after calling foo(). I want to get arg3==\"new_value\".\nHow do I do that?",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 69913928,
+        "score": 0,
+        "vote": 0,
+        "content": "To manipulate an outside-function variable, you either have to return it, or use it as a global variable: return global",
+        "abstract": ""
+      },
+      {
+        "id": 69913926,
+        "score": 2,
+        "vote": 0,
+        "content": "Python always receives parameters by value, so assigning a new value to a parameter variable inside the body of a function won't affect the caller. If the value is mutable, then mutating it inside the body of the function will affect the caller, but strings are immutable (there's no method you can call on a string that will change its contents, only return a new string). In general, the way to approach the situation you describe is to simply return multiple values: If you need an immutable argument to be mutable, though, an easy workaround (that doesn't involve using global) is to wrap it in a mutable container, like a list:",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/38691069/how-can-i-write-function-with-optional-output-parameters-in-python",
+    "keywords": [],
+    "tags": [
+      "python"
+    ],
+    "question": {
+      "id": 38691069,
+      "title": "how can I write function with optional output parameters in python",
+      "content": "how can I write function with optional output parameters.\nIn example 1) mat = ReadBinFile(filename)\nor\n2) [mat,titles] = ReadBinFile(filename) if i finished the \"ReadBinFile\" function with  i have a tuple in \"mat\" in the first example Thank You for the Help",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 66113656,
+        "score": 0,
+        "vote": 0,
+        "content": "As far as I have researched, the only convincing way I found by using \"_\" but this when you call the function, not inside it. As an example: mat, _= ReadBinFile(filename) if you want the \"mat\" _, title= ReadBinFile(filename) if you want the \"title\"",
+        "abstract": ""
+      },
+      {
+        "id": 38692659,
+        "score": 0,
+        "vote": 0,
+        "content": "You cannot do this without indicating to the function which return type is required, or masking the function name (see my comment).  Let me demonstrate why. In Perl we can do this, by testing the context of the call.  The first (single return value) would be scalar context, and the second in list context.  We could test using a function called wantarray (Google \"python wantarray\" - other search engines are available).  Perl, for this reason and many others, is unusual if not unique. Python doesn't work like that, even though introspection can be taken to extremes compared to other languages.  The form of an assignment is: where name is a typeless reference.  So: Even if, by some sneaky means, we inspected the byte-code, we would have no way of knowing what class of object mat is supposed to reference.  A list, a tuple, an int, a bird, a plane? The syntax you show: is a puzzle.  Although valid, it has no practical difference to: which of course is a tuple.  So, how can we tell if: should be a tuple, a list, or whatever class of object mat is supposed to reference.   After all that, in my opinion returning objects of different classes is a dubious practice, even in Perl.  There are a few exceptions, returning None under some circumstances for example.  Why dubious?  Because the code becomes difficult to read, modify, and support.  ",
+        "abstract": ""
+      },
+      {
+        "id": 38691125,
+        "score": -1,
+        "vote": 0,
+        "content": "There are two ways to do this. One is to accept an argument that determines the return value. The second, (and more interesting) is to return a generator. This will let you get only the first or get the first n return values.",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/65785263/how-to-call-a-c-function-with-an-output-parameter",
+    "keywords": [],
+    "tags": [
+      "python",
+      "dll",
+      "ctypes"
+    ],
+    "question": {
+      "id": 65785263,
+      "title": "How to call a C function with an output parameter",
+      "content": "A have code in my dll (on C++). The function must accept a pointer to long as an output variable: I am using Python 3: And I get the error:",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 65786490,
+        "score": 1,
+        "vote": 0,
+        "content": "POINTER(ctypes-type) declares a pointer type and its parameter must be a ctypes type, so below was incorrect: When you create a ctype to hold the output parameter, simply create an instance of the type: Then pass it as a parameter by reference with: Also, wrapping input values is generally unncessary if you set .argtypes.  ctypes knows to wrap Python values as declared, so you can just pass them directly. Example: test.c test.py Output: You can create pointers directly with pointer(instance) as well, so below also works, but is less efficient than byref:",
+        "abstract": ""
+      },
+      {
+        "id": 65785486,
+        "score": 0,
+        "vote": 0,
+        "content": "I modified your code a little to Change the definitions to match.  Following the ideas in the answer to Passing pointers to DLL function in Python , this may help",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/54736309/how-to-use-output-for-one-function-as-parameter-for-another",
+    "keywords": [],
+    "tags": [
+      "python",
+      "python-3.x",
+      "function",
+      "parameters"
+    ],
+    "question": {
+      "id": 54736309,
+      "title": "How to use output for one function as parameter for another",
+      "content": "I am trying to work on one file, and I have two functions a and b. suppose a was: how would I use the output from A(num3) and use it in B?",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 54736439,
+        "score": 2,
+        "vote": 0,
+        "content": "1) RETURN the output of function A. 2) When you call function A, store the result in another variable. The variable result will now contain the value of (num1+num2). We will pass this as an argument to function B. 3) When calling function B, in place of num3, pass the value stored in 'result'. The second argument can be any number.",
+        "abstract": ""
+      },
+      {
+        "id": 54736424,
+        "score": 0,
+        "vote": 0,
+        "content": "what your looking for is the \"return\"\nbasically it allows your function to give an output that you could use later. for example: in general this is pretty basic and not very good code practice because i don't know what your trying to solve. further information might help writing a better use of code for your problem :)\ni wouldn't actually use this code other than to demonstrate the return in this situation \njust so you know, while defining a function doesn't actually do anything until you call it so the fact you gave it the same name does not bind the actual values in any way. i would recommend you read more about python basics regardless. good luck!",
+        "abstract": ""
+      },
+      {
+        "id": 54736346,
+        "score": 4,
+        "vote": 0,
+        "content": "First, you need your functions to return values. Currently A() is just computing the value num1 + num2 and not doing anything with it. If you want it to pass back the answer, you have to add a return statement at the end of it: Next, if you want to pass the result of that function into function B, you'd do this: See, it works the same as calling a function anywhere else, except it's inside the parentheses and in the same place as you might otherwise put a variable.",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/53929453/python-by-value-and-by-reference-function-arguments",
+    "keywords": [],
+    "tags": [
+      "python",
+      "pass-by-value"
+    ],
+    "question": {
+      "id": 53929453,
+      "title": "Python - by value and by reference function arguments",
+      "content": "Sorry if the title is not accurate, not sure how to name it properly.\nthe question is. If I do this code: The num will obviously stay 1\nBut if I do similar thing with objects The value of test_obj.one will change to 10. Why are integers passed by value and user defined objects by reference?",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 53929719,
+        "score": 0,
+        "vote": 0,
+        "content": "This happens because -  In first case, after passing a variable to a function test_func2(num), that value like will be caught in a local variable arg, whose scope is local to the function. After we return from function that variable is destroyed as the function has ended its execution. And when you pass object to the function test_func(test_obj), the arg in function will be a reference to the object it catches i.e., test_obj. That means after modifying arg.one = 10 you are actually modifying the original objects value i.e., test_obj.one = 10.",
+        "abstract": ""
+      },
+      {
+        "id": 53929523,
+        "score": 2,
+        "vote": 0,
+        "content": "In the first case, num refers to the integer object of value 1.  Passing it to a function assigns arg to also refer to the same integer object of value 1, but then arg is reassigned to a new integer object of value 10.  num is still referring to the original integer object of value 1. In the second case, test_obj as assigned the value of a new TestClass instance.  Passing it to a function assigns arg to the same TestClass instance.  The object itself is altered, and both arg and test_obj still refer to the same object, so even after the function returns, test_obj \"sees\" the change.",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/49183276/turning-an-input-parameter-into-an-output-parameter-in-python",
+    "keywords": [],
+    "tags": [
+      "python",
+      "parameters",
+      "output"
+    ],
+    "question": {
+      "id": 49183276,
+      "title": "Turning an input parameter into an output parameter in Python",
+      "content": "I have a Python script that takes several input parameters, one of which is the name of an output folder which will hold processed data. I want to be able to access that output folder variable as an output parameter as well. How do I do this? Note: This script is being used in an ArcGIS model. I need that output parameter to be an input for another process in the model.",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 49184305,
+        "score": 1,
+        "vote": 0,
+        "content": "Python is about to \"output\" variables (or parameters as you called them) in a few ways. If you would like the variables to be written to screen, you can use the print function. If you instead want this variable to be used for a different python script, you might want to consider writing a function. Functions can take variables as input and use them to do calculations, then return outputs. Lastly, you may want to consider placing your sys.argv commands inside of a conditions which only runs the commands if your script is run from the command line. This way the program will not be looking for command line arguments if someone used \"import\" on your script instead of running it from the command line.",
+        "abstract": ""
+      },
+      {
+        "id": 49183847,
+        "score": 1,
+        "vote": 0,
+        "content": "If you have to put it in as an input, don't you have that information already? How are you calling the function if you don't know what your inputs are? Store the input as a variable before calling it, then use that variable wherever else you need it.",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/47899965/out-parameter-using-call-by-reference-for-user-defined-object-in-python",
+    "keywords": [],
+    "tags": [
+      "python",
+      "pass-by-reference",
+      "pass-by-value",
+      "user-defined-types",
+      "out-parameters"
+    ],
+    "question": {
+      "id": 47899965,
+      "title": "Out parameter using call by reference for User defined Object in Python",
+      "content": "I have one User defined Object. I want to pass as reference (out parameter) so that value of input Object will be changed inside function and return to called function. This can be achieved by using list or Dictionary i.e mutable object. But How to achieve with User defined object without using list & Dictionary.\nCheck below code snippet as example:- May be i am missing something.",
+      "abstract": ""
+    },
+    "answers": []
+  },
+  {
+    "link": "https://stackoverflow.com/questions/47020064/swig-python-output-parameter-by-reference-of-char-char",
+    "keywords": [],
+    "tags": [
+      "python",
+      "list",
+      "reference",
+      "char",
+      "swig"
+    ],
+    "question": {
+      "id": 47020064,
+      "title": "swig python output parameter by reference of char** (char**&amp;)",
+      "content": "I'm struggled with the c++ wrap for python using swig, what makes me stuck is the output parameter by reference of char** (a list of char*). My c++ is like this: I know that I need to use typemap, and I wrote in swig interface file (.i): I have no problem when compile .i file, but when I use it in python, python.exe has stopped working I succeed wrapping the output parameter by reference of char* as: But how to wrap the output parameter by reference of char** (list of char*)? Anyone can help?",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 47050775,
+        "score": 0,
+        "vote": 0,
+        "content": "One issue is this line: Should be: The $result handling looks funny, but I didn't continue to debug.  I think a better solution is to use a multi-argument typemap.  Here's what I came up with to test it (Windows OS): dict.hpp dict.cpp dict.i Output:",
+        "abstract": ""
+      }
+    ]
+  }
+]

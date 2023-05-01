@@ -1,0 +1,371 @@
+[
+  {
+    "link": "https://stackoverflow.com/questions/74977520/python-lambda-in-a-loop-ends-up-using-last-index-value-not-the-index-value-that",
+    "keywords": [],
+    "tags": [
+      "python",
+      "list",
+      "function",
+      "for-loop",
+      "lambda"
+    ],
+    "question": {
+      "id": 74977520,
+      "title": "Python lambda in a loop ends up using last index value not the index value that was set",
+      "content": "Using the for loop index in a lambda:function(index) causes the function to use the value that index reaches to, not the value that it was set to. Using Python 3.9.6 Causes the result: But what I needed/expected to get: How can I get the expected result?",
+      "abstract": ""
+    },
+    "answers": []
+  },
+  {
+    "link": "https://stackoverflow.com/questions/74746357/python-lambda-function-in-a-list-gives-unexpected-result",
+    "keywords": [],
+    "tags": [
+      "python",
+      "list",
+      "lambda",
+      "dynamic-programming"
+    ],
+    "question": {
+      "id": 74746357,
+      "title": "Python lambda function in a list gives unexpected result",
+      "content": "So I'm trying to make a list where a lambda functions are the elements of the list. The lambda function calls\nanother function which I pass an argument to. The problem is that lambda function only 'saves' the last value for all other items in the list. See below The question is what should I do to get the desired result? Edit: The stated problem is simplified. I have to use lambda for the solution This is the code I'm trying to understand the problem: Desired result: Real result:",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 74746462,
+        "score": 0,
+        "vote": 0,
+        "content": "For loop in lambda saves last item of list so its better to write it way out lambda\nlike this: and output is:",
+        "abstract": ""
+      },
+      {
+        "id": 74746676,
+        "score": 0,
+        "vote": 0,
+        "content": "if you need to create an array of function calls you can achieve what you are trying to do with the following: output",
+        "abstract": ""
+      },
+      {
+        "id": 74746577,
+        "score": 0,
+        "vote": 0,
+        "content": "While lambda accesses the context it's defined in, a for loop doesn#t create a new context each time it runs. That would be too inefficient. Thus, by the time your code actually calls the lambda functions that context has ended and a contains the last value the loop assigned to it. Correct code: If this answer is not sufficient, please clarify why do you need that lambda in the first place.",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/68717273/bind-loop-variable-value-to-lambda",
+    "keywords": [],
+    "tags": [
+      "python",
+      "for-loop",
+      "lambda",
+      "reference"
+    ],
+    "question": {
+      "id": 68717273,
+      "title": "bind loop variable value to lambda",
+      "content": "Python is not fixing the value of the loop variable when passing it to a lambda. Consider the same example in Java: I have more experience in Java. Thus, the output of the Java program is what I have expected. This is a real gotcha for me in Python and I would like to understand what is happening.",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 68717304,
+        "score": 1,
+        "vote": 0,
+        "content": "How can I change above Python Code to get the same output as in the Java example One can bind the value of the outer scope variable to the scope of the lambda: Still I wonder why Python has been designed this way. I just noticed that Java will not let you do the following: The compiler complaints: Variable used in lambda expression should be final or effectively final A fix for this is then I think this corresponds to the Python code. Python is less strict and allows (in Java terms) to use a variable that is not \"final or effectively final\" to be used in a lambda.",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/11723217/python-lambda-doesnt-remember-argument-in-for-loop",
+    "keywords": [],
+    "tags": [
+      "python",
+      "for-loop",
+      "lambda"
+    ],
+    "question": {
+      "id": 11723217,
+      "title": "Python lambda doesn&#39;t remember argument in for loop",
+      "content": "I'm working with python and trying to isolate a problem I had with lambda functions. From the following code I was expecting to create two lambda functions, each getting a different x, and the output should be but the output is Why?\nAnd how can I make two different functions? Using def?",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 11723328,
+        "score": 26,
+        "vote": 0,
+        "content": "The body of the lambda in your code references the name x.  The value associated with that name is changed on the next iteration of the loop, so when the lambda is called and it resolves the name it obtains the new value.   To achieve the result you expected, bind the value of x in the loop to a parameter of the lambda and then reference that parameter, as shown below:",
+        "abstract": ""
+      },
+      {
+        "id": 11723478,
+        "score": 8,
+        "vote": 0,
+        "content": "Looks like work for partial. ",
+        "abstract": ""
+      },
+      {
+        "id": 11723314,
+        "score": 4,
+        "vote": 0,
+        "content": "This will fix it. It is because the x is directly bound to the lambda.",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/66039869/lambda-with-different-expression-returns-same-output",
+    "keywords": [],
+    "tags": [
+      "python",
+      "python-3.x"
+    ],
+    "question": {
+      "id": 66039869,
+      "title": "Lambda with different expression returns same output",
+      "content": "Take this code snippet for example: The output is: But I expected it to be How do I fix this?",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 66039891,
+        "score": 3,
+        "vote": 0,
+        "content": "Use default arguments: This works because the default value is evaluated when the function is created. Otherwise all lambda functions will point to the last value of x, which was 1.",
+        "abstract": ""
+      },
+      {
+        "id": 66039981,
+        "score": 1,
+        "vote": 0,
+        "content": "@sarartur already provided the solution. Here is little more explanation for this behavior. This is called Late Binding Closures. Quoting from the blog, Python’s closures are late binding. This means that the values of variables used in closures are looked up at the time the inner function is called. So here whenever any of the returned functions are called, the value of i is looked up in the surrounding scope at call time. By then, the loop has completed and i is left with its final value of 1.",
+        "abstract": ""
+      },
+      {
+        "id": 66039895,
+        "score": 0,
+        "vote": 0,
+        "content": "This is happening because your lambda expressions are printing x, but x is being updated by your for loop, so by the time your lambda expressions are invoked, x has finished with a value of 1 because that's the last value in range(2).",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/19837486/lambda-in-a-loop",
+    "keywords": [],
+    "tags": [
+      "python",
+      "loops",
+      "anonymous-function"
+    ],
+    "question": {
+      "id": 19837486,
+      "title": "Lambda in a loop",
+      "content": "Considering the following code snippet: I expect to create a dictionary of two function as following : but it looks like the two lambda function generated are exactly the same : I really don't understand why. Do you have any suggestions ?",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 57288183,
+        "score": 12,
+        "vote": 0,
+        "content": "Alternatively, instead of lambda, you can use functools.partial which, in my opinion, has a cleaner syntax.  Instead of: it will be: Or, here is another simple example:",
+        "abstract": ""
+      },
+      {
+        "id": 19837683,
+        "score": 118,
+        "vote": 0,
+        "content": "You need to bind d for each function created. One way to do that is to pass it as a parameter with a default value: Now the d inside the function uses the parameter, even though it has the same name, and the default value for that is evaluated when the function is created. To help you see this: Remember how default values work, such as for mutable objects like lists and dicts, because you are binding an object. This idiom of parameters with default values is common enough, but may fail if you introspect function parameters and determine what to do based on their presence.  You can avoid the parameter with another closure:",
+        "abstract": ""
+      },
+      {
+        "id": 46847190,
+        "score": 3,
+        "vote": 0,
+        "content": "I met the same problem. The selected solution helped me a lot, but I consider necessary to add a precision to make functional the code of the question: define the lambda function outside of the loop. By the way, default value is not necessary.",
+        "abstract": ""
+      },
+      {
+        "id": 19837590,
+        "score": 31,
+        "vote": 0,
+        "content": "This is due to the point at which d is being bound. The lambda functions all point at the variable d rather than the current value of it, so when you update d in the next iteration, this update is seen across all your functions. For a simpler example: You can get around this by adding an additional function, like so: You can also fix the scoping inside the lambda expression  However in general this is not good practice as you have changed the signature of your function.",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/33983980/lambda-in-for-loop-only-takes-last-value",
+    "keywords": [],
+    "tags": [
+      "python",
+      "lambda",
+      "tkinter",
+      "contextmenu"
+    ],
+    "question": {
+      "id": 33983980,
+      "title": "lambda in for loop only takes last value",
+      "content": "Problemset: Context Menu should show filter variables dynamically and execute a function with parameters defined inside the callback.\nGeneric descriptions show properly, but function call is always executed with last set option. What I have tried: The current output i get is: Filter Log Recordset by 2 and DEBUG No matter which of the three options i choose. I assume it has sth to do with the garbage collection that only the last option remains but i cannot figure out how to avoid this. Any help is recommended.",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 63044909,
+        "score": -2,
+        "vote": 0,
+        "content": "I know I am late, but I found a messy workaround which gets the job done (tested in Python 3.7) If you use a double lambda (like I said, very messy) you can preserve the value, like so: Step 1: Create the nested lambda statement: Step 2: Use the lambda statement: The send_param method returns the inner most lambda (lambda: print(val)) without executing the statement, until you call the result of send_param which takes no arguments, for example: Only the second line will execute the print statement.",
+        "abstract": ""
+      },
+      {
+        "id": 57736125,
+        "score": 19,
+        "vote": 0,
+        "content": "Closures in Python capture variables, not values. For example consider: What do you expect the result of calling f() to be? The correct answer is 2, because the lambda f captured the variable x, not its value 1 at the time of creation. Now if for example we write: we created a list of 10 different lambdas, but all of them captured the same variable i, thus calling L[3]() the result will be 9 because the value of variable i at the end of the iteration was 9 (in Python a comprehension doesn't create a new binding for each iteration; it just keeps updating the same binding). A \"trick\" that can be seen often in Python when capturing the value is the desired semantic is to use default arguments. In Python, differently from say C++, default value expressions are evaluated at function definition time (i.e. when the lambda is created) and not when the function is invoked. So in code like: we're declaring a parameter j and setting as default the current value of i at the time the lambda was created. This means that when calling e.g. L[3]() the result will be 3 this time because of the default value of the \"hidden\" parameter (calling L[3](42) will return 42 of course). More often you see the sightly more confusing form where the \"hidden\" parameter has the same name as the variable of which we want to capture the value of.",
+        "abstract": ""
+      },
+      {
+        "id": 33984811,
+        "score": 39,
+        "vote": 0,
+        "content": "Please read about minimal examples. Without reading your code, I believe you have run into a well known issue addressed in previous questions and answers that needs 2 lines to illustrate.  Names in function bodies are evaluated when the function is executed. prints '2' 3 times because the 3 functions are identical and the 'i' in each is not evaluated until the call, when i == 2.  However, makes three different functions, each with a different captured value, so 0, 1, and 2 are printed.  In your statement add option=option before : to capture the different values of option.  You might want to rewrite as to differentiate the loop variable from the function parameter.  If column changed within the loop, it would need the same treatment.",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/72921131/lambda-in-nested-loop-with-condition",
+    "keywords": [],
+    "tags": [
+      "python",
+      "loops",
+      "lambda",
+      "nested",
+      "logic"
+    ],
+    "question": {
+      "id": 72921131,
+      "title": "lambda in nested loop with condition",
+      "content": "I encountered this question in one of my test for applying a new job. Given this array : arr = [[-1, 1, 2, -2, 6], [3, 4, -5]] I already made an answer using normal looping The result should be like this : [[1, 4, 36], [9, 16]] The problem is, I have to use lambda function to deliver the question. I tried to use nested loop with condition for lambda but it's very confusing. Any idea how to solve the problem ? Any helps will be very much appreciated.",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 72921246,
+        "score": 0,
+        "vote": 0,
+        "content": "one way of using lambda",
+        "abstract": ""
+      },
+      {
+        "id": 72921569,
+        "score": 0,
+        "vote": 0,
+        "content": "A bit more verbose: the partial is not required but it is a bad practice to assign lambda to variable. or a single line",
+        "abstract": ""
+      },
+      {
+        "id": 72921188,
+        "score": 3,
+        "vote": 0,
+        "content": "As you need to use lambda, you can convert what you would get as list comprehension (the most pythonic IMO): into a functional variant: longer, less efficient, more cryptic, but you do have plenty of lambdas ;) output: [[1, 4, 36], [9, 16]] More on this topic: list comprehension vs lambda+filter",
+        "abstract": ""
+      },
+      {
+        "id": 72921203,
+        "score": 0,
+        "vote": 0,
+        "content": "You can use lambda like this:",
+        "abstract": ""
+      },
+      {
+        "id": 72921168,
+        "score": 1,
+        "vote": 0,
+        "content": "How about using a list comprehension? Output:",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/63123011/lambda-functions-created-in-a-for-loop-being-overwritten",
+    "keywords": [],
+    "tags": [
+      "python",
+      "lambda"
+    ],
+    "question": {
+      "id": 63123011,
+      "title": "lambda functions created in a for-loop being overwritten",
+      "content": "Executing the following code results in this output: I don't understand why all functions in the list are getting overwritten? Having only primitive datatypes (floats) in the expression should not lead to any reference problems, should it? Edit: The code uses numpy/scipy for the splines if that matters.",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 63123965,
+        "score": 1,
+        "vote": 0,
+        "content": "You can read it from the official python documentation, but in short Consider this what do you think will be printed to console? 99, right? (Yes, it will be 99 in both cases).  See that lambdas behave exactly the same way as regular functions; If the variable is not defined in the function scope, python searches the variable from the parent scope. Notice that after a for loop like this The value of x will be 5. So this is the reason why all the functions you created have the same value (the last one). Apologies for not copy-pasting your example code to my examples. I am writing the answer with my phone so it's easier to just write simplified examples. I hope you'll get the idea from these examples. There are three clean ways for the problem That is, instead of Use The variables local to lambda have zero appended for clarity (will work with just the same variable names). Note that this is pretty much the same as and it would be equally good option to use the def func() syntax inside the for loop. By that I mean, since functions are objects (or: first-class citizens) in python, you can create a function that returns a function. Functions that take functions as arguments or return a function are called higher order functions. You can use this to create a higher order function: or, why not even and the later on just get functions in your loop with This will work since the get_func has its' own scope. The builtin functools has a great helper function called partial which also does just what you want.",
+        "abstract": ""
+      },
+      {
+        "id": 63123379,
+        "score": 2,
+        "vote": 0,
+        "content": "Your lambda is relying on the definition of m, x0, and b from the enclosing scope, but that dependency is loaded when the lambda is executed, not when it's defined. As such, you're using the values from the final loop in all of your lambdas. You need to store those values at definition time. The simplest approach is to make them default arguments for the lambda (argument defaults being bound at definition time):",
+        "abstract": ""
+      },
+      {
+        "id": 63123301,
+        "score": -1,
+        "vote": 0,
+        "content": "So, I think I found a way to get this to work. exec gets a bad rep here on SO, but this works and I can't think of another way.",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/62429039/lambda-in-loop-stored-in-list-prints-only-the-last-loops-evaluated-value-not-di",
+    "keywords": [],
+    "tags": [
+      "python",
+      "lambda"
+    ],
+    "question": {
+      "id": 62429039,
+      "title": "Lambda in loop stored in list, prints only the last loops evaluated value not different values from all loop iterations",
+      "content": "I have a problem with lambdas in a loop. It is hard to explain the problem so I will show it in a short example: as a result of print I get: Despite I would expect [True, False]. \nCould you tell me why it does not work? and how Could I get the result that I expected? I only add that lambdas in a loop are required in my code to define formulas(those formulas are a lot and can be much more complex). Those formulas are defined in one place in the application and executed after many lines below the definition.\nI would be grateful for your help.  ",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 62429146,
+        "score": 3,
+        "vote": 0,
+        "content": "Lambdas are evaluated when they are executed.  They are executed when you print them. The only known foo at that time is the one from the last loop. So TestObj(1) is printed twice.  You can verify this by changing your lambda to: You need to \"early\" bind the foo from the loop to the lambda: Full fix: Output: See Is it Pythonic to use list comprehensions for just side effects? regarding using list comprehension sideeffects and why its bad. Related: ",
+        "abstract": ""
+      },
+      {
+        "id": 62429245,
+        "score": 1,
+        "vote": 0,
+        "content": "The problem is that the foo is merely lexically defined in the lambda, so it is not storing the value of foo from the time when the lambda was created. Instead of a lambda, you could perhaps use a class to generate your callable.  This can then store the associated state, namely the TestObj instance to which foo was pointing: output:",
+        "abstract": ""
+      },
+      {
+        "id": 62429135,
+        "score": 0,
+        "vote": 0,
+        "content": "For what you're doing you can use a map function. Small example: So for your example: Or using list comprehension:",
+        "abstract": ""
+      }
+    ]
+  }
+]

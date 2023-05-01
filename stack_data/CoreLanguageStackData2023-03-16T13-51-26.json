@@ -1,0 +1,713 @@
+[
+  {
+    "link": "https://stackoverflow.com/questions/75717160/method-object-is-not-subscriptable-error-appears-when-using-get-function",
+    "keywords": [],
+    "tags": [
+      "python",
+      "django",
+      "function",
+      "web",
+      "django-views"
+    ],
+    "question": {
+      "id": 75717160,
+      "title": "&#39;method&#39; object is not subscriptable error appears when using get function",
+      "content": "Django rises an error of ('method' object is not subscriptable) when trying to access username attribute from class User .\nimports : the function that cause the error : I tried using square brackets instead of parentheses, but it raised a similar error .",
+      "abstract": ""
+    },
+    "answers": []
+  },
+  {
+    "link": "https://stackoverflow.com/questions/972/adding-a-method-to-an-existing-object-instance-in-python",
+    "keywords": [],
+    "tags": [
+      "python",
+      "oop",
+      "methods",
+      "monkeypatching"
+    ],
+    "question": {
+      "id": 972,
+      "title": "Adding a method to an existing object instance in Python",
+      "content": "I've read that it is possible to add a method to an existing object (i.e., not in the class definition) in Python.  I understand that it's not always good to do so. But how might one do this?",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 73486831,
+        "score": 1,
+        "vote": 0,
+        "content": "Thanks to Arturo!\nYour answer got me on the right track! Based on Arturo's code, I wrote a little class:  This class allows you to add new attributes and methods at any time. Edit: Here is a more generalized solution: Let's test it:",
+        "abstract": ""
+      },
+      {
+        "id": 28060251,
+        "score": 164,
+        "vote": 0,
+        "content": "Preface - a note on compatibility: other answers may only work in Python 2 - this answer should work perfectly well in Python 2 and 3. If writing Python 3 only, you might leave out explicitly inheriting from object, but otherwise the code should remain the same. I've read that it is possible to add a method to an existing object (e.g. not in the class definition) in Python. I understand that it's not always a good decision to do so. But, how might one do this? I don't recommend this. This is a bad idea. Don't do it. Here's a couple of reasons: Thus, I suggest that you not do this unless you have a really good reason. It is far better to define the correct method in the class definition or less preferably to monkey-patch the class directly, like this: Since it's instructive, however, I'm going to show you some ways of doing this. Here's some setup code. We need a class definition. It could be imported, but it really doesn't matter. Create an instance: Create a method to add to it: Dotted lookups on functions call the __get__ method of the function with the instance, binding the object to the method and thus creating a \"bound method.\" and now: First, import types, from which we'll get the method constructor: Now we add the method to the instance. To do this, we require the MethodType constructor from the types module (which we imported above). The argument signature for types.MethodType (in Python 3) is (function, instance): and usage: Parenthetically, in Python 2 the signature was (function, instance, class): First, we create a wrapper function that binds the method to the instance: usage: A partial function applies the first argument(s) to a function (and optionally keyword arguments), and can later be called with the remaining arguments (and overriding keyword arguments). Thus: This makes sense when you consider that bound methods are partial functions of the instance. If we try to add the sample_method in the same way as we might add it to the class, it is unbound from the instance, and doesn't take the implicit self as the first argument. We can make the unbound function work by explicitly passing the instance (or anything, since this method doesn't actually use the self argument variable), but it would not be consistent with the expected signature of other instances (if we're monkey-patching this instance): You now know several ways you could do this, but in all seriousness - don't do this.",
+        "abstract": ""
+      },
+      {
+        "id": 982,
+        "score": 32,
+        "vote": 0,
+        "content": "In Python monkeypatching generally works by overwriting a class or function's signature with your own. Below is an example from the Zope Wiki: This code will overwrite/create a method called speak in the class. In Jeff Atwood's recent post on monkey patching, he showed an example in C# 3.0 which is the current language I use for work.",
+        "abstract": ""
+      },
+      {
+        "id": 70662971,
+        "score": 0,
+        "vote": 0,
+        "content": "",
+        "abstract": ""
+      },
+      {
+        "id": 64950870,
+        "score": -1,
+        "vote": 0,
+        "content": "Apart from what others said, I found that __repr__ and __str__ methods can't be monkeypatched on object level, because repr() and str() use class-methods, not locally-bounded object methods:",
+        "abstract": ""
+      },
+      {
+        "id": 2982,
+        "score": 1137,
+        "vote": 0,
+        "content": "In Python, there is a difference between functions and bound methods. Bound methods have been \"bound\" (how descriptive) to an instance, and that instance will be passed as the first argument whenever the method is called. Callables that are attributes of a class (as opposed to an instance) are still unbound, though, so you can modify the class definition whenever you want: Previously defined instances are updated as well (as long as they haven't overridden the attribute themselves): The problem comes when you want to attach a method to a single instance: The function is not automatically bound when it's attached directly to an instance: To bind it, we can use the MethodType function in the types module: This time other instances of the class have not been affected: More information can be found by reading about descriptors and metaclass programming.",
+        "abstract": ""
+      },
+      {
+        "id": 24865663,
+        "score": 20,
+        "vote": 0,
+        "content": "You can use lambda to bind a method to an instance: Output:",
+        "abstract": ""
+      },
+      {
+        "id": 45341362,
+        "score": 4,
+        "vote": 0,
+        "content": "With this, you can use the self pointer",
+        "abstract": ""
+      },
+      {
+        "id": 43703054,
+        "score": 5,
+        "vote": 0,
+        "content": "I find it strange that nobody mentioned that all of the methods listed above creates a cycle reference between the added method and the instance, causing the object to be persistent till garbage collection. There was an old trick adding a descriptor by extending the class of the object:",
+        "abstract": ""
+      },
+      {
+        "id": 8961717,
+        "score": 42,
+        "vote": 0,
+        "content": "I think that the above answers missed the key point.  Let's have a class with a method: Now, let's play with it in ipython: Ok, so m() somehow becomes an unbound method of A. But is it really like that? It turns out that m() is just a function, reference to which is added to A class dictionary - there's no magic. Then why A.m gives us an unbound method? It's because the dot is not translated to a simple dictionary lookup. It's de facto a call of A.__class__.__getattribute__(A, 'm'): Now, I'm not sure out of the top of my head why the last line is printed twice, but still it's clear what's going on there. Now, what the default __getattribute__ does is that it checks if the attribute is a so-called descriptor or not, i.e. if it implements a special __get__ method. If it implements that method, then what is returned is the result of calling that __get__ method. Going back to the first version of our A class, this is what we have: And because Python functions implement the descriptor protocol, if they are called on behalf of an object, they bind themselves to that object in their __get__ method. Ok, so how to add a method to an existing object? Assuming you don't mind patching class, it's as simple as: Then B.m \"becomes\" an unbound method, thanks to the descriptor magic. And if you want to add a method just to a single object, then you have to emulate the machinery yourself, by using types.MethodType: By the way:",
+        "abstract": ""
+      },
+      {
+        "id": 34404761,
+        "score": 5,
+        "vote": 0,
+        "content": "This question was opened years ago, but hey, there's an easy way to simulate the binding of a function to a class instance using decorators: There, when you pass the function and the instance to the binder decorator, it will create a new function, with the same code object as the first one. Then, the given instance of the class is stored in an attribute of the newly created function. The decorator return a (third) function calling automatically the copied function, giving the instance as the first parameter.\n  \n\nIn conclusion you get a function simulating it's binding to the class instance. Letting the original function unchanged.",
+        "abstract": ""
+      },
+      {
+        "id": 32076685,
+        "score": 7,
+        "vote": 0,
+        "content": "Although Jasons answer works, it does only work if one wants to add a function to a class.\nIt did not work for me when I tried to reload an already existing method from the .py source code file. It took me for ages to find a workaround, but the trick seems simple...\n1.st import the code from the source code file\n2.nd force a reload\n3.rd use types.FunctionType(...) to convert the imported and bound method to a function\nyou can also pass on the current global variables, as the reloaded method would be in a different namespace\n4.th now you can continue as suggested by \"Jason Pratt\"\nusing the types.MethodType(...) Example:",
+        "abstract": ""
+      },
+      {
+        "id": 24748849,
+        "score": 4,
+        "vote": 0,
+        "content": "If it can be of any help, I recently released a Python library named Gorilla to make the process of monkey patching more convenient. Using a function needle() to patch a module named guineapig goes as follows: But it also takes care of more interesting use cases as shown in the FAQ from the documentation. The code is available on GitHub.",
+        "abstract": ""
+      },
+      {
+        "id": 16240409,
+        "score": 11,
+        "vote": 0,
+        "content": "There are at least two ways for attach a method to an instance without types.MethodType: 1: 2: Useful links:\nData model - invoking descriptors\nDescriptor HowTo Guide - invoking descriptors",
+        "abstract": ""
+      },
+      {
+        "id": 959064,
+        "score": 104,
+        "vote": 0,
+        "content": "Module new is deprecated since python 2.6 and removed in 3.0, use types see http://docs.python.org/library/new.html In the example below I've deliberately removed return value from patch_me() function.\nI think that giving return value may make one believe that patch returns a new object, which is not true - it modifies the incoming one. Probably this can facilitate a more disciplined use of monkeypatching.",
+        "abstract": ""
+      },
+      {
+        "id": 9636303,
+        "score": 7,
+        "vote": 0,
+        "content": "Since this question asked for non-Python versions, here's JavaScript:",
+        "abstract": ""
+      },
+      {
+        "id": 9041763,
+        "score": 7,
+        "vote": 0,
+        "content": "Consolidating Jason Pratt's and the community wiki answers, with a look at the results of different methods of binding: Especially note how adding the binding function as a class method works, but the referencing scope is incorrect. Personally, I prefer the external ADDMETHOD function route, as it allows me to dynamically assign new method names within an iterator as well.",
+        "abstract": ""
+      },
+      {
+        "id": 22525,
+        "score": 3,
+        "vote": 0,
+        "content": "What Jason Pratt posted is correct. As you can see, Python doesn't consider b() any different than a(). In Python all methods are just variables that happen to be functions. ",
+        "abstract": ""
+      },
+      {
+        "id": 4600,
+        "score": 13,
+        "vote": 0,
+        "content": "What you're looking for is setattr I believe.\nUse this to set an attribute on an object.",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/34439/finding-what-methods-a-python-object-has",
+    "keywords": [],
+    "tags": [
+      "python",
+      "introspection"
+    ],
+    "question": {
+      "id": 34439,
+      "title": "Finding what methods a Python object has",
+      "content": "Given a Python object of any kind, is there an easy way to get the list of all methods that this object has? Or if this is not possible, is there at least an easy way to check if it has a particular method, other than checking if an error occurs when the method is called?",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 34467,
+        "score": 343,
+        "vote": 0,
+        "content": "You can use the built in dir() function to get a list of all the attributes a module has.  Try this at the command line to see how it works. Also, you can use the hasattr(module_name, \"attr_name\") function to find out if a module has a specific attribute. See the Python introspection for more information.",
+        "abstract": ""
+      },
+      {
+        "id": 34452,
+        "score": 724,
+        "vote": 0,
+        "content": "For many objects, you can use this code, replacing 'object' with the object you're interested in: I discovered it at diveintopython.net (now archived), that should provide some further details! If you get an AttributeError, you can use this instead: getattr() is intolerant of pandas style Python 3.6 abstract virtual sub-classes.  This code does the same as above and ignores exceptions.",
+        "abstract": ""
+      },
+      {
+        "id": 20100900,
+        "score": 146,
+        "vote": 0,
+        "content": "The simplest method is to use dir(objectname). It will display all the methods available for that object.",
+        "abstract": ""
+      },
+      {
+        "id": 65186594,
+        "score": 21,
+        "vote": 0,
+        "content": "Suppose we have a Python obj. Then to see all the methods it has, including those surrounded by __ (magic methods): To exclude magic builtins one would do:",
+        "abstract": ""
+      },
+      {
+        "id": 50050651,
+        "score": 26,
+        "vote": 0,
+        "content": "The simplest way to get a list of methods of any object is to use the help() command. It will list out all the available/important methods associated with that object. For example:",
+        "abstract": ""
+      },
+      {
+        "id": 68474764,
+        "score": 0,
+        "vote": 0,
+        "content": "Most of the time, I want to see the user-defined methods and I don't want to see the built-in attributes that start with '__', if you want that you can use the following code: For example, for this class: Above code will print: ['print_name']",
+        "abstract": ""
+      },
+      {
+        "id": 67662964,
+        "score": -1,
+        "vote": 0,
+        "content": "Here's a nice one liner (but will get attributes as well):",
+        "abstract": ""
+      },
+      {
+        "id": 63620684,
+        "score": 2,
+        "vote": 0,
+        "content": "I have done the following function (get_object_functions), which receives an object (object_) as its argument, and returns a list (functions) containing all of the methods (including static and class methods) defined in the object's class: Well, it just checks if the string representation of the type of a class' attribute equals \"<class 'function'>\" or \"<class 'method'>\" and then includes that attribute in the functions list if that's True. For a cleaner version of the code: https://github.com/revliscano/utilities/blob/master/get_object_functions/object_functions_getter.py",
+        "abstract": ""
+      },
+      {
+        "id": 63481052,
+        "score": -1,
+        "vote": 0,
+        "content": "You can make use of dir() which is pre-defined in Python. You can also pass an object to dir() as If the object is an object of a pre-defined class such as int, str, etc. it displays the methods in it (you may know those methods as built in functions). If that object is created for a user-defined class, it displays all the methods given in that class.",
+        "abstract": ""
+      },
+      {
+        "id": 47317075,
+        "score": 14,
+        "vote": 0,
+        "content": "Open a Bash shell (Ctrl + Alt + T on Ubuntu). Start a Python 3 shell in it. Create an object to observe the methods of. Just add a dot after it and press Tab twice and you'll see something like this:",
+        "abstract": ""
+      },
+      {
+        "id": 37464502,
+        "score": 40,
+        "vote": 0,
+        "content": "I believe that you want something like this: a list of attributes from an object The built-in function dir() can do this job. Taken from help(dir) output on your Python shell: dir(...) If called without an argument, return the names in the current scope. Else, return an alphabetized list of names comprising (some of) the attributes of the given object, and of attributes reachable from it. If the object supplies a method named __dir__, it will be used; otherwise\nthe default dir() logic is used and returns: For example:",
+        "abstract": ""
+      },
+      {
+        "id": 27380776,
+        "score": 10,
+        "vote": 0,
+        "content": "The problem with all methods indicated here is that you can't be sure that a method doesn't exist. In Python you can intercept the dot calling through __getattr__ and __getattribute__, making it possible to create method \"at runtime\" Example: If you execute it, you can call non-existing methods in the object dictionary... And it's why you use the Easier to ask for forgiveness than permission paradigms in Python.",
+        "abstract": ""
+      },
+      {
+        "id": 15640132,
+        "score": 1,
+        "vote": 0,
+        "content": "...is there at least an easy way to check if it has a particular method other than simply checking if an error occurs when the method is called While \"Easier to ask for forgiveness than permission\" is certainly the Pythonic way, you may be looking for:",
+        "abstract": ""
+      },
+      {
+        "id": 34481,
+        "score": 27,
+        "vote": 0,
+        "content": "On top of the more direct answers, I'd be remiss if I didn't mention IPython. Hit Tab to see the available methods, with autocompletion. And once you've found a method, try: to see the pydocs, method signature, etc. Ahh... REPL.",
+        "abstract": ""
+      },
+      {
+        "id": 58987382,
+        "score": 3,
+        "vote": 0,
+        "content": "This should work :)",
+        "abstract": ""
+      },
+      {
+        "id": 61189861,
+        "score": 0,
+        "vote": 0,
+        "content": "If you are, for instance, using shell plus you can use this instead: that way, with the '??' just after your object, it'll show you all the attributes/methods the class has.",
+        "abstract": ""
+      },
+      {
+        "id": 49194581,
+        "score": 0,
+        "vote": 0,
+        "content": "In order to search for a specific method in a whole module",
+        "abstract": ""
+      },
+      {
+        "id": 48284803,
+        "score": 1,
+        "vote": 0,
+        "content": "Take a list as an object list(filter(lambda x:callable(getattr(obj,x)),obj.__dir__())) You get:",
+        "abstract": ""
+      },
+      {
+        "id": 28220562,
+        "score": 20,
+        "vote": 0,
+        "content": "If you specifically want methods, you should use inspect.ismethod. For method names: For the methods themselves: Sometimes inspect.isroutine can be useful too (for built-ins, C extensions, Cython without the \"binding\" compiler directive).",
+        "abstract": ""
+      },
+      {
+        "id": 32608298,
+        "score": 4,
+        "vote": 0,
+        "content": "There is no reliable way to list all object's methods. dir(object) is usually useful, but in some cases it may not list all methods. According to dir() documentation: \"With an argument, attempt to return a list of valid attributes for that object.\" Checking that method exists can be done by callable(getattr(object, method)) as already mentioned there.",
+        "abstract": ""
+      },
+      {
+        "id": 29851741,
+        "score": 1,
+        "vote": 0,
+        "content": "One can create a getAttrs function that will return an object's callable property names That'd return",
+        "abstract": ""
+      },
+      {
+        "id": 34472,
+        "score": 34,
+        "vote": 0,
+        "content": "To check if it has a particular method:",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/1911281/how-do-i-get-list-of-methods-in-a-python-class",
+    "keywords": [],
+    "tags": [
+      "python"
+    ],
+    "question": {
+      "id": 1911281,
+      "title": "How do I get list of methods in a Python class?",
+      "content": "I want to iterate through the methods in a class, or handle class or instance objects differently based on the methods present. How do I get a list of class methods? Also see:",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 74315537,
+        "score": 0,
+        "vote": 0,
+        "content": "For my use case, I needed to distinguish between class methods, static methods, properties, and instance methods. The inspect module confuses the issue a bit (particularly with class methods and instance methods), so I used vars based on a comment on this SO question. The basic gist is to use vars to get the __dict__ attribute of the class, then filter based on various isinstance checks. For instance methods, I check that it is callable and not a class method. One caveat: this approach of using vars (or __dict__ for that matter) won't work with __slots__. Using Python 3.6.9 (because it's what the Docker image I'm using as my interpreter has): To see it in action, I created this little test class: then did: which output In this example I'm discarding the actual methods, but if you needed to keep them you could just use a dict comprehension instead of a set comprehension:",
+        "abstract": ""
+      },
+      {
+        "id": 71816408,
+        "score": -1,
+        "vote": 0,
+        "content": "Just like this",
+        "abstract": ""
+      },
+      {
+        "id": 68804677,
+        "score": 1,
+        "vote": 0,
+        "content": "use inspect.ismethod and dir and getattr output:",
+        "abstract": ""
+      },
+      {
+        "id": 68575686,
+        "score": 0,
+        "vote": 0,
+        "content": "None of the above worked for me. I've encountered this problem while writing pytests. The only work-around I found was to: 1- create another directory and place all my .py files there 2- create a separate directory for my pytests and then importing the classes I'm interested in This allowed me to get up-to-dated methods within the class - you can change the method names and then use print(dir(class)) to confirm it.",
+        "abstract": ""
+      },
+      {
+        "id": 65571791,
+        "score": 9,
+        "vote": 0,
+        "content": "Try\nprint(help(ClassName))\nIt prints out methods of the class",
+        "abstract": ""
+      },
+      {
+        "id": 54326058,
+        "score": 5,
+        "vote": 0,
+        "content": "This also works: In mymodule.py: In another file: Output: ['foo', 'bar'] From the Python docs: Return true if the object is a user-defined or built-in function or method.",
+        "abstract": ""
+      },
+      {
+        "id": 64315050,
+        "score": 3,
+        "vote": 0,
+        "content": "You can use a function which I have created. Output:",
+        "abstract": ""
+      },
+      {
+        "id": 50179469,
+        "score": 9,
+        "vote": 0,
+        "content": "If your method is a \"regular\" method and not a staticmethod, classmethod etc.\nThere is a little hack I came up with - This can be extended to other type of methods by changing \"function\" in the if condition correspondingly.\nTested in Python 2.7 and Python 3.5.",
+        "abstract": ""
+      },
+      {
+        "id": 61200307,
+        "score": 5,
+        "vote": 0,
+        "content": "There's this approach: When dealing with a class instance, perhaps it'd be better to return a list with the method references instead of just names¹. If that's your goal, as well as It may be of use. You might also want to assure it's callable(getattr(obj, m)), since dir returns all attributes within obj, not just methods. In a nutshell, for a class like We could check instance retrieval with So you can call it right away: ¹ An use case: I used this for unit testing. Had a class where all methods performed variations of the same process - which led to lengthy tests, each only a tweak away from the others. DRY was a far away dream. Thought I should have a single test for all methods, so I made the above iteration. Although I realized I should instead refactor the code itself to be DRY-compliant anyway... this may still serve a random nitpicky soul in the future.",
+        "abstract": ""
+      },
+      {
+        "id": 63305638,
+        "score": -1,
+        "vote": 0,
+        "content": "To produce a list of methods put the name of the method in a list without the usual parenthesis. Remove the name and attach the parenthesis and that calls the method.",
+        "abstract": ""
+      },
+      {
+        "id": 61957218,
+        "score": 26,
+        "vote": 0,
+        "content": "You can list all methods in a python class by using the following code This will return a list of all the names of the methods in the class",
+        "abstract": ""
+      },
+      {
+        "id": 61490721,
+        "score": 7,
+        "vote": 0,
+        "content": "I just keep this there, because top rated answers are not clear. This is simple test with not usual class based on Enum. And this is output results. So what we have: Why are votes so erroneous? And where i'm wrong? And where wrong other people which answers have so low votes?",
+        "abstract": ""
+      },
+      {
+        "id": 1911287,
+        "score": 426,
+        "vote": 0,
+        "content": "An example (listing the methods of the optparse.OptionParser class): Notice that getmembers returns a list of 2-tuples. The first item is the name of the member, the second item is the value. You can also pass an instance to getmembers:",
+        "abstract": ""
+      },
+      {
+        "id": 59631738,
+        "score": -1,
+        "vote": 0,
+        "content": "This is just an observation. \"encode\" seems to be a method for string objects However, if str1 is inspected for methods, an empty list is returned So, maybe I am wrong, but the issue seems to be not simple.",
+        "abstract": ""
+      },
+      {
+        "id": 57149907,
+        "score": 2,
+        "vote": 0,
+        "content": "gives an identical list as does.",
+        "abstract": ""
+      },
+      {
+        "id": 55332478,
+        "score": -6,
+        "vote": 0,
+        "content": "If you want to list only methods of a python class",
+        "abstract": ""
+      },
+      {
+        "id": 55056496,
+        "score": -2,
+        "vote": 0,
+        "content": "output",
+        "abstract": ""
+      },
+      {
+        "id": 53608586,
+        "score": 60,
+        "vote": 0,
+        "content": "Say you want to know all methods associated with list class\nJust Type The following  Above will give you all methods of list class",
+        "abstract": ""
+      },
+      {
+        "id": 39061905,
+        "score": 207,
+        "vote": 0,
+        "content": "Python 3.x answer without external libraries dunder-excluded result:",
+        "abstract": ""
+      },
+      {
+        "id": 29333454,
+        "score": 30,
+        "vote": 0,
+        "content": "you can also import the FunctionType from types and test it with the class.__dict__:",
+        "abstract": ""
+      },
+      {
+        "id": 24715094,
+        "score": 3,
+        "vote": 0,
+        "content": "So Think Python page 210",
+        "abstract": ""
+      },
+      {
+        "id": 1911313,
+        "score": 290,
+        "vote": 0,
+        "content": "There is the dir(theobject) method to list all the fields and methods of your object (as a tuple) and the inspect module (as codeape write) to list the fields and methods with their doc (in \"\"\"). Because everything (even fields) might be called in Python, I'm not sure there is a built-in function to list only methods. You might want to try if the object you get through dir is callable or not.",
+        "abstract": ""
+      },
+      {
+        "id": 7478804,
+        "score": 15,
+        "vote": 0,
+        "content": "Note that you need to consider whether you want methods from base classes which are inherited (but not overridden) included in the result. The dir() and inspect.getmembers() operations do include base class methods, but use of the __dict__ attribute does not.",
+        "abstract": ""
+      },
+      {
+        "id": 24795848,
+        "score": 1,
+        "vote": 0,
+        "content": "I know this is an old post, but just wrote this function and will leave it here is case someone stumbles looking for an answer:",
+        "abstract": ""
+      },
+      {
+        "id": 1911291,
+        "score": 38,
+        "vote": 0,
+        "content": "Try the property __dict__.",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/73990497/do-python-methods-belong-to-object-or-class",
+    "keywords": [],
+    "tags": [
+      "python",
+      "class"
+    ],
+    "question": {
+      "id": 73990497,
+      "title": "Do python methods belong to object or class?",
+      "content": "When an instance is created via a python class, does this object have its own methods in memory along with its instance variables? I imagine that this isn't the case because a lot of memory would be used if it were. When an object invokes a method from the class which the object was created from, how does the method lookup work? Does it work similarly to the process in which class variable is used when instance's variable with the same name doesn't exist? According to the following code, jane.full_name have the same id as john.full_name yet they are !=",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 73990545,
+        "score": 1,
+        "vote": 0,
+        "content": "Methods belong to the class. They are, in fact, simply function-valued class attributes that, due to the descriptor protocol, produce a callable method object when invoked from an instance of the class. More specifically, Person.full_name is equivalent to Person.__dict__['full_name'].__get__(None, Person), while jane.full_name is equivalent to Person.__dict__['full_name'].__get__(jane). The method object wraps both the function and the instance (jane, in this case) that accessed the attribute. The above is true for instance methods. Class methods and static methods are simply class attributes of type classmethod and staticmethod, respectively. The sole purpose of the two classes is to override __get__ to modify the object returned. classmethod.__get__ always returns a method instance that wraps the class, and staticmethod.__get__ always returns the function itself.",
+        "abstract": ""
+      },
+      {
+        "id": 73990556,
+        "score": 2,
+        "vote": 0,
+        "content": "No, methods belong to the class, but when you access a Python method from an instance, the descriptor protocol for function objects bind the instance as the first argument and return a bound method. This is a distinct object each time you do the attribute access: Note, you can introspect the instance versus the class namespaces: The instance namespace is empty - there are no instance attributes.",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/68418413/calling-an-object-of-a-method-of-a-class-within-another-method-of-the-same-class",
+    "keywords": [],
+    "tags": [
+      "python",
+      "class",
+      "object",
+      "methods"
+    ],
+    "question": {
+      "id": 68418413,
+      "title": "Calling an object of a method of a class within another method of the same class",
+      "content": "I was trying to call the objects of a method in one of my classes within antoher method of the same class. Below you can find a small example of how I tried to do it: If I do this, I get the error: \"'NoneType' object has no attribute 'a'\".\nI am sure this is a fearly basic problem, but I am using classes, objects and methods for the first time and would really appreciate the help! Thank you in advance and stay safe!",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 68418526,
+        "score": 0,
+        "vote": 0,
+        "content": "This should work You can't access a method's local variables from another method, you should store them as attributes.",
+        "abstract": ""
+      },
+      {
+        "id": 68418456,
+        "score": 2,
+        "vote": 0,
+        "content": "",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/37370578/different-way-to-create-an-instance-method-object-in-python",
+    "keywords": [],
+    "tags": [
+      "python",
+      "python-3.x",
+      "methods",
+      "attributes",
+      "instance"
+    ],
+    "question": {
+      "id": 37370578,
+      "title": "Different way to create an instance method object in Python",
+      "content": "The Python 3.x language reference described two ways to create a method object: User-defined method objects may be created when getting an attribute of a class (perhaps via an instance of that class), if that attribute is a user-defined function object or a class method object. When an instance method object is created by retrieving a user-defined function object from a class via one of its instances, its self attribute is the instance, and the method object is said to be bound. The new method’s func attribute is the original function object. When a user-defined method object is created by retrieving another method object from a class or instance, the behaviour is the same as for a function object, except that the func attribute of the new instance is not the original method object but its func attribute. When an instance method object is called, the underlying function (func) is called, inserting the class instance (self) in front of the argument list. For instance, when C is a class which contains a definition for a function f(), and x is an instance of C, calling x.f(1) is equivalent to calling C.f(x, 1). When an instance method object is derived from a class method object, the “class instance” stored in self will actually be the class itself, so that calling either x.f(1) or C.f(1) is equivalent to calling f(C,1) where f is the underlying function. In different ways, they both have different __func__ and __self__ values, but I'm not very aware of these two different ways, could someone explain it to me? Python Language Reference | The Standard Type Hierarchy:\nhttps://docs.python.org/3/reference/datamodel.html#the-standard-type-hierarchy",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 56587904,
+        "score": 1,
+        "vote": 0,
+        "content": "For completeness and as an addendum to the excellent answer provided by @mgilson, I wanted to explain the remaining 2 paragraphs referenced in the original question. First let's create a class with a classmethod: Now for the 3rd paragraph: When a user-defined method object is created by retrieving another method object from a class or instance, the behaviour is the same as for a function object, except that the func attribute of the new instance is not the original method object but its func attribute. This means: Note that __self__ is a reference to the Foo class. Finally, the last paragraph: When an instance method object is derived from a class method object, the “class instance” stored in self will actually be the class itself, so that calling either x.f(1) or C.f(1) is equivalent to calling f(C,1) where f is the underlying function. This just says that all of the following are equivalent:",
+        "abstract": ""
+      },
+      {
+        "id": 37396464,
+        "score": 6,
+        "vote": 0,
+        "content": "I'm not 100% sure that I completely understand your question, but maybe looking at an example will be helpful.  To start, lets create a class which has a function in the definition: User-defined method objects may be created when getting an attribute of a class (perhaps via an instance of that class), if that attribute is a user-defined function object or a class method object. Ok, so we can create a method object by just accessing the attribute on an instance (if the attribute is a function).  In our setup, f is an instance of the class Foo: Compare that with accessing the method attribute on the class: When an instance method object is created by retrieving a user-defined function object from a class via one of its instances, its __self__ attribute is the instance, and the method object is said to be bound. The new method’s __func__ attribute is the original function object. This is just telling us what attributes exist on instance methods.  Let's check it out: So we see that the method object has a __func__ attribute which is just a reference to the actual Foo.method function.  It also has a __self__ attribute that is a reference to the instance. When an instance method object is called, the underlying function (func) is called, inserting the class instance (self) in front of the argument list. For instance, when C is a class which contains a definition for a function f(), and x is an instance of C, calling x.f(1) is equivalent to calling C.f(x, 1). Basically, in reference to our example above, this is just saying that If: Then: executes the following:",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/54044943/how-do-i-use-a-callable-object-as-a-method-definition",
+    "keywords": [],
+    "tags": [
+      "python",
+      "python-2.7"
+    ],
+    "question": {
+      "id": 54044943,
+      "title": "How do I use a callable object as a method definition?",
+      "content": "I know it's possible to define a function and use it as a method: I'd like to do the same thing with callable objects, like this: However, when I do this, the self argument of Method.__call__ is the method itself (which is normal), but the self argument of the Test instance is lost. Is it possible to have the self argument passed as the second argument to Method.__call__?",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 54045993,
+        "score": 3,
+        "vote": 0,
+        "content": "Yes: make the method a descriptor—which, as already noted by Wombatz, is the mechanism used by normal method binding. Notes:",
+        "abstract": ""
+      },
+      {
+        "id": 54045798,
+        "score": 8,
+        "vote": 0,
+        "content": "By wrapping that function method in a class you are effectively preventing the mechanism that binds an object to a function and thus creates a method. The way this works is that regular python functions are descriptors. To summarize the docs: When you write the following code: The some_functions __get__ method is called with some_instance as the first parameter. The __get__ method then returns a bound method object, that remembers the instance. Later, when the bound method object's __call__ method is called, it passes the saved instance as a first parameter. We can reimplement that behaviour like this: In your case Method is not a descriptor. So, when internally the __call__ property (which is a function) is requested it is bound to an object of the containing class (Method). I am not sure if this is useful, as this example is just a simplified version of what happens under the hood anyway. Note: in this example: The first print shows us, that an unbound method literally is called <unbound method C.function> while a bound method is called <bound method C.function of ...>. In python3 however the first print shows us that unbound methods are just the unchanged functions we defined in the class.",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/52328984/difference-between-object-method-and-methodobject-in-python",
+    "keywords": [],
+    "tags": [
+      "python",
+      "python-3.x",
+      "object",
+      "methods"
+    ],
+    "question": {
+      "id": 52328984,
+      "title": "Difference between object.method() and method(object) in Python?",
+      "content": "I have a very basic question; if this is a duplicate please link me to it as I wasn’t sure what to search! I’d like the ask what the difference between object.method() and method(object) is. For instance, when I was defining a stack class, I noticed that peek(stack) returned name error while stack.peek() worked fine. Why is this so? Please forgive me is this is a duplicate, will remove this question if so!",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 52331202,
+        "score": 1,
+        "vote": 0,
+        "content": "Assuming this class definition: The peek function, being declared in the class statement block, becomes an attribute of the Stack class and not a module global of the foo module, so you cannot access it directly - you need to look it up on Stack, ie:",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "link": "https://stackoverflow.com/questions/14298844/method-objects-vs-function-objects-python-class-instances-vs-class",
+    "keywords": [],
+    "tags": [
+      "python",
+      "class",
+      "methods",
+      "instance"
+    ],
+    "question": {
+      "id": 14298844,
+      "title": "method objects vs function objects , Python class instances vs class",
+      "content": "I am trying to verify the difference between instance attributes and class attributes as laid out by the Python tutorial release 2.7.3 dated Nov 01, 2012, chapter 9: Classes, Page 66 last line (source): Valid method names of an instance object depend on its class. By\n  definition, all attributes of a class that are function objects define\n  corresponding methods of its instances. So in our example, x.f is a\n  valid method reference, since MyClass.f is a function, but x.i is not,\n  since MyClass.i is not. But x.f is not the same thing as MyClass.f —\n  it is a method object, not a function object. I have this: Then I do this: Note that the type of both x.f and MyClass.f is  instancemethod. There is no difference in types but the tutorial says otherwise. Can someone please clarify?",
+      "abstract": ""
+    },
+    "answers": [
+      {
+        "id": 14298889,
+        "score": 29,
+        "vote": 0,
+        "content": "So, first off, a note that this is different in 3.x. In 3.x, you will get MyClass.f being a function, and x.f as a method - as expected. This behaviour is essentially a poor design decision that has later been changed. The reason for this is that Python has the concept of a method that is different to most languages, which is essentially a function with the first argument pre-filled as the instance (self). This pre-filling makes a bound method. In Python 2.x and before, it was reasoned that a method not attached to an instance would be an unbound method, which was a function with the restriction that the first argument (self), must be an instance of the object. This is then ready to be bound to an instance and become a bound method. With time, it became clear an unbound method is really just a function with this odd restriction that didn't really matter (that self must be of the 'correct' type), so they were removed from the language (in 3.x). This is essentially duck-typing self, which suits the language. This is a (condensed, from memory) explanation which can be read in full from Python creator Guido van Rossum's own mouth in his 'History of Python' series.",
+        "abstract": ""
+      },
+      {
+        "id": 14298870,
+        "score": 14,
+        "vote": 0,
+        "content": "The tutorial is indeed wrong; both class.functionname and instance.functionname return a method object. What goes on is that a function is a descriptor and their __get__ method is invoked, returning a method. Methods have a __func__ attribute pointing back to the original function: This all has changed in Python 3 though; there Foo.bar returns the function itself, unbound methods no longer exist:",
+        "abstract": ""
+      }
+    ]
+  }
+]
