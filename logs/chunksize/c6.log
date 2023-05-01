@@ -1,0 +1,339 @@
+17:53:22 INFO: ============================================================
+17:53:22 INFO: Starts Training Model
+17:53:22 INFO: ============================================================
+17:53:22 INFO: adding document #0 to Dictionary<0 unique tokens: []>
+17:53:22 INFO: built Dictionary<327 unique tokens: ["'", '+', '2.x', '3.x', '=']...> from 10 documents (total 987 corpus positions)
+17:53:22 DEBUG: starting a new internal lifecycle event log for Dictionary
+17:53:22 INFO: Dictionary lifecycle event {'msg': 'built Dictionary<327 unique tokens: ["\'", \'+\', \'2.x\', \'3.x\', \'=\']...> from 10 documents (total 987 corpus positions)', 'datetime': '2023-03-19T17:53:22.484772', 'gensim': '4.3.1', 'python': '3.9.2 (default, Mar  4 2021, 10:15:47) \n[Clang 10.0.0 (clang-1000.10.44.4)]', 'platform': 'macOS-10.16-x86_64-i386-64bit', 'event': 'created'}
+17:53:22 INFO: using serial LDA version on this node
+17:53:22 INFO: running online (multi-pass) LDA training, 5 topics, 10 passes over the supplied corpus of 10 documents, updating model once every 6 documents, evaluating perplexity every 6 documents, iterating 2000x with a convergence threshold of 0.001000
+17:53:22 DEBUG: bound: at document #0
+17:53:22 INFO: -7.726 per-word bound, 211.7 perplexity estimate based on a held-out corpus of 6 documents with 784 words
+17:53:22 INFO: PROGRESS: pass 0, at document #6/10
+17:53:22 DEBUG: performing inference on a chunk of 6 documents
+17:53:22 DEBUG: 6/6 documents converged within 2000 iterations
+17:53:22 DEBUG: updating topics
+17:53:22 INFO: merging changes from 6 documents into a model of 10 documents
+17:53:22 INFO: topic #0 (1.000): 0.054*"variable" + 0.035*"global" + 0.029*"function" + 0.023*"value" + 0.021*"program" + 0.020*"loop" + 0.018*"scope" + 0.017*"local" + 0.015*"access" + 0.012*"class"
+17:53:22 INFO: topic #1 (1.000): 0.057*"variable" + 0.045*"global" + 0.038*"local" + 0.033*"scope" + 0.029*"function" + 0.026*"c" + 0.025*"name" + 0.022*"line" + 0.021*"assignment" + 0.019*"="
+17:53:22 INFO: topic #2 (1.000): 0.057*"function" + 0.051*"variable" + 0.045*"local" + 0.042*"global" + 0.027*"scope" + 0.019*"line" + 0.017*"value" + 0.017*"name" + 0.017*"assignment" + 0.015*"c"
+17:53:22 INFO: topic #3 (1.000): 0.081*"variable" + 0.040*"function" + 0.040*"global" + 0.035*"local" + 0.034*"scope" + 0.023*"num" + 0.019*"name" + 0.018*"assignment" + 0.015*"=" + 0.015*"error"
+17:53:22 INFO: topic #4 (1.000): 0.043*"variable" + 0.034*"value" + 0.032*"global" + 0.030*"function" + 0.021*"local" + 0.019*"scope" + 0.016*"program" + 0.014*"definition" + 0.014*"class" + 0.013*"access"
+17:53:22 INFO: topic diff=3.601806, rho=1.000000
+17:53:22 DEBUG: bound: at document #0
+17:53:22 INFO: -10.045 per-word bound, 1056.3 perplexity estimate based on a held-out corpus of 4 documents with 203 words
+17:53:22 INFO: PROGRESS: pass 0, at document #10/10
+17:53:22 DEBUG: performing inference on a chunk of 4 documents
+17:53:22 DEBUG: 4/4 documents converged within 2000 iterations
+17:53:22 DEBUG: updating topics
+17:53:22 INFO: merging changes from 4 documents into a model of 10 documents
+17:53:22 INFO: topic #0 (1.000): 0.063*"variable" + 0.045*"global" + 0.037*"var1" + 0.037*"f" + 0.031*"function" + 0.027*"value" + 0.015*"local" + 0.013*"scope" + 0.012*"print" + 0.012*"other"
+17:53:22 INFO: topic #1 (1.000): 0.069*"variable" + 0.050*"global" + 0.049*"local" + 0.036*"function" + 0.032*"scope" + 0.025*"assignment" + 0.024*"name" + 0.017*"c" + 0.017*"value" + 0.017*"case"
+17:53:22 INFO: topic #2 (1.000): 0.069*"function" + 0.054*"variable" + 0.052*"global" + 0.046*"local" + 0.022*"scope" + 0.022*"value" + 0.014*"assignment" + 0.013*"name" + 0.013*"inside" + 0.013*"line"
+17:53:22 INFO: topic #3 (1.000): 0.122*"variable" + 0.066*"global" + 0.059*"function" + 0.052*"local" + 0.037*"scope" + 0.022*"inside" + 0.019*"assignment" + 0.019*"work" + 0.018*"name" + 0.017*"error"
+17:53:22 INFO: topic #4 (1.000): 0.054*"value" + 0.041*"variable" + 0.035*"global" + 0.030*"function" + 0.026*"f" + 0.026*"var1" + 0.018*"local" + 0.013*"scope" + 0.010*"condition" + 0.009*"other"
+17:53:22 INFO: topic diff=2.497996, rho=0.707107
+17:53:22 DEBUG: bound: at document #0
+17:53:22 DEBUG: bound: at document #6
+17:53:22 INFO: Epoch 0: Perplexity estimate: 69.06722043959832
+17:53:22 DEBUG: Setting topics to those of the model: LdaModel<num_terms=327, num_topics=5, decay=0.5, chunksize=6>
+17:53:22 INFO: Epoch 0: Coherence estimate: -0.9761603700432726
+17:53:22 DEBUG: bound: at document #0
+17:53:22 INFO: -6.091 per-word bound, 68.2 perplexity estimate based on a held-out corpus of 6 documents with 784 words
+17:53:22 INFO: PROGRESS: pass 1, at document #6/10
+17:53:22 DEBUG: performing inference on a chunk of 6 documents
+17:53:22 DEBUG: 6/6 documents converged within 2000 iterations
+17:53:22 DEBUG: updating topics
+17:53:22 INFO: merging changes from 6 documents into a model of 10 documents
+17:53:22 INFO: topic #0 (1.000): 0.053*"variable" + 0.037*"program" + 0.031*"value" + 0.031*"loop" + 0.028*"global" + 0.019*"f" + 0.019*"var1" + 0.019*"function" + 0.015*"print" + 0.015*"definition"
+17:53:22 INFO: topic #1 (1.000): 0.060*"variable" + 0.042*"global" + 0.041*"local" + 0.034*"scope" + 0.030*"function" + 0.025*"name" + 0.023*"c" + 0.022*"assignment" + 0.021*"line" + 0.019*"num"
+17:53:22 INFO: topic #2 (1.000): 0.068*"function" + 0.062*"global" + 0.041*"variable" + 0.039*"local" + 0.024*"value" + 0.016*"scope" + 0.015*"line" + 0.011*"start" + 0.011*"access" + 0.011*"assignment"
+17:53:22 INFO: topic #3 (1.000): 0.126*"variable" + 0.078*"function" + 0.071*"global" + 0.053*"local" + 0.035*"scope" + 0.024*"inside" + 0.018*"access" + 0.017*"value" + 0.017*"work" + 0.017*"assignment"
+17:53:22 INFO: topic #4 (1.000): 0.054*"value" + 0.031*"variable" + 0.026*"global" + 0.021*"function" + 0.016*"var1" + 0.016*"f" + 0.015*"definition" + 0.013*"program" + 0.012*"local" + 0.011*"other"
+17:53:22 INFO: topic diff=1.083678, rho=0.522233
+17:53:22 DEBUG: bound: at document #0
+17:53:22 INFO: -6.815 per-word bound, 112.6 perplexity estimate based on a held-out corpus of 4 documents with 203 words
+17:53:22 INFO: PROGRESS: pass 1, at document #10/10
+17:53:22 DEBUG: performing inference on a chunk of 4 documents
+17:53:22 DEBUG: 4/4 documents converged within 2000 iterations
+17:53:22 DEBUG: updating topics
+17:53:22 INFO: merging changes from 4 documents into a model of 10 documents
+17:53:22 INFO: topic #0 (1.000): 0.061*"var1" + 0.061*"f" + 0.048*"variable" + 0.028*"global" + 0.024*"value" + 0.020*"print" + 0.017*"load" + 0.017*"caller" + 0.017*"return" + 0.016*"other"
+17:53:22 INFO: topic #1 (1.000): 0.058*"variable" + 0.042*"local" + 0.039*"global" + 0.032*"scope" + 0.030*"function" + 0.025*"name" + 0.023*"assignment" + 0.020*"c" + 0.020*"=" + 0.019*"line"
+17:53:22 INFO: topic #2 (1.000): 0.056*"function" + 0.051*"global" + 0.031*"variable" + 0.029*"local" + 0.021*"value" + 0.012*"scope" + 0.011*"line" + 0.009*"inside" + 0.008*"start" + 0.008*"assignment"
+17:53:22 INFO: topic #3 (1.000): 0.135*"variable" + 0.086*"global" + 0.081*"function" + 0.067*"local" + 0.037*"scope" + 0.027*"inside" + 0.021*"work" + 0.020*"var1" + 0.020*"f" + 0.019*"assignment"
+17:53:22 INFO: topic #4 (1.000): 0.084*"value" + 0.036*"condition" + 0.025*"define" + 0.025*"instance" + 0.025*"long" + 0.025*"bit" + 0.025*"execute" + 0.025*"comment" + 0.018*"variable" + 0.016*"global"
+17:53:22 INFO: topic diff=1.009905, rho=0.522233
+17:53:22 DEBUG: bound: at document #0
+17:53:22 DEBUG: bound: at document #6
+17:53:22 INFO: Epoch 1: Perplexity estimate: 53.60210221879859
+17:53:22 DEBUG: Setting topics to those of the model: LdaModel<num_terms=327, num_topics=5, decay=0.5, chunksize=6>
+17:53:22 INFO: Epoch 1: Coherence estimate: -2.490462446528177
+17:53:22 DEBUG: bound: at document #0
+17:53:22 INFO: -5.770 per-word bound, 54.6 perplexity estimate based on a held-out corpus of 6 documents with 784 words
+17:53:22 INFO: PROGRESS: pass 2, at document #6/10
+17:53:22 DEBUG: performing inference on a chunk of 6 documents
+17:53:22 DEBUG: 6/6 documents converged within 2000 iterations
+17:53:22 DEBUG: updating topics
+17:53:22 INFO: merging changes from 6 documents into a model of 10 documents
+17:53:22 INFO: topic #0 (1.000): 0.047*"variable" + 0.039*"program" + 0.036*"var1" + 0.036*"f" + 0.032*"loop" + 0.030*"value" + 0.020*"print" + 0.019*"definition" + 0.018*"global" + 0.018*"other"
+17:53:22 INFO: topic #1 (1.000): 0.058*"variable" + 0.040*"local" + 0.039*"global" + 0.034*"scope" + 0.029*"function" + 0.025*"name" + 0.023*"c" + 0.022*"assignment" + 0.021*"line" + 0.020*"num"
+17:53:22 INFO: topic #2 (1.000): 0.057*"global" + 0.050*"function" + 0.023*"local" + 0.021*"value" + 0.021*"variable" + 0.021*"start" + 0.020*"force" + 0.019*"coffee_machine" + 0.014*"appropriate" + 0.014*"line"
+17:53:22 INFO: topic #3 (1.000): 0.134*"variable" + 0.094*"function" + 0.091*"global" + 0.065*"local" + 0.034*"scope" + 0.027*"inside" + 0.019*"work" + 0.018*"value" + 0.018*"access" + 0.018*"assignment"
+17:53:22 INFO: topic #4 (1.000): 0.075*"value" + 0.025*"condition" + 0.017*"execute" + 0.017*"long" + 0.017*"define" + 0.017*"bit" + 0.017*"comment" + 0.017*"instance" + 0.013*"variable" + 0.012*"global"
+17:53:22 INFO: topic diff=0.566321, rho=0.462910
+17:53:22 DEBUG: bound: at document #0
+17:53:22 INFO: -6.067 per-word bound, 67.1 perplexity estimate based on a held-out corpus of 4 documents with 203 words
+17:53:22 INFO: PROGRESS: pass 2, at document #10/10
+17:53:22 DEBUG: performing inference on a chunk of 4 documents
+17:53:22 DEBUG: 4/4 documents converged within 2000 iterations
+17:53:22 DEBUG: updating topics
+17:53:22 INFO: merging changes from 4 documents into a model of 10 documents
+17:53:22 INFO: topic #0 (1.000): 0.059*"var1" + 0.059*"f" + 0.043*"variable" + 0.024*"print" + 0.024*"value" + 0.019*"loop" + 0.019*"program" + 0.019*"other" + 0.018*"load" + 0.018*"caller"
+17:53:22 INFO: topic #1 (1.000): 0.056*"variable" + 0.039*"local" + 0.036*"global" + 0.032*"scope" + 0.028*"function" + 0.025*"name" + 0.023*"assignment" + 0.021*"c" + 0.021*"=" + 0.019*"line"
+17:53:22 INFO: topic #2 (1.000): 0.042*"global" + 0.037*"function" + 0.017*"value" + 0.017*"local" + 0.015*"variable" + 0.014*"start" + 0.014*"force" + 0.013*"coffee_machine" + 0.010*"line" + 0.010*"appropriate"
+17:53:22 INFO: topic #3 (1.000): 0.138*"variable" + 0.095*"global" + 0.089*"function" + 0.072*"local" + 0.036*"scope" + 0.028*"inside" + 0.022*"var1" + 0.022*"f" + 0.020*"work" + 0.020*"assignment"
+17:53:22 INFO: topic #4 (1.000): 0.099*"value" + 0.053*"condition" + 0.031*"execute" + 0.031*"long" + 0.031*"define" + 0.031*"bit" + 0.031*"comment" + 0.031*"instance" + 0.008*"variable" + 0.007*"global"
+17:53:22 INFO: topic diff=0.509016, rho=0.462910
+17:53:22 DEBUG: bound: at document #0
+17:53:22 DEBUG: bound: at document #6
+17:53:22 INFO: Epoch 2: Perplexity estimate: 50.24033344133972
+17:53:22 DEBUG: Setting topics to those of the model: LdaModel<num_terms=327, num_topics=5, decay=0.5, chunksize=6>
+17:53:22 INFO: Epoch 2: Coherence estimate: -4.347199348708189
+17:53:22 DEBUG: bound: at document #0
+17:53:22 INFO: -5.677 per-word bound, 51.2 perplexity estimate based on a held-out corpus of 6 documents with 784 words
+17:53:22 INFO: PROGRESS: pass 3, at document #6/10
+17:53:22 DEBUG: performing inference on a chunk of 6 documents
+17:53:22 DEBUG: 6/6 documents converged within 2000 iterations
+17:53:22 DEBUG: updating topics
+17:53:22 INFO: merging changes from 6 documents into a model of 10 documents
+17:53:22 INFO: topic #0 (1.000): 0.044*"variable" + 0.039*"program" + 0.038*"var1" + 0.038*"f" + 0.032*"loop" + 0.029*"value" + 0.023*"print" + 0.020*"definition" + 0.019*"other" + 0.017*"class"
+17:53:22 INFO: topic #1 (1.000): 0.057*"variable" + 0.039*"local" + 0.038*"global" + 0.034*"scope" + 0.028*"function" + 0.025*"name" + 0.023*"c" + 0.022*"assignment" + 0.021*"line" + 0.020*"num"
+17:53:22 INFO: topic #2 (1.000): 0.039*"global" + 0.030*"function" + 0.026*"start" + 0.025*"force" + 0.025*"coffee_machine" + 0.021*"appropriate" + 0.015*"value" + 0.012*"local" + 0.010*"variable" + 0.010*"line"
+17:53:22 INFO: topic #3 (1.000): 0.135*"variable" + 0.100*"function" + 0.099*"global" + 0.069*"local" + 0.034*"scope" + 0.028*"inside" + 0.019*"work" + 0.018*"value" + 0.018*"assignment" + 0.018*"access"
+17:53:22 INFO: topic #4 (1.000): 0.088*"value" + 0.037*"condition" + 0.022*"execute" + 0.022*"long" + 0.022*"define" + 0.022*"bit" + 0.022*"comment" + 0.022*"instance" + 0.006*"variable" + 0.006*"global"
+17:53:22 INFO: topic diff=0.317372, rho=0.420084
+17:53:22 DEBUG: bound: at document #0
+17:53:22 INFO: -5.915 per-word bound, 60.3 perplexity estimate based on a held-out corpus of 4 documents with 203 words
+17:53:22 INFO: PROGRESS: pass 3, at document #10/10
+17:53:22 DEBUG: performing inference on a chunk of 4 documents
+17:53:22 DEBUG: 4/4 documents converged within 2000 iterations
+17:53:22 DEBUG: updating topics
+17:53:22 INFO: merging changes from 4 documents into a model of 10 documents
+17:53:22 INFO: topic #0 (1.000): 0.056*"var1" + 0.056*"f" + 0.041*"variable" + 0.027*"print" + 0.024*"value" + 0.021*"loop" + 0.020*"program" + 0.019*"other" + 0.018*"load" + 0.018*"caller"
+17:53:22 INFO: topic #1 (1.000): 0.055*"variable" + 0.038*"local" + 0.036*"global" + 0.032*"scope" + 0.027*"function" + 0.025*"name" + 0.022*"assignment" + 0.021*"c" + 0.021*"=" + 0.020*"line"
+17:53:22 INFO: topic #2 (1.000): 0.028*"global" + 0.022*"function" + 0.017*"start" + 0.017*"force" + 0.017*"coffee_machine" + 0.015*"appropriate" + 0.012*"value" + 0.009*"local" + 0.008*"variable" + 0.007*"line"
+17:53:22 INFO: topic #3 (1.000): 0.139*"variable" + 0.101*"global" + 0.094*"function" + 0.074*"local" + 0.036*"scope" + 0.028*"inside" + 0.023*"var1" + 0.023*"f" + 0.021*"assignment" + 0.020*"work"
+17:53:22 INFO: topic #4 (1.000): 0.106*"value" + 0.060*"condition" + 0.032*"long" + 0.032*"bit" + 0.032*"execute" + 0.032*"comment" + 0.032*"define" + 0.032*"instance" + 0.004*"change" + 0.004*"variable"
+17:53:22 INFO: topic diff=0.313266, rho=0.420084
+17:53:22 DEBUG: bound: at document #0
+17:53:22 DEBUG: bound: at document #6
+17:53:22 INFO: Epoch 3: Perplexity estimate: 49.073937090028856
+17:53:22 DEBUG: Setting topics to those of the model: LdaModel<num_terms=327, num_topics=5, decay=0.5, chunksize=6>
+17:53:22 INFO: Epoch 3: Coherence estimate: -4.359379292913041
+17:53:22 DEBUG: bound: at document #0
+17:53:22 INFO: -5.641 per-word bound, 49.9 perplexity estimate based on a held-out corpus of 6 documents with 784 words
+17:53:22 INFO: PROGRESS: pass 4, at document #6/10
+17:53:22 DEBUG: performing inference on a chunk of 6 documents
+17:53:22 DEBUG: 6/6 documents converged within 2000 iterations
+17:53:22 DEBUG: updating topics
+17:53:22 INFO: merging changes from 6 documents into a model of 10 documents
+17:53:22 INFO: topic #0 (1.000): 0.042*"variable" + 0.038*"var1" + 0.038*"f" + 0.038*"program" + 0.032*"loop" + 0.029*"value" + 0.024*"print" + 0.019*"definition" + 0.019*"other" + 0.018*"point"
+17:53:22 INFO: topic #1 (1.000): 0.056*"variable" + 0.038*"local" + 0.037*"global" + 0.034*"scope" + 0.028*"function" + 0.026*"name" + 0.023*"c" + 0.022*"assignment" + 0.021*"line" + 0.021*"num"
+17:53:22 INFO: topic #2 (1.000): 0.028*"start" + 0.028*"force" + 0.028*"coffee_machine" + 0.026*"appropriate" + 0.024*"global" + 0.017*"function" + 0.009*"value" + 0.007*"local" + 0.006*"access" + 0.006*"line"
+17:53:22 INFO: topic #3 (1.000): 0.136*"variable" + 0.105*"global" + 0.103*"function" + 0.071*"local" + 0.034*"scope" + 0.028*"inside" + 0.019*"assignment" + 0.019*"work" + 0.019*"value" + 0.018*"access"
+17:53:22 INFO: topic #4 (1.000): 0.095*"value" + 0.043*"condition" + 0.023*"comment" + 0.023*"instance" + 0.023*"long" + 0.023*"bit" + 0.023*"execute" + 0.023*"define" + 0.004*"change" + 0.004*"variable"
+17:53:22 INFO: topic diff=0.229518, rho=0.387298
+17:53:22 DEBUG: bound: at document #0
+17:53:22 INFO: -5.848 per-word bound, 57.6 perplexity estimate based on a held-out corpus of 4 documents with 203 words
+17:53:22 INFO: PROGRESS: pass 4, at document #10/10
+17:53:22 DEBUG: performing inference on a chunk of 4 documents
+17:53:22 DEBUG: 4/4 documents converged within 2000 iterations
+17:53:22 DEBUG: updating topics
+17:53:22 INFO: merging changes from 4 documents into a model of 10 documents
+17:53:22 INFO: topic #0 (1.000): 0.054*"var1" + 0.054*"f" + 0.040*"variable" + 0.028*"print" + 0.023*"value" + 0.021*"loop" + 0.021*"program" + 0.018*"other" + 0.018*"load" + 0.018*"caller"
+17:53:22 INFO: topic #1 (1.000): 0.055*"variable" + 0.038*"local" + 0.036*"global" + 0.033*"scope" + 0.027*"function" + 0.025*"name" + 0.022*"assignment" + 0.022*"c" + 0.021*"=" + 0.020*"line"
+17:53:22 INFO: topic #2 (1.000): 0.019*"start" + 0.019*"force" + 0.019*"coffee_machine" + 0.018*"appropriate" + 0.018*"global" + 0.013*"function" + 0.007*"value" + 0.005*"local" + 0.005*"access" + 0.005*"line"
+17:53:22 INFO: topic #3 (1.000): 0.140*"variable" + 0.105*"global" + 0.097*"function" + 0.076*"local" + 0.037*"scope" + 0.028*"inside" + 0.022*"f" + 0.022*"var1" + 0.021*"assignment" + 0.020*"work"
+17:53:22 INFO: topic #4 (1.000): 0.110*"value" + 0.062*"condition" + 0.032*"comment" + 0.032*"execute" + 0.032*"bit" + 0.032*"instance" + 0.032*"define" + 0.032*"long" + 0.003*"change" + 0.003*"variable"
+17:53:22 INFO: topic diff=0.235114, rho=0.387298
+17:53:22 DEBUG: bound: at document #0
+17:53:22 DEBUG: bound: at document #6
+17:53:22 INFO: Epoch 4: Perplexity estimate: 48.40576308278837
+17:53:22 DEBUG: Setting topics to those of the model: LdaModel<num_terms=327, num_topics=5, decay=0.5, chunksize=6>
+17:53:22 INFO: Epoch 4: Coherence estimate: -4.192051868408296
+17:53:22 DEBUG: bound: at document #0
+17:53:22 INFO: -5.620 per-word bound, 49.2 perplexity estimate based on a held-out corpus of 6 documents with 784 words
+17:53:22 INFO: PROGRESS: pass 5, at document #6/10
+17:53:22 DEBUG: performing inference on a chunk of 6 documents
+17:53:22 DEBUG: 6/6 documents converged within 2000 iterations
+17:53:22 DEBUG: updating topics
+17:53:22 INFO: merging changes from 6 documents into a model of 10 documents
+17:53:22 INFO: topic #0 (1.000): 0.041*"variable" + 0.038*"var1" + 0.038*"f" + 0.036*"program" + 0.031*"loop" + 0.028*"value" + 0.026*"print" + 0.019*"other" + 0.019*"definition" + 0.018*"point"
+17:53:22 INFO: topic #1 (1.000): 0.056*"variable" + 0.038*"local" + 0.037*"global" + 0.034*"scope" + 0.028*"function" + 0.026*"name" + 0.023*"c" + 0.022*"assignment" + 0.021*"line" + 0.021*"="
+17:53:22 INFO: topic #2 (1.000): 0.029*"start" + 0.029*"force" + 0.029*"coffee_machine" + 0.028*"appropriate" + 0.014*"global" + 0.009*"function" + 0.006*"value" + 0.005*"access" + 0.004*"local" + 0.004*"line"
+17:53:22 INFO: topic #3 (1.000): 0.137*"variable" + 0.108*"global" + 0.106*"function" + 0.073*"local" + 0.035*"scope" + 0.028*"inside" + 0.019*"assignment" + 0.019*"work" + 0.019*"value" + 0.018*"access"
+17:53:22 INFO: topic #4 (1.000): 0.100*"value" + 0.045*"condition" + 0.024*"long" + 0.024*"define" + 0.024*"bit" + 0.024*"comment" + 0.024*"execute" + 0.024*"instance" + 0.003*"change" + 0.003*"variable"
+17:53:22 INFO: topic diff=0.195612, rho=0.361158
+17:53:22 DEBUG: bound: at document #0
+17:53:22 INFO: -5.799 per-word bound, 55.7 perplexity estimate based on a held-out corpus of 4 documents with 203 words
+17:53:22 INFO: PROGRESS: pass 5, at document #10/10
+17:53:22 DEBUG: performing inference on a chunk of 4 documents
+17:53:22 DEBUG: 4/4 documents converged within 2000 iterations
+17:53:22 DEBUG: updating topics
+17:53:22 INFO: merging changes from 4 documents into a model of 10 documents
+17:53:22 INFO: topic #0 (1.000): 0.053*"var1" + 0.053*"f" + 0.039*"variable" + 0.028*"print" + 0.023*"value" + 0.022*"loop" + 0.021*"program" + 0.019*"load" + 0.019*"caller" + 0.019*"return"
+17:53:22 INFO: topic #1 (1.000): 0.054*"variable" + 0.037*"local" + 0.036*"global" + 0.033*"scope" + 0.027*"function" + 0.025*"name" + 0.022*"c" + 0.022*"assignment" + 0.021*"=" + 0.020*"line"
+17:53:22 INFO: topic #2 (1.000): 0.020*"start" + 0.020*"force" + 0.020*"coffee_machine" + 0.020*"appropriate" + 0.011*"global" + 0.007*"function" + 0.005*"value" + 0.004*"access" + 0.004*"local" + 0.004*"line"
+17:53:22 INFO: topic #3 (1.000): 0.141*"variable" + 0.108*"global" + 0.100*"function" + 0.077*"local" + 0.037*"scope" + 0.029*"inside" + 0.022*"var1" + 0.022*"f" + 0.022*"assignment" + 0.020*"work"
+17:53:22 INFO: topic #4 (1.000): 0.112*"value" + 0.062*"condition" + 0.032*"long" + 0.032*"define" + 0.032*"bit" + 0.032*"comment" + 0.032*"execute" + 0.032*"instance" + 0.002*"change" + 0.002*"variable"
+17:53:22 INFO: topic diff=0.204339, rho=0.361158
+17:53:22 DEBUG: bound: at document #0
+17:53:22 DEBUG: bound: at document #6
+17:53:22 INFO: Epoch 5: Perplexity estimate: 47.94945944435875
+17:53:22 DEBUG: Setting topics to those of the model: LdaModel<num_terms=327, num_topics=5, decay=0.5, chunksize=6>
+17:53:22 INFO: Epoch 5: Coherence estimate: -4.293110396663823
+17:53:22 DEBUG: bound: at document #0
+17:53:22 INFO: -5.605 per-word bound, 48.7 perplexity estimate based on a held-out corpus of 6 documents with 784 words
+17:53:22 INFO: PROGRESS: pass 6, at document #6/10
+17:53:22 DEBUG: performing inference on a chunk of 6 documents
+17:53:22 DEBUG: 6/6 documents converged within 2000 iterations
+17:53:22 DEBUG: updating topics
+17:53:22 INFO: merging changes from 6 documents into a model of 10 documents
+17:53:22 INFO: topic #0 (1.000): 0.041*"variable" + 0.039*"f" + 0.039*"var1" + 0.035*"program" + 0.031*"loop" + 0.027*"value" + 0.026*"print" + 0.018*"other" + 0.018*"point" + 0.018*"definition"
+17:53:22 INFO: topic #1 (1.000): 0.056*"variable" + 0.038*"local" + 0.037*"global" + 0.034*"scope" + 0.028*"function" + 0.026*"name" + 0.023*"c" + 0.022*"assignment" + 0.021*"line" + 0.021*"="
+17:53:22 INFO: topic #2 (1.000): 0.029*"start" + 0.029*"force" + 0.029*"coffee_machine" + 0.029*"appropriate" + 0.008*"global" + 0.006*"function" + 0.004*"value" + 0.004*"access" + 0.003*"local" + 0.003*"line"
+17:53:22 INFO: topic #3 (1.000): 0.138*"variable" + 0.111*"global" + 0.107*"function" + 0.074*"local" + 0.035*"scope" + 0.028*"inside" + 0.020*"assignment" + 0.019*"work" + 0.019*"value" + 0.018*"access"
+17:53:22 INFO: topic #4 (1.000): 0.102*"value" + 0.047*"condition" + 0.025*"execute" + 0.025*"comment" + 0.025*"define" + 0.025*"bit" + 0.025*"long" + 0.025*"instance" + 0.002*"change" + 0.002*"variable"
+17:53:22 INFO: topic diff=0.177375, rho=0.339683
+17:53:22 DEBUG: bound: at document #0
+17:53:22 INFO: -5.765 per-word bound, 54.4 perplexity estimate based on a held-out corpus of 4 documents with 203 words
+17:53:22 INFO: PROGRESS: pass 6, at document #10/10
+17:53:22 DEBUG: performing inference on a chunk of 4 documents
+17:53:22 DEBUG: 4/4 documents converged within 2000 iterations
+17:53:22 DEBUG: updating topics
+17:53:22 INFO: merging changes from 4 documents into a model of 10 documents
+17:53:22 INFO: topic #0 (1.000): 0.053*"var1" + 0.053*"f" + 0.039*"variable" + 0.029*"print" + 0.023*"loop" + 0.023*"value" + 0.021*"program" + 0.020*"load" + 0.020*"caller" + 0.020*"return"
+17:53:22 INFO: topic #1 (1.000): 0.054*"variable" + 0.037*"local" + 0.036*"global" + 0.033*"scope" + 0.027*"function" + 0.025*"name" + 0.022*"c" + 0.022*"assignment" + 0.021*"=" + 0.020*"line"
+17:53:22 INFO: topic #2 (1.000): 0.021*"start" + 0.021*"force" + 0.021*"coffee_machine" + 0.021*"appropriate" + 0.007*"global" + 0.005*"function" + 0.004*"value" + 0.003*"access" + 0.003*"local" + 0.003*"line"
+17:53:22 INFO: topic #3 (1.000): 0.142*"variable" + 0.110*"global" + 0.101*"function" + 0.078*"local" + 0.038*"scope" + 0.029*"inside" + 0.022*"assignment" + 0.021*"f" + 0.021*"var1" + 0.020*"work"
+17:53:22 INFO: topic #4 (1.000): 0.113*"value" + 0.062*"condition" + 0.032*"execute" + 0.032*"long" + 0.032*"define" + 0.032*"comment" + 0.032*"bit" + 0.032*"instance" + 0.002*"change" + 0.002*"variable"
+17:53:22 INFO: topic diff=0.182342, rho=0.339683
+17:53:22 DEBUG: bound: at document #0
+17:53:22 DEBUG: bound: at document #6
+17:53:22 INFO: Epoch 6: Perplexity estimate: 47.67386897261129
+17:53:22 DEBUG: Setting topics to those of the model: LdaModel<num_terms=327, num_topics=5, decay=0.5, chunksize=6>
+17:53:22 INFO: Epoch 6: Coherence estimate: -4.302352359071289
+17:53:22 DEBUG: bound: at document #0
+17:53:22 INFO: -5.596 per-word bound, 48.4 perplexity estimate based on a held-out corpus of 6 documents with 784 words
+17:53:22 INFO: PROGRESS: pass 7, at document #6/10
+17:53:22 DEBUG: performing inference on a chunk of 6 documents
+17:53:22 DEBUG: 6/6 documents converged within 2000 iterations
+17:53:22 DEBUG: updating topics
+17:53:22 INFO: merging changes from 6 documents into a model of 10 documents
+17:53:22 INFO: topic #0 (1.000): 0.040*"variable" + 0.040*"var1" + 0.040*"f" + 0.034*"program" + 0.031*"loop" + 0.026*"print" + 0.026*"value" + 0.018*"point" + 0.018*"other" + 0.018*"code"
+17:53:22 INFO: topic #1 (1.000): 0.056*"variable" + 0.038*"local" + 0.037*"global" + 0.034*"scope" + 0.028*"function" + 0.026*"name" + 0.023*"c" + 0.022*"assignment" + 0.021*"line" + 0.021*"="
+17:53:22 INFO: topic #2 (1.000): 0.029*"start" + 0.029*"force" + 0.029*"coffee_machine" + 0.029*"appropriate" + 0.005*"global" + 0.004*"function" + 0.003*"value" + 0.003*"access" + 0.003*"local" + 0.003*"line"
+17:53:22 INFO: topic #3 (1.000): 0.139*"variable" + 0.112*"global" + 0.108*"function" + 0.075*"local" + 0.036*"scope" + 0.029*"inside" + 0.020*"assignment" + 0.019*"work" + 0.019*"value" + 0.018*"access"
+17:53:22 INFO: topic #4 (1.000): 0.104*"value" + 0.047*"condition" + 0.025*"execute" + 0.025*"long" + 0.025*"define" + 0.025*"comment" + 0.025*"bit" + 0.025*"instance" + 0.002*"change" + 0.002*"variable"
+17:53:22 INFO: topic diff=0.161175, rho=0.321634
+17:53:22 DEBUG: bound: at document #0
+17:53:22 INFO: -5.743 per-word bound, 53.6 perplexity estimate based on a held-out corpus of 4 documents with 203 words
+17:53:22 INFO: PROGRESS: pass 7, at document #10/10
+17:53:22 DEBUG: performing inference on a chunk of 4 documents
+17:53:22 DEBUG: 4/4 documents converged within 2000 iterations
+17:53:22 DEBUG: updating topics
+17:53:22 INFO: merging changes from 4 documents into a model of 10 documents
+17:53:22 INFO: topic #0 (1.000): 0.053*"var1" + 0.053*"f" + 0.039*"variable" + 0.029*"print" + 0.023*"loop" + 0.022*"value" + 0.021*"program" + 0.021*"code" + 0.020*"load" + 0.020*"caller"
+17:53:22 INFO: topic #1 (1.000): 0.054*"variable" + 0.037*"local" + 0.036*"global" + 0.033*"scope" + 0.027*"function" + 0.025*"name" + 0.022*"c" + 0.022*"assignment" + 0.021*"=" + 0.020*"line"
+17:53:22 INFO: topic #2 (1.000): 0.021*"start" + 0.021*"force" + 0.021*"coffee_machine" + 0.021*"appropriate" + 0.005*"global" + 0.004*"function" + 0.003*"value" + 0.003*"access" + 0.003*"local" + 0.003*"line"
+17:53:22 INFO: topic #3 (1.000): 0.142*"variable" + 0.111*"global" + 0.102*"function" + 0.078*"local" + 0.038*"scope" + 0.029*"inside" + 0.022*"assignment" + 0.020*"work" + 0.020*"var1" + 0.020*"f"
+17:53:22 INFO: topic #4 (1.000): 0.114*"value" + 0.062*"condition" + 0.032*"define" + 0.032*"instance" + 0.032*"bit" + 0.032*"long" + 0.032*"execute" + 0.032*"comment" + 0.002*"change" + 0.002*"variable"
+17:53:22 INFO: topic diff=0.162660, rho=0.321634
+17:53:22 DEBUG: bound: at document #0
+17:53:22 DEBUG: bound: at document #6
+17:53:22 INFO: Epoch 7: Perplexity estimate: 47.510032932991
+17:53:22 DEBUG: Setting topics to those of the model: LdaModel<num_terms=327, num_topics=5, decay=0.5, chunksize=6>
+17:53:22 INFO: Epoch 7: Coherence estimate: -4.080291359669942
+17:53:22 DEBUG: bound: at document #0
+17:53:22 INFO: -5.590 per-word bound, 48.2 perplexity estimate based on a held-out corpus of 6 documents with 784 words
+17:53:22 INFO: PROGRESS: pass 8, at document #6/10
+17:53:22 DEBUG: performing inference on a chunk of 6 documents
+17:53:22 DEBUG: 6/6 documents converged within 2000 iterations
+17:53:22 DEBUG: updating topics
+17:53:22 INFO: merging changes from 6 documents into a model of 10 documents
+17:53:22 INFO: topic #0 (1.000): 0.041*"var1" + 0.041*"f" + 0.040*"variable" + 0.034*"program" + 0.031*"loop" + 0.027*"print" + 0.026*"value" + 0.020*"code" + 0.018*"point" + 0.018*"other"
+17:53:22 INFO: topic #1 (1.000): 0.056*"variable" + 0.038*"local" + 0.037*"global" + 0.034*"scope" + 0.028*"function" + 0.025*"name" + 0.023*"c" + 0.022*"assignment" + 0.021*"line" + 0.021*"="
+17:53:22 INFO: topic #2 (1.000): 0.029*"start" + 0.029*"force" + 0.029*"coffee_machine" + 0.029*"appropriate" + 0.004*"global" + 0.003*"function" + 0.003*"value" + 0.003*"access" + 0.003*"local" + 0.003*"line"
+17:53:22 INFO: topic #3 (1.000): 0.140*"variable" + 0.113*"global" + 0.108*"function" + 0.075*"local" + 0.036*"scope" + 0.029*"inside" + 0.021*"assignment" + 0.019*"work" + 0.019*"value" + 0.018*"error"
+17:53:22 INFO: topic #4 (1.000): 0.104*"value" + 0.048*"condition" + 0.025*"instance" + 0.025*"long" + 0.025*"bit" + 0.025*"comment" + 0.025*"define" + 0.025*"execute" + 0.002*"change" + 0.002*"variable"
+17:53:22 INFO: topic diff=0.146828, rho=0.306186
+17:53:22 DEBUG: bound: at document #0
+17:53:22 INFO: -5.728 per-word bound, 53.0 perplexity estimate based on a held-out corpus of 4 documents with 203 words
+17:53:22 INFO: PROGRESS: pass 8, at document #10/10
+17:53:22 DEBUG: performing inference on a chunk of 4 documents
+17:53:22 DEBUG: 4/4 documents converged within 2000 iterations
+17:53:22 DEBUG: updating topics
+17:53:22 INFO: merging changes from 4 documents into a model of 10 documents
+17:53:22 INFO: topic #0 (1.000): 0.054*"var1" + 0.054*"f" + 0.039*"variable" + 0.028*"print" + 0.024*"loop" + 0.023*"code" + 0.022*"value" + 0.021*"load" + 0.021*"caller" + 0.021*"return"
+17:53:22 INFO: topic #1 (1.000): 0.054*"variable" + 0.037*"local" + 0.036*"global" + 0.033*"scope" + 0.027*"function" + 0.025*"name" + 0.022*"c" + 0.022*"assignment" + 0.021*"=" + 0.020*"line"
+17:53:22 INFO: topic #2 (1.000): 0.022*"start" + 0.022*"force" + 0.022*"coffee_machine" + 0.022*"appropriate" + 0.004*"global" + 0.003*"function" + 0.003*"value" + 0.003*"access" + 0.003*"local" + 0.003*"line"
+17:53:22 INFO: topic #3 (1.000): 0.143*"variable" + 0.112*"global" + 0.102*"function" + 0.079*"local" + 0.038*"scope" + 0.029*"inside" + 0.022*"assignment" + 0.020*"work" + 0.020*"f" + 0.020*"var1"
+17:53:22 INFO: topic #4 (1.000): 0.114*"value" + 0.061*"condition" + 0.032*"execute" + 0.032*"comment" + 0.032*"define" + 0.032*"long" + 0.032*"bit" + 0.032*"instance" + 0.002*"change" + 0.002*"variable"
+17:53:22 INFO: topic diff=0.147648, rho=0.306186
+17:53:22 DEBUG: bound: at document #0
+17:53:22 DEBUG: bound: at document #6
+17:53:22 INFO: Epoch 8: Perplexity estimate: 47.396005406759684
+17:53:22 DEBUG: Setting topics to those of the model: LdaModel<num_terms=327, num_topics=5, decay=0.5, chunksize=6>
+17:53:22 INFO: Epoch 8: Coherence estimate: -3.7456595334998375
+17:53:22 DEBUG: bound: at document #0
+17:53:22 INFO: -5.585 per-word bound, 48.0 perplexity estimate based on a held-out corpus of 6 documents with 784 words
+17:53:22 INFO: PROGRESS: pass 9, at document #6/10
+17:53:22 DEBUG: performing inference on a chunk of 6 documents
+17:53:22 DEBUG: 6/6 documents converged within 2000 iterations
+17:53:22 DEBUG: updating topics
+17:53:22 INFO: merging changes from 6 documents into a model of 10 documents
+17:53:22 INFO: topic #0 (1.000): 0.042*"var1" + 0.042*"f" + 0.040*"variable" + 0.033*"program" + 0.031*"loop" + 0.027*"print" + 0.025*"value" + 0.022*"code" + 0.018*"point" + 0.018*"other"
+17:53:22 INFO: topic #1 (1.000): 0.056*"variable" + 0.038*"local" + 0.037*"global" + 0.034*"scope" + 0.027*"function" + 0.025*"name" + 0.023*"c" + 0.021*"assignment" + 0.021*"line" + 0.021*"="
+17:53:22 INFO: topic #2 (1.000): 0.029*"start" + 0.029*"force" + 0.029*"coffee_machine" + 0.029*"appropriate" + 0.003*"global" + 0.003*"function" + 0.003*"value" + 0.003*"access" + 0.003*"local" + 0.003*"line"
+17:53:22 INFO: topic #3 (1.000): 0.140*"variable" + 0.113*"global" + 0.108*"function" + 0.076*"local" + 0.036*"scope" + 0.029*"inside" + 0.021*"assignment" + 0.019*"work" + 0.019*"value" + 0.018*"error"
+17:53:22 INFO: topic #4 (1.000): 0.105*"value" + 0.048*"condition" + 0.025*"execute" + 0.025*"comment" + 0.025*"define" + 0.025*"long" + 0.025*"bit" + 0.025*"instance" + 0.002*"change" + 0.002*"variable"
+17:53:22 INFO: topic diff=0.135583, rho=0.292770
+17:53:22 DEBUG: bound: at document #0
+17:53:22 INFO: -5.717 per-word bound, 52.6 perplexity estimate based on a held-out corpus of 4 documents with 203 words
+17:53:22 INFO: PROGRESS: pass 9, at document #10/10
+17:53:22 DEBUG: performing inference on a chunk of 4 documents
+17:53:22 DEBUG: 4/4 documents converged within 2000 iterations
+17:53:22 DEBUG: updating topics
+17:53:22 INFO: merging changes from 4 documents into a model of 10 documents
+17:53:22 INFO: topic #0 (1.000): 0.055*"var1" + 0.055*"f" + 0.039*"variable" + 0.028*"print" + 0.024*"code" + 0.024*"loop" + 0.022*"load" + 0.022*"caller" + 0.022*"return" + 0.022*"value"
+17:53:22 INFO: topic #1 (1.000): 0.054*"variable" + 0.037*"local" + 0.036*"global" + 0.033*"scope" + 0.027*"function" + 0.025*"name" + 0.022*"c" + 0.021*"assignment" + 0.021*"=" + 0.020*"line"
+17:53:22 INFO: topic #2 (1.000): 0.022*"start" + 0.022*"force" + 0.022*"coffee_machine" + 0.022*"appropriate" + 0.003*"global" + 0.003*"function" + 0.003*"value" + 0.003*"access" + 0.003*"local" + 0.003*"line"
+17:53:22 INFO: topic #3 (1.000): 0.143*"variable" + 0.112*"global" + 0.103*"function" + 0.079*"local" + 0.039*"scope" + 0.029*"inside" + 0.022*"assignment" + 0.020*"work" + 0.019*"var1" + 0.019*"f"
+17:53:22 INFO: topic #4 (1.000): 0.114*"value" + 0.061*"condition" + 0.031*"execute" + 0.031*"comment" + 0.031*"long" + 0.031*"define" + 0.031*"instance" + 0.031*"bit" + 0.002*"change" + 0.002*"variable"
+17:53:22 INFO: topic diff=0.136744, rho=0.292770
+17:53:22 DEBUG: bound: at document #0
+17:53:22 DEBUG: bound: at document #6
+17:53:22 INFO: Epoch 9: Perplexity estimate: 47.303852717669855
+17:53:22 DEBUG: Setting topics to those of the model: LdaModel<num_terms=327, num_topics=5, decay=0.5, chunksize=6>
+17:53:22 INFO: Epoch 9: Coherence estimate: -3.7179336462774395
+17:53:22 DEBUG: starting a new internal lifecycle event log for LdaModel
+17:53:22 INFO: LdaModel lifecycle event {'msg': 'trained LdaModel<num_terms=327, num_topics=5, decay=0.5, chunksize=6> in 0.20s', 'datetime': '2023-03-19T17:53:22.728340', 'gensim': '4.3.1', 'python': '3.9.2 (default, Mar  4 2021, 10:15:47) \n[Clang 10.0.0 (clang-1000.10.44.4)]', 'platform': 'macOS-10.16-x86_64-i386-64bit', 'event': 'created'}
+17:53:22 INFO: <<Training Time>>: 0.2462000846862793
+17:53:22 INFO: topic #0 (1.000): 0.055*"var1" + 0.055*"f" + 0.039*"variable" + 0.028*"print" + 0.024*"code" + 0.024*"loop" + 0.022*"load" + 0.022*"caller" + 0.022*"return" + 0.022*"value"
+17:53:22 INFO: topic #1 (1.000): 0.054*"variable" + 0.037*"local" + 0.036*"global" + 0.033*"scope" + 0.027*"function" + 0.025*"name" + 0.022*"c" + 0.021*"assignment" + 0.021*"=" + 0.020*"line"
+17:53:22 INFO: topic #2 (1.000): 0.022*"start" + 0.022*"force" + 0.022*"coffee_machine" + 0.022*"appropriate" + 0.003*"global" + 0.003*"function" + 0.003*"value" + 0.003*"access" + 0.003*"local" + 0.003*"line"
+17:53:22 INFO: topic #3 (1.000): 0.143*"variable" + 0.112*"global" + 0.103*"function" + 0.079*"local" + 0.039*"scope" + 0.029*"inside" + 0.022*"assignment" + 0.020*"work" + 0.019*"var1" + 0.019*"f"
+17:53:22 INFO: topic #4 (1.000): 0.114*"value" + 0.061*"condition" + 0.031*"execute" + 0.031*"comment" + 0.031*"long" + 0.031*"define" + 0.031*"instance" + 0.031*"bit" + 0.002*"change" + 0.002*"variable"
+17:53:22 DEBUG: starting a new internal lifecycle event log for LdaState
+17:53:22 INFO: LdaState lifecycle event {'fname_or_handle': 'model/chunksize/chunksize6/model.state', 'separately': 'None', 'sep_limit': 10485760, 'ignore': frozenset(), 'datetime': '2023-03-19T17:53:22.729432', 'gensim': '4.3.1', 'python': '3.9.2 (default, Mar  4 2021, 10:15:47) \n[Clang 10.0.0 (clang-1000.10.44.4)]', 'platform': 'macOS-10.16-x86_64-i386-64bit', 'event': 'saving'}
+17:53:22 DEBUG: {'uri': 'model/chunksize/chunksize6/model.state', 'mode': 'wb', 'buffering': -1, 'encoding': None, 'errors': None, 'newline': None, 'closefd': True, 'opener': None, 'compression': 'infer_from_extension', 'transport_params': None}
+17:53:22 INFO: saved model/chunksize/chunksize6/model.state
+17:53:22 DEBUG: {'uri': 'model/chunksize/chunksize6/model.id2word', 'mode': 'wb', 'buffering': -1, 'encoding': None, 'errors': None, 'newline': None, 'closefd': True, 'opener': None, 'compression': 'infer_from_extension', 'transport_params': None}
+17:53:22 INFO: LdaModel lifecycle event {'fname_or_handle': 'model/chunksize/chunksize6/model', 'separately': "['expElogbeta', 'sstats']", 'sep_limit': 10485760, 'ignore': ['id2word', 'state', 'dispatcher'], 'datetime': '2023-03-19T17:53:22.736056', 'gensim': '4.3.1', 'python': '3.9.2 (default, Mar  4 2021, 10:15:47) \n[Clang 10.0.0 (clang-1000.10.44.4)]', 'platform': 'macOS-10.16-x86_64-i386-64bit', 'event': 'saving'}
+17:53:22 INFO: storing np array 'expElogbeta' to model/chunksize/chunksize6/model.expElogbeta.npy
+17:53:22 INFO: not storing attribute id2word
+17:53:22 INFO: not storing attribute state
+17:53:22 INFO: not storing attribute dispatcher
+17:53:22 DEBUG: {'uri': 'model/chunksize/chunksize6/model', 'mode': 'wb', 'buffering': -1, 'encoding': None, 'errors': None, 'newline': None, 'closefd': True, 'opener': None, 'compression': 'infer_from_extension', 'transport_params': None}
+17:53:22 INFO: saved model/chunksize/chunksize6/model

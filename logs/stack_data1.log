@@ -1,0 +1,14 @@
+INFO: <<Objects>>
+INFO: What is a class?
+INFO: ['python', 'class']
+INFO: ['https://stackoverflow.com/questions/46636267/python-class-as-object', 'https://stackoverflow.com/questions/36640673/why-should-i-use-classes-in-python', 'https://stackoverflow.com/questions/1535327/how-to-print-instances-of-a-class-using-print', 'https://stackoverflow.com/questions/1911281/how-do-i-get-list-of-methods-in-a-python-class', 'https://stackoverflow.com/questions/73928136/python-class-methods-and-conventions', 'https://stackoverflow.com/questions/510972/getting-the-class-name-of-an-instance', 'https://stackoverflow.com/questions/61452246/python-class-with-a-lot-of-arguments', 'https://stackoverflow.com/questions/71346117/python-class-when-i-call-the-class-methods-it-always-output-a-none-within-t', 'https://stackoverflow.com/questions/70656424/is-there-a-way-to-disable-some-function-in-python-class-so-that-it-cannot-be-use', 'https://stackoverflow.com/questions/72952883/when-to-create-a-class-with-object-as-an-argument-and-when-to-not']
+DEBUG: Starting new HTTPS connection (1): api.stackexchange.com:443
+DEBUG: https://api.stackexchange.com:443 "GET /2.3/questions/46636267;36640673;1535327;1911281;73928136;510972;61452246;71346117;70656424;72952883?page=1&site=stackoverflow&filter=withbody HTTP/1.1" 200 5699
+DEBUG: Starting new HTTPS connection (1): api.stackexchange.com:443
+DEBUG: https://api.stackexchange.com:443 "GET /2.3/questions/46636267;36640673;1535327;1911281;73928136;510972;61452246;71346117;70656424;72952883/answers?page=1&site=stackoverflow&filter=withbody HTTP/1.1" 200 11407
+DEBUG: Starting new HTTPS connection (1): api.stackexchange.com:443
+DEBUG: https://api.stackexchange.com:443 "GET /2.3/questions/46636267;36640673;1535327;1911281;73928136;510972;61452246;71346117;70656424;72952883/answers?page=2&site=stackoverflow&filter=withbody HTTP/1.1" 200 11386
+DEBUG: Starting new HTTPS connection (1): api.stackexchange.com:443
+DEBUG: https://api.stackexchange.com:443 "GET /2.3/questions/46636267;36640673;1535327;1911281;73928136;510972;61452246;71346117;70656424;72952883/answers?page=3&site=stackoverflow&filter=withbody HTTP/1.1" 200 595
+INFO: --------------------
+INFO: What is a method?

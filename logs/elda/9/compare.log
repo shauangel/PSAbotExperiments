@@ -1,0 +1,1611 @@
+INFO: --------------------
+INFO: How do you make a higher order function in Python?
+INFO: --------------------
+INFO: exist
+INFO: adding document #0 to Dictionary<0 unique tokens: []>
+INFO: built Dictionary<226 unique tokens: ['argument', 'callable', 'class', 'convenient', 'debate']...> from 9 documents (total 555 corpus positions)
+DEBUG: starting a new internal lifecycle event log for Dictionary
+INFO: Dictionary lifecycle event {'msg': "built Dictionary<226 unique tokens: ['argument', 'callable', 'class', 'convenient', 'debate']...> from 9 documents (total 555 corpus positions)", 'datetime': '2023-04-25T15:14:17.137628', 'gensim': '4.3.1', 'python': '3.9.2 (default, Mar  4 2021, 10:15:47) \n[Clang 10.0.0 (clang-1000.10.44.4)]', 'platform': 'macOS-10.16-x86_64-i386-64bit', 'event': 'created'}
+INFO: adding document #0 to Dictionary<0 unique tokens: []>
+INFO: built Dictionary<226 unique tokens: ['argument', 'callable', 'class', 'convenient', 'debate']...> from 9 documents (total 555 corpus positions)
+DEBUG: starting a new internal lifecycle event log for Dictionary
+INFO: Dictionary lifecycle event {'msg': "built Dictionary<226 unique tokens: ['argument', 'callable', 'class', 'convenient', 'debate']...> from 9 documents (total 555 corpus positions)", 'datetime': '2023-04-25T15:14:17.139823', 'gensim': '4.3.1', 'python': '3.9.2 (default, Mar  4 2021, 10:15:47) \n[Clang 10.0.0 (clang-1000.10.44.4)]', 'platform': 'macOS-10.16-x86_64-i386-64bit', 'event': 'created'}
+INFO: generating 5 topic models using 1 workers
+INFO: using autotuned alpha, starting with [0.2, 0.2, 0.2, 0.2, 0.2]
+INFO: using serial LDA version on this node
+INFO: running online (multi-pass) LDA training, 5 topics, 10 passes over the supplied corpus of 9 documents, updating model once every 5 documents, evaluating perplexity every 5 documents, iterating 2000x with a convergence threshold of 0.001000
+DEBUG: bound: at document #0
+INFO: -7.272 per-word bound, 154.5 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 0, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+WARNING: updated prior is not positive
+INFO: optimized alpha [0.2, 0.2, 0.2, 0.2, 0.2]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.200): 0.005*"function" + 0.004*"argument" + 0.004*"high" + 0.004*"decorator" + 0.004*"type" + 0.004*"order" + 0.004*"f" + 0.004*"element" + 0.004*"positional" + 0.004*"ref"
+INFO: topic #1 (0.200): 0.005*"function" + 0.005*"argument" + 0.004*"type" + 0.004*"decorator" + 0.004*"return" + 0.004*"order" + 0.004*"high" + 0.004*"element" + 0.004*"f" + 0.004*"last"
+INFO: topic #2 (0.200): 0.005*"function" + 0.005*"argument" + 0.004*"type" + 0.004*"decorator" + 0.004*"high" + 0.004*"order" + 0.004*"element" + 0.004*"f" + 0.004*"return" + 0.004*"list"
+INFO: topic #3 (0.200): 0.049*"argument" + 0.033*"high" + 0.033*"tuple" + 0.033*"args" + 0.033*"positional" + 0.033*"type" + 0.017*"function" + 0.017*"learn" + 0.017*"call" + 0.017*"online"
+INFO: topic #4 (0.200): 0.174*"function" + 0.072*"argument" + 0.036*"order" + 0.033*"decorator" + 0.030*"name" + 0.030*"high" + 0.020*"call" + 0.017*"way" + 0.017*"lambda" + 0.013*"expression"
+INFO: topic diff=3.276138, rho=1.000000
+DEBUG: bound: at document #0
+INFO: -7.678 per-word bound, 204.8 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 0, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.18841876, 0.13949446, 0.13998342, 0.21533236, 0.3062355]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.188): 0.043*"version" + 0.043*"hof" + 0.029*"datum" + 0.029*"operation" + 0.029*"lst" + 0.016*"state" + 0.016*"key" + 0.016*"user" + 0.016*"useless" + 0.016*"step"
+INFO: topic #1 (0.139): 0.059*"new" + 0.031*"make_function_print_arg" + 0.031*"single" + 0.016*"line" + 0.016*"modifie" + 0.016*"certain" + 0.016*"education" + 0.016*"https://book.pythontips.com/en/latest/decorators.html" + 0.016*"idea" + 0.016*"g(x"
+INFO: topic #2 (0.140): 0.070*"html_tag" + 0.056*"second" + 0.029*"new" + 0.029*"reason" + 0.029*"different" + 0.016*"state" + 0.016*"key" + 0.016*"difference" + 0.016*"usage" + 0.016*"decrease"
+INFO: topic #3 (0.215): 0.071*"first" + 0.036*"multiple" + 0.035*"argument" + 0.027*"return" + 0.024*"f" + 0.023*"programming" + 0.023*"body" + 0.022*"high" + 0.016*"lot" + 0.014*"function"
+INFO: topic #4 (0.306): 0.203*"function" + 0.061*"argument" + 0.038*"example" + 0.034*"return" + 0.034*"class" + 0.033*"order" + 0.027*"high" + 0.022*"time" + 0.020*"way" + 0.020*"value"
+INFO: topic diff=1.300844, rho=0.707107
+DEBUG: bound: at document #0
+INFO: -5.200 per-word bound, 36.8 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 1, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.0979409, 0.088969946, 0.08911248, 0.16894665, 0.29119712]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.098): 0.031*"version" + 0.031*"hof" + 0.022*"datum" + 0.022*"operation" + 0.022*"lst" + 0.012*"state" + 0.012*"key" + 0.012*"user" + 0.012*"useless" + 0.012*"step"
+INFO: topic #1 (0.089): 0.040*"new" + 0.022*"make_function_print_arg" + 0.022*"single" + 0.012*"line" + 0.012*"modifie" + 0.012*"certain" + 0.012*"education" + 0.012*"https://book.pythontips.com/en/latest/decorators.html" + 0.012*"idea" + 0.012*"g(x"
+INFO: topic #2 (0.089): 0.048*"html_tag" + 0.039*"second" + 0.021*"new" + 0.021*"reason" + 0.021*"different" + 0.012*"state" + 0.012*"key" + 0.012*"difference" + 0.012*"usage" + 0.012*"decrease"
+INFO: topic #3 (0.169): 0.042*"argument" + 0.041*"first" + 0.028*"high" + 0.026*"multiple" + 0.024*"tuple" + 0.024*"args" + 0.024*"type" + 0.024*"positional" + 0.022*"return" + 0.020*"f"
+INFO: topic #4 (0.291): 0.185*"function" + 0.068*"argument" + 0.035*"order" + 0.029*"high" + 0.027*"decorator" + 0.023*"name" + 0.022*"return" + 0.021*"example" + 0.019*"class" + 0.018*"way"
+INFO: topic diff=0.456196, rho=0.512989
+DEBUG: bound: at document #0
+INFO: -5.521 per-word bound, 45.9 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 1, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.10800136, 0.08554556, 0.085745536, 0.15729806, 0.37380844]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.108): 0.043*"version" + 0.043*"hof" + 0.029*"datum" + 0.029*"operation" + 0.029*"lst" + 0.016*"step" + 0.016*"extra" + 0.016*"user" + 0.016*"useless" + 0.016*"functools.partial"
+INFO: topic #1 (0.086): 0.062*"new" + 0.032*"single" + 0.032*"make_function_print_arg" + 0.017*"line" + 0.017*"g" + 0.017*"behaviour" + 0.017*"maximal" + 0.017*"certain" + 0.017*"education" + 0.017*"g(x"
+INFO: topic #2 (0.086): 0.073*"html_tag" + 0.059*"second" + 0.031*"reason" + 0.031*"different" + 0.030*"new" + 0.016*"equivalent" + 0.016*"important" + 0.016*"decrease" + 0.016*"helper" + 0.016*"counting_tag"
+INFO: topic #3 (0.157): 0.077*"first" + 0.032*"argument" + 0.030*"multiple" + 0.026*"body" + 0.026*"programming" + 0.022*"high" + 0.020*"return" + 0.020*"f" + 0.016*"tuple" + 0.016*"args"
+INFO: topic #4 (0.374): 0.206*"function" + 0.064*"argument" + 0.037*"example" + 0.036*"return" + 0.033*"order" + 0.033*"class" + 0.029*"high" + 0.022*"time" + 0.020*"way" + 0.020*"decorator"
+INFO: topic diff=0.386438, rho=0.512989
+DEBUG: bound: at document #0
+INFO: -5.117 per-word bound, 34.7 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 2, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.080662586, 0.068293884, 0.06841391, 0.14208409, 0.34810588]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.081): 0.033*"version" + 0.033*"hof" + 0.023*"datum" + 0.023*"operation" + 0.023*"lst" + 0.013*"step" + 0.013*"extra" + 0.013*"user" + 0.013*"useless" + 0.013*"functools.partial"
+INFO: topic #1 (0.068): 0.046*"new" + 0.024*"single" + 0.024*"make_function_print_arg" + 0.014*"line" + 0.014*"g" + 0.014*"behaviour" + 0.014*"maximal" + 0.014*"certain" + 0.014*"education" + 0.014*"g(x"
+INFO: topic #2 (0.068): 0.054*"html_tag" + 0.044*"second" + 0.023*"reason" + 0.023*"different" + 0.023*"new" + 0.013*"equivalent" + 0.013*"important" + 0.013*"decrease" + 0.013*"helper" + 0.013*"counting_tag"
+INFO: topic #3 (0.142): 0.045*"first" + 0.040*"argument" + 0.027*"high" + 0.025*"tuple" + 0.025*"args" + 0.025*"type" + 0.025*"positional" + 0.023*"multiple" + 0.021*"body" + 0.021*"programming"
+INFO: topic #4 (0.348): 0.188*"function" + 0.069*"argument" + 0.035*"order" + 0.030*"high" + 0.027*"decorator" + 0.024*"return" + 0.023*"name" + 0.022*"example" + 0.020*"class" + 0.018*"way"
+INFO: topic diff=0.356912, rho=0.456435
+DEBUG: bound: at document #0
+INFO: -5.436 per-word bound, 43.3 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 2, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.09009922, 0.068371, 0.06852984, 0.13878979, 0.42095372]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.090): 0.043*"version" + 0.043*"hof" + 0.029*"datum" + 0.029*"operation" + 0.029*"lst" + 0.015*"step" + 0.015*"extra" + 0.015*"user" + 0.015*"useless" + 0.015*"functools.partial"
+INFO: topic #1 (0.068): 0.062*"new" + 0.032*"single" + 0.032*"make_function_print_arg" + 0.017*"line" + 0.017*"g" + 0.017*"behaviour" + 0.017*"maximal" + 0.017*"certain" + 0.017*"education" + 0.017*"g(x"
+INFO: topic #2 (0.069): 0.073*"html_tag" + 0.059*"second" + 0.030*"reason" + 0.030*"different" + 0.030*"new" + 0.016*"equivalent" + 0.016*"important" + 0.016*"decrease" + 0.016*"helper" + 0.016*"counting_tag"
+INFO: topic #3 (0.139): 0.073*"first" + 0.031*"argument" + 0.028*"multiple" + 0.025*"body" + 0.025*"programming" + 0.021*"high" + 0.018*"tuple" + 0.018*"args" + 0.018*"type" + 0.017*"positional"
+INFO: topic #4 (0.421): 0.205*"function" + 0.066*"argument" + 0.036*"return" + 0.036*"example" + 0.034*"order" + 0.031*"class" + 0.030*"high" + 0.021*"time" + 0.020*"decorator" + 0.020*"way"
+INFO: topic diff=0.288856, rho=0.456435
+DEBUG: bound: at document #0
+INFO: -5.081 per-word bound, 33.8 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 3, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.07267747, 0.05829099, 0.058403254, 0.13052918, 0.3852817]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.073): 0.034*"version" + 0.034*"hof" + 0.023*"datum" + 0.023*"operation" + 0.023*"lst" + 0.013*"step" + 0.013*"extra" + 0.013*"user" + 0.013*"useless" + 0.013*"functools.partial"
+INFO: topic #1 (0.058): 0.048*"new" + 0.025*"single" + 0.025*"make_function_print_arg" + 0.014*"line" + 0.014*"g" + 0.014*"behaviour" + 0.014*"maximal" + 0.014*"certain" + 0.014*"education" + 0.014*"g(x"
+INFO: topic #2 (0.058): 0.057*"html_tag" + 0.046*"second" + 0.024*"reason" + 0.024*"different" + 0.024*"new" + 0.013*"equivalent" + 0.013*"important" + 0.013*"decrease" + 0.013*"helper" + 0.013*"counting_tag"
+INFO: topic #3 (0.131): 0.045*"first" + 0.038*"argument" + 0.026*"high" + 0.026*"tuple" + 0.026*"args" + 0.025*"type" + 0.025*"positional" + 0.023*"multiple" + 0.021*"body" + 0.021*"programming"
+INFO: topic #4 (0.385): 0.190*"function" + 0.069*"argument" + 0.035*"order" + 0.030*"high" + 0.027*"decorator" + 0.025*"return" + 0.023*"example" + 0.022*"name" + 0.021*"class" + 0.018*"way"
+INFO: topic diff=0.293010, rho=0.415227
+DEBUG: bound: at document #0
+INFO: -5.397 per-word bound, 42.1 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 3, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.08074066, 0.05897683, 0.059116248, 0.11265998, 0.43796903]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.081): 0.042*"version" + 0.042*"hof" + 0.029*"datum" + 0.029*"operation" + 0.029*"lst" + 0.015*"step" + 0.015*"extra" + 0.015*"user" + 0.015*"useless" + 0.015*"functools.partial"
+INFO: topic #1 (0.059): 0.061*"new" + 0.031*"single" + 0.031*"make_function_print_arg" + 0.017*"line" + 0.017*"g" + 0.017*"behaviour" + 0.017*"maximal" + 0.017*"certain" + 0.017*"education" + 0.017*"g(x"
+INFO: topic #2 (0.059): 0.071*"html_tag" + 0.057*"second" + 0.030*"different" + 0.030*"reason" + 0.029*"new" + 0.026*"first" + 0.016*"helper" + 0.016*"important" + 0.016*"performance" + 0.016*"efficient"
+INFO: topic #3 (0.113): 0.054*"first" + 0.029*"argument" + 0.028*"multiple" + 0.021*"high" + 0.020*"tuple" + 0.020*"args" + 0.019*"type" + 0.019*"positional" + 0.017*"body" + 0.017*"programming"
+INFO: topic #4 (0.438): 0.205*"function" + 0.067*"argument" + 0.036*"return" + 0.035*"example" + 0.034*"order" + 0.030*"high" + 0.030*"class" + 0.021*"decorator" + 0.020*"way" + 0.020*"time"
+INFO: topic diff=0.275502, rho=0.415227
+DEBUG: bound: at document #0
+INFO: -5.059 per-word bound, 33.3 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 4, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.06760386, 0.051937513, 0.052043788, 0.11046155, 0.3997331]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.068): 0.034*"version" + 0.034*"hof" + 0.024*"datum" + 0.024*"operation" + 0.024*"lst" + 0.013*"step" + 0.013*"extra" + 0.013*"user" + 0.013*"useless" + 0.013*"functools.partial"
+INFO: topic #1 (0.052): 0.048*"new" + 0.025*"single" + 0.025*"make_function_print_arg" + 0.014*"line" + 0.014*"g" + 0.014*"behaviour" + 0.014*"maximal" + 0.014*"certain" + 0.014*"education" + 0.014*"g(x"
+INFO: topic #2 (0.052): 0.057*"html_tag" + 0.046*"second" + 0.024*"different" + 0.024*"reason" + 0.024*"new" + 0.021*"first" + 0.013*"helper" + 0.013*"important" + 0.013*"performance" + 0.013*"efficient"
+INFO: topic #3 (0.110): 0.037*"argument" + 0.037*"first" + 0.026*"tuple" + 0.026*"args" + 0.026*"type" + 0.026*"positional" + 0.026*"high" + 0.023*"multiple" + 0.017*"body" + 0.017*"programming"
+INFO: topic #4 (0.400): 0.191*"function" + 0.070*"argument" + 0.035*"order" + 0.030*"high" + 0.027*"decorator" + 0.026*"return" + 0.023*"example" + 0.022*"name" + 0.021*"class" + 0.018*"way"
+INFO: topic diff=0.259682, rho=0.383482
+DEBUG: bound: at document #0
+INFO: -5.337 per-word bound, 40.4 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 4, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.07460638, 0.05277108, 0.05291377, 0.087345794, 0.43472466]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.075): 0.042*"version" + 0.042*"hof" + 0.028*"datum" + 0.028*"operation" + 0.028*"lst" + 0.015*"step" + 0.015*"extra" + 0.015*"user" + 0.015*"useless" + 0.015*"functools.partial"
+INFO: topic #1 (0.053): 0.060*"new" + 0.031*"single" + 0.031*"make_function_print_arg" + 0.017*"behaviour" + 0.017*"certain" + 0.017*"education" + 0.017*"line" + 0.017*"exercise" + 0.017*"idea" + 0.017*"great"
+INFO: topic #2 (0.053): 0.069*"html_tag" + 0.055*"second" + 0.044*"first" + 0.029*"different" + 0.029*"reason" + 0.029*"new" + 0.015*"helper" + 0.015*"important" + 0.015*"performance" + 0.015*"efficient"
+INFO: topic #3 (0.087): 0.029*"argument" + 0.029*"first" + 0.021*"tuple" + 0.021*"args" + 0.021*"type" + 0.021*"positional" + 0.021*"high" + 0.019*"multiple" + 0.014*"body" + 0.014*"programming"
+INFO: topic #4 (0.435): 0.204*"function" + 0.067*"argument" + 0.036*"return" + 0.034*"example" + 0.034*"order" + 0.030*"high" + 0.028*"class" + 0.021*"decorator" + 0.020*"way" + 0.018*"time"
+INFO: topic diff=0.256238, rho=0.383482
+DEBUG: bound: at document #0
+INFO: -5.043 per-word bound, 33.0 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 5, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.06384025, 0.047363218, 0.047476746, 0.08853015, 0.39597034]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.064): 0.035*"version" + 0.035*"hof" + 0.024*"datum" + 0.024*"operation" + 0.024*"lst" + 0.013*"step" + 0.013*"extra" + 0.013*"user" + 0.013*"useless" + 0.013*"functools.partial"
+INFO: topic #1 (0.047): 0.048*"new" + 0.026*"single" + 0.026*"make_function_print_arg" + 0.014*"behaviour" + 0.014*"certain" + 0.014*"education" + 0.014*"line" + 0.014*"exercise" + 0.014*"idea" + 0.014*"great"
+INFO: topic #2 (0.047): 0.056*"html_tag" + 0.046*"second" + 0.036*"first" + 0.024*"different" + 0.024*"reason" + 0.024*"new" + 0.013*"helper" + 0.013*"important" + 0.013*"performance" + 0.013*"efficient"
+INFO: topic #3 (0.089): 0.036*"argument" + 0.027*"tuple" + 0.027*"args" + 0.027*"type" + 0.027*"positional" + 0.025*"high" + 0.024*"first" + 0.018*"multiple" + 0.016*"body" + 0.016*"programming"
+INFO: topic #4 (0.396): 0.192*"function" + 0.070*"argument" + 0.035*"order" + 0.030*"high" + 0.026*"decorator" + 0.026*"return" + 0.024*"example" + 0.022*"name" + 0.020*"class" + 0.018*"way"
+INFO: topic diff=0.238389, rho=0.358057
+DEBUG: bound: at document #0
+INFO: -5.297 per-word bound, 39.3 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 5, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.07023529, 0.048333853, 0.04847801, 0.074402496, 0.42534006]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.070): 0.041*"version" + 0.041*"hof" + 0.028*"operation" + 0.028*"datum" + 0.028*"lst" + 0.025*"class" + 0.015*"useless" + 0.015*"step" + 0.015*"encapsulation" + 0.015*"need"
+INFO: topic #1 (0.048): 0.059*"new" + 0.031*"single" + 0.031*"make_function_print_arg" + 0.016*"behaviour" + 0.016*"certain" + 0.016*"education" + 0.016*"line" + 0.016*"exercise" + 0.016*"idea" + 0.016*"great"
+INFO: topic #2 (0.048): 0.067*"html_tag" + 0.054*"second" + 0.050*"first" + 0.028*"different" + 0.028*"reason" + 0.028*"new" + 0.015*"helper" + 0.015*"important" + 0.015*"performance" + 0.015*"efficient"
+INFO: topic #3 (0.074): 0.029*"argument" + 0.022*"tuple" + 0.022*"args" + 0.022*"type" + 0.022*"positional" + 0.020*"high" + 0.019*"first" + 0.015*"multiple" + 0.013*"body" + 0.013*"programming"
+INFO: topic #4 (0.425): 0.205*"function" + 0.068*"argument" + 0.036*"return" + 0.034*"order" + 0.034*"example" + 0.031*"high" + 0.024*"class" + 0.022*"decorator" + 0.020*"way" + 0.018*"value"
+INFO: topic diff=0.233908, rho=0.358057
+DEBUG: bound: at document #0
+INFO: -5.031 per-word bound, 32.7 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 6, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.061040714, 0.043963157, 0.044081297, 0.0764714, 0.38775998]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.061): 0.034*"version" + 0.034*"hof" + 0.024*"operation" + 0.024*"datum" + 0.024*"lst" + 0.021*"class" + 0.013*"useless" + 0.013*"step" + 0.013*"encapsulation" + 0.013*"need"
+INFO: topic #1 (0.044): 0.049*"new" + 0.026*"single" + 0.026*"make_function_print_arg" + 0.014*"behaviour" + 0.014*"certain" + 0.014*"education" + 0.014*"line" + 0.014*"exercise" + 0.014*"idea" + 0.014*"great"
+INFO: topic #2 (0.044): 0.056*"html_tag" + 0.045*"second" + 0.041*"first" + 0.024*"different" + 0.024*"reason" + 0.024*"new" + 0.013*"helper" + 0.013*"important" + 0.013*"performance" + 0.013*"efficient"
+INFO: topic #3 (0.076): 0.035*"argument" + 0.027*"tuple" + 0.027*"args" + 0.027*"type" + 0.027*"positional" + 0.024*"high" + 0.019*"first" + 0.016*"multiple" + 0.015*"body" + 0.015*"programming"
+INFO: topic #4 (0.388): 0.193*"function" + 0.070*"argument" + 0.035*"order" + 0.031*"high" + 0.027*"return" + 0.026*"decorator" + 0.024*"example" + 0.022*"name" + 0.018*"way" + 0.018*"class"
+INFO: topic diff=0.221266, rho=0.337100
+DEBUG: bound: at document #0
+INFO: -5.270 per-word bound, 38.6 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 6, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.06690694, 0.044958733, 0.045104977, 0.0663449, 0.4115842]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.067): 0.045*"class" + 0.040*"version" + 0.040*"hof" + 0.027*"datum" + 0.027*"operation" + 0.027*"lst" + 0.015*"encapsulation" + 0.015*"partial" + 0.015*"work" + 0.015*"user"
+INFO: topic #1 (0.045): 0.059*"new" + 0.031*"single" + 0.031*"make_function_print_arg" + 0.016*"behaviour" + 0.016*"certain" + 0.016*"education" + 0.016*"line" + 0.016*"exercise" + 0.016*"idea" + 0.016*"great"
+INFO: topic #2 (0.045): 0.066*"html_tag" + 0.053*"second" + 0.051*"first" + 0.028*"different" + 0.028*"reason" + 0.028*"new" + 0.022*"time" + 0.015*"efficient" + 0.015*"helper" + 0.015*"equivalent"
+INFO: topic #3 (0.066): 0.029*"argument" + 0.022*"tuple" + 0.022*"args" + 0.022*"type" + 0.022*"positional" + 0.020*"high" + 0.016*"first" + 0.014*"multiple" + 0.013*"body" + 0.013*"programming"
+INFO: topic #4 (0.412): 0.206*"function" + 0.069*"argument" + 0.036*"return" + 0.034*"order" + 0.034*"example" + 0.031*"high" + 0.022*"decorator" + 0.020*"way" + 0.019*"class" + 0.018*"value"
+INFO: topic diff=0.219295, rho=0.337100
+DEBUG: bound: at document #0
+INFO: -5.020 per-word bound, 32.4 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 7, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.058825813, 0.041296832, 0.041419286, 0.06865795, 0.37608486]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.059): 0.038*"class" + 0.034*"version" + 0.034*"hof" + 0.023*"datum" + 0.023*"operation" + 0.023*"lst" + 0.013*"encapsulation" + 0.013*"partial" + 0.013*"work" + 0.013*"user"
+INFO: topic #1 (0.041): 0.049*"new" + 0.026*"single" + 0.026*"make_function_print_arg" + 0.014*"behaviour" + 0.014*"certain" + 0.014*"education" + 0.014*"line" + 0.014*"exercise" + 0.014*"idea" + 0.014*"great"
+INFO: topic #2 (0.041): 0.056*"html_tag" + 0.045*"second" + 0.043*"first" + 0.024*"different" + 0.024*"reason" + 0.024*"new" + 0.019*"time" + 0.013*"efficient" + 0.013*"helper" + 0.013*"equivalent"
+INFO: topic #3 (0.069): 0.035*"argument" + 0.027*"tuple" + 0.027*"args" + 0.027*"type" + 0.027*"positional" + 0.024*"high" + 0.017*"first" + 0.016*"multiple" + 0.015*"body" + 0.015*"programming"
+INFO: topic #4 (0.376): 0.194*"function" + 0.071*"argument" + 0.035*"order" + 0.031*"high" + 0.027*"return" + 0.026*"decorator" + 0.024*"example" + 0.022*"name" + 0.019*"way" + 0.017*"call"
+INFO: topic diff=0.207676, rho=0.319438
+DEBUG: bound: at document #0
+INFO: -5.246 per-word bound, 37.9 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 7, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.06424817, 0.042283066, 0.042432226, 0.060782336, 0.39655]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.064): 0.061*"class" + 0.039*"version" + 0.039*"hof" + 0.027*"datum" + 0.027*"operation" + 0.027*"lst" + 0.014*"encapsulation" + 0.014*"partial" + 0.014*"work" + 0.014*"user"
+INFO: topic #1 (0.042): 0.059*"new" + 0.030*"single" + 0.030*"make_function_print_arg" + 0.016*"behaviour" + 0.016*"certain" + 0.016*"education" + 0.016*"line" + 0.016*"exercise" + 0.016*"idea" + 0.016*"great"
+INFO: topic #2 (0.042): 0.065*"html_tag" + 0.053*"second" + 0.052*"first" + 0.032*"time" + 0.027*"different" + 0.027*"reason" + 0.027*"new" + 0.015*"efficient" + 0.015*"helper" + 0.015*"equivalent"
+INFO: topic #3 (0.061): 0.029*"argument" + 0.023*"tuple" + 0.023*"args" + 0.023*"type" + 0.022*"positional" + 0.020*"high" + 0.014*"first" + 0.013*"multiple" + 0.013*"body" + 0.013*"programming"
+INFO: topic #4 (0.397): 0.207*"function" + 0.069*"argument" + 0.036*"return" + 0.035*"order" + 0.033*"example" + 0.031*"high" + 0.022*"decorator" + 0.020*"way" + 0.018*"value" + 0.017*"name"
+INFO: topic diff=0.206575, rho=0.319438
+DEBUG: bound: at document #0
+INFO: -5.011 per-word bound, 32.3 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 8, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.056999333, 0.039132673, 0.039259627, 0.06312281, 0.3631022]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.057): 0.052*"class" + 0.034*"hof" + 0.034*"version" + 0.023*"operation" + 0.023*"datum" + 0.023*"lst" + 0.013*"partial" + 0.013*"specific" + 0.013*"step" + 0.013*"pre"
+INFO: topic #1 (0.039): 0.049*"new" + 0.026*"single" + 0.026*"make_function_print_arg" + 0.014*"behaviour" + 0.014*"certain" + 0.014*"education" + 0.014*"line" + 0.014*"exercise" + 0.014*"idea" + 0.014*"great"
+INFO: topic #2 (0.039): 0.056*"html_tag" + 0.045*"second" + 0.044*"first" + 0.028*"time" + 0.024*"different" + 0.024*"reason" + 0.024*"new" + 0.013*"efficient" + 0.013*"helper" + 0.013*"equivalent"
+INFO: topic #3 (0.063): 0.035*"argument" + 0.027*"tuple" + 0.027*"args" + 0.027*"type" + 0.027*"positional" + 0.024*"high" + 0.016*"first" + 0.015*"multiple" + 0.015*"body" + 0.015*"programming"
+INFO: topic #4 (0.363): 0.195*"function" + 0.071*"argument" + 0.035*"order" + 0.031*"high" + 0.027*"return" + 0.026*"decorator" + 0.024*"example" + 0.022*"name" + 0.019*"way" + 0.017*"call"
+INFO: topic diff=0.196209, rho=0.304290
+DEBUG: bound: at document #0
+INFO: -5.229 per-word bound, 37.5 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 8, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.062053077, 0.040098723, 0.040250532, 0.056687407, 0.38202482]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.062): 0.070*"class" + 0.038*"hof" + 0.038*"version" + 0.026*"datum" + 0.026*"operation" + 0.026*"lst" + 0.014*"useless" + 0.014*"specific" + 0.014*"machine" + 0.014*"user"
+INFO: topic #1 (0.040): 0.059*"new" + 0.030*"single" + 0.030*"make_function_print_arg" + 0.016*"behaviour" + 0.016*"certain" + 0.016*"education" + 0.016*"line" + 0.016*"exercise" + 0.016*"idea" + 0.016*"great"
+INFO: topic #2 (0.040): 0.064*"html_tag" + 0.052*"second" + 0.051*"first" + 0.041*"time" + 0.027*"different" + 0.027*"reason" + 0.027*"new" + 0.014*"efficient" + 0.014*"helper" + 0.014*"equivalent"
+INFO: topic #3 (0.057): 0.029*"argument" + 0.023*"tuple" + 0.023*"args" + 0.023*"type" + 0.023*"positional" + 0.020*"high" + 0.014*"first" + 0.013*"multiple" + 0.013*"body" + 0.013*"programming"
+INFO: topic #4 (0.382): 0.208*"function" + 0.070*"argument" + 0.036*"return" + 0.035*"order" + 0.033*"example" + 0.032*"high" + 0.023*"decorator" + 0.020*"way" + 0.018*"value" + 0.017*"name"
+INFO: topic diff=0.194953, rho=0.304290
+DEBUG: bound: at document #0
+INFO: -5.005 per-word bound, 32.1 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 9, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.05545513, 0.037334498, 0.03746539, 0.058976207, 0.35043505]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.055): 0.060*"class" + 0.033*"hof" + 0.033*"version" + 0.023*"operation" + 0.023*"datum" + 0.023*"lst" + 0.013*"partial" + 0.013*"specific" + 0.013*"step" + 0.013*"pre"
+INFO: topic #1 (0.037): 0.050*"new" + 0.026*"single" + 0.026*"make_function_print_arg" + 0.014*"behaviour" + 0.014*"certain" + 0.014*"education" + 0.014*"line" + 0.014*"exercise" + 0.014*"idea" + 0.014*"great"
+INFO: topic #2 (0.037): 0.055*"html_tag" + 0.045*"second" + 0.044*"first" + 0.036*"time" + 0.024*"different" + 0.024*"reason" + 0.024*"new" + 0.013*"efficient" + 0.013*"helper" + 0.013*"equivalent"
+INFO: topic #3 (0.059): 0.034*"argument" + 0.027*"tuple" + 0.027*"args" + 0.027*"type" + 0.027*"positional" + 0.024*"high" + 0.015*"first" + 0.015*"multiple" + 0.015*"body" + 0.015*"programming"
+INFO: topic #4 (0.350): 0.196*"function" + 0.071*"argument" + 0.035*"order" + 0.031*"high" + 0.027*"return" + 0.026*"decorator" + 0.025*"example" + 0.022*"name" + 0.019*"way" + 0.017*"call"
+INFO: topic diff=0.186236, rho=0.291111
+DEBUG: bound: at document #0
+INFO: -5.216 per-word bound, 37.2 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 9, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.06019736, 0.038274556, 0.038428094, 0.05353274, 0.36848202]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.060): 0.075*"class" + 0.038*"hof" + 0.038*"version" + 0.026*"operation" + 0.026*"datum" + 0.026*"lst" + 0.014*"partial" + 0.014*"specific" + 0.014*"step" + 0.014*"pre"
+INFO: topic #1 (0.038): 0.058*"new" + 0.030*"single" + 0.030*"make_function_print_arg" + 0.016*"behaviour" + 0.016*"certain" + 0.016*"education" + 0.016*"line" + 0.016*"exercise" + 0.016*"idea" + 0.016*"great"
+INFO: topic #2 (0.038): 0.064*"html_tag" + 0.051*"second" + 0.051*"first" + 0.048*"time" + 0.027*"different" + 0.027*"reason" + 0.027*"new" + 0.014*"efficient" + 0.014*"helper" + 0.014*"equivalent"
+INFO: topic #3 (0.054): 0.029*"argument" + 0.023*"tuple" + 0.023*"args" + 0.023*"type" + 0.023*"positional" + 0.020*"high" + 0.013*"first" + 0.013*"multiple" + 0.013*"body" + 0.013*"programming"
+INFO: topic #4 (0.368): 0.209*"function" + 0.070*"argument" + 0.035*"return" + 0.035*"order" + 0.033*"example" + 0.032*"high" + 0.023*"decorator" + 0.020*"way" + 0.018*"value" + 0.018*"name"
+INFO: topic diff=0.184842, rho=0.291111
+DEBUG: starting a new internal lifecycle event log for LdaModel
+INFO: LdaModel lifecycle event {'msg': 'trained LdaModel<num_terms=226, num_topics=5, decay=0.5, chunksize=5> in 0.12s', 'datetime': '2023-04-25T15:14:17.262889', 'gensim': '4.3.1', 'python': '3.9.2 (default, Mar  4 2021, 10:15:47) \n[Clang 10.0.0 (clang-1000.10.44.4)]', 'platform': 'macOS-10.16-x86_64-i386-64bit', 'event': 'created'}
+INFO: using autotuned alpha, starting with [0.2, 0.2, 0.2, 0.2, 0.2]
+INFO: using serial LDA version on this node
+INFO: running online (multi-pass) LDA training, 5 topics, 10 passes over the supplied corpus of 9 documents, updating model once every 5 documents, evaluating perplexity every 5 documents, iterating 2000x with a convergence threshold of 0.001000
+DEBUG: bound: at document #0
+INFO: -7.272 per-word bound, 154.6 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 0, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+WARNING: updated prior is not positive
+INFO: optimized alpha [0.2, 0.2, 0.2, 0.2, 0.2]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.200): 0.174*"function" + 0.072*"argument" + 0.036*"order" + 0.033*"decorator" + 0.030*"name" + 0.030*"high" + 0.020*"call" + 0.017*"lambda" + 0.017*"way" + 0.013*"expression"
+INFO: topic #1 (0.200): 0.057*"type" + 0.030*"argument" + 0.030*"return" + 0.030*"list" + 0.030*"f" + 0.030*"element" + 0.030*"last" + 0.030*"first" + 0.030*"ref" + 0.030*"https://docs.python.org/3/library/typing.html#callable"
+INFO: topic #2 (0.200): 0.005*"function" + 0.005*"argument" + 0.004*"decorator" + 0.004*"high" + 0.004*"order" + 0.004*"type" + 0.004*"return" + 0.004*"solution" + 0.004*"f" + 0.004*"last"
+INFO: topic #3 (0.200): 0.005*"function" + 0.004*"argument" + 0.004*"high" + 0.004*"type" + 0.004*"decorator" + 0.004*"order" + 0.004*"return" + 0.004*"solution" + 0.004*"ref" + 0.004*"call"
+INFO: topic #4 (0.200): 0.041*"high" + 0.040*"argument" + 0.040*"positional" + 0.040*"tuple" + 0.040*"args" + 0.021*"function" + 0.021*"call" + 0.021*"link" + 0.021*"fnc" + 0.021*"additional"
+INFO: topic diff=3.329483, rho=1.000000
+DEBUG: bound: at document #0
+INFO: -7.689 per-word bound, 206.3 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 0, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.3137388, 0.19175197, 0.25900176, 0.13868052, 0.20882122]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.314): 0.204*"function" + 0.061*"argument" + 0.038*"example" + 0.034*"class" + 0.033*"order" + 0.031*"return" + 0.029*"high" + 0.022*"time" + 0.020*"way" + 0.020*"value"
+INFO: topic #1 (0.192): 0.078*"first" + 0.044*"return" + 0.035*"f" + 0.025*"html_tag" + 0.024*"new" + 0.020*"second" + 0.019*"argument" + 0.014*"type" + 0.011*"reason" + 0.011*"different"
+INFO: topic #2 (0.259): 0.038*"new" + 0.031*"html_tag" + 0.027*"version" + 0.027*"hof" + 0.025*"second" + 0.019*"operation" + 0.019*"datum" + 0.016*"state" + 0.016*"key" + 0.014*"make_function_print_arg"
+INFO: topic #3 (0.139): 0.053*"lst" + 0.028*"problem" + 0.028*"mode" + 0.028*"instance" + 0.028*"core" + 0.028*"conditional" + 0.028*"block" + 0.028*"attribute" + 0.004*"result" + 0.004*"reference"
+INFO: topic #4 (0.209): 0.046*"multiple" + 0.031*"programming" + 0.031*"body" + 0.026*"argument" + 0.023*"high" + 0.020*"lot" + 0.017*"positional" + 0.017*"tuple" + 0.017*"args" + 0.015*"function"
+INFO: topic diff=1.235733, rho=0.707107
+DEBUG: bound: at document #0
+INFO: -5.153 per-word bound, 35.6 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 1, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.29801035, 0.1268276, 0.093028694, 0.08860753, 0.1340735]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.298): 0.186*"function" + 0.068*"argument" + 0.035*"order" + 0.029*"high" + 0.027*"decorator" + 0.023*"name" + 0.021*"example" + 0.020*"return" + 0.019*"class" + 0.018*"way"
+INFO: topic #1 (0.127): 0.057*"first" + 0.038*"return" + 0.033*"type" + 0.033*"f" + 0.024*"argument" + 0.018*"element" + 0.018*"last" + 0.018*"ref" + 0.018*"https://docs.python.org/3/library/typing.html#callable" + 0.018*"solution"
+INFO: topic #2 (0.093): 0.031*"new" + 0.025*"html_tag" + 0.022*"version" + 0.022*"hof" + 0.020*"second" + 0.015*"operation" + 0.015*"datum" + 0.013*"state" + 0.013*"key" + 0.012*"make_function_print_arg"
+INFO: topic #3 (0.089): 0.031*"lst" + 0.018*"problem" + 0.018*"mode" + 0.018*"instance" + 0.018*"core" + 0.018*"conditional" + 0.018*"block" + 0.018*"attribute" + 0.004*"result" + 0.004*"reference"
+INFO: topic #4 (0.134): 0.034*"argument" + 0.033*"high" + 0.032*"multiple" + 0.030*"tuple" + 0.030*"args" + 0.030*"positional" + 0.025*"programming" + 0.025*"body" + 0.021*"lot" + 0.018*"function"
+INFO: topic diff=0.424405, rho=0.512989
+DEBUG: bound: at document #0
+INFO: -5.733 per-word bound, 53.2 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 1, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.37935892, 0.109340556, 0.12079859, 0.08370485, 0.11123864]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.379): 0.205*"function" + 0.064*"argument" + 0.037*"example" + 0.035*"return" + 0.033*"order" + 0.033*"class" + 0.030*"high" + 0.022*"time" + 0.020*"way" + 0.020*"decorator"
+INFO: topic #1 (0.109): 0.099*"first" + 0.029*"return" + 0.020*"type" + 0.019*"f" + 0.016*"html_tag" + 0.016*"argument" + 0.013*"second" + 0.012*"new" + 0.011*"element" + 0.011*"last"
+INFO: topic #2 (0.121): 0.043*"new" + 0.034*"html_tag" + 0.027*"second" + 0.024*"hof" + 0.024*"version" + 0.016*"operation" + 0.016*"datum" + 0.016*"state" + 0.016*"key" + 0.015*"single"
+INFO: topic #3 (0.084): 0.054*"lst" + 0.029*"problem" + 0.029*"mode" + 0.029*"instance" + 0.029*"core" + 0.029*"conditional" + 0.029*"block" + 0.029*"attribute" + 0.004*"result" + 0.004*"reference"
+INFO: topic #4 (0.111): 0.033*"programming" + 0.033*"body" + 0.025*"argument" + 0.023*"high" + 0.021*"multiple" + 0.020*"tuple" + 0.020*"args" + 0.020*"positional" + 0.018*"lot" + 0.013*"function"
+INFO: topic diff=0.315461, rho=0.512989
+DEBUG: bound: at document #0
+INFO: -5.053 per-word bound, 33.2 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 2, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.35898694, 0.094149224, 0.08665204, 0.06714493, 0.09624098]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.359): 0.188*"function" + 0.069*"argument" + 0.035*"order" + 0.030*"high" + 0.027*"decorator" + 0.023*"return" + 0.023*"name" + 0.022*"example" + 0.020*"class" + 0.018*"way"
+INFO: topic #1 (0.094): 0.068*"first" + 0.036*"type" + 0.029*"return" + 0.024*"f" + 0.021*"argument" + 0.020*"element" + 0.020*"last" + 0.020*"ref" + 0.020*"https://docs.python.org/3/library/typing.html#callable" + 0.020*"solution"
+INFO: topic #2 (0.087): 0.036*"new" + 0.029*"html_tag" + 0.024*"second" + 0.021*"hof" + 0.021*"version" + 0.014*"operation" + 0.014*"datum" + 0.014*"state" + 0.014*"key" + 0.013*"single"
+INFO: topic #3 (0.067): 0.035*"lst" + 0.019*"problem" + 0.019*"mode" + 0.019*"instance" + 0.019*"core" + 0.019*"conditional" + 0.019*"block" + 0.019*"attribute" + 0.004*"result" + 0.004*"reference"
+INFO: topic #4 (0.096): 0.032*"argument" + 0.031*"high" + 0.031*"tuple" + 0.031*"args" + 0.031*"positional" + 0.027*"programming" + 0.027*"body" + 0.021*"multiple" + 0.020*"lot" + 0.017*"fnc"
+INFO: topic diff=0.306022, rho=0.456435
+DEBUG: bound: at document #0
+INFO: -5.612 per-word bound, 48.9 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 2, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.4324867, 0.08821662, 0.11053916, 0.0666771, 0.088924676]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.432): 0.205*"function" + 0.066*"argument" + 0.036*"return" + 0.036*"example" + 0.033*"order" + 0.032*"class" + 0.030*"high" + 0.021*"time" + 0.020*"decorator" + 0.020*"way"
+INFO: topic #1 (0.088): 0.107*"first" + 0.023*"type" + 0.022*"return" + 0.016*"f" + 0.015*"argument" + 0.013*"element" + 0.013*"last" + 0.013*"ref" + 0.013*"https://docs.python.org/3/library/typing.html#callable" + 0.013*"solution"
+INFO: topic #2 (0.111): 0.044*"new" + 0.036*"html_tag" + 0.029*"second" + 0.023*"hof" + 0.023*"version" + 0.016*"operation" + 0.016*"datum" + 0.016*"key" + 0.016*"state" + 0.015*"make_function_print_arg"
+INFO: topic #3 (0.067): 0.054*"lst" + 0.028*"attribute" + 0.028*"mode" + 0.028*"instance" + 0.028*"core" + 0.028*"conditional" + 0.028*"block" + 0.028*"problem" + 0.004*"result" + 0.004*"func"
+INFO: topic #4 (0.089): 0.033*"programming" + 0.033*"body" + 0.024*"argument" + 0.023*"high" + 0.022*"tuple" + 0.022*"args" + 0.022*"positional" + 0.017*"lot" + 0.015*"multiple" + 0.012*"fnc"
+INFO: topic diff=0.234572, rho=0.456435
+DEBUG: bound: at document #0
+INFO: -5.018 per-word bound, 32.4 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 3, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.4071231, 0.08069207, 0.08463136, 0.057150945, 0.081740685]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.407): 0.190*"function" + 0.070*"argument" + 0.035*"order" + 0.030*"high" + 0.027*"decorator" + 0.025*"return" + 0.023*"example" + 0.022*"name" + 0.021*"class" + 0.018*"way"
+INFO: topic #1 (0.081): 0.074*"first" + 0.038*"type" + 0.024*"return" + 0.021*"f" + 0.020*"element" + 0.020*"last" + 0.020*"ref" + 0.020*"https://docs.python.org/3/library/typing.html#callable" + 0.020*"solution" + 0.020*"list"
+INFO: topic #2 (0.085): 0.038*"new" + 0.031*"html_tag" + 0.025*"second" + 0.021*"hof" + 0.021*"version" + 0.014*"operation" + 0.014*"datum" + 0.014*"key" + 0.014*"state" + 0.014*"make_function_print_arg"
+INFO: topic #3 (0.057): 0.036*"lst" + 0.020*"attribute" + 0.020*"mode" + 0.020*"instance" + 0.020*"core" + 0.020*"conditional" + 0.020*"block" + 0.020*"problem" + 0.004*"result" + 0.004*"func"
+INFO: topic #4 (0.082): 0.032*"tuple" + 0.032*"args" + 0.031*"positional" + 0.030*"high" + 0.029*"argument" + 0.028*"programming" + 0.028*"body" + 0.019*"lot" + 0.019*"multiple" + 0.017*"fnc"
+INFO: topic diff=0.239430, rho=0.415227
+DEBUG: bound: at document #0
+INFO: -5.578 per-word bound, 47.8 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 3, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.4707204, 0.07794044, 0.106098734, 0.05777295, 0.07823497]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.471): 0.204*"function" + 0.067*"argument" + 0.036*"return" + 0.035*"example" + 0.034*"order" + 0.031*"class" + 0.030*"high" + 0.021*"decorator" + 0.020*"time" + 0.020*"way"
+INFO: topic #1 (0.078): 0.109*"first" + 0.025*"type" + 0.018*"return" + 0.015*"f" + 0.014*"element" + 0.014*"last" + 0.014*"ref" + 0.014*"https://docs.python.org/3/library/typing.html#callable" + 0.014*"solution" + 0.014*"list"
+INFO: topic #2 (0.106): 0.044*"new" + 0.036*"html_tag" + 0.029*"second" + 0.023*"hof" + 0.023*"version" + 0.016*"operation" + 0.016*"datum" + 0.015*"key" + 0.015*"state" + 0.015*"make_function_print_arg"
+INFO: topic #3 (0.058): 0.053*"lst" + 0.028*"attribute" + 0.028*"mode" + 0.028*"instance" + 0.028*"core" + 0.028*"conditional" + 0.028*"block" + 0.028*"problem" + 0.004*"func" + 0.004*"result"
+INFO: topic #4 (0.078): 0.033*"programming" + 0.033*"body" + 0.023*"tuple" + 0.023*"args" + 0.023*"positional" + 0.022*"argument" + 0.022*"high" + 0.017*"lot" + 0.014*"multiple" + 0.013*"fnc"
+INFO: topic diff=0.201428, rho=0.415227
+DEBUG: bound: at document #0
+INFO: -4.997 per-word bound, 31.9 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 4, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.4444348, 0.07329977, 0.084237926, 0.051220436, 0.07391679]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.444): 0.190*"function" + 0.070*"argument" + 0.035*"order" + 0.030*"high" + 0.026*"decorator" + 0.026*"return" + 0.023*"example" + 0.022*"name" + 0.021*"class" + 0.018*"way"
+INFO: topic #1 (0.073): 0.077*"first" + 0.038*"type" + 0.021*"return" + 0.021*"element" + 0.021*"last" + 0.021*"ref" + 0.021*"https://docs.python.org/3/library/typing.html#callable" + 0.021*"solution" + 0.021*"list" + 0.020*"f"
+INFO: topic #2 (0.084): 0.039*"new" + 0.032*"html_tag" + 0.026*"second" + 0.020*"hof" + 0.020*"version" + 0.014*"operation" + 0.014*"datum" + 0.014*"key" + 0.014*"state" + 0.014*"make_function_print_arg"
+INFO: topic #3 (0.051): 0.037*"lst" + 0.020*"attribute" + 0.020*"mode" + 0.020*"instance" + 0.020*"core" + 0.020*"conditional" + 0.020*"block" + 0.020*"problem" + 0.004*"func" + 0.004*"result"
+INFO: topic #4 (0.074): 0.032*"tuple" + 0.032*"args" + 0.031*"positional" + 0.029*"high" + 0.028*"programming" + 0.028*"body" + 0.027*"argument" + 0.019*"lot" + 0.018*"multiple" + 0.017*"fnc"
+INFO: topic diff=0.201559, rho=0.383482
+DEBUG: bound: at document #0
+INFO: -5.561 per-word bound, 47.2 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 4, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.4982, 0.071845606, 0.104020886, 0.052200336, 0.07190559]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.498): 0.203*"function" + 0.067*"argument" + 0.036*"return" + 0.034*"example" + 0.034*"order" + 0.030*"high" + 0.030*"class" + 0.021*"decorator" + 0.020*"time" + 0.020*"way"
+INFO: topic #1 (0.072): 0.108*"first" + 0.026*"type" + 0.017*"return" + 0.015*"element" + 0.015*"last" + 0.015*"ref" + 0.015*"https://docs.python.org/3/library/typing.html#callable" + 0.015*"solution" + 0.015*"list" + 0.014*"f"
+INFO: topic #2 (0.104): 0.044*"new" + 0.037*"html_tag" + 0.029*"second" + 0.023*"hof" + 0.023*"version" + 0.015*"operation" + 0.015*"datum" + 0.015*"key" + 0.015*"state" + 0.015*"make_function_print_arg"
+INFO: topic #3 (0.052): 0.052*"lst" + 0.028*"attribute" + 0.028*"mode" + 0.028*"instance" + 0.028*"core" + 0.028*"conditional" + 0.028*"block" + 0.028*"problem" + 0.004*"func" + 0.004*"result"
+INFO: topic #4 (0.072): 0.032*"programming" + 0.032*"body" + 0.024*"tuple" + 0.024*"args" + 0.023*"positional" + 0.022*"high" + 0.021*"argument" + 0.016*"lot" + 0.014*"multiple" + 0.013*"fnc"
+INFO: topic diff=0.180214, rho=0.383482
+DEBUG: bound: at document #0
+INFO: -4.982 per-word bound, 31.6 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 5, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.47084326, 0.068608, 0.08451085, 0.047231942, 0.06896691]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.471): 0.191*"function" + 0.071*"argument" + 0.035*"order" + 0.030*"high" + 0.026*"decorator" + 0.026*"return" + 0.024*"example" + 0.022*"name" + 0.021*"class" + 0.018*"way"
+INFO: topic #1 (0.069): 0.079*"first" + 0.038*"type" + 0.021*"element" + 0.021*"last" + 0.021*"ref" + 0.021*"https://docs.python.org/3/library/typing.html#callable" + 0.021*"solution" + 0.021*"list" + 0.019*"return" + 0.019*"f"
+INFO: topic #2 (0.085): 0.039*"new" + 0.033*"html_tag" + 0.027*"second" + 0.020*"hof" + 0.020*"version" + 0.014*"operation" + 0.014*"datum" + 0.014*"key" + 0.014*"state" + 0.014*"make_function_print_arg"
+INFO: topic #3 (0.047): 0.038*"lst" + 0.021*"attribute" + 0.021*"mode" + 0.021*"instance" + 0.021*"core" + 0.021*"conditional" + 0.021*"block" + 0.021*"problem" + 0.004*"func" + 0.004*"result"
+INFO: topic #4 (0.069): 0.032*"tuple" + 0.032*"args" + 0.031*"positional" + 0.028*"high" + 0.028*"programming" + 0.028*"body" + 0.025*"argument" + 0.019*"lot" + 0.017*"multiple" + 0.017*"fnc"
+INFO: topic diff=0.178083, rho=0.358057
+DEBUG: bound: at document #0
+INFO: -5.550 per-word bound, 46.8 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 5, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.51618457, 0.06779621, 0.10301848, 0.048335418, 0.06764376]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.516): 0.202*"function" + 0.068*"argument" + 0.035*"return" + 0.034*"order" + 0.034*"example" + 0.030*"high" + 0.030*"class" + 0.021*"decorator" + 0.020*"way" + 0.020*"time"
+INFO: topic #1 (0.068): 0.108*"first" + 0.027*"type" + 0.015*"element" + 0.015*"last" + 0.015*"ref" + 0.015*"https://docs.python.org/3/library/typing.html#callable" + 0.015*"solution" + 0.015*"return" + 0.015*"list" + 0.014*"f"
+INFO: topic #2 (0.103): 0.044*"new" + 0.037*"html_tag" + 0.029*"second" + 0.022*"hof" + 0.022*"version" + 0.015*"operation" + 0.015*"datum" + 0.015*"key" + 0.015*"state" + 0.015*"single"
+INFO: topic #3 (0.048): 0.051*"lst" + 0.027*"attribute" + 0.027*"mode" + 0.027*"instance" + 0.027*"core" + 0.027*"conditional" + 0.027*"block" + 0.027*"problem" + 0.004*"func" + 0.004*"result"
+INFO: topic #4 (0.068): 0.030*"programming" + 0.030*"body" + 0.024*"tuple" + 0.024*"args" + 0.024*"positional" + 0.022*"high" + 0.020*"argument" + 0.016*"lot" + 0.014*"multiple" + 0.014*"fnc"
+INFO: topic diff=0.166913, rho=0.358057
+DEBUG: bound: at document #0
+INFO: -4.971 per-word bound, 31.4 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 6, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.48860988, 0.06535566, 0.085059926, 0.044336393, 0.06548904]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.489): 0.191*"function" + 0.071*"argument" + 0.035*"order" + 0.030*"high" + 0.027*"return" + 0.026*"decorator" + 0.024*"example" + 0.022*"name" + 0.022*"class" + 0.018*"way"
+INFO: topic #1 (0.065): 0.080*"first" + 0.038*"type" + 0.021*"element" + 0.021*"last" + 0.021*"ref" + 0.021*"https://docs.python.org/3/library/typing.html#callable" + 0.021*"solution" + 0.021*"list" + 0.018*"f" + 0.017*"return"
+INFO: topic #2 (0.085): 0.040*"new" + 0.033*"html_tag" + 0.027*"second" + 0.021*"hof" + 0.021*"version" + 0.014*"operation" + 0.014*"datum" + 0.014*"key" + 0.014*"state" + 0.014*"single"
+INFO: topic #3 (0.044): 0.038*"lst" + 0.021*"attribute" + 0.021*"mode" + 0.021*"instance" + 0.021*"core" + 0.021*"conditional" + 0.021*"block" + 0.021*"problem" + 0.004*"func" + 0.004*"result"
+INFO: topic #4 (0.065): 0.032*"tuple" + 0.032*"args" + 0.031*"positional" + 0.028*"high" + 0.027*"programming" + 0.027*"body" + 0.024*"argument" + 0.018*"lot" + 0.017*"multiple" + 0.017*"fnc"
+INFO: topic diff=0.162138, rho=0.337100
+DEBUG: bound: at document #0
+INFO: -5.535 per-word bound, 46.4 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 6, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.5214381, 0.06477491, 0.10234849, 0.04541427, 0.058775887]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.521): 0.202*"function" + 0.069*"argument" + 0.035*"return" + 0.034*"order" + 0.033*"example" + 0.031*"high" + 0.029*"class" + 0.022*"decorator" + 0.020*"way" + 0.019*"time"
+INFO: topic #1 (0.065): 0.107*"first" + 0.027*"type" + 0.015*"element" + 0.015*"last" + 0.015*"ref" + 0.015*"https://docs.python.org/3/library/typing.html#callable" + 0.015*"solution" + 0.015*"list" + 0.014*"return" + 0.013*"f"
+INFO: topic #2 (0.102): 0.043*"new" + 0.036*"html_tag" + 0.029*"second" + 0.022*"hof" + 0.022*"version" + 0.015*"operation" + 0.015*"datum" + 0.015*"key" + 0.015*"state" + 0.015*"single"
+INFO: topic #3 (0.045): 0.051*"lst" + 0.027*"attribute" + 0.027*"mode" + 0.027*"instance" + 0.027*"core" + 0.027*"conditional" + 0.027*"block" + 0.027*"problem" + 0.004*"func" + 0.004*"result"
+INFO: topic #4 (0.059): 0.025*"tuple" + 0.025*"args" + 0.025*"positional" + 0.022*"high" + 0.021*"programming" + 0.021*"body" + 0.019*"argument" + 0.015*"lot" + 0.014*"multiple" + 0.014*"fnc"
+INFO: topic diff=0.161058, rho=0.337100
+DEBUG: bound: at document #0
+INFO: -4.963 per-word bound, 31.2 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 7, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.49462146, 0.06281129, 0.085476466, 0.04205326, 0.05769956]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.495): 0.191*"function" + 0.072*"argument" + 0.034*"order" + 0.030*"high" + 0.027*"return" + 0.026*"decorator" + 0.024*"example" + 0.022*"class" + 0.022*"name" + 0.018*"way"
+INFO: topic #1 (0.063): 0.082*"first" + 0.038*"type" + 0.021*"element" + 0.021*"last" + 0.021*"ref" + 0.021*"https://docs.python.org/3/library/typing.html#callable" + 0.021*"solution" + 0.020*"list" + 0.017*"f" + 0.015*"return"
+INFO: topic #2 (0.085): 0.040*"new" + 0.033*"html_tag" + 0.027*"second" + 0.020*"hof" + 0.020*"version" + 0.014*"operation" + 0.014*"datum" + 0.014*"key" + 0.014*"state" + 0.014*"single"
+INFO: topic #3 (0.042): 0.038*"lst" + 0.021*"attribute" + 0.021*"mode" + 0.021*"instance" + 0.021*"core" + 0.021*"conditional" + 0.021*"block" + 0.021*"problem" + 0.004*"func" + 0.004*"result"
+INFO: topic #4 (0.058): 0.032*"args" + 0.032*"tuple" + 0.031*"positional" + 0.028*"high" + 0.023*"argument" + 0.022*"programming" + 0.022*"body" + 0.017*"lot" + 0.017*"multiple" + 0.017*"resource"
+INFO: topic diff=0.151253, rho=0.319438
+DEBUG: bound: at document #0
+INFO: -5.517 per-word bound, 45.8 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 7, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.52343667, 0.062475964, 0.101881295, 0.043136254, 0.05273746]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.523): 0.201*"function" + 0.069*"argument" + 0.035*"return" + 0.034*"order" + 0.033*"example" + 0.031*"high" + 0.029*"class" + 0.022*"decorator" + 0.019*"way" + 0.019*"time"
+INFO: topic #1 (0.062): 0.107*"first" + 0.028*"type" + 0.016*"element" + 0.016*"last" + 0.016*"ref" + 0.016*"https://docs.python.org/3/library/typing.html#callable" + 0.016*"solution" + 0.015*"list" + 0.013*"f" + 0.012*"return"
+INFO: topic #2 (0.102): 0.043*"new" + 0.036*"html_tag" + 0.029*"second" + 0.022*"hof" + 0.022*"version" + 0.015*"operation" + 0.015*"datum" + 0.015*"make_function_print_arg" + 0.015*"single" + 0.015*"state"
+INFO: topic #3 (0.043): 0.050*"lst" + 0.027*"attribute" + 0.027*"mode" + 0.027*"instance" + 0.027*"core" + 0.027*"conditional" + 0.027*"block" + 0.027*"problem" + 0.004*"func" + 0.004*"result"
+INFO: topic #4 (0.053): 0.026*"args" + 0.026*"tuple" + 0.025*"positional" + 0.023*"high" + 0.019*"argument" + 0.018*"programming" + 0.018*"body" + 0.015*"lot" + 0.014*"multiple" + 0.014*"resource"
+INFO: topic diff=0.148116, rho=0.319438
+DEBUG: bound: at document #0
+INFO: -4.957 per-word bound, 31.1 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 8, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.49762124, 0.060840547, 0.08588846, 0.040235046, 0.052222956]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.498): 0.191*"function" + 0.072*"argument" + 0.034*"order" + 0.030*"high" + 0.027*"return" + 0.026*"decorator" + 0.024*"example" + 0.022*"class" + 0.021*"name" + 0.018*"way"
+INFO: topic #1 (0.061): 0.082*"first" + 0.038*"type" + 0.021*"last" + 0.021*"element" + 0.021*"ref" + 0.021*"solution" + 0.021*"https://docs.python.org/3/library/typing.html#callable" + 0.020*"list" + 0.016*"f" + 0.014*"return"
+INFO: topic #2 (0.086): 0.040*"new" + 0.033*"html_tag" + 0.027*"second" + 0.020*"hof" + 0.020*"version" + 0.014*"operation" + 0.014*"datum" + 0.014*"make_function_print_arg" + 0.014*"single" + 0.014*"state"
+INFO: topic #3 (0.040): 0.039*"lst" + 0.021*"attribute" + 0.021*"mode" + 0.021*"instance" + 0.021*"core" + 0.021*"conditional" + 0.021*"block" + 0.021*"problem" + 0.004*"func" + 0.004*"result"
+INFO: topic #4 (0.052): 0.032*"args" + 0.032*"tuple" + 0.031*"positional" + 0.028*"high" + 0.022*"argument" + 0.020*"programming" + 0.020*"body" + 0.017*"multiple" + 0.017*"resource" + 0.017*"additional"
+INFO: topic diff=0.142392, rho=0.304290
+DEBUG: bound: at document #0
+INFO: -5.509 per-word bound, 45.5 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 8, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.5235271, 0.060667727, 0.10153654, 0.04130447, 0.048334908]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.524): 0.201*"function" + 0.069*"argument" + 0.035*"return" + 0.034*"order" + 0.032*"example" + 0.031*"high" + 0.029*"class" + 0.022*"decorator" + 0.019*"way" + 0.019*"time"
+INFO: topic #1 (0.061): 0.106*"first" + 0.028*"type" + 0.016*"last" + 0.016*"element" + 0.016*"solution" + 0.016*"ref" + 0.016*"https://docs.python.org/3/library/typing.html#callable" + 0.016*"list" + 0.013*"f" + 0.011*"return"
+INFO: topic #2 (0.102): 0.043*"new" + 0.036*"html_tag" + 0.029*"second" + 0.022*"hof" + 0.022*"version" + 0.015*"operation" + 0.015*"datum" + 0.015*"make_function_print_arg" + 0.015*"single" + 0.015*"state"
+INFO: topic #3 (0.041): 0.050*"lst" + 0.027*"attribute" + 0.027*"mode" + 0.027*"instance" + 0.027*"core" + 0.027*"conditional" + 0.027*"block" + 0.027*"problem" + 0.004*"func" + 0.004*"result"
+INFO: topic #4 (0.048): 0.026*"args" + 0.026*"tuple" + 0.026*"positional" + 0.023*"high" + 0.018*"argument" + 0.016*"programming" + 0.016*"body" + 0.015*"multiple" + 0.015*"resource" + 0.015*"additional"
+INFO: topic diff=0.139296, rho=0.304290
+DEBUG: bound: at document #0
+INFO: -4.952 per-word bound, 31.0 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 9, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.49870497, 0.059268717, 0.08627715, 0.038748797, 0.048141908]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.499): 0.191*"function" + 0.072*"argument" + 0.034*"order" + 0.030*"high" + 0.028*"return" + 0.026*"decorator" + 0.024*"example" + 0.022*"class" + 0.021*"name" + 0.018*"way"
+INFO: topic #1 (0.059): 0.083*"first" + 0.038*"type" + 0.021*"https://docs.python.org/3/library/typing.html#callable" + 0.021*"last" + 0.021*"ref" + 0.021*"solution" + 0.021*"element" + 0.020*"list" + 0.016*"f" + 0.012*"return"
+INFO: topic #2 (0.086): 0.040*"new" + 0.033*"html_tag" + 0.027*"second" + 0.020*"hof" + 0.020*"version" + 0.014*"operation" + 0.014*"datum" + 0.014*"make_function_print_arg" + 0.014*"single" + 0.014*"state"
+INFO: topic #3 (0.039): 0.039*"lst" + 0.021*"attribute" + 0.021*"mode" + 0.021*"instance" + 0.021*"core" + 0.021*"conditional" + 0.021*"block" + 0.021*"problem" + 0.004*"func" + 0.004*"result"
+INFO: topic #4 (0.048): 0.032*"args" + 0.032*"tuple" + 0.031*"positional" + 0.028*"high" + 0.022*"argument" + 0.019*"programming" + 0.019*"body" + 0.017*"multiple" + 0.017*"refer" + 0.017*"online"
+INFO: topic diff=0.134859, rho=0.291111
+DEBUG: bound: at document #0
+INFO: -5.504 per-word bound, 45.4 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 9, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.5224829, 0.059208613, 0.1012676, 0.039796147, 0.0449699]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.522): 0.200*"function" + 0.070*"argument" + 0.035*"return" + 0.034*"order" + 0.032*"example" + 0.031*"high" + 0.029*"class" + 0.022*"decorator" + 0.019*"way" + 0.019*"time"
+INFO: topic #1 (0.059): 0.106*"first" + 0.029*"type" + 0.016*"ref" + 0.016*"element" + 0.016*"solution" + 0.016*"https://docs.python.org/3/library/typing.html#callable" + 0.016*"last" + 0.016*"list" + 0.013*"f" + 0.010*"return"
+INFO: topic #2 (0.101): 0.043*"new" + 0.036*"html_tag" + 0.029*"second" + 0.022*"hof" + 0.022*"version" + 0.015*"operation" + 0.015*"datum" + 0.015*"make_function_print_arg" + 0.015*"single" + 0.015*"state"
+INFO: topic #3 (0.040): 0.050*"lst" + 0.027*"attribute" + 0.027*"mode" + 0.027*"instance" + 0.027*"core" + 0.027*"conditional" + 0.027*"block" + 0.027*"problem" + 0.004*"func" + 0.004*"result"
+INFO: topic #4 (0.045): 0.026*"args" + 0.026*"tuple" + 0.026*"positional" + 0.023*"high" + 0.018*"argument" + 0.016*"programming" + 0.016*"body" + 0.015*"multiple" + 0.015*"fnc(*args" + 0.015*"refer"
+INFO: topic diff=0.132017, rho=0.291111
+DEBUG: starting a new internal lifecycle event log for LdaModel
+INFO: LdaModel lifecycle event {'msg': 'trained LdaModel<num_terms=226, num_topics=5, decay=0.5, chunksize=5> in 0.13s', 'datetime': '2023-04-25T15:14:17.394317', 'gensim': '4.3.1', 'python': '3.9.2 (default, Mar  4 2021, 10:15:47) \n[Clang 10.0.0 (clang-1000.10.44.4)]', 'platform': 'macOS-10.16-x86_64-i386-64bit', 'event': 'created'}
+INFO: using autotuned alpha, starting with [0.2, 0.2, 0.2, 0.2, 0.2]
+INFO: using serial LDA version on this node
+INFO: running online (multi-pass) LDA training, 5 topics, 10 passes over the supplied corpus of 9 documents, updating model once every 5 documents, evaluating perplexity every 5 documents, iterating 2000x with a convergence threshold of 0.001000
+DEBUG: bound: at document #0
+INFO: -7.262 per-word bound, 153.5 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 0, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+WARNING: updated prior is not positive
+INFO: optimized alpha [0.2, 0.2, 0.2, 0.2, 0.2]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.200): 0.082*"function" + 0.055*"argument" + 0.028*"order" + 0.028*"unnamed" + 0.028*"change" + 0.028*"simple" + 0.028*"func" + 0.028*"default" + 0.028*"choice" + 0.015*"way"
+INFO: topic #1 (0.200): 0.183*"function" + 0.070*"argument" + 0.039*"decorator" + 0.035*"name" + 0.035*"order" + 0.035*"high" + 0.024*"call" + 0.016*"return" + 0.016*"lambda" + 0.016*"expression"
+INFO: topic #2 (0.200): 0.005*"function" + 0.005*"argument" + 0.004*"high" + 0.004*"decorator" + 0.004*"order" + 0.004*"type" + 0.004*"return" + 0.004*"https://docs.python.org/3/library/typing.html#callable" + 0.004*"positional" + 0.004*"f"
+INFO: topic #3 (0.200): 0.041*"argument" + 0.040*"args" + 0.040*"high" + 0.040*"tuple" + 0.040*"positional" + 0.021*"function" + 0.021*"additional" + 0.021*"fnc(*args" + 0.021*"available" + 0.021*"resource"
+INFO: topic #4 (0.200): 0.057*"type" + 0.030*"argument" + 0.030*"f" + 0.030*"element" + 0.030*"list" + 0.030*"first" + 0.030*"last" + 0.030*"return" + 0.030*"ref" + 0.030*"solution"
+INFO: topic diff=3.565516, rho=1.000000
+DEBUG: bound: at document #0
+INFO: -7.771 per-word bound, 218.4 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 0, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.24233945, 0.3149868, 0.3130735, 0.21647944, 0.15044677]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.242): 0.072*"time" + 0.069*"function" + 0.046*"result" + 0.031*"value" + 0.027*"argument" + 0.024*"func" + 0.024*"change" + 0.021*"way" + 0.020*"order" + 0.019*"variable"
+INFO: topic #1 (0.315): 0.212*"function" + 0.063*"argument" + 0.044*"example" + 0.042*"return" + 0.039*"class" + 0.033*"high" + 0.031*"order" + 0.022*"decorator" + 0.021*"reference" + 0.018*"f"
+INFO: topic #2 (0.313): 0.039*"new" + 0.025*"version" + 0.025*"hof" + 0.022*"html_tag" + 0.018*"second" + 0.017*"operation" + 0.017*"datum" + 0.016*"single" + 0.016*"make_function_print_arg" + 0.015*"lst"
+INFO: topic #3 (0.216): 0.047*"multiple" + 0.031*"programming" + 0.031*"body" + 0.026*"argument" + 0.023*"high" + 0.018*"lot" + 0.017*"args" + 0.017*"tuple" + 0.017*"positional" + 0.015*"function"
+INFO: topic #4 (0.150): 0.093*"first" + 0.030*"html_tag" + 0.027*"return" + 0.025*"second" + 0.017*"type" + 0.014*"new" + 0.014*"reason" + 0.014*"different" + 0.013*"argument" + 0.010*"f"
+INFO: topic diff=1.259659, rho=0.707107
+DEBUG: bound: at document #0
+INFO: -5.068 per-word bound, 33.6 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 1, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.14154547, 0.24696892, 0.07403971, 0.13411897, 0.11228358]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.142): 0.076*"function" + 0.042*"argument" + 0.041*"time" + 0.029*"result" + 0.026*"func" + 0.026*"change" + 0.025*"order" + 0.022*"value" + 0.020*"unnamed" + 0.020*"simple"
+INFO: topic #1 (0.247): 0.195*"function" + 0.068*"argument" + 0.035*"high" + 0.034*"order" + 0.032*"decorator" + 0.027*"name" + 0.026*"return" + 0.025*"example" + 0.023*"class" + 0.020*"call"
+INFO: topic #2 (0.074): 0.032*"new" + 0.020*"version" + 0.020*"hof" + 0.018*"html_tag" + 0.015*"second" + 0.014*"operation" + 0.014*"datum" + 0.014*"single" + 0.014*"make_function_print_arg" + 0.013*"lst"
+INFO: topic #3 (0.134): 0.034*"argument" + 0.033*"high" + 0.032*"multiple" + 0.031*"args" + 0.031*"tuple" + 0.031*"positional" + 0.025*"programming" + 0.025*"body" + 0.020*"lot" + 0.017*"function"
+INFO: topic #4 (0.112): 0.063*"first" + 0.036*"type" + 0.028*"return" + 0.021*"argument" + 0.019*"element" + 0.019*"last" + 0.019*"ref" + 0.019*"solution" + 0.019*"https://docs.python.org/3/library/typing.html#callable" + 0.019*"list"
+INFO: topic diff=0.437730, rho=0.512989
+DEBUG: bound: at document #0
+INFO: -5.899 per-word bound, 59.7 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 1, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.16336596, 0.32302487, 0.10895034, 0.112372324, 0.101932235]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.163): 0.077*"time" + 0.065*"function" + 0.049*"result" + 0.029*"value" + 0.029*"argument" + 0.026*"func" + 0.026*"change" + 0.021*"way" + 0.021*"variable" + 0.020*"order"
+INFO: topic #1 (0.323): 0.218*"function" + 0.067*"argument" + 0.043*"example" + 0.043*"return" + 0.038*"class" + 0.035*"high" + 0.033*"order" + 0.023*"decorator" + 0.021*"reference" + 0.018*"f"
+INFO: topic #2 (0.109): 0.043*"new" + 0.025*"html_tag" + 0.024*"hof" + 0.024*"version" + 0.020*"second" + 0.016*"operation" + 0.016*"datum" + 0.016*"make_function_print_arg" + 0.016*"single" + 0.015*"lst"
+INFO: topic #3 (0.112): 0.033*"programming" + 0.033*"body" + 0.025*"argument" + 0.022*"high" + 0.021*"multiple" + 0.020*"args" + 0.020*"tuple" + 0.020*"positional" + 0.017*"lot" + 0.013*"function"
+INFO: topic #4 (0.102): 0.096*"first" + 0.027*"html_tag" + 0.022*"return" + 0.022*"second" + 0.019*"type" + 0.013*"argument" + 0.012*"reason" + 0.012*"different" + 0.011*"element" + 0.011*"last"
+INFO: topic diff=0.304394, rho=0.512989
+DEBUG: bound: at document #0
+INFO: -4.956 per-word bound, 31.0 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 2, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.12323181, 0.2661244, 0.07969649, 0.09549093, 0.08811561]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.123): 0.074*"function" + 0.045*"time" + 0.042*"argument" + 0.032*"result" + 0.027*"func" + 0.027*"change" + 0.024*"order" + 0.022*"value" + 0.021*"unnamed" + 0.021*"simple"
+INFO: topic #1 (0.266): 0.200*"function" + 0.069*"argument" + 0.035*"high" + 0.034*"order" + 0.032*"decorator" + 0.028*"return" + 0.027*"name" + 0.026*"example" + 0.024*"class" + 0.020*"call"
+INFO: topic #2 (0.080): 0.036*"new" + 0.022*"html_tag" + 0.020*"hof" + 0.020*"version" + 0.018*"second" + 0.014*"operation" + 0.014*"datum" + 0.014*"make_function_print_arg" + 0.014*"single" + 0.013*"lst"
+INFO: topic #3 (0.095): 0.032*"args" + 0.032*"tuple" + 0.031*"positional" + 0.031*"argument" + 0.031*"high" + 0.027*"programming" + 0.027*"body" + 0.022*"multiple" + 0.019*"lot" + 0.017*"additional"
+INFO: topic #4 (0.088): 0.067*"first" + 0.036*"type" + 0.025*"return" + 0.019*"argument" + 0.019*"element" + 0.019*"last" + 0.019*"ref" + 0.019*"solution" + 0.019*"https://docs.python.org/3/library/typing.html#callable" + 0.019*"list"
+INFO: topic diff=0.329507, rho=0.456435
+DEBUG: bound: at document #0
+INFO: -5.796 per-word bound, 55.6 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 2, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.14321996, 0.3375156, 0.11332269, 0.08883996, 0.08433539]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.143): 0.078*"time" + 0.063*"function" + 0.050*"result" + 0.031*"argument" + 0.028*"func" + 0.027*"value" + 0.027*"change" + 0.022*"variable" + 0.021*"way" + 0.020*"order"
+INFO: topic #1 (0.338): 0.220*"function" + 0.068*"argument" + 0.042*"return" + 0.042*"example" + 0.037*"class" + 0.035*"high" + 0.033*"order" + 0.024*"decorator" + 0.020*"reference" + 0.018*"f"
+INFO: topic #2 (0.113): 0.042*"new" + 0.030*"html_tag" + 0.024*"second" + 0.022*"version" + 0.022*"hof" + 0.015*"operation" + 0.015*"datum" + 0.015*"make_function_print_arg" + 0.015*"single" + 0.015*"lst"
+INFO: topic #3 (0.089): 0.033*"body" + 0.033*"programming" + 0.023*"argument" + 0.022*"high" + 0.022*"args" + 0.022*"tuple" + 0.022*"positional" + 0.016*"lot" + 0.015*"multiple" + 0.013*"additional"
+INFO: topic #4 (0.084): 0.103*"first" + 0.022*"type" + 0.020*"return" + 0.018*"html_tag" + 0.014*"second" + 0.014*"argument" + 0.013*"element" + 0.013*"last" + 0.013*"ref" + 0.013*"solution"
+INFO: topic diff=0.229912, rho=0.456435
+DEBUG: bound: at document #0
+INFO: -4.914 per-word bound, 30.2 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 3, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.11575985, 0.28271195, 0.08417488, 0.08046981, 0.076677516]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.116): 0.072*"function" + 0.048*"time" + 0.042*"argument" + 0.033*"result" + 0.028*"func" + 0.028*"change" + 0.024*"order" + 0.021*"value" + 0.021*"unnamed" + 0.021*"simple"
+INFO: topic #1 (0.283): 0.202*"function" + 0.070*"argument" + 0.036*"high" + 0.034*"order" + 0.031*"decorator" + 0.029*"return" + 0.027*"example" + 0.026*"name" + 0.025*"class" + 0.020*"call"
+INFO: topic #2 (0.084): 0.037*"new" + 0.026*"html_tag" + 0.021*"second" + 0.020*"version" + 0.020*"hof" + 0.014*"operation" + 0.014*"datum" + 0.014*"make_function_print_arg" + 0.014*"single" + 0.013*"lst"
+INFO: topic #3 (0.080): 0.032*"args" + 0.032*"tuple" + 0.031*"positional" + 0.029*"high" + 0.028*"argument" + 0.027*"body" + 0.027*"programming" + 0.019*"lot" + 0.019*"multiple" + 0.017*"additional"
+INFO: topic #4 (0.077): 0.072*"first" + 0.037*"type" + 0.023*"return" + 0.020*"element" + 0.020*"last" + 0.020*"ref" + 0.020*"solution" + 0.020*"https://docs.python.org/3/library/typing.html#callable" + 0.020*"list" + 0.019*"f"
+INFO: topic diff=0.258937, rho=0.415227
+DEBUG: bound: at document #0
+INFO: -5.752 per-word bound, 53.9 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 3, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.13389295, 0.3501739, 0.11653168, 0.07755516, 0.07502395]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.134): 0.078*"time" + 0.062*"function" + 0.050*"result" + 0.032*"argument" + 0.029*"func" + 0.028*"change" + 0.025*"value" + 0.022*"variable" + 0.020*"order" + 0.020*"way"
+INFO: topic #1 (0.350): 0.220*"function" + 0.069*"argument" + 0.042*"return" + 0.041*"example" + 0.036*"class" + 0.035*"high" + 0.033*"order" + 0.024*"decorator" + 0.019*"reference" + 0.018*"name"
+INFO: topic #2 (0.117): 0.042*"new" + 0.032*"html_tag" + 0.026*"second" + 0.022*"version" + 0.022*"hof" + 0.015*"operation" + 0.015*"datum" + 0.015*"single" + 0.015*"make_function_print_arg" + 0.015*"state"
+INFO: topic #3 (0.078): 0.032*"body" + 0.032*"programming" + 0.023*"args" + 0.023*"tuple" + 0.023*"positional" + 0.022*"high" + 0.022*"argument" + 0.016*"lot" + 0.014*"multiple" + 0.013*"additional"
+INFO: topic #4 (0.075): 0.107*"first" + 0.024*"type" + 0.018*"return" + 0.014*"element" + 0.014*"last" + 0.014*"ref" + 0.014*"solution" + 0.014*"https://docs.python.org/3/library/typing.html#callable" + 0.014*"list" + 0.013*"argument"
+INFO: topic diff=0.210465, rho=0.415227
+DEBUG: bound: at document #0
+INFO: -4.891 per-word bound, 29.7 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 4, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.11219532, 0.29881936, 0.08800264, 0.07235813, 0.070003554]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.112): 0.071*"function" + 0.050*"time" + 0.042*"argument" + 0.034*"result" + 0.029*"func" + 0.028*"change" + 0.024*"order" + 0.021*"unnamed" + 0.021*"simple" + 0.021*"default"
+INFO: topic #1 (0.299): 0.204*"function" + 0.071*"argument" + 0.036*"high" + 0.034*"order" + 0.031*"decorator" + 0.030*"return" + 0.027*"example" + 0.026*"name" + 0.025*"class" + 0.020*"call"
+INFO: topic #2 (0.088): 0.037*"new" + 0.029*"html_tag" + 0.023*"second" + 0.020*"version" + 0.020*"hof" + 0.013*"operation" + 0.013*"datum" + 0.013*"single" + 0.013*"make_function_print_arg" + 0.013*"state"
+INFO: topic #3 (0.072): 0.032*"args" + 0.032*"tuple" + 0.031*"positional" + 0.028*"high" + 0.028*"body" + 0.028*"programming" + 0.026*"argument" + 0.018*"lot" + 0.018*"multiple" + 0.017*"additional"
+INFO: topic #4 (0.070): 0.076*"first" + 0.038*"type" + 0.021*"return" + 0.020*"element" + 0.020*"last" + 0.020*"ref" + 0.020*"solution" + 0.020*"https://docs.python.org/3/library/typing.html#callable" + 0.020*"list" + 0.019*"f"
+INFO: topic diff=0.218341, rho=0.383482
+DEBUG: bound: at document #0
+INFO: -5.729 per-word bound, 53.0 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 4, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.12863597, 0.36300105, 0.1192562, 0.07089003, 0.06934761]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.129): 0.078*"time" + 0.061*"function" + 0.050*"result" + 0.033*"argument" + 0.029*"func" + 0.028*"change" + 0.024*"value" + 0.022*"variable" + 0.020*"order" + 0.020*"way"
+INFO: topic #1 (0.363): 0.219*"function" + 0.069*"argument" + 0.041*"return" + 0.040*"example" + 0.036*"high" + 0.035*"class" + 0.034*"order" + 0.025*"decorator" + 0.019*"reference" + 0.018*"name"
+INFO: topic #2 (0.119): 0.041*"new" + 0.033*"html_tag" + 0.027*"second" + 0.021*"hof" + 0.021*"version" + 0.014*"operation" + 0.014*"datum" + 0.014*"single" + 0.014*"make_function_print_arg" + 0.014*"state"
+INFO: topic #3 (0.071): 0.031*"body" + 0.031*"programming" + 0.024*"args" + 0.024*"tuple" + 0.023*"positional" + 0.022*"high" + 0.021*"argument" + 0.016*"lot" + 0.014*"multiple" + 0.013*"additional"
+INFO: topic #4 (0.069): 0.108*"first" + 0.026*"type" + 0.017*"return" + 0.015*"element" + 0.015*"last" + 0.015*"ref" + 0.015*"solution" + 0.015*"https://docs.python.org/3/library/typing.html#callable" + 0.014*"list" + 0.014*"f"
+INFO: topic diff=0.191096, rho=0.383482
+DEBUG: bound: at document #0
+INFO: -4.876 per-word bound, 29.4 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 5, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.11026892, 0.3134622, 0.091387905, 0.067266084, 0.065706216]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.110): 0.070*"function" + 0.051*"time" + 0.042*"argument" + 0.035*"result" + 0.029*"func" + 0.028*"change" + 0.024*"order" + 0.021*"unnamed" + 0.021*"simple" + 0.021*"default"
+INFO: topic #1 (0.313): 0.204*"function" + 0.071*"argument" + 0.036*"high" + 0.034*"order" + 0.031*"decorator" + 0.031*"return" + 0.028*"example" + 0.026*"name" + 0.025*"class" + 0.020*"call"
+INFO: topic #2 (0.091): 0.037*"new" + 0.030*"html_tag" + 0.024*"second" + 0.019*"hof" + 0.019*"version" + 0.013*"operation" + 0.013*"datum" + 0.013*"single" + 0.013*"make_function_print_arg" + 0.013*"state"
+INFO: topic #3 (0.067): 0.032*"args" + 0.032*"tuple" + 0.031*"positional" + 0.028*"high" + 0.027*"body" + 0.027*"programming" + 0.025*"argument" + 0.018*"lot" + 0.018*"multiple" + 0.017*"additional"
+INFO: topic #4 (0.066): 0.079*"first" + 0.038*"type" + 0.021*"element" + 0.021*"last" + 0.021*"ref" + 0.021*"solution" + 0.021*"https://docs.python.org/3/library/typing.html#callable" + 0.020*"list" + 0.020*"return" + 0.019*"f"
+INFO: topic diff=0.190963, rho=0.358057
+DEBUG: bound: at document #0
+INFO: -5.712 per-word bound, 52.4 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 5, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.12468983, 0.37446797, 0.121672556, 0.066320114, 0.06555299]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.125): 0.078*"time" + 0.061*"function" + 0.050*"result" + 0.033*"argument" + 0.030*"func" + 0.025*"change" + 0.023*"variable" + 0.022*"value" + 0.020*"order" + 0.019*"way"
+INFO: topic #1 (0.374): 0.218*"function" + 0.070*"argument" + 0.041*"return" + 0.039*"example" + 0.036*"high" + 0.035*"class" + 0.034*"order" + 0.025*"decorator" + 0.019*"name" + 0.019*"reference"
+INFO: topic #2 (0.122): 0.041*"new" + 0.034*"html_tag" + 0.027*"second" + 0.021*"hof" + 0.021*"version" + 0.014*"operation" + 0.014*"datum" + 0.014*"single" + 0.014*"make_function_print_arg" + 0.014*"state"
+INFO: topic #3 (0.066): 0.027*"body" + 0.027*"programming" + 0.025*"args" + 0.025*"tuple" + 0.024*"positional" + 0.022*"high" + 0.020*"argument" + 0.015*"lot" + 0.014*"multiple" + 0.014*"additional"
+INFO: topic #4 (0.066): 0.108*"first" + 0.027*"type" + 0.015*"return" + 0.015*"element" + 0.015*"last" + 0.015*"ref" + 0.015*"solution" + 0.015*"https://docs.python.org/3/library/typing.html#callable" + 0.015*"list" + 0.014*"f"
+INFO: topic diff=0.177997, rho=0.358057
+DEBUG: bound: at document #0
+INFO: -4.867 per-word bound, 29.2 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 6, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.108693585, 0.32585168, 0.09439784, 0.06362297, 0.06272557]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.109): 0.069*"function" + 0.052*"time" + 0.042*"argument" + 0.036*"result" + 0.029*"func" + 0.027*"change" + 0.024*"order" + 0.021*"unnamed" + 0.021*"simple" + 0.021*"default"
+INFO: topic #1 (0.326): 0.204*"function" + 0.072*"argument" + 0.036*"high" + 0.034*"order" + 0.031*"return" + 0.031*"decorator" + 0.028*"example" + 0.025*"name" + 0.025*"class" + 0.020*"call"
+INFO: topic #2 (0.094): 0.037*"new" + 0.031*"html_tag" + 0.025*"second" + 0.019*"hof" + 0.019*"version" + 0.013*"operation" + 0.013*"datum" + 0.013*"single" + 0.013*"make_function_print_arg" + 0.013*"state"
+INFO: topic #3 (0.064): 0.032*"args" + 0.032*"tuple" + 0.031*"positional" + 0.027*"high" + 0.025*"body" + 0.025*"programming" + 0.024*"argument" + 0.018*"lot" + 0.017*"multiple" + 0.017*"additional"
+INFO: topic #4 (0.063): 0.080*"first" + 0.038*"type" + 0.021*"element" + 0.021*"last" + 0.021*"ref" + 0.021*"solution" + 0.021*"https://docs.python.org/3/library/typing.html#callable" + 0.020*"list" + 0.018*"f" + 0.018*"return"
+INFO: topic diff=0.172649, rho=0.337100
+DEBUG: bound: at document #0
+INFO: -5.684 per-word bound, 51.4 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 6, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.11297153, 0.37762946, 0.123252824, 0.05747527, 0.0625925]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.113): 0.078*"time" + 0.060*"function" + 0.050*"result" + 0.034*"argument" + 0.030*"func" + 0.023*"variable" + 0.021*"value" + 0.021*"order" + 0.021*"change" + 0.019*"way"
+INFO: topic #1 (0.378): 0.218*"function" + 0.070*"argument" + 0.041*"return" + 0.038*"example" + 0.036*"high" + 0.034*"class" + 0.034*"order" + 0.025*"decorator" + 0.019*"name" + 0.018*"reference"
+INFO: topic #2 (0.123): 0.040*"new" + 0.034*"html_tag" + 0.027*"second" + 0.021*"hof" + 0.021*"version" + 0.014*"operation" + 0.014*"datum" + 0.014*"single" + 0.014*"make_function_print_arg" + 0.014*"state"
+INFO: topic #3 (0.057): 0.025*"args" + 0.025*"tuple" + 0.025*"positional" + 0.022*"high" + 0.020*"body" + 0.020*"programming" + 0.019*"argument" + 0.014*"lot" + 0.014*"multiple" + 0.014*"additional"
+INFO: topic #4 (0.063): 0.107*"first" + 0.027*"type" + 0.015*"element" + 0.015*"last" + 0.015*"ref" + 0.015*"solution" + 0.015*"https://docs.python.org/3/library/typing.html#callable" + 0.015*"list" + 0.014*"return" + 0.013*"f"
+INFO: topic diff=0.168057, rho=0.337100
+DEBUG: bound: at document #0
+INFO: -4.861 per-word bound, 29.1 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 7, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.10090326, 0.32968628, 0.09644123, 0.055974852, 0.060242813]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.101): 0.069*"function" + 0.053*"time" + 0.042*"argument" + 0.037*"result" + 0.029*"func" + 0.024*"change" + 0.024*"order" + 0.021*"simple" + 0.021*"unnamed" + 0.021*"choice"
+INFO: topic #1 (0.330): 0.205*"function" + 0.072*"argument" + 0.036*"high" + 0.034*"order" + 0.032*"return" + 0.030*"decorator" + 0.028*"example" + 0.026*"class" + 0.025*"name" + 0.020*"call"
+INFO: topic #2 (0.096): 0.037*"new" + 0.031*"html_tag" + 0.025*"second" + 0.019*"hof" + 0.019*"version" + 0.013*"operation" + 0.013*"datum" + 0.013*"single" + 0.013*"make_function_print_arg" + 0.013*"state"
+INFO: topic #3 (0.056): 0.032*"args" + 0.032*"tuple" + 0.031*"positional" + 0.027*"high" + 0.022*"argument" + 0.021*"body" + 0.021*"programming" + 0.018*"multiple" + 0.017*"fnc(*args" + 0.017*"available"
+INFO: topic #4 (0.060): 0.081*"first" + 0.038*"type" + 0.021*"element" + 0.021*"last" + 0.021*"solution" + 0.021*"ref" + 0.021*"https://docs.python.org/3/library/typing.html#callable" + 0.020*"list" + 0.017*"f" + 0.016*"return"
+INFO: topic diff=0.160171, rho=0.319438
+DEBUG: bound: at document #0
+INFO: -5.665 per-word bound, 50.7 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 7, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.10558802, 0.3791509, 0.124347225, 0.05147565, 0.06033293]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.106): 0.077*"time" + 0.060*"function" + 0.050*"result" + 0.035*"argument" + 0.030*"func" + 0.023*"variable" + 0.021*"order" + 0.020*"value" + 0.019*"way" + 0.019*"change"
+INFO: topic #1 (0.379): 0.217*"function" + 0.071*"argument" + 0.041*"return" + 0.038*"example" + 0.036*"high" + 0.034*"class" + 0.034*"order" + 0.025*"decorator" + 0.019*"name" + 0.018*"reference"
+INFO: topic #2 (0.124): 0.040*"new" + 0.033*"html_tag" + 0.027*"second" + 0.021*"hof" + 0.021*"version" + 0.014*"operation" + 0.014*"datum" + 0.014*"single" + 0.014*"make_function_print_arg" + 0.014*"state"
+INFO: topic #3 (0.051): 0.026*"args" + 0.026*"tuple" + 0.025*"positional" + 0.022*"high" + 0.018*"argument" + 0.017*"body" + 0.017*"programming" + 0.015*"multiple" + 0.015*"fnc(*args" + 0.015*"available"
+INFO: topic #4 (0.060): 0.107*"first" + 0.028*"type" + 0.016*"element" + 0.016*"last" + 0.016*"ref" + 0.016*"solution" + 0.016*"https://docs.python.org/3/library/typing.html#callable" + 0.015*"list" + 0.013*"f" + 0.013*"return"
+INFO: topic diff=0.155051, rho=0.319438
+DEBUG: bound: at document #0
+INFO: -4.856 per-word bound, 29.0 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 8, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.09577493, 0.33227262, 0.09812849, 0.05061437, 0.058324296]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.096): 0.068*"function" + 0.054*"time" + 0.042*"argument" + 0.037*"result" + 0.030*"func" + 0.023*"order" + 0.022*"change" + 0.021*"simple" + 0.021*"choice" + 0.021*"default"
+INFO: topic #1 (0.332): 0.205*"function" + 0.073*"argument" + 0.036*"high" + 0.034*"order" + 0.032*"return" + 0.030*"decorator" + 0.028*"example" + 0.026*"class" + 0.025*"name" + 0.020*"call"
+INFO: topic #2 (0.098): 0.037*"new" + 0.031*"html_tag" + 0.025*"second" + 0.019*"hof" + 0.019*"version" + 0.013*"operation" + 0.013*"datum" + 0.013*"single" + 0.013*"make_function_print_arg" + 0.013*"state"
+INFO: topic #3 (0.051): 0.032*"args" + 0.032*"tuple" + 0.031*"positional" + 0.027*"high" + 0.022*"argument" + 0.019*"body" + 0.019*"programming" + 0.018*"multiple" + 0.018*"detail" + 0.018*"resource"
+INFO: topic #4 (0.058): 0.082*"first" + 0.038*"type" + 0.021*"element" + 0.021*"last" + 0.021*"https://docs.python.org/3/library/typing.html#callable" + 0.021*"ref" + 0.021*"solution" + 0.020*"list" + 0.016*"f" + 0.014*"return"
+INFO: topic diff=0.150056, rho=0.304290
+DEBUG: bound: at document #0
+INFO: -5.657 per-word bound, 50.4 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 8, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.10056156, 0.379688, 0.12514898, 0.047116227, 0.058556605]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.101): 0.077*"time" + 0.060*"function" + 0.050*"result" + 0.035*"argument" + 0.030*"func" + 0.023*"variable" + 0.021*"order" + 0.020*"value" + 0.019*"way" + 0.018*"change"
+INFO: topic #1 (0.380): 0.216*"function" + 0.071*"argument" + 0.040*"return" + 0.038*"example" + 0.036*"high" + 0.034*"order" + 0.034*"class" + 0.025*"decorator" + 0.019*"name" + 0.018*"reference"
+INFO: topic #2 (0.125): 0.040*"new" + 0.033*"html_tag" + 0.027*"second" + 0.021*"hof" + 0.021*"version" + 0.014*"operation" + 0.014*"datum" + 0.014*"single" + 0.014*"make_function_print_arg" + 0.014*"state"
+INFO: topic #3 (0.047): 0.026*"args" + 0.026*"tuple" + 0.026*"positional" + 0.022*"high" + 0.018*"argument" + 0.016*"body" + 0.016*"programming" + 0.015*"multiple" + 0.015*"detail" + 0.015*"resource"
+INFO: topic #4 (0.059): 0.106*"first" + 0.028*"type" + 0.016*"element" + 0.016*"last" + 0.016*"https://docs.python.org/3/library/typing.html#callable" + 0.016*"ref" + 0.016*"solution" + 0.016*"list" + 0.013*"f" + 0.012*"return"
+INFO: topic diff=0.145962, rho=0.304290
+DEBUG: bound: at document #0
+INFO: -4.851 per-word bound, 28.9 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 9, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.09218961, 0.3339201, 0.099558726, 0.046630334, 0.0568002]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.092): 0.068*"function" + 0.055*"time" + 0.042*"argument" + 0.037*"result" + 0.030*"func" + 0.023*"order" + 0.022*"change" + 0.021*"simple" + 0.021*"default" + 0.021*"choice"
+INFO: topic #1 (0.334): 0.205*"function" + 0.073*"argument" + 0.036*"high" + 0.034*"order" + 0.032*"return" + 0.030*"decorator" + 0.028*"example" + 0.026*"class" + 0.025*"name" + 0.020*"call"
+INFO: topic #2 (0.100): 0.037*"new" + 0.031*"html_tag" + 0.025*"second" + 0.019*"hof" + 0.019*"version" + 0.013*"operation" + 0.013*"datum" + 0.013*"single" + 0.013*"make_function_print_arg" + 0.013*"state"
+INFO: topic #3 (0.047): 0.032*"args" + 0.032*"tuple" + 0.031*"positional" + 0.027*"high" + 0.021*"argument" + 0.018*"body" + 0.018*"programming" + 0.018*"multiple" + 0.018*"detail" + 0.018*"resource"
+INFO: topic #4 (0.057): 0.083*"first" + 0.038*"type" + 0.021*"element" + 0.021*"https://docs.python.org/3/library/typing.html#callable" + 0.021*"ref" + 0.021*"solution" + 0.021*"last" + 0.020*"list" + 0.016*"f" + 0.013*"return"
+INFO: topic diff=0.141764, rho=0.291111
+DEBUG: bound: at document #0
+INFO: -5.651 per-word bound, 50.2 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 9, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.09695253, 0.3795149, 0.12576108, 0.043793835, 0.0571264]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.097): 0.076*"time" + 0.061*"function" + 0.049*"result" + 0.035*"argument" + 0.030*"func" + 0.023*"variable" + 0.021*"order" + 0.019*"value" + 0.019*"way" + 0.017*"change"
+INFO: topic #1 (0.380): 0.216*"function" + 0.071*"argument" + 0.040*"return" + 0.037*"example" + 0.036*"high" + 0.034*"order" + 0.033*"class" + 0.026*"decorator" + 0.020*"name" + 0.018*"way"
+INFO: topic #2 (0.126): 0.040*"new" + 0.033*"html_tag" + 0.027*"second" + 0.020*"version" + 0.020*"hof" + 0.014*"operation" + 0.014*"datum" + 0.014*"make_function_print_arg" + 0.014*"single" + 0.014*"key"
+INFO: topic #3 (0.044): 0.026*"args" + 0.026*"tuple" + 0.026*"positional" + 0.022*"high" + 0.018*"argument" + 0.015*"body" + 0.015*"programming" + 0.015*"multiple" + 0.015*"detail" + 0.015*"resource"
+INFO: topic #4 (0.057): 0.106*"first" + 0.028*"type" + 0.016*"solution" + 0.016*"last" + 0.016*"ref" + 0.016*"https://docs.python.org/3/library/typing.html#callable" + 0.016*"element" + 0.016*"list" + 0.012*"f" + 0.011*"return"
+INFO: topic diff=0.138458, rho=0.291111
+DEBUG: starting a new internal lifecycle event log for LdaModel
+INFO: LdaModel lifecycle event {'msg': 'trained LdaModel<num_terms=226, num_topics=5, decay=0.5, chunksize=5> in 0.11s', 'datetime': '2023-04-25T15:14:17.507143', 'gensim': '4.3.1', 'python': '3.9.2 (default, Mar  4 2021, 10:15:47) \n[Clang 10.0.0 (clang-1000.10.44.4)]', 'platform': 'macOS-10.16-x86_64-i386-64bit', 'event': 'created'}
+INFO: using autotuned alpha, starting with [0.2, 0.2, 0.2, 0.2, 0.2]
+INFO: using serial LDA version on this node
+INFO: running online (multi-pass) LDA training, 5 topics, 10 passes over the supplied corpus of 9 documents, updating model once every 5 documents, evaluating perplexity every 5 documents, iterating 2000x with a convergence threshold of 0.001000
+DEBUG: bound: at document #0
+INFO: -7.274 per-word bound, 154.7 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 0, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+WARNING: updated prior is not positive
+INFO: optimized alpha [0.2, 0.2, 0.2, 0.2, 0.2]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.200): 0.005*"function" + 0.004*"argument" + 0.004*"high" + 0.004*"order" + 0.004*"decorator" + 0.004*"return" + 0.004*"type" + 0.004*"list" + 0.004*"args" + 0.004*"f"
+INFO: topic #1 (0.200): 0.057*"type" + 0.030*"argument" + 0.030*"ref" + 0.030*"return" + 0.030*"https://docs.python.org/3/library/typing.html#callable" + 0.030*"f" + 0.030*"element" + 0.030*"solution" + 0.030*"last" + 0.030*"list"
+INFO: topic #2 (0.200): 0.005*"function" + 0.005*"argument" + 0.004*"order" + 0.004*"high" + 0.004*"type" + 0.004*"decorator" + 0.004*"return" + 0.004*"list" + 0.004*"first" + 0.004*"f"
+INFO: topic #3 (0.200): 0.005*"argument" + 0.005*"function" + 0.004*"high" + 0.004*"order" + 0.004*"decorator" + 0.004*"return" + 0.004*"type" + 0.004*"f" + 0.004*"first" + 0.004*"args"
+INFO: topic #4 (0.200): 0.162*"function" + 0.072*"argument" + 0.033*"high" + 0.033*"order" + 0.030*"decorator" + 0.027*"name" + 0.021*"call" + 0.015*"way" + 0.015*"lambda" + 0.015*"positional"
+INFO: topic diff=3.155666, rho=1.000000
+DEBUG: bound: at document #0
+INFO: -7.627 per-word bound, 197.7 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 0, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.0793817, 0.18099782, 0.13687795, 0.2407116, 0.30399257]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.079): 0.004*"lst" + 0.004*"new" + 0.004*"function" + 0.004*"html_tag" + 0.004*"mode" + 0.004*"block" + 0.004*"attribute" + 0.004*"instance" + 0.004*"conditional" + 0.004*"problem"
+INFO: topic #1 (0.181): 0.078*"first" + 0.044*"return" + 0.034*"f" + 0.025*"html_tag" + 0.024*"new" + 0.020*"second" + 0.019*"argument" + 0.014*"type" + 0.011*"reason" + 0.011*"different"
+INFO: topic #2 (0.137): 0.050*"version" + 0.050*"hof" + 0.034*"datum" + 0.034*"operation" + 0.018*"state" + 0.018*"key" + 0.018*"useless" + 0.018*"need" + 0.018*"meat" + 0.018*"user"
+INFO: topic #3 (0.241): 0.050*"new" + 0.038*"html_tag" + 0.031*"second" + 0.022*"lst" + 0.018*"make_function_print_arg" + 0.018*"single" + 0.016*"different" + 0.016*"reason" + 0.012*"block" + 0.012*"core"
+INFO: topic #4 (0.304): 0.195*"function" + 0.062*"argument" + 0.036*"example" + 0.032*"class" + 0.031*"high" + 0.031*"order" + 0.029*"return" + 0.021*"time" + 0.019*"way" + 0.019*"value"
+INFO: topic diff=1.182317, rho=0.707107
+DEBUG: bound: at document #0
+INFO: -5.237 per-word bound, 37.7 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 1, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.0624557, 0.12268974, 0.08736019, 0.09401427, 0.33765766]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.062): 0.004*"lst" + 0.004*"new" + 0.004*"function" + 0.004*"html_tag" + 0.004*"mode" + 0.004*"block" + 0.004*"attribute" + 0.004*"instance" + 0.004*"conditional" + 0.004*"problem"
+INFO: topic #1 (0.123): 0.057*"first" + 0.038*"return" + 0.033*"type" + 0.032*"f" + 0.024*"argument" + 0.018*"ref" + 0.018*"https://docs.python.org/3/library/typing.html#callable" + 0.018*"element" + 0.018*"solution" + 0.018*"last"
+INFO: topic #2 (0.087): 0.035*"version" + 0.035*"hof" + 0.024*"datum" + 0.024*"operation" + 0.013*"state" + 0.013*"key" + 0.013*"useless" + 0.013*"need" + 0.013*"meat" + 0.013*"user"
+INFO: topic #3 (0.094): 0.038*"new" + 0.030*"html_tag" + 0.024*"second" + 0.018*"lst" + 0.015*"make_function_print_arg" + 0.015*"single" + 0.013*"different" + 0.013*"reason" + 0.010*"block" + 0.010*"core"
+INFO: topic #4 (0.338): 0.175*"function" + 0.068*"argument" + 0.032*"high" + 0.032*"order" + 0.025*"decorator" + 0.022*"name" + 0.020*"example" + 0.019*"return" + 0.018*"call" + 0.018*"class"
+INFO: topic diff=0.388161, rho=0.512989
+DEBUG: bound: at document #0
+INFO: -5.586 per-word bound, 48.0 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 1, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.05313415, 0.106803864, 0.08408175, 0.12057802, 0.41954905]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.053): 0.004*"lst" + 0.004*"new" + 0.004*"function" + 0.004*"html_tag" + 0.004*"mode" + 0.004*"block" + 0.004*"attribute" + 0.004*"instance" + 0.004*"conditional" + 0.004*"problem"
+INFO: topic #1 (0.107): 0.100*"first" + 0.029*"return" + 0.020*"type" + 0.019*"f" + 0.016*"argument" + 0.015*"html_tag" + 0.012*"second" + 0.011*"ref" + 0.011*"https://docs.python.org/3/library/typing.html#callable" + 0.011*"element"
+INFO: topic #2 (0.084): 0.050*"version" + 0.050*"hof" + 0.034*"operation" + 0.034*"datum" + 0.018*"user" + 0.018*"step" + 0.018*"know" + 0.018*"wrapper" + 0.018*"partial" + 0.018*"pre"
+INFO: topic #3 (0.121): 0.053*"new" + 0.042*"html_tag" + 0.034*"second" + 0.020*"lst" + 0.019*"make_function_print_arg" + 0.019*"single" + 0.018*"reason" + 0.018*"different" + 0.011*"core" + 0.011*"mode"
+INFO: topic #4 (0.420): 0.196*"function" + 0.065*"argument" + 0.035*"example" + 0.034*"return" + 0.031*"high" + 0.031*"order" + 0.031*"class" + 0.020*"time" + 0.019*"way" + 0.019*"decorator"
+INFO: topic diff=0.311369, rho=0.512989
+DEBUG: bound: at document #0
+INFO: -5.144 per-word bound, 35.4 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 2, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.04671808, 0.093703814, 0.06811118, 0.08805528, 0.44359237]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.047): 0.004*"lst" + 0.004*"new" + 0.004*"function" + 0.004*"html_tag" + 0.004*"mode" + 0.004*"block" + 0.004*"attribute" + 0.004*"instance" + 0.004*"conditional" + 0.004*"problem"
+INFO: topic #1 (0.094): 0.068*"first" + 0.036*"type" + 0.029*"return" + 0.024*"f" + 0.021*"argument" + 0.020*"ref" + 0.020*"https://docs.python.org/3/library/typing.html#callable" + 0.020*"element" + 0.020*"solution" + 0.020*"last"
+INFO: topic #2 (0.068): 0.037*"version" + 0.037*"hof" + 0.026*"operation" + 0.026*"datum" + 0.014*"user" + 0.014*"step" + 0.014*"know" + 0.014*"wrapper" + 0.014*"partial" + 0.014*"pre"
+INFO: topic #3 (0.088): 0.044*"new" + 0.035*"html_tag" + 0.028*"second" + 0.017*"lst" + 0.016*"make_function_print_arg" + 0.016*"single" + 0.015*"reason" + 0.015*"different" + 0.009*"core" + 0.009*"mode"
+INFO: topic #4 (0.444): 0.177*"function" + 0.069*"argument" + 0.032*"high" + 0.032*"order" + 0.025*"decorator" + 0.022*"return" + 0.021*"name" + 0.021*"example" + 0.019*"class" + 0.018*"call"
+INFO: topic diff=0.286952, rho=0.456435
+DEBUG: bound: at document #0
+INFO: -5.488 per-word bound, 44.9 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 2, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.04216329, 0.08793908, 0.06825678, 0.111127205, 0.5080286]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.042): 0.004*"lst" + 0.004*"new" + 0.004*"function" + 0.004*"html_tag" + 0.004*"mode" + 0.004*"block" + 0.004*"attribute" + 0.004*"instance" + 0.004*"conditional" + 0.004*"problem"
+INFO: topic #1 (0.088): 0.107*"first" + 0.023*"type" + 0.022*"return" + 0.016*"f" + 0.014*"argument" + 0.013*"ref" + 0.013*"https://docs.python.org/3/library/typing.html#callable" + 0.013*"element" + 0.013*"solution" + 0.013*"last"
+INFO: topic #2 (0.068): 0.049*"version" + 0.049*"hof" + 0.034*"operation" + 0.034*"datum" + 0.018*"user" + 0.018*"step" + 0.018*"know" + 0.018*"wrapper" + 0.018*"partial" + 0.018*"pre"
+INFO: topic #3 (0.111): 0.054*"new" + 0.044*"html_tag" + 0.035*"second" + 0.019*"lst" + 0.019*"make_function_print_arg" + 0.019*"single" + 0.018*"reason" + 0.018*"different" + 0.010*"core" + 0.010*"mode"
+INFO: topic #4 (0.508): 0.195*"function" + 0.066*"argument" + 0.034*"return" + 0.034*"example" + 0.032*"high" + 0.032*"order" + 0.029*"class" + 0.020*"time" + 0.019*"decorator" + 0.019*"way"
+INFO: topic diff=0.234313, rho=0.456435
+DEBUG: bound: at document #0
+INFO: -5.108 per-word bound, 34.5 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 3, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.038625617, 0.08171053, 0.05902426, 0.08690771, 0.5308523]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.039): 0.004*"lst" + 0.004*"new" + 0.004*"function" + 0.004*"html_tag" + 0.004*"mode" + 0.004*"block" + 0.004*"attribute" + 0.004*"instance" + 0.004*"conditional" + 0.004*"problem"
+INFO: topic #1 (0.082): 0.074*"first" + 0.038*"type" + 0.024*"return" + 0.021*"f" + 0.021*"ref" + 0.021*"https://docs.python.org/3/library/typing.html#callable" + 0.021*"element" + 0.021*"solution" + 0.021*"last" + 0.020*"list"
+INFO: topic #2 (0.059): 0.038*"version" + 0.038*"hof" + 0.026*"operation" + 0.026*"datum" + 0.014*"user" + 0.014*"step" + 0.014*"know" + 0.014*"wrapper" + 0.014*"partial" + 0.014*"pre"
+INFO: topic #3 (0.087): 0.046*"new" + 0.037*"html_tag" + 0.030*"second" + 0.017*"lst" + 0.017*"make_function_print_arg" + 0.017*"single" + 0.016*"reason" + 0.016*"different" + 0.009*"core" + 0.009*"mode"
+INFO: topic #4 (0.531): 0.178*"function" + 0.070*"argument" + 0.032*"high" + 0.032*"order" + 0.025*"decorator" + 0.023*"return" + 0.021*"example" + 0.021*"name" + 0.019*"class" + 0.018*"call"
+INFO: topic diff=0.229001, rho=0.415227
+DEBUG: bound: at document #0
+INFO: -5.455 per-word bound, 43.9 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 3, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.035784442, 0.07871332, 0.059933867, 0.107688196, 0.56747484]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.036): 0.004*"lst" + 0.004*"new" + 0.004*"function" + 0.004*"html_tag" + 0.004*"mode" + 0.004*"block" + 0.004*"attribute" + 0.004*"instance" + 0.004*"conditional" + 0.004*"problem"
+INFO: topic #1 (0.079): 0.108*"first" + 0.025*"type" + 0.018*"return" + 0.015*"f" + 0.014*"ref" + 0.014*"https://docs.python.org/3/library/typing.html#callable" + 0.014*"element" + 0.014*"solution" + 0.014*"last" + 0.014*"list"
+INFO: topic #2 (0.060): 0.049*"version" + 0.049*"hof" + 0.033*"operation" + 0.033*"datum" + 0.018*"user" + 0.018*"step" + 0.018*"know" + 0.018*"wrapper" + 0.018*"partial" + 0.018*"pre"
+INFO: topic #3 (0.108): 0.054*"new" + 0.045*"html_tag" + 0.036*"second" + 0.019*"lst" + 0.019*"make_function_print_arg" + 0.019*"single" + 0.019*"reason" + 0.019*"different" + 0.010*"instance" + 0.010*"mode"
+INFO: topic #4 (0.567): 0.194*"function" + 0.066*"argument" + 0.034*"return" + 0.033*"example" + 0.032*"high" + 0.032*"order" + 0.027*"class" + 0.020*"decorator" + 0.019*"time" + 0.019*"way"
+INFO: topic diff=0.198896, rho=0.415227
+DEBUG: bound: at document #0
+INFO: -5.085 per-word bound, 33.9 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 4, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.03349314, 0.075017855, 0.05352833, 0.08723293, 0.5916994]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.033): 0.004*"lst" + 0.004*"new" + 0.004*"function" + 0.004*"html_tag" + 0.004*"mode" + 0.004*"block" + 0.004*"attribute" + 0.004*"instance" + 0.004*"conditional" + 0.004*"problem"
+INFO: topic #1 (0.075): 0.077*"first" + 0.038*"type" + 0.021*"return" + 0.021*"ref" + 0.021*"https://docs.python.org/3/library/typing.html#callable" + 0.021*"element" + 0.021*"last" + 0.021*"solution" + 0.021*"list" + 0.020*"f"
+INFO: topic #2 (0.054): 0.038*"version" + 0.038*"hof" + 0.026*"operation" + 0.026*"datum" + 0.015*"user" + 0.015*"step" + 0.015*"know" + 0.015*"wrapper" + 0.015*"partial" + 0.015*"pre"
+INFO: topic #3 (0.087): 0.046*"new" + 0.039*"html_tag" + 0.031*"second" + 0.017*"lst" + 0.017*"make_function_print_arg" + 0.017*"single" + 0.017*"reason" + 0.017*"different" + 0.009*"instance" + 0.009*"mode"
+INFO: topic #4 (0.592): 0.179*"function" + 0.070*"argument" + 0.032*"high" + 0.032*"order" + 0.025*"decorator" + 0.024*"return" + 0.022*"example" + 0.021*"name" + 0.019*"class" + 0.018*"call"
+INFO: topic diff=0.194452, rho=0.383482
+DEBUG: bound: at document #0
+INFO: -5.434 per-word bound, 43.2 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 4, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.031489722, 0.073109075, 0.054634355, 0.10627646, 0.59844774]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.031): 0.004*"lst" + 0.004*"new" + 0.004*"function" + 0.004*"html_tag" + 0.004*"mode" + 0.004*"block" + 0.004*"attribute" + 0.004*"instance" + 0.004*"conditional" + 0.004*"problem"
+INFO: topic #1 (0.073): 0.108*"first" + 0.026*"type" + 0.016*"return" + 0.015*"ref" + 0.015*"https://docs.python.org/3/library/typing.html#callable" + 0.015*"element" + 0.015*"solution" + 0.015*"last" + 0.015*"list" + 0.014*"f"
+INFO: topic #2 (0.055): 0.048*"version" + 0.048*"hof" + 0.032*"operation" + 0.032*"datum" + 0.025*"class" + 0.017*"user" + 0.017*"machine" + 0.017*"know" + 0.017*"wrapper" + 0.017*"partial"
+INFO: topic #3 (0.106): 0.054*"new" + 0.045*"html_tag" + 0.036*"second" + 0.019*"lst" + 0.019*"make_function_print_arg" + 0.019*"single" + 0.019*"reason" + 0.019*"different" + 0.010*"instance" + 0.010*"mode"
+INFO: topic #4 (0.598): 0.194*"function" + 0.067*"argument" + 0.034*"return" + 0.032*"example" + 0.032*"high" + 0.032*"order" + 0.024*"class" + 0.020*"decorator" + 0.019*"time" + 0.019*"way"
+INFO: topic diff=0.178188, rho=0.383482
+DEBUG: bound: at document #0
+INFO: -5.069 per-word bound, 33.6 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 5, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.029857388, 0.07062337, 0.049735326, 0.08794913, 0.6247973]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.030): 0.004*"lst" + 0.004*"new" + 0.004*"function" + 0.004*"html_tag" + 0.004*"mode" + 0.004*"block" + 0.004*"attribute" + 0.004*"instance" + 0.004*"conditional" + 0.004*"problem"
+INFO: topic #1 (0.071): 0.079*"first" + 0.038*"type" + 0.021*"ref" + 0.021*"https://docs.python.org/3/library/typing.html#callable" + 0.021*"element" + 0.021*"solution" + 0.021*"last" + 0.021*"list" + 0.018*"f" + 0.018*"return"
+INFO: topic #2 (0.050): 0.038*"version" + 0.038*"hof" + 0.026*"operation" + 0.026*"datum" + 0.021*"class" + 0.015*"user" + 0.015*"machine" + 0.015*"know" + 0.015*"wrapper" + 0.015*"partial"
+INFO: topic #3 (0.088): 0.047*"new" + 0.039*"html_tag" + 0.032*"second" + 0.017*"lst" + 0.017*"make_function_print_arg" + 0.017*"single" + 0.017*"reason" + 0.017*"different" + 0.009*"instance" + 0.009*"mode"
+INFO: topic #4 (0.625): 0.179*"function" + 0.070*"argument" + 0.033*"high" + 0.033*"order" + 0.025*"return" + 0.025*"decorator" + 0.022*"example" + 0.021*"name" + 0.018*"call" + 0.017*"class"
+INFO: topic diff=0.172713, rho=0.358057
+DEBUG: bound: at document #0
+INFO: -5.411 per-word bound, 42.5 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 5, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.028337166, 0.069221415, 0.0508673, 0.10554083, 0.6051865]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.028): 0.004*"lst" + 0.004*"new" + 0.004*"function" + 0.004*"html_tag" + 0.004*"mode" + 0.004*"block" + 0.004*"attribute" + 0.004*"instance" + 0.004*"conditional" + 0.004*"problem"
+INFO: topic #1 (0.069): 0.107*"first" + 0.027*"type" + 0.015*"ref" + 0.015*"https://docs.python.org/3/library/typing.html#callable" + 0.015*"element" + 0.015*"solution" + 0.015*"last" + 0.015*"list" + 0.014*"return" + 0.013*"f"
+INFO: topic #2 (0.051): 0.049*"class" + 0.046*"version" + 0.046*"hof" + 0.031*"operation" + 0.031*"datum" + 0.017*"user" + 0.017*"machine" + 0.017*"know" + 0.017*"wrapper" + 0.017*"partial"
+INFO: topic #3 (0.106): 0.053*"new" + 0.045*"html_tag" + 0.036*"second" + 0.019*"lst" + 0.019*"make_function_print_arg" + 0.019*"single" + 0.019*"reason" + 0.019*"different" + 0.010*"instance" + 0.010*"mode"
+INFO: topic #4 (0.605): 0.194*"function" + 0.068*"argument" + 0.034*"return" + 0.032*"high" + 0.032*"order" + 0.032*"example" + 0.020*"decorator" + 0.019*"way" + 0.019*"time" + 0.018*"class"
+INFO: topic diff=0.166721, rho=0.358057
+DEBUG: bound: at document #0
+INFO: -5.057 per-word bound, 33.3 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 6, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.027099963, 0.06740639, 0.04689137, 0.08862532, 0.6344125]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.027): 0.004*"lst" + 0.004*"new" + 0.004*"function" + 0.004*"html_tag" + 0.004*"mode" + 0.004*"block" + 0.004*"attribute" + 0.004*"instance" + 0.004*"conditional" + 0.004*"problem"
+INFO: topic #1 (0.067): 0.080*"first" + 0.038*"type" + 0.021*"ref" + 0.021*"last" + 0.021*"solution" + 0.021*"element" + 0.021*"https://docs.python.org/3/library/typing.html#callable" + 0.021*"list" + 0.017*"f" + 0.016*"return"
+INFO: topic #2 (0.047): 0.040*"class" + 0.038*"version" + 0.038*"hof" + 0.026*"operation" + 0.026*"datum" + 0.014*"user" + 0.014*"machine" + 0.014*"know" + 0.014*"wrapper" + 0.014*"partial"
+INFO: topic #3 (0.089): 0.047*"new" + 0.040*"html_tag" + 0.032*"second" + 0.017*"lst" + 0.017*"make_function_print_arg" + 0.017*"single" + 0.017*"reason" + 0.017*"different" + 0.009*"instance" + 0.009*"mode"
+INFO: topic #4 (0.634): 0.180*"function" + 0.071*"argument" + 0.033*"high" + 0.033*"order" + 0.025*"return" + 0.025*"decorator" + 0.022*"example" + 0.020*"name" + 0.018*"call" + 0.017*"way"
+INFO: topic diff=0.158152, rho=0.337100
+DEBUG: bound: at document #0
+INFO: -5.387 per-word bound, 41.9 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 6, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.02589907, 0.066325165, 0.048010297, 0.10503976, 0.60071355]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.026): 0.004*"lst" + 0.004*"new" + 0.004*"function" + 0.004*"html_tag" + 0.004*"mode" + 0.004*"block" + 0.004*"attribute" + 0.004*"instance" + 0.004*"conditional" + 0.004*"problem"
+INFO: topic #1 (0.066): 0.107*"first" + 0.027*"type" + 0.016*"ref" + 0.016*"element" + 0.016*"solution" + 0.016*"https://docs.python.org/3/library/typing.html#callable" + 0.016*"last" + 0.015*"list" + 0.013*"f" + 0.013*"return"
+INFO: topic #2 (0.048): 0.069*"class" + 0.044*"version" + 0.044*"hof" + 0.030*"operation" + 0.030*"datum" + 0.016*"user" + 0.016*"machine" + 0.016*"know" + 0.016*"wrapper" + 0.016*"partial"
+INFO: topic #3 (0.105): 0.053*"new" + 0.045*"html_tag" + 0.036*"second" + 0.019*"lst" + 0.019*"make_function_print_arg" + 0.019*"single" + 0.019*"reason" + 0.019*"different" + 0.010*"instance" + 0.010*"mode"
+INFO: topic #4 (0.601): 0.194*"function" + 0.069*"argument" + 0.034*"return" + 0.032*"high" + 0.032*"order" + 0.032*"example" + 0.021*"decorator" + 0.019*"way" + 0.018*"time" + 0.017*"value"
+INFO: topic diff=0.156547, rho=0.337100
+DEBUG: bound: at document #0
+INFO: -5.048 per-word bound, 33.1 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 7, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.02492068, 0.064923726, 0.04465649, 0.08917847, 0.63208836]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.025): 0.004*"lst" + 0.004*"new" + 0.004*"function" + 0.004*"html_tag" + 0.004*"mode" + 0.004*"block" + 0.004*"attribute" + 0.004*"instance" + 0.004*"conditional" + 0.004*"problem"
+INFO: topic #1 (0.065): 0.081*"first" + 0.038*"type" + 0.021*"ref" + 0.021*"element" + 0.021*"solution" + 0.021*"https://docs.python.org/3/library/typing.html#callable" + 0.021*"last" + 0.020*"list" + 0.016*"f" + 0.014*"return"
+INFO: topic #2 (0.045): 0.058*"class" + 0.037*"version" + 0.037*"hof" + 0.026*"operation" + 0.026*"datum" + 0.014*"user" + 0.014*"machine" + 0.014*"know" + 0.014*"wrapper" + 0.014*"partial"
+INFO: topic #3 (0.089): 0.047*"new" + 0.040*"html_tag" + 0.032*"second" + 0.017*"lst" + 0.017*"make_function_print_arg" + 0.017*"single" + 0.017*"reason" + 0.017*"different" + 0.009*"instance" + 0.009*"mode"
+INFO: topic #4 (0.632): 0.181*"function" + 0.071*"argument" + 0.033*"high" + 0.033*"order" + 0.026*"return" + 0.025*"decorator" + 0.023*"example" + 0.020*"name" + 0.018*"call" + 0.017*"way"
+INFO: topic diff=0.147340, rho=0.319438
+DEBUG: bound: at document #0
+INFO: -5.371 per-word bound, 41.4 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 7, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.023947127, 0.064085454, 0.045757227, 0.10465163, 0.59422195]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.024): 0.004*"lst" + 0.004*"new" + 0.004*"function" + 0.004*"html_tag" + 0.004*"block" + 0.004*"attribute" + 0.004*"conditional" + 0.004*"problem" + 0.004*"mode" + 0.004*"instance"
+INFO: topic #1 (0.064): 0.106*"first" + 0.028*"type" + 0.016*"solution" + 0.016*"https://docs.python.org/3/library/typing.html#callable" + 0.016*"last" + 0.016*"ref" + 0.016*"element" + 0.015*"list" + 0.013*"f" + 0.012*"return"
+INFO: topic #2 (0.046): 0.080*"class" + 0.043*"version" + 0.043*"hof" + 0.030*"operation" + 0.030*"datum" + 0.016*"user" + 0.016*"machine" + 0.016*"know" + 0.016*"wrapper" + 0.016*"partial"
+INFO: topic #3 (0.105): 0.053*"new" + 0.044*"html_tag" + 0.036*"second" + 0.019*"lst" + 0.019*"make_function_print_arg" + 0.019*"single" + 0.019*"reason" + 0.019*"different" + 0.010*"instance" + 0.010*"mode"
+INFO: topic #4 (0.594): 0.195*"function" + 0.069*"argument" + 0.034*"return" + 0.032*"order" + 0.032*"high" + 0.032*"example" + 0.021*"decorator" + 0.019*"way" + 0.018*"time" + 0.017*"value"
+INFO: topic diff=0.146787, rho=0.319438
+DEBUG: bound: at document #0
+INFO: -5.042 per-word bound, 32.9 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 8, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.023149481, 0.06296093, 0.042851735, 0.08963877, 0.6265185]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.023): 0.004*"lst" + 0.004*"new" + 0.004*"function" + 0.004*"html_tag" + 0.004*"mode" + 0.004*"block" + 0.004*"attribute" + 0.004*"instance" + 0.004*"conditional" + 0.004*"problem"
+INFO: topic #1 (0.063): 0.082*"first" + 0.038*"type" + 0.021*"solution" + 0.021*"https://docs.python.org/3/library/typing.html#callable" + 0.021*"last" + 0.021*"ref" + 0.021*"element" + 0.020*"list" + 0.016*"f" + 0.013*"return"
+INFO: topic #2 (0.043): 0.068*"class" + 0.037*"version" + 0.037*"hof" + 0.025*"operation" + 0.025*"datum" + 0.014*"user" + 0.014*"machine" + 0.014*"know" + 0.014*"wrapper" + 0.014*"partial"
+INFO: topic #3 (0.090): 0.048*"new" + 0.040*"html_tag" + 0.032*"second" + 0.017*"lst" + 0.017*"make_function_print_arg" + 0.017*"single" + 0.017*"reason" + 0.017*"different" + 0.009*"instance" + 0.009*"mode"
+INFO: topic #4 (0.627): 0.182*"function" + 0.071*"argument" + 0.033*"high" + 0.033*"order" + 0.026*"return" + 0.025*"decorator" + 0.023*"example" + 0.020*"name" + 0.018*"call" + 0.017*"way"
+INFO: topic diff=0.138538, rho=0.304290
+DEBUG: bound: at document #0
+INFO: -5.359 per-word bound, 41.1 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 8, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.022342302, 0.062300928, 0.043928526, 0.1043221, 0.5877719]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.022): 0.004*"lst" + 0.004*"new" + 0.004*"function" + 0.004*"html_tag" + 0.004*"block" + 0.004*"attribute" + 0.004*"conditional" + 0.004*"problem" + 0.004*"mode" + 0.004*"instance"
+INFO: topic #1 (0.062): 0.105*"first" + 0.028*"type" + 0.016*"element" + 0.016*"last" + 0.016*"https://docs.python.org/3/library/typing.html#callable" + 0.016*"solution" + 0.016*"ref" + 0.016*"list" + 0.012*"f" + 0.011*"return"
+INFO: topic #2 (0.044): 0.086*"class" + 0.043*"version" + 0.043*"hof" + 0.029*"operation" + 0.029*"datum" + 0.016*"user" + 0.016*"machine" + 0.016*"know" + 0.016*"wrapper" + 0.016*"partial"
+INFO: topic #3 (0.104): 0.053*"new" + 0.044*"html_tag" + 0.036*"second" + 0.019*"lst" + 0.018*"make_function_print_arg" + 0.018*"single" + 0.018*"reason" + 0.018*"different" + 0.010*"instance" + 0.010*"mode"
+INFO: topic #4 (0.588): 0.195*"function" + 0.070*"argument" + 0.034*"return" + 0.033*"order" + 0.033*"high" + 0.031*"example" + 0.021*"decorator" + 0.019*"way" + 0.018*"time" + 0.017*"value"
+INFO: topic diff=0.138621, rho=0.304290
+DEBUG: bound: at document #0
+INFO: -5.037 per-word bound, 32.8 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 9, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.021676779, 0.06137267, 0.04136137, 0.09002274, 0.620204]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.022): 0.004*"lst" + 0.004*"new" + 0.004*"function" + 0.004*"html_tag" + 0.004*"mode" + 0.004*"block" + 0.004*"attribute" + 0.004*"instance" + 0.004*"conditional" + 0.004*"problem"
+INFO: topic #1 (0.061): 0.082*"first" + 0.038*"type" + 0.021*"element" + 0.021*"last" + 0.021*"https://docs.python.org/3/library/typing.html#callable" + 0.021*"solution" + 0.021*"ref" + 0.020*"list" + 0.015*"f" + 0.011*"return"
+INFO: topic #2 (0.041): 0.073*"class" + 0.037*"version" + 0.037*"hof" + 0.025*"operation" + 0.025*"datum" + 0.014*"user" + 0.014*"machine" + 0.014*"know" + 0.014*"wrapper" + 0.014*"partial"
+INFO: topic #3 (0.090): 0.048*"new" + 0.040*"html_tag" + 0.032*"second" + 0.017*"lst" + 0.017*"make_function_print_arg" + 0.017*"single" + 0.017*"reason" + 0.017*"different" + 0.009*"instance" + 0.009*"mode"
+INFO: topic #4 (0.620): 0.182*"function" + 0.072*"argument" + 0.033*"high" + 0.033*"order" + 0.027*"return" + 0.025*"decorator" + 0.023*"example" + 0.020*"name" + 0.018*"call" + 0.018*"way"
+INFO: topic diff=0.131189, rho=0.291111
+DEBUG: bound: at document #0
+INFO: -5.350 per-word bound, 40.8 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 9, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.020995494, 0.060848676, 0.04241252, 0.10403502, 0.5823047]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.021): 0.004*"lst" + 0.004*"new" + 0.004*"function" + 0.004*"html_tag" + 0.004*"block" + 0.004*"attribute" + 0.004*"conditional" + 0.004*"problem" + 0.004*"mode" + 0.004*"instance"
+INFO: topic #1 (0.061): 0.104*"first" + 0.029*"type" + 0.016*"ref" + 0.016*"last" + 0.016*"element" + 0.016*"https://docs.python.org/3/library/typing.html#callable" + 0.016*"solution" + 0.016*"list" + 0.012*"f" + 0.010*"return"
+INFO: topic #2 (0.042): 0.088*"class" + 0.042*"version" + 0.042*"hof" + 0.029*"operation" + 0.029*"datum" + 0.015*"user" + 0.015*"machine" + 0.015*"know" + 0.015*"wrapper" + 0.015*"partial"
+INFO: topic #3 (0.104): 0.053*"new" + 0.044*"html_tag" + 0.036*"second" + 0.018*"lst" + 0.018*"make_function_print_arg" + 0.018*"single" + 0.018*"reason" + 0.018*"different" + 0.010*"instance" + 0.010*"mode"
+INFO: topic #4 (0.582): 0.195*"function" + 0.070*"argument" + 0.034*"return" + 0.033*"order" + 0.033*"high" + 0.031*"example" + 0.021*"decorator" + 0.019*"way" + 0.018*"time" + 0.017*"value"
+INFO: topic diff=0.131371, rho=0.291111
+DEBUG: starting a new internal lifecycle event log for LdaModel
+INFO: LdaModel lifecycle event {'msg': 'trained LdaModel<num_terms=226, num_topics=5, decay=0.5, chunksize=5> in 0.11s', 'datetime': '2023-04-25T15:14:17.619588', 'gensim': '4.3.1', 'python': '3.9.2 (default, Mar  4 2021, 10:15:47) \n[Clang 10.0.0 (clang-1000.10.44.4)]', 'platform': 'macOS-10.16-x86_64-i386-64bit', 'event': 'created'}
+INFO: using autotuned alpha, starting with [0.2, 0.2, 0.2, 0.2, 0.2]
+INFO: using serial LDA version on this node
+INFO: running online (multi-pass) LDA training, 5 topics, 10 passes over the supplied corpus of 9 documents, updating model once every 5 documents, evaluating perplexity every 5 documents, iterating 2000x with a convergence threshold of 0.001000
+DEBUG: bound: at document #0
+INFO: -7.258 per-word bound, 153.0 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 0, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.07849401, 0.07594738, 0.061674416, 0.20573415, 0.0039220005]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.078): 0.169*"function" + 0.063*"argument" + 0.048*"name" + 0.022*"call" + 0.020*"lambda" + 0.018*"order" + 0.017*"way" + 0.017*"expression" + 0.016*"positional" + 0.016*"high"
+INFO: topic #1 (0.076): 0.141*"function" + 0.060*"argument" + 0.034*"call" + 0.030*"name" + 0.022*"high" + 0.020*"expression" + 0.019*"way" + 0.019*"order" + 0.016*"lambda" + 0.014*"object"
+INFO: topic #2 (0.062): 0.057*"type" + 0.030*"argument" + 0.030*"ref" + 0.030*"return" + 0.030*"element" + 0.030*"https://docs.python.org/3/library/typing.html#callable" + 0.030*"list" + 0.030*"solution" + 0.030*"last" + 0.030*"f"
+INFO: topic #3 (0.206): 0.119*"function" + 0.066*"decorator" + 0.066*"argument" + 0.047*"order" + 0.047*"high" + 0.020*"class" + 0.014*"return" + 0.014*"f" + 0.014*"unnamed" + 0.014*"choice"
+INFO: topic #4 (0.004): 0.005*"argument" + 0.005*"function" + 0.004*"type" + 0.004*"decorator" + 0.004*"high" + 0.004*"order" + 0.004*"positional" + 0.004*"f" + 0.004*"return" + 0.004*"first"
+INFO: topic diff=3.387289, rho=1.000000
+DEBUG: bound: at document #0
+INFO: -7.878 per-word bound, 235.3 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 0, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.08749491, 0.08648789, 0.060161285, 0.28047487, 0.0066732215]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.087): 0.158*"function" + 0.054*"argument" + 0.027*"name" + 0.021*"parameter" + 0.018*"statement" + 0.018*"print" + 0.016*"return" + 0.013*"useful" + 0.013*"case" + 0.013*"call"
+INFO: topic #1 (0.086): 0.129*"function" + 0.053*"example" + 0.049*"reference" + 0.035*"way" + 0.034*"argument" + 0.024*"call" + 0.018*"object" + 0.017*"print" + 0.016*"invoke" + 0.016*"high"
+INFO: topic #2 (0.060): 0.093*"first" + 0.030*"html_tag" + 0.026*"return" + 0.025*"second" + 0.017*"type" + 0.014*"reason" + 0.014*"new" + 0.014*"different" + 0.013*"argument" + 0.010*"ref"
+INFO: topic #3 (0.280): 0.157*"function" + 0.055*"argument" + 0.049*"class" + 0.039*"return" + 0.035*"order" + 0.035*"high" + 0.032*"time" + 0.027*"decorator" + 0.026*"example" + 0.023*"f"
+INFO: topic #4 (0.007): 0.038*"new" + 0.025*"version" + 0.025*"hof" + 0.021*"html_tag" + 0.017*"second" + 0.017*"datum" + 0.017*"operation" + 0.016*"lst" + 0.016*"make_function_print_arg" + 0.016*"single"
+INFO: topic diff=1.356248, rho=0.707107
+DEBUG: bound: at document #0
+INFO: -5.240 per-word bound, 37.8 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 1, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.07538159, 0.072311185, 0.055332653, 0.21120653, 0.0065241857]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.075): 0.172*"function" + 0.065*"argument" + 0.041*"name" + 0.025*"call" + 0.018*"lambda" + 0.018*"order" + 0.018*"expression" + 0.017*"high" + 0.017*"parameter" + 0.016*"way"
+INFO: topic #1 (0.072): 0.100*"function" + 0.045*"example" + 0.041*"reference" + 0.031*"way" + 0.027*"argument" + 0.022*"call" + 0.017*"object" + 0.015*"invoke" + 0.014*"high" + 0.013*"print"
+INFO: topic #2 (0.055): 0.063*"first" + 0.036*"type" + 0.028*"return" + 0.021*"argument" + 0.019*"ref" + 0.019*"element" + 0.019*"https://docs.python.org/3/library/typing.html#callable" + 0.019*"list" + 0.019*"solution" + 0.019*"last"
+INFO: topic #3 (0.211): 0.137*"function" + 0.061*"argument" + 0.048*"decorator" + 0.041*"order" + 0.041*"high" + 0.034*"class" + 0.026*"return" + 0.019*"time" + 0.018*"f" + 0.016*"example"
+INFO: topic #4 (0.007): 0.031*"new" + 0.021*"version" + 0.021*"hof" + 0.018*"html_tag" + 0.015*"second" + 0.014*"datum" + 0.014*"operation" + 0.013*"lst" + 0.013*"make_function_print_arg" + 0.013*"single"
+INFO: topic diff=0.515735, rho=0.512989
+DEBUG: bound: at document #0
+INFO: -5.925 per-word bound, 60.7 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 1, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.080804646, 0.079855345, 0.05507165, 0.26331487, 0.009830252]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.081): 0.156*"function" + 0.059*"argument" + 0.033*"name" + 0.020*"call" + 0.020*"parameter" + 0.018*"statement" + 0.017*"print" + 0.016*"order" + 0.015*"high" + 0.015*"lambda"
+INFO: topic #1 (0.080): 0.098*"function" + 0.085*"example" + 0.063*"reference" + 0.041*"way" + 0.020*"call" + 0.019*"object" + 0.019*"argument" + 0.019*"invoke" + 0.018*"print" + 0.017*"html_tag"
+INFO: topic #2 (0.055): 0.094*"first" + 0.029*"html_tag" + 0.024*"second" + 0.022*"return" + 0.019*"type" + 0.014*"argument" + 0.013*"reason" + 0.013*"different" + 0.011*"ref" + 0.011*"element"
+INFO: topic #3 (0.263): 0.177*"function" + 0.061*"argument" + 0.049*"class" + 0.044*"return" + 0.038*"order" + 0.037*"high" + 0.033*"time" + 0.029*"decorator" + 0.023*"f" + 0.023*"value"
+INFO: topic #4 (0.010): 0.043*"new" + 0.025*"version" + 0.025*"hof" + 0.021*"html_tag" + 0.017*"second" + 0.017*"datum" + 0.017*"operation" + 0.016*"single" + 0.016*"make_function_print_arg" + 0.016*"lst"
+INFO: topic diff=0.367653, rho=0.512989
+DEBUG: bound: at document #0
+INFO: -5.012 per-word bound, 32.3 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 2, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.07131163, 0.06018777, 0.051485803, 0.20370618, 0.0095294565]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.071): 0.169*"function" + 0.065*"argument" + 0.040*"name" + 0.027*"call" + 0.018*"order" + 0.018*"lambda" + 0.018*"high" + 0.018*"expression" + 0.018*"way" + 0.017*"parameter"
+INFO: topic #1 (0.060): 0.073*"function" + 0.064*"example" + 0.047*"reference" + 0.031*"way" + 0.016*"call" + 0.015*"object" + 0.015*"argument" + 0.015*"invoke" + 0.014*"print" + 0.013*"html_tag"
+INFO: topic #2 (0.051): 0.066*"first" + 0.035*"type" + 0.026*"return" + 0.021*"argument" + 0.019*"ref" + 0.019*"element" + 0.019*"https://docs.python.org/3/library/typing.html#callable" + 0.019*"list" + 0.019*"solution" + 0.019*"last"
+INFO: topic #3 (0.204): 0.150*"function" + 0.064*"argument" + 0.047*"decorator" + 0.042*"order" + 0.042*"high" + 0.036*"class" + 0.030*"return" + 0.021*"time" + 0.019*"f" + 0.016*"value"
+INFO: topic #4 (0.010): 0.036*"new" + 0.021*"version" + 0.021*"hof" + 0.018*"html_tag" + 0.015*"second" + 0.015*"datum" + 0.015*"operation" + 0.014*"single" + 0.014*"make_function_print_arg" + 0.014*"lst"
+INFO: topic diff=0.373452, rho=0.456435
+DEBUG: bound: at document #0
+INFO: -5.823 per-word bound, 56.6 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 2, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.06737283, 0.066680685, 0.051273033, 0.24582008, 0.013791919]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.067): 0.153*"function" + 0.060*"argument" + 0.035*"name" + 0.023*"call" + 0.017*"statement" + 0.017*"print" + 0.016*"order" + 0.016*"high" + 0.016*"lambda" + 0.016*"expression"
+INFO: topic #1 (0.067): 0.101*"example" + 0.074*"function" + 0.064*"reference" + 0.041*"way" + 0.026*"html_tag" + 0.020*"second" + 0.018*"object" + 0.018*"invoke" + 0.018*"print" + 0.016*"call"
+INFO: topic #2 (0.051): 0.098*"first" + 0.023*"html_tag" + 0.021*"type" + 0.021*"return" + 0.019*"second" + 0.015*"argument" + 0.012*"ref" + 0.012*"element" + 0.012*"https://docs.python.org/3/library/typing.html#callable" + 0.012*"list"
+INFO: topic #3 (0.246): 0.187*"function" + 0.064*"argument" + 0.048*"class" + 0.046*"return" + 0.039*"order" + 0.039*"high" + 0.032*"time" + 0.031*"decorator" + 0.024*"value" + 0.023*"f"
+INFO: topic #4 (0.014): 0.044*"new" + 0.024*"hof" + 0.024*"version" + 0.019*"html_tag" + 0.016*"operation" + 0.016*"datum" + 0.016*"second" + 0.016*"single" + 0.016*"make_function_print_arg" + 0.016*"lst"
+INFO: topic diff=0.306017, rho=0.456435
+DEBUG: bound: at document #0
+INFO: -4.948 per-word bound, 30.9 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 3, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.061815582, 0.05371303, 0.04846602, 0.1955876, 0.013233628]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.062): 0.167*"function" + 0.065*"argument" + 0.041*"name" + 0.027*"call" + 0.019*"order" + 0.019*"high" + 0.018*"lambda" + 0.018*"expression" + 0.018*"way" + 0.015*"parameter"
+INFO: topic #1 (0.054): 0.077*"example" + 0.057*"function" + 0.049*"reference" + 0.032*"way" + 0.020*"html_tag" + 0.016*"second" + 0.015*"object" + 0.015*"invoke" + 0.014*"print" + 0.013*"call"
+INFO: topic #2 (0.048): 0.070*"first" + 0.036*"type" + 0.024*"return" + 0.021*"argument" + 0.019*"ref" + 0.019*"element" + 0.019*"https://docs.python.org/3/library/typing.html#callable" + 0.019*"list" + 0.019*"solution" + 0.019*"last"
+INFO: topic #3 (0.196): 0.158*"function" + 0.065*"argument" + 0.046*"decorator" + 0.042*"order" + 0.042*"high" + 0.036*"class" + 0.032*"return" + 0.021*"time" + 0.019*"f" + 0.017*"value"
+INFO: topic #4 (0.013): 0.039*"new" + 0.021*"hof" + 0.021*"version" + 0.017*"html_tag" + 0.015*"operation" + 0.015*"datum" + 0.014*"second" + 0.014*"single" + 0.014*"make_function_print_arg" + 0.014*"lst"
+INFO: topic diff=0.283859, rho=0.415227
+DEBUG: bound: at document #0
+INFO: -5.761 per-word bound, 54.2 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 3, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.059878573, 0.059656512, 0.048451357, 0.23396981, 0.01856712]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.060): 0.152*"function" + 0.060*"argument" + 0.036*"name" + 0.024*"call" + 0.017*"order" + 0.017*"high" + 0.017*"statement" + 0.016*"lambda" + 0.016*"expression" + 0.016*"print"
+INFO: topic #1 (0.060): 0.101*"example" + 0.059*"function" + 0.058*"reference" + 0.041*"html_tag" + 0.037*"way" + 0.032*"second" + 0.016*"invoke" + 0.016*"object" + 0.016*"print" + 0.015*"different"
+INFO: topic #2 (0.048): 0.102*"first" + 0.023*"type" + 0.019*"return" + 0.015*"argument" + 0.015*"html_tag" + 0.013*"ref" + 0.013*"element" + 0.013*"https://docs.python.org/3/library/typing.html#callable" + 0.013*"list" + 0.013*"solution"
+INFO: topic #3 (0.234): 0.190*"function" + 0.066*"argument" + 0.048*"class" + 0.047*"return" + 0.040*"order" + 0.040*"high" + 0.032*"decorator" + 0.031*"time" + 0.024*"value" + 0.023*"f"
+INFO: topic #4 (0.019): 0.047*"new" + 0.025*"hof" + 0.025*"version" + 0.017*"datum" + 0.017*"operation" + 0.017*"make_function_print_arg" + 0.017*"single" + 0.017*"lst" + 0.016*"state" + 0.016*"key"
+INFO: topic diff=0.268694, rho=0.415227
+DEBUG: bound: at document #0
+INFO: -4.926 per-word bound, 30.4 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 4, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.056140248, 0.049869884, 0.04621554, 0.19120863, 0.017614549]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.056): 0.166*"function" + 0.065*"argument" + 0.041*"name" + 0.027*"call" + 0.019*"order" + 0.019*"high" + 0.018*"lambda" + 0.018*"expression" + 0.018*"way" + 0.014*"parameter"
+INFO: topic #1 (0.050): 0.080*"example" + 0.047*"function" + 0.047*"reference" + 0.033*"html_tag" + 0.030*"way" + 0.026*"second" + 0.014*"invoke" + 0.013*"object" + 0.013*"print" + 0.013*"different"
+INFO: topic #2 (0.046): 0.074*"first" + 0.037*"type" + 0.023*"return" + 0.021*"argument" + 0.020*"ref" + 0.020*"element" + 0.020*"https://docs.python.org/3/library/typing.html#callable" + 0.020*"list" + 0.020*"solution" + 0.020*"last"
+INFO: topic #3 (0.191): 0.162*"function" + 0.066*"argument" + 0.046*"decorator" + 0.043*"order" + 0.043*"high" + 0.037*"class" + 0.034*"return" + 0.022*"time" + 0.019*"f" + 0.017*"value"
+INFO: topic #4 (0.018): 0.041*"new" + 0.022*"hof" + 0.022*"version" + 0.015*"datum" + 0.015*"operation" + 0.015*"make_function_print_arg" + 0.015*"single" + 0.015*"lst" + 0.015*"state" + 0.015*"key"
+INFO: topic diff=0.246953, rho=0.383482
+DEBUG: bound: at document #0
+INFO: -5.662 per-word bound, 50.6 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 4, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.05515096, 0.055365723, 0.04636167, 0.2271639, 0.024071096]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.055): 0.152*"function" + 0.060*"argument" + 0.036*"name" + 0.024*"call" + 0.017*"order" + 0.017*"high" + 0.017*"lambda" + 0.017*"expression" + 0.017*"way" + 0.016*"statement"
+INFO: topic #1 (0.055): 0.093*"example" + 0.051*"html_tag" + 0.051*"reference" + 0.050*"function" + 0.041*"second" + 0.033*"way" + 0.020*"different" + 0.020*"reason" + 0.014*"invoke" + 0.014*"print"
+INFO: topic #2 (0.046): 0.104*"first" + 0.025*"type" + 0.018*"return" + 0.016*"argument" + 0.014*"ref" + 0.014*"element" + 0.014*"https://docs.python.org/3/library/typing.html#callable" + 0.014*"list" + 0.014*"solution" + 0.014*"last"
+INFO: topic #3 (0.227): 0.190*"function" + 0.067*"argument" + 0.047*"class" + 0.047*"return" + 0.041*"order" + 0.040*"high" + 0.033*"decorator" + 0.031*"time" + 0.024*"value" + 0.023*"f"
+INFO: topic #4 (0.024): 0.050*"new" + 0.026*"version" + 0.026*"hof" + 0.018*"operation" + 0.018*"datum" + 0.018*"single" + 0.018*"make_function_print_arg" + 0.018*"lst" + 0.017*"state" + 0.017*"key"
+INFO: topic diff=0.266039, rho=0.383482
+DEBUG: bound: at document #0
+INFO: -4.915 per-word bound, 30.2 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 5, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.05243019, 0.04741966, 0.044543903, 0.18952681, 0.022563508]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.052): 0.165*"function" + 0.065*"argument" + 0.041*"name" + 0.027*"call" + 0.019*"order" + 0.019*"high" + 0.018*"lambda" + 0.018*"expression" + 0.018*"way" + 0.014*"parameter"
+INFO: topic #1 (0.047): 0.077*"example" + 0.043*"html_tag" + 0.043*"reference" + 0.042*"function" + 0.034*"second" + 0.028*"way" + 0.018*"different" + 0.018*"reason" + 0.012*"invoke" + 0.012*"print"
+INFO: topic #2 (0.045): 0.076*"first" + 0.037*"type" + 0.023*"return" + 0.021*"argument" + 0.020*"ref" + 0.020*"element" + 0.020*"https://docs.python.org/3/library/typing.html#callable" + 0.020*"list" + 0.020*"solution" + 0.020*"last"
+INFO: topic #3 (0.190): 0.164*"function" + 0.067*"argument" + 0.045*"decorator" + 0.043*"order" + 0.043*"high" + 0.037*"class" + 0.035*"return" + 0.022*"time" + 0.019*"f" + 0.018*"value"
+INFO: topic #4 (0.023): 0.044*"new" + 0.023*"version" + 0.023*"hof" + 0.016*"operation" + 0.016*"datum" + 0.016*"single" + 0.016*"make_function_print_arg" + 0.016*"lst" + 0.015*"state" + 0.015*"key"
+INFO: topic diff=0.224376, rho=0.358057
+DEBUG: bound: at document #0
+INFO: -5.572 per-word bound, 47.6 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 5, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.051948708, 0.052526183, 0.04484153, 0.22400412, 0.030171715]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.052): 0.152*"function" + 0.060*"argument" + 0.037*"name" + 0.025*"call" + 0.017*"order" + 0.017*"high" + 0.017*"lambda" + 0.017*"expression" + 0.017*"way" + 0.016*"statement"
+INFO: topic #1 (0.053): 0.090*"example" + 0.055*"html_tag" + 0.048*"reference" + 0.045*"function" + 0.044*"second" + 0.031*"way" + 0.022*"different" + 0.022*"reason" + 0.013*"invoke" + 0.013*"print"
+INFO: topic #2 (0.045): 0.104*"first" + 0.026*"type" + 0.018*"return" + 0.016*"argument" + 0.015*"ref" + 0.015*"element" + 0.015*"https://docs.python.org/3/library/typing.html#callable" + 0.015*"list" + 0.015*"solution" + 0.015*"last"
+INFO: topic #3 (0.224): 0.191*"function" + 0.068*"argument" + 0.047*"return" + 0.047*"class" + 0.041*"order" + 0.041*"high" + 0.033*"decorator" + 0.030*"time" + 0.024*"value" + 0.022*"f"
+INFO: topic #4 (0.030): 0.051*"new" + 0.027*"version" + 0.027*"hof" + 0.018*"datum" + 0.018*"operation" + 0.018*"make_function_print_arg" + 0.018*"single" + 0.018*"lst" + 0.016*"key" + 0.016*"state"
+INFO: topic diff=0.233611, rho=0.358057
+DEBUG: bound: at document #0
+INFO: -4.907 per-word bound, 30.0 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 6, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.049865965, 0.04577729, 0.04333017, 0.18983753, 0.027938738]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.050): 0.164*"function" + 0.064*"argument" + 0.041*"name" + 0.027*"call" + 0.019*"order" + 0.019*"high" + 0.018*"lambda" + 0.018*"expression" + 0.018*"way" + 0.014*"parameter"
+INFO: topic #1 (0.046): 0.076*"example" + 0.046*"html_tag" + 0.041*"reference" + 0.038*"function" + 0.037*"second" + 0.027*"way" + 0.020*"different" + 0.020*"reason" + 0.012*"invoke" + 0.012*"print"
+INFO: topic #2 (0.043): 0.077*"first" + 0.037*"type" + 0.022*"return" + 0.021*"argument" + 0.020*"ref" + 0.020*"element" + 0.020*"https://docs.python.org/3/library/typing.html#callable" + 0.020*"solution" + 0.020*"list" + 0.020*"last"
+INFO: topic #3 (0.190): 0.166*"function" + 0.067*"argument" + 0.045*"decorator" + 0.043*"order" + 0.043*"high" + 0.037*"class" + 0.035*"return" + 0.022*"time" + 0.019*"f" + 0.018*"value"
+INFO: topic #4 (0.028): 0.045*"new" + 0.024*"version" + 0.024*"hof" + 0.017*"datum" + 0.017*"operation" + 0.017*"make_function_print_arg" + 0.017*"single" + 0.017*"lst" + 0.015*"key" + 0.015*"state"
+INFO: topic diff=0.202666, rho=0.337100
+DEBUG: bound: at document #0
+INFO: -5.523 per-word bound, 46.0 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 6, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.045064922, 0.05045219, 0.043619797, 0.22129382, 0.036600724]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.045): 0.150*"function" + 0.059*"argument" + 0.037*"name" + 0.025*"call" + 0.017*"order" + 0.017*"high" + 0.017*"lambda" + 0.017*"expression" + 0.017*"way" + 0.013*"parameter"
+INFO: topic #1 (0.050): 0.088*"example" + 0.055*"html_tag" + 0.046*"reference" + 0.045*"second" + 0.041*"function" + 0.030*"way" + 0.023*"different" + 0.023*"reason" + 0.013*"invoke" + 0.013*"print"
+INFO: topic #2 (0.044): 0.102*"first" + 0.027*"type" + 0.018*"return" + 0.016*"argument" + 0.015*"ref" + 0.015*"element" + 0.015*"solution" + 0.015*"https://docs.python.org/3/library/typing.html#callable" + 0.015*"list" + 0.015*"last"
+INFO: topic #3 (0.221): 0.193*"function" + 0.069*"argument" + 0.047*"return" + 0.046*"class" + 0.041*"order" + 0.041*"high" + 0.033*"decorator" + 0.030*"time" + 0.024*"value" + 0.022*"f"
+INFO: topic #4 (0.037): 0.049*"new" + 0.027*"version" + 0.027*"hof" + 0.019*"datum" + 0.019*"operation" + 0.018*"single" + 0.018*"make_function_print_arg" + 0.018*"lst" + 0.014*"key" + 0.014*"state"
+INFO: topic diff=0.212942, rho=0.337100
+DEBUG: bound: at document #0
+INFO: -4.903 per-word bound, 29.9 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 7, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.043921445, 0.044501927, 0.04230426, 0.18924347, 0.033463553]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.044): 0.163*"function" + 0.064*"argument" + 0.041*"name" + 0.027*"call" + 0.019*"order" + 0.019*"high" + 0.019*"lambda" + 0.019*"expression" + 0.019*"way" + 0.014*"parameter"
+INFO: topic #1 (0.045): 0.076*"example" + 0.048*"html_tag" + 0.040*"reference" + 0.039*"second" + 0.036*"function" + 0.026*"way" + 0.020*"different" + 0.020*"reason" + 0.012*"invoke" + 0.012*"print"
+INFO: topic #2 (0.042): 0.077*"first" + 0.037*"type" + 0.022*"return" + 0.021*"argument" + 0.020*"ref" + 0.020*"element" + 0.020*"solution" + 0.020*"https://docs.python.org/3/library/typing.html#callable" + 0.020*"last" + 0.020*"list"
+INFO: topic #3 (0.189): 0.168*"function" + 0.068*"argument" + 0.044*"decorator" + 0.043*"order" + 0.043*"high" + 0.037*"class" + 0.036*"return" + 0.022*"time" + 0.019*"f" + 0.018*"value"
+INFO: topic #4 (0.033): 0.044*"new" + 0.024*"version" + 0.024*"hof" + 0.017*"datum" + 0.017*"operation" + 0.017*"single" + 0.017*"make_function_print_arg" + 0.017*"lst" + 0.013*"key" + 0.013*"state"
+INFO: topic diff=0.183835, rho=0.319438
+DEBUG: bound: at document #0
+INFO: -5.467 per-word bound, 44.2 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 7, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.040371194, 0.048871923, 0.04260825, 0.21877092, 0.040369973]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.040): 0.150*"function" + 0.059*"argument" + 0.038*"name" + 0.026*"call" + 0.017*"order" + 0.017*"high" + 0.017*"lambda" + 0.017*"expression" + 0.017*"way" + 0.013*"parameter"
+INFO: topic #1 (0.049): 0.086*"example" + 0.055*"html_tag" + 0.045*"reference" + 0.044*"second" + 0.038*"function" + 0.029*"way" + 0.023*"reason" + 0.023*"different" + 0.015*"new" + 0.013*"invoke"
+INFO: topic #2 (0.043): 0.096*"first" + 0.028*"type" + 0.018*"return" + 0.017*"argument" + 0.016*"element" + 0.016*"ref" + 0.016*"https://docs.python.org/3/library/typing.html#callable" + 0.016*"last" + 0.016*"solution" + 0.016*"list"
+INFO: topic #3 (0.219): 0.194*"function" + 0.069*"argument" + 0.047*"return" + 0.045*"class" + 0.041*"order" + 0.041*"high" + 0.034*"decorator" + 0.029*"time" + 0.024*"value" + 0.022*"f"
+INFO: topic #4 (0.040): 0.042*"new" + 0.027*"version" + 0.027*"hof" + 0.019*"operation" + 0.019*"datum" + 0.019*"single" + 0.019*"make_function_print_arg" + 0.019*"lst" + 0.012*"key" + 0.012*"state"
+INFO: topic diff=0.190297, rho=0.319438
+DEBUG: bound: at document #0
+INFO: -4.900 per-word bound, 29.9 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 8, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.039721057, 0.043506116, 0.041437536, 0.18846305, 0.036704548]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.040): 0.162*"function" + 0.064*"argument" + 0.041*"name" + 0.028*"call" + 0.019*"order" + 0.019*"high" + 0.019*"lambda" + 0.019*"expression" + 0.019*"way" + 0.014*"parameter"
+INFO: topic #1 (0.044): 0.075*"example" + 0.048*"html_tag" + 0.040*"reference" + 0.039*"second" + 0.033*"function" + 0.025*"way" + 0.020*"reason" + 0.020*"different" + 0.014*"new" + 0.011*"invoke"
+INFO: topic #2 (0.041): 0.074*"first" + 0.037*"type" + 0.022*"return" + 0.021*"argument" + 0.020*"element" + 0.020*"ref" + 0.020*"https://docs.python.org/3/library/typing.html#callable" + 0.020*"last" + 0.020*"solution" + 0.020*"list"
+INFO: topic #3 (0.188): 0.170*"function" + 0.068*"argument" + 0.044*"decorator" + 0.043*"order" + 0.043*"high" + 0.038*"class" + 0.036*"return" + 0.022*"time" + 0.019*"f" + 0.019*"value"
+INFO: topic #4 (0.037): 0.038*"new" + 0.025*"version" + 0.025*"hof" + 0.017*"operation" + 0.017*"datum" + 0.017*"single" + 0.017*"make_function_print_arg" + 0.017*"lst" + 0.011*"key" + 0.011*"state"
+INFO: topic diff=0.172010, rho=0.304290
+DEBUG: bound: at document #0
+INFO: -5.429 per-word bound, 43.1 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 8, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.036893573, 0.04756727, 0.038361043, 0.21533403, 0.04375459]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.037): 0.150*"function" + 0.059*"argument" + 0.038*"name" + 0.026*"call" + 0.018*"order" + 0.018*"high" + 0.018*"lambda" + 0.018*"expression" + 0.018*"way" + 0.013*"parameter"
+INFO: topic #1 (0.048): 0.084*"example" + 0.054*"html_tag" + 0.044*"reference" + 0.043*"second" + 0.035*"function" + 0.028*"way" + 0.026*"first" + 0.022*"different" + 0.022*"reason" + 0.019*"new"
+INFO: topic #2 (0.038): 0.057*"first" + 0.029*"type" + 0.018*"return" + 0.017*"argument" + 0.016*"element" + 0.016*"ref" + 0.016*"https://docs.python.org/3/library/typing.html#callable" + 0.016*"last" + 0.016*"solution" + 0.016*"list"
+INFO: topic #3 (0.215): 0.194*"function" + 0.070*"argument" + 0.047*"return" + 0.045*"class" + 0.041*"order" + 0.041*"high" + 0.034*"decorator" + 0.029*"time" + 0.024*"value" + 0.022*"f"
+INFO: topic #4 (0.044): 0.039*"new" + 0.028*"version" + 0.028*"hof" + 0.019*"operation" + 0.019*"datum" + 0.019*"single" + 0.019*"make_function_print_arg" + 0.019*"lst" + 0.011*"key" + 0.011*"state"
+INFO: topic diff=0.184500, rho=0.304290
+DEBUG: bound: at document #0
+INFO: -4.895 per-word bound, 29.8 perplexity estimate based on a held-out corpus of 5 documents with 320 words
+INFO: PROGRESS: pass 9, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.036515426, 0.042631056, 0.037628297, 0.18631558, 0.039575804]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #0 (0.037): 0.161*"function" + 0.063*"argument" + 0.041*"name" + 0.028*"call" + 0.019*"order" + 0.019*"high" + 0.019*"lambda" + 0.019*"expression" + 0.019*"way" + 0.014*"parameter"
+INFO: topic #1 (0.043): 0.074*"example" + 0.048*"html_tag" + 0.039*"reference" + 0.038*"second" + 0.031*"function" + 0.025*"way" + 0.023*"first" + 0.020*"different" + 0.020*"reason" + 0.017*"new"
+INFO: topic #2 (0.038): 0.048*"first" + 0.038*"type" + 0.022*"return" + 0.021*"argument" + 0.021*"element" + 0.021*"ref" + 0.021*"https://docs.python.org/3/library/typing.html#callable" + 0.021*"last" + 0.021*"solution" + 0.021*"list"
+INFO: topic #3 (0.186): 0.171*"function" + 0.069*"argument" + 0.044*"decorator" + 0.043*"order" + 0.043*"high" + 0.038*"class" + 0.037*"return" + 0.022*"time" + 0.019*"f" + 0.019*"value"
+INFO: topic #4 (0.040): 0.035*"new" + 0.025*"version" + 0.025*"hof" + 0.017*"operation" + 0.017*"datum" + 0.017*"single" + 0.017*"make_function_print_arg" + 0.017*"lst" + 0.010*"key" + 0.010*"state"
+INFO: topic diff=0.165988, rho=0.291111
+DEBUG: bound: at document #0
+INFO: -5.390 per-word bound, 41.9 perplexity estimate based on a held-out corpus of 4 documents with 235 words
+INFO: PROGRESS: pass 9, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.034238487, 0.046498355, 0.03521076, 0.21234794, 0.046750475]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #0 (0.034): 0.150*"function" + 0.059*"argument" + 0.038*"name" + 0.026*"call" + 0.018*"order" + 0.018*"high" + 0.018*"lambda" + 0.018*"expression" + 0.018*"way" + 0.013*"parameter"
+INFO: topic #1 (0.046): 0.083*"example" + 0.053*"html_tag" + 0.043*"reference" + 0.043*"second" + 0.034*"first" + 0.033*"function" + 0.027*"way" + 0.022*"different" + 0.022*"reason" + 0.020*"new"
+INFO: topic #2 (0.035): 0.038*"first" + 0.030*"type" + 0.018*"return" + 0.017*"argument" + 0.017*"element" + 0.017*"ref" + 0.017*"https://docs.python.org/3/library/typing.html#callable" + 0.017*"last" + 0.017*"solution" + 0.017*"list"
+INFO: topic #3 (0.212): 0.194*"function" + 0.070*"argument" + 0.047*"return" + 0.045*"class" + 0.041*"order" + 0.041*"high" + 0.034*"decorator" + 0.028*"time" + 0.024*"value" + 0.022*"f"
+INFO: topic #4 (0.047): 0.038*"new" + 0.028*"version" + 0.028*"hof" + 0.019*"operation" + 0.019*"datum" + 0.019*"single" + 0.019*"make_function_print_arg" + 0.019*"lst" + 0.010*"key" + 0.010*"state"
+INFO: topic diff=0.169785, rho=0.291111
+DEBUG: starting a new internal lifecycle event log for LdaModel
+INFO: LdaModel lifecycle event {'msg': 'trained LdaModel<num_terms=226, num_topics=5, decay=0.5, chunksize=5> in 0.12s', 'datetime': '2023-04-25T15:14:17.742407', 'gensim': '4.3.1', 'python': '3.9.2 (default, Mar  4 2021, 10:15:47) \n[Clang 10.0.0 (clang-1000.10.44.4)]', 'platform': 'macOS-10.16-x86_64-i386-64bit', 'event': 'created'}
+INFO: generating a 25 x 25 asymmetric distance matrix...
+INFO: the given threshold of None covered on average 91.1% of tokens
+INFO: fitting the clustering model, using 2 for min_samples
+INFO: generating stable topics, using 2 for min_cores
+INFO: found 3 clusters
+INFO: found 3 stable topics
+INFO: generating classic gensim model representation based on results from the ensemble
+INFO: using autotuned alpha, starting with [0.33333334, 0.33333334, 0.33333334]
+INFO: using serial LDA version on this node
+INFO: running online (multi-pass) LDA training, 3 topics, 0 passes over the supplied corpus of 9 documents, updating model once every 5 documents, evaluating perplexity every 5 documents, iterating 2000x with a convergence threshold of 0.001000
+WARNING: too few updates, training might not converge; consider increasing the number of passes or iterations to improve accuracy
+DEBUG: starting a new internal lifecycle event log for LdaModel
+INFO: LdaModel lifecycle event {'msg': 'trained LdaModel<num_terms=226, num_topics=3, decay=0.5, chunksize=5> in 0.00s', 'datetime': '2023-04-25T15:14:17.769701', 'gensim': '4.3.1', 'python': '3.9.2 (default, Mar  4 2021, 10:15:47) \n[Clang 10.0.0 (clang-1000.10.44.4)]', 'platform': 'macOS-10.16-x86_64-i386-64bit', 'event': 'created'}
+DEBUG: Setting topics to those of the model: <gensim.models.ensemblelda.EnsembleLda object at 0x1310c2100>
+INFO: measuring u_mass...
+INFO: Coherence u_mass: -1.3119
+INFO: Coherence u_mass per-topic: [-0.2310490601781816, -0.5361814448862838, -3.168552766132573]
+DEBUG: starting a new internal lifecycle event log for EnsembleLda
+INFO: EnsembleLda lifecycle event {'fname_or_handle': 'model/elda/9/model', 'separately': 'None', 'sep_limit': 10485760, 'ignore': frozenset({'topic_model_class'}), 'datetime': '2023-04-25T15:14:17.772346', 'gensim': '4.3.1', 'python': '3.9.2 (default, Mar  4 2021, 10:15:47) \n[Clang 10.0.0 (clang-1000.10.44.4)]', 'platform': 'macOS-10.16-x86_64-i386-64bit', 'event': 'saving'}
+INFO: not storing attribute topic_model_class
+DEBUG: {'uri': 'model/elda/9/model', 'mode': 'wb', 'buffering': -1, 'encoding': None, 'errors': None, 'newline': None, 'closefd': True, 'opener': None, 'compression': 'infer_from_extension', 'transport_params': None}
+INFO: saved model/elda/9/model
+INFO: topic #0 (0.333): 0.105*"first" + 0.029*"type" + 0.016*"solution" + 0.016*"https://docs.python.org/3/library/typing.html#callable" + 0.016*"last" + 0.016*"ref" + 0.016*"element" + 0.016*"list" + 0.012*"f" + 0.010*"return"
+INFO: topic #1 (0.333): 0.025*"tuple" + 0.025*"args" + 0.025*"positional" + 0.022*"high" + 0.022*"argument" + 0.015*"programming" + 0.015*"body" + 0.014*"multiple" + 0.014*"refer" + 0.014*"online"
+INFO: topic #2 (0.333): 0.194*"function" + 0.068*"argument" + 0.033*"return" + 0.032*"order" + 0.032*"high" + 0.025*"example" + 0.021*"decorator" + 0.021*"class" + 0.018*"name" + 0.017*"way"
+INFO: Question Similarity: [0.10462534427642822, 0.14560920000076294, 0.2888372540473938, 0.4489741325378418, 0.05246710777282715, 0.3915720582008362, 0.4021875858306885, 0.14681553840637207, 0.5099236369132996, 0.15382105112075806]
+INFO: 62328793: -0.14330600003124935
+INFO: 62328997: -0.14450808950057561
+INFO: 74854675: -0.2094838883497336
+INFO: 65901747: -0.3219220536476274
+INFO: 50623708: -0.3316564836215386
+INFO: 70168821: -0.7632061287829832
+INFO: 70168888: -0.7708950027479883
+INFO: 70168970: -0.8218870672449626
+INFO: 74483522: -0.8220377506407915
+INFO: 74483521: -0.9083317025505957
+INFO: 61810300: -0.9253832070683146
+INFO: 61810298: -1.0075042484801195
+INFO: 70170703: -1.0186896340236917
+INFO: 61810249: -1.047520484219135
+INFO: 70170666: -1.0899260072099128
+INFO: Recommended Keywords
+INFO: order score: -0.84325147
+INFO: possible score: -0.81463736
+INFO: give score: -0.7888364
+INFO: example score: -0.7861381
+INFO: way score: -0.7771704
+INFO: choice score: -0.76123697
+INFO: reason score: -0.75598437
+INFO: multiple score: -0.74986005
+INFO: change score: -0.74716467
+INFO: case score: -0.7297464
+INFO: instance score: -0.7290507
+INFO: result score: -0.7031338
+INFO: element score: -0.6972392
+INFO: step score: -0.6884286
+INFO: pre score: -0.6716243
+INFO: convenient score: -0.66842407
+INFO: individual score: -0.6644943
+INFO: difference score: -0.6577897
+INFO: simple score: -0.6563548
+INFO: time score: -0.6553008
+INFO: key score: -0.64763176
+INFO: equivalent score: -0.64738566
+INFO: positional score: -0.64545614
+INFO: invoke score: -0.5977607
+INFO: class score: -0.59718364
+INFO: real score: -0.5970721
+INFO: first score: -0.5962862
+INFO: argument score: -0.5896745
+INFO: function score: -0.5896327
+INFO: available score: -0.58903146
+INFO: refer score: -0.5866371
+INFO: note score: -0.5797259
+INFO: last score: -0.5755886
+INFO: object score: -0.5718495
+INFO: extra score: -0.5711025
+INFO: high score: -0.5689242
+INFO: define score: -0.5671333
+INFO: problem score: -0.56665015
+INFO: type score: -0.56658924
+INFO: reference score: -0.56279397
+INFO: link score: -0.562075
+INFO: additional score: -0.5592094
+INFO: list score: -0.55426633
+INFO: solution score: -0.55309457
+INFO: need score: -0.5465441
+INFO: second score: -0.53891426
+INFO: return score: -0.53788584
+INFO: call score: -0.53781253
+INFO: advantage score: -0.53208745
+INFO: programming score: -0.5303605
+INFO: redundant score: -0.53033316
+INFO: different score: -0.52998024
+INFO: benefit score: -0.52986825
+INFO: single score: -0.5232758
+INFO: helper score: -0.51810676
+INFO: new score: -0.51592314
+INFO: expression score: -0.50668055
+INFO: shorthand score: -0.5022053
+INFO: attribute score: -0.49567005
+INFO: tuple score: -0.4898668
+INFO: operation score: -0.4862238
+INFO: statement score: -0.484662
+INFO: name score: -0.4839971
+INFO: resource score: -0.47316098
+INFO: body score: -0.4702493
+INFO: core score: -0.46867523
+INFO: conditional score: -0.4604441
+INFO: ref score: -0.45197707
+INFO: value score: -0.45087752
+INFO: later score: -0.45067966
+INFO: block score: -0.4492809
+INFO: functional score: -0.44585913
+INFO: relevant score: -0.44353235
+INFO: detail score: -0.4410266
+INFO: run score: -0.44044113
+INFO: mind score: -0.4384842
+INFO: memory score: -0.4367387
+INFO: mode score: -0.42976204
+INFO: execute score: -0.42606935
+INFO: variable score: -0.42152226
+INFO: args score: -0.4156252
+INFO: signature score: -0.41135418
+INFO: code score: -0.39391446
+INFO: efficient score: -0.39343798
+INFO: state score: -0.38779283
+INFO: guess score: -0.38379952
+INFO: debate score: -0.38010606
+INFO: unnamed score: -0.3677864
+INFO: default score: -0.3655693
+INFO: phrase score: -0.36388668
+INFO: f score: -0.36347565
+INFO: version score: -0.35635886
+INFO: online score: -0.34167707
+INFO: learn score: -0.31913105
+INFO: maximal score: -0.31853792
+INFO: sum score: -0.31343338
+INFO: string score: -0.30424246
+INFO: func score: -0.30199957
+INFO: lst score: -0.27884227
+INFO: datum score: -0.27757785
+INFO: pointer score: -0.24371393
+INFO: lot score: -0.24245206
+INFO: parameter score: -0.238501
+INFO: syntactic score: -0.2333813
+INFO: talk score: -0.23249197
+INFO: syntax score: -0.21246904
+INFO: callable score: -0.1884844
+INFO: g score: -0.18611972
+INFO: print score: -0.17561698
+INFO: research score: -0.16248271
+INFO: wiil score: -0.15347561
+INFO: x score: -0.13206834
+INFO: decorator score: -0.13142116
+INFO: lambda score: -0.11417117
+INFO: hof score: -0.09274755
+INFO: homework score: -0.04772225
+INFO: panda score: -0.028905049
+INFO: weird score: -0.009581381
+INFO: fnc score: -0.0
+INFO: fnc(*args score: -0.0
+INFO: https://docs.python.org/3/library/typing.html#callable score: -0.0
+INFO: make_function_print_arg score: -0.0
+INFO: f(x score: -0.0
+INFO: html_tag score: -0.0
+INFO: print_h1 score: -0.0
+INFO: def score: 0.04033137
+INFO: ============================================================

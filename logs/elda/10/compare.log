@@ -1,0 +1,1575 @@
+INFO: --------------------
+INFO: How do I copy an object in Python?
+INFO: --------------------
+INFO: exist
+INFO: adding document #0 to Dictionary<0 unique tokens: []>
+INFO: built Dictionary<147 unique tokens: ['assignment', 'batchelder', 'case', 'copy', 'copy.deepcopy']...> from 10 documents (total 393 corpus positions)
+DEBUG: starting a new internal lifecycle event log for Dictionary
+INFO: Dictionary lifecycle event {'msg': "built Dictionary<147 unique tokens: ['assignment', 'batchelder', 'case', 'copy', 'copy.deepcopy']...> from 10 documents (total 393 corpus positions)", 'datetime': '2023-04-25T15:14:20.153999', 'gensim': '4.3.1', 'python': '3.9.2 (default, Mar  4 2021, 10:15:47) \n[Clang 10.0.0 (clang-1000.10.44.4)]', 'platform': 'macOS-10.16-x86_64-i386-64bit', 'event': 'created'}
+INFO: adding document #0 to Dictionary<0 unique tokens: []>
+INFO: built Dictionary<147 unique tokens: ['assignment', 'batchelder', 'case', 'copy', 'copy.deepcopy']...> from 10 documents (total 393 corpus positions)
+DEBUG: starting a new internal lifecycle event log for Dictionary
+INFO: Dictionary lifecycle event {'msg': "built Dictionary<147 unique tokens: ['assignment', 'batchelder', 'case', 'copy', 'copy.deepcopy']...> from 10 documents (total 393 corpus positions)", 'datetime': '2023-04-25T15:14:20.155687', 'gensim': '4.3.1', 'python': '3.9.2 (default, Mar  4 2021, 10:15:47) \n[Clang 10.0.0 (clang-1000.10.44.4)]', 'platform': 'macOS-10.16-x86_64-i386-64bit', 'event': 'created'}
+INFO: generating 5 topic models using 1 workers
+INFO: using autotuned alpha, starting with [0.2, 0.2, 0.2, 0.2, 0.2]
+INFO: using serial LDA version on this node
+INFO: running online (multi-pass) LDA training, 5 topics, 10 passes over the supplied corpus of 10 documents, updating model once every 5 documents, evaluating perplexity every 5 documents, iterating 2000x with a convergence threshold of 0.001000
+DEBUG: bound: at document #0
+INFO: -7.438 per-word bound, 173.4 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 0, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.027018636, 0.09143613, 0.15410542, 0.15152453, 0.026562303]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.027): 0.007*"object" + 0.007*"deepcopy" + 0.007*"copy" + 0.007*"new" + 0.007*"foo" + 0.007*"reference" + 0.007*"df" + 0.007*"function" + 0.007*"name" + 0.007*"shallow"
+INFO: topic #1 (0.091): 0.094*"deepcopy" + 0.048*"copy" + 0.048*"dictionary" + 0.048*"memo" + 0.048*"answer" + 0.048*"lots_of_data" + 0.025*"class" + 0.025*"several" + 0.025*"place" + 0.025*"time"
+INFO: topic #2 (0.154): 0.084*"object" + 0.056*"instance" + 0.056*"df" + 0.056*"reference" + 0.043*"variable" + 0.043*"copy" + 0.029*"dict_b" + 0.029*"deepcopy" + 0.015*"name" + 0.015*"dictionary"
+INFO: topic #3 (0.152): 0.083*"object" + 0.066*"new" + 0.050*"copy" + 0.050*"name" + 0.050*"list" + 0.034*"point" + 0.034*"foo" + 0.018*"deepcopy" + 0.018*"reference" + 0.018*"good"
+INFO: topic #4 (0.027): 0.007*"deepcopy" + 0.007*"object" + 0.007*"copy" + 0.007*"new" + 0.007*"reference" + 0.007*"name" + 0.007*"list" + 0.007*"shallow" + 0.007*"instance" + 0.007*"module"
+INFO: topic diff=3.616374, rho=1.000000
+DEBUG: bound: at document #0
+INFO: -6.882 per-word bound, 118.0 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 0, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.036549233, 0.11082299, 0.1561014, 0.20044348, 0.028304387]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.037): 0.064*"method" + 0.034*"deep" + 0.030*"attribute" + 0.030*"produce" + 0.030*"mutable" + 0.030*"content" + 0.024*"hook" + 0.024*"customize" + 0.021*"difference" + 0.017*"recursive"
+INFO: topic #1 (0.111): 0.142*"copy" + 0.093*"class" + 0.070*"deepcopy" + 0.055*"shallow" + 0.037*"dictionary" + 0.037*"answer" + 0.031*"value" + 0.024*"memo" + 0.017*"method" + 0.015*"deep"
+INFO: topic #2 (0.156): 0.099*"object" + 0.061*"instance" + 0.055*"reference" + 0.051*"copy" + 0.044*"deepcopy" + 0.029*"df" + 0.025*"=" + 0.025*"function" + 0.024*"memory" + 0.022*"variable"
+INFO: topic #3 (0.200): 0.189*"copy" + 0.163*"object" + 0.053*"new" + 0.051*"list" + 0.046*"shallow" + 0.034*"original" + 0.019*"deep" + 0.016*"memory" + 0.015*"datum" + 0.015*"case"
+INFO: topic #4 (0.028): 0.066*"deep" + 0.039*"interior" + 0.039*"immutable" + 0.039*"change" + 0.039*"method" + 0.029*"container" + 0.029*"tuple" + 0.020*"slice" + 0.020*"independent" + 0.020*"structure"
+INFO: topic diff=1.585091, rho=0.707107
+DEBUG: bound: at document #0
+INFO: -5.369 per-word bound, 41.3 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 1, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.032645103, 0.09091481, 0.13416766, 0.1529417, 0.025961068]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.033): 0.044*"method" + 0.025*"deep" + 0.022*"attribute" + 0.022*"produce" + 0.022*"mutable" + 0.022*"content" + 0.018*"hook" + 0.018*"customize" + 0.016*"difference" + 0.013*"recursive"
+INFO: topic #1 (0.091): 0.101*"copy" + 0.080*"deepcopy" + 0.063*"class" + 0.042*"shallow" + 0.042*"dictionary" + 0.042*"answer" + 0.035*"memo" + 0.029*"value" + 0.028*"lots_of_data" + 0.015*"several"
+INFO: topic #2 (0.134): 0.089*"object" + 0.058*"instance" + 0.056*"reference" + 0.046*"df" + 0.046*"copy" + 0.035*"variable" + 0.035*"deepcopy" + 0.024*"dict_b" + 0.019*"=" + 0.019*"function"
+INFO: topic #3 (0.153): 0.141*"copy" + 0.135*"object" + 0.058*"new" + 0.051*"list" + 0.036*"shallow" + 0.028*"original" + 0.023*"name" + 0.017*"memory" + 0.016*"datum" + 0.016*"case"
+INFO: topic #4 (0.026): 0.053*"deep" + 0.032*"interior" + 0.032*"immutable" + 0.032*"change" + 0.032*"method" + 0.024*"container" + 0.024*"tuple" + 0.017*"slice" + 0.017*"independent" + 0.017*"structure"
+INFO: topic diff=0.467088, rho=0.500000
+DEBUG: bound: at document #0
+INFO: -4.912 per-word bound, 30.1 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 1, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.03703189, 0.1031784, 0.13827923, 0.18733753, 0.027195165]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.037): 0.076*"method" + 0.040*"produce" + 0.037*"attribute" + 0.035*"mutable" + 0.025*"hook" + 0.025*"customize" + 0.022*"singleton" + 0.022*"altered" + 0.022*"distinct" + 0.022*"call"
+INFO: topic #1 (0.103): 0.121*"copy" + 0.108*"class" + 0.076*"deepcopy" + 0.049*"shallow" + 0.044*"dictionary" + 0.044*"answer" + 0.037*"value" + 0.030*"memo" + 0.016*"lots_of_data" + 0.011*"method"
+INFO: topic #2 (0.138): 0.088*"object" + 0.063*"instance" + 0.058*"reference" + 0.049*"deepcopy" + 0.038*"copy" + 0.032*"df" + 0.026*"memory" + 0.025*"=" + 0.025*"variable" + 0.023*"function"
+INFO: topic #3 (0.187): 0.209*"copy" + 0.165*"object" + 0.054*"new" + 0.052*"shallow" + 0.051*"list" + 0.033*"original" + 0.021*"deep" + 0.017*"content" + 0.015*"datum" + 0.015*"case"
+INFO: topic #4 (0.027): 0.064*"deep" + 0.041*"interior" + 0.040*"change" + 0.038*"immutable" + 0.038*"method" + 0.031*"tuple" + 0.031*"container" + 0.022*"structure" + 0.022*"independent" + 0.022*"slice"
+INFO: topic diff=0.399734, rho=0.500000
+DEBUG: bound: at document #0
+INFO: -5.225 per-word bound, 37.4 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 2, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.03335131, 0.087608494, 0.12427103, 0.14988723, 0.025208298]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.033): 0.056*"method" + 0.030*"produce" + 0.029*"attribute" + 0.027*"mutable" + 0.020*"hook" + 0.020*"customize" + 0.017*"singleton" + 0.017*"altered" + 0.017*"distinct" + 0.017*"call"
+INFO: topic #1 (0.088): 0.090*"copy" + 0.084*"deepcopy" + 0.073*"class" + 0.046*"dictionary" + 0.046*"answer" + 0.039*"shallow" + 0.038*"memo" + 0.032*"value" + 0.030*"lots_of_data" + 0.016*"several"
+INFO: topic #2 (0.124): 0.086*"object" + 0.059*"instance" + 0.057*"reference" + 0.046*"df" + 0.041*"copy" + 0.038*"deepcopy" + 0.035*"variable" + 0.024*"dict_b" + 0.020*"memory" + 0.019*"="
+INFO: topic #3 (0.150): 0.161*"copy" + 0.140*"object" + 0.057*"new" + 0.051*"list" + 0.042*"shallow" + 0.029*"original" + 0.022*"name" + 0.016*"datum" + 0.016*"case" + 0.016*"memory"
+INFO: topic #4 (0.025): 0.054*"deep" + 0.035*"interior" + 0.034*"change" + 0.033*"immutable" + 0.033*"method" + 0.027*"tuple" + 0.027*"container" + 0.019*"structure" + 0.019*"independent" + 0.019*"slice"
+INFO: topic diff=0.367865, rho=0.447214
+DEBUG: bound: at document #0
+INFO: -4.795 per-word bound, 27.8 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 2, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.03740023, 0.10598813, 0.11885771, 0.19524258, 0.026357226]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.037): 0.080*"method" + 0.043*"produce" + 0.041*"attribute" + 0.039*"mutable" + 0.024*"customize" + 0.024*"hook" + 0.023*"create" + 0.023*"general" + 0.023*"altered" + 0.023*"call"
+INFO: topic #1 (0.106): 0.117*"class" + 0.097*"copy" + 0.086*"deepcopy" + 0.049*"dictionary" + 0.049*"answer" + 0.041*"shallow" + 0.040*"value" + 0.034*"memo" + 0.019*"lots_of_data" + 0.010*"several"
+INFO: topic #2 (0.119): 0.077*"object" + 0.064*"instance" + 0.060*"reference" + 0.042*"deepcopy" + 0.035*"copy" + 0.034*"df" + 0.028*"memory" + 0.026*"variable" + 0.025*"=" + 0.022*"function"
+INFO: topic #3 (0.195): 0.220*"copy" + 0.168*"object" + 0.056*"shallow" + 0.054*"new" + 0.051*"list" + 0.033*"original" + 0.023*"deep" + 0.018*"content" + 0.016*"deepcopy" + 0.015*"datum"
+INFO: topic #4 (0.026): 0.062*"deep" + 0.042*"interior" + 0.040*"change" + 0.039*"method" + 0.038*"immutable" + 0.032*"tuple" + 0.032*"container" + 0.022*"structure" + 0.022*"independent" + 0.022*"slice"
+INFO: topic diff=0.331351, rho=0.447214
+DEBUG: bound: at document #0
+INFO: -5.180 per-word bound, 36.3 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 3, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.0339228, 0.09036723, 0.11156231, 0.1558262, 0.024628295]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.034): 0.061*"method" + 0.034*"produce" + 0.032*"attribute" + 0.031*"mutable" + 0.020*"customize" + 0.020*"hook" + 0.019*"create" + 0.019*"general" + 0.019*"altered" + 0.019*"call"
+INFO: topic #1 (0.090): 0.089*"deepcopy" + 0.079*"class" + 0.077*"copy" + 0.048*"dictionary" + 0.048*"answer" + 0.040*"memo" + 0.035*"shallow" + 0.034*"value" + 0.031*"lots_of_data" + 0.017*"several"
+INFO: topic #2 (0.112): 0.081*"object" + 0.060*"instance" + 0.058*"reference" + 0.046*"df" + 0.039*"copy" + 0.035*"deepcopy" + 0.035*"variable" + 0.024*"dict_b" + 0.021*"memory" + 0.020*"="
+INFO: topic #3 (0.156): 0.174*"copy" + 0.145*"object" + 0.057*"new" + 0.051*"list" + 0.045*"shallow" + 0.029*"original" + 0.021*"name" + 0.017*"deep" + 0.016*"deepcopy" + 0.016*"datum"
+INFO: topic #4 (0.025): 0.054*"deep" + 0.037*"interior" + 0.036*"change" + 0.034*"method" + 0.033*"immutable" + 0.028*"tuple" + 0.028*"container" + 0.020*"structure" + 0.020*"independent" + 0.020*"slice"
+INFO: topic diff=0.291633, rho=0.408248
+DEBUG: bound: at document #0
+INFO: -4.747 per-word bound, 26.8 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 3, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.03768517, 0.107233986, 0.10978397, 0.19834888, 0.025692249]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.038): 0.081*"method" + 0.043*"produce" + 0.042*"attribute" + 0.041*"mutable" + 0.024*"customize" + 0.024*"hook" + 0.023*"distinct" + 0.023*"general" + 0.023*"call" + 0.023*"altered"
+INFO: topic #1 (0.107): 0.121*"class" + 0.090*"deepcopy" + 0.079*"copy" + 0.051*"dictionary" + 0.051*"answer" + 0.042*"value" + 0.036*"memo" + 0.035*"shallow" + 0.020*"lots_of_data" + 0.011*"several"
+INFO: topic #2 (0.110): 0.073*"object" + 0.063*"instance" + 0.061*"reference" + 0.040*"deepcopy" + 0.035*"df" + 0.035*"copy" + 0.030*"memory" + 0.027*"variable" + 0.025*"=" + 0.022*"function"
+INFO: topic #3 (0.198): 0.227*"copy" + 0.169*"object" + 0.058*"shallow" + 0.054*"new" + 0.051*"list" + 0.033*"original" + 0.024*"deep" + 0.018*"content" + 0.017*"deepcopy" + 0.016*"datum"
+INFO: topic #4 (0.026): 0.059*"deep" + 0.042*"interior" + 0.041*"change" + 0.040*"method" + 0.037*"immutable" + 0.032*"tuple" + 0.032*"container" + 0.022*"structure" + 0.022*"independent" + 0.022*"slice"
+INFO: topic diff=0.272434, rho=0.408248
+DEBUG: bound: at document #0
+INFO: -5.160 per-word bound, 35.7 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 4, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.034386646, 0.092101045, 0.10502033, 0.15960102, 0.024157315]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.034): 0.064*"method" + 0.035*"produce" + 0.034*"attribute" + 0.033*"mutable" + 0.020*"customize" + 0.020*"hook" + 0.020*"distinct" + 0.020*"general" + 0.020*"call" + 0.020*"altered"
+INFO: topic #1 (0.092): 0.091*"deepcopy" + 0.083*"class" + 0.067*"copy" + 0.050*"dictionary" + 0.050*"answer" + 0.041*"memo" + 0.036*"value" + 0.031*"lots_of_data" + 0.031*"shallow" + 0.017*"several"
+INFO: topic #2 (0.105): 0.079*"object" + 0.060*"instance" + 0.059*"reference" + 0.046*"df" + 0.039*"copy" + 0.035*"variable" + 0.034*"deepcopy" + 0.024*"dict_b" + 0.022*"memory" + 0.020*"="
+INFO: topic #3 (0.160): 0.182*"copy" + 0.147*"object" + 0.057*"new" + 0.051*"list" + 0.048*"shallow" + 0.029*"original" + 0.021*"name" + 0.019*"deep" + 0.017*"deepcopy" + 0.016*"datum"
+INFO: topic #4 (0.024): 0.053*"deep" + 0.038*"interior" + 0.036*"change" + 0.036*"method" + 0.033*"immutable" + 0.029*"tuple" + 0.029*"container" + 0.020*"structure" + 0.020*"independent" + 0.020*"slice"
+INFO: topic diff=0.243843, rho=0.377964
+DEBUG: bound: at document #0
+INFO: -4.720 per-word bound, 26.4 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 4, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.037910398, 0.10771051, 0.10462261, 0.19957212, 0.025147228]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.038): 0.082*"method" + 0.043*"produce" + 0.042*"attribute" + 0.042*"mutable" + 0.023*"hook" + 0.023*"customize" + 0.023*"distinct" + 0.023*"general" + 0.023*"mutate" + 0.023*"call"
+INFO: topic #1 (0.108): 0.123*"class" + 0.091*"deepcopy" + 0.068*"copy" + 0.053*"dictionary" + 0.053*"answer" + 0.043*"value" + 0.038*"memo" + 0.031*"shallow" + 0.022*"lots_of_data" + 0.012*"several"
+INFO: topic #2 (0.105): 0.072*"object" + 0.062*"instance" + 0.061*"reference" + 0.039*"deepcopy" + 0.036*"df" + 0.034*"copy" + 0.031*"memory" + 0.027*"variable" + 0.024*"=" + 0.021*"function"
+INFO: topic #3 (0.200): 0.230*"copy" + 0.168*"object" + 0.060*"shallow" + 0.054*"new" + 0.051*"list" + 0.033*"original" + 0.026*"deep" + 0.018*"deepcopy" + 0.018*"content" + 0.016*"datum"
+INFO: topic #4 (0.025): 0.058*"deep" + 0.042*"interior" + 0.041*"change" + 0.041*"method" + 0.037*"immutable" + 0.032*"tuple" + 0.032*"container" + 0.022*"structure" + 0.022*"independent" + 0.022*"slice"
+INFO: topic diff=0.236649, rho=0.377964
+DEBUG: bound: at document #0
+INFO: -5.146 per-word bound, 35.4 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 5, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.034768637, 0.09324264, 0.10111886, 0.16230705, 0.023763113]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.035): 0.066*"method" + 0.036*"produce" + 0.035*"attribute" + 0.035*"mutable" + 0.020*"hook" + 0.020*"customize" + 0.020*"distinct" + 0.020*"general" + 0.020*"mutate" + 0.020*"call"
+INFO: topic #1 (0.093): 0.092*"deepcopy" + 0.086*"class" + 0.060*"copy" + 0.051*"dictionary" + 0.051*"answer" + 0.042*"memo" + 0.036*"value" + 0.032*"lots_of_data" + 0.029*"shallow" + 0.017*"several"
+INFO: topic #2 (0.101): 0.078*"object" + 0.060*"instance" + 0.059*"reference" + 0.045*"df" + 0.038*"copy" + 0.034*"variable" + 0.034*"deepcopy" + 0.024*"dict_b" + 0.023*"memory" + 0.020*"="
+INFO: topic #3 (0.162): 0.188*"copy" + 0.148*"object" + 0.057*"new" + 0.051*"list" + 0.050*"shallow" + 0.029*"original" + 0.020*"name" + 0.020*"deep" + 0.018*"deepcopy" + 0.016*"datum"
+INFO: topic #4 (0.024): 0.052*"deep" + 0.038*"interior" + 0.037*"change" + 0.037*"method" + 0.033*"immutable" + 0.029*"tuple" + 0.029*"container" + 0.020*"structure" + 0.020*"independent" + 0.020*"slice"
+INFO: topic diff=0.216750, rho=0.353553
+DEBUG: bound: at document #0
+INFO: -4.702 per-word bound, 26.0 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 5, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.038030412, 0.10135029, 0.100816555, 0.19955876, 0.024661168]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.038): 0.082*"method" + 0.043*"produce" + 0.042*"attribute" + 0.042*"mutable" + 0.023*"hook" + 0.023*"customize" + 0.023*"distinct" + 0.023*"general" + 0.023*"mutate" + 0.023*"call"
+INFO: topic #1 (0.101): 0.124*"class" + 0.086*"deepcopy" + 0.060*"copy" + 0.054*"dictionary" + 0.054*"answer" + 0.044*"value" + 0.039*"memo" + 0.028*"shallow" + 0.023*"lots_of_data" + 0.013*"several"
+INFO: topic #2 (0.101): 0.072*"object" + 0.062*"instance" + 0.061*"reference" + 0.038*"deepcopy" + 0.036*"df" + 0.034*"copy" + 0.031*"memory" + 0.028*"variable" + 0.024*"=" + 0.019*"function"
+INFO: topic #3 (0.200): 0.231*"copy" + 0.167*"object" + 0.061*"shallow" + 0.054*"new" + 0.051*"list" + 0.032*"original" + 0.026*"deep" + 0.021*"deepcopy" + 0.018*"content" + 0.016*"datum"
+INFO: topic #4 (0.025): 0.056*"deep" + 0.042*"interior" + 0.041*"change" + 0.041*"method" + 0.036*"immutable" + 0.032*"tuple" + 0.032*"container" + 0.022*"structure" + 0.022*"independent" + 0.022*"slice"
+INFO: topic diff=0.214587, rho=0.353553
+DEBUG: bound: at document #0
+INFO: -5.135 per-word bound, 35.1 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 6, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.035014678, 0.08940422, 0.09799226, 0.16351077, 0.023391424]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.035): 0.067*"method" + 0.036*"produce" + 0.036*"attribute" + 0.035*"mutable" + 0.020*"hook" + 0.020*"customize" + 0.020*"distinct" + 0.020*"general" + 0.020*"mutate" + 0.020*"call"
+INFO: topic #1 (0.089): 0.089*"deepcopy" + 0.088*"class" + 0.056*"copy" + 0.052*"dictionary" + 0.052*"answer" + 0.042*"memo" + 0.037*"value" + 0.032*"lots_of_data" + 0.027*"shallow" + 0.017*"place"
+INFO: topic #2 (0.098): 0.077*"object" + 0.059*"instance" + 0.059*"reference" + 0.045*"df" + 0.038*"copy" + 0.034*"variable" + 0.034*"deepcopy" + 0.024*"memory" + 0.023*"dict_b" + 0.020*"="
+INFO: topic #3 (0.164): 0.191*"copy" + 0.149*"object" + 0.057*"new" + 0.051*"shallow" + 0.051*"list" + 0.029*"original" + 0.021*"deep" + 0.020*"deepcopy" + 0.020*"name" + 0.016*"datum"
+INFO: topic #4 (0.023): 0.051*"deep" + 0.038*"interior" + 0.038*"change" + 0.038*"method" + 0.033*"immutable" + 0.029*"container" + 0.029*"tuple" + 0.020*"independent" + 0.020*"structure" + 0.020*"slice"
+INFO: topic diff=0.199531, rho=0.333333
+DEBUG: bound: at document #0
+INFO: -4.691 per-word bound, 25.8 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 6, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.038098373, 0.09709469, 0.09804007, 0.19864465, 0.024234874]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.038): 0.081*"method" + 0.043*"produce" + 0.042*"attribute" + 0.042*"mutable" + 0.023*"hook" + 0.023*"customize" + 0.023*"distinct" + 0.023*"general" + 0.023*"mutate" + 0.023*"call"
+INFO: topic #1 (0.097): 0.125*"class" + 0.082*"deepcopy" + 0.055*"copy" + 0.055*"dictionary" + 0.055*"answer" + 0.044*"value" + 0.039*"memo" + 0.026*"shallow" + 0.024*"lots_of_data" + 0.013*"place"
+INFO: topic #2 (0.098): 0.072*"object" + 0.061*"instance" + 0.061*"reference" + 0.038*"deepcopy" + 0.036*"df" + 0.034*"copy" + 0.032*"memory" + 0.028*"variable" + 0.024*"=" + 0.019*"dict_b"
+INFO: topic #3 (0.199): 0.231*"copy" + 0.166*"object" + 0.061*"shallow" + 0.054*"new" + 0.051*"list" + 0.032*"original" + 0.027*"deep" + 0.022*"deepcopy" + 0.018*"content" + 0.016*"datum"
+INFO: topic #4 (0.024): 0.055*"deep" + 0.042*"interior" + 0.042*"method" + 0.042*"change" + 0.036*"immutable" + 0.032*"tuple" + 0.032*"container" + 0.022*"structure" + 0.022*"independent" + 0.022*"slice"
+INFO: topic diff=0.198399, rho=0.333333
+DEBUG: bound: at document #0
+INFO: -5.126 per-word bound, 34.9 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 7, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.03520142, 0.08677336, 0.09567672, 0.16421837, 0.023061095]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.035): 0.068*"method" + 0.036*"produce" + 0.036*"attribute" + 0.036*"mutable" + 0.020*"hook" + 0.020*"customize" + 0.020*"distinct" + 0.020*"general" + 0.020*"mutate" + 0.020*"call"
+INFO: topic #1 (0.087): 0.090*"class" + 0.086*"deepcopy" + 0.053*"copy" + 0.053*"dictionary" + 0.053*"answer" + 0.042*"memo" + 0.038*"value" + 0.032*"lots_of_data" + 0.026*"shallow" + 0.017*"multiple"
+INFO: topic #2 (0.096): 0.077*"object" + 0.059*"instance" + 0.059*"reference" + 0.045*"df" + 0.038*"copy" + 0.034*"deepcopy" + 0.034*"variable" + 0.025*"memory" + 0.023*"dict_b" + 0.020*"="
+INFO: topic #3 (0.164): 0.194*"copy" + 0.149*"object" + 0.057*"new" + 0.052*"shallow" + 0.050*"list" + 0.029*"original" + 0.022*"deep" + 0.021*"deepcopy" + 0.020*"name" + 0.016*"datum"
+INFO: topic #4 (0.023): 0.050*"deep" + 0.039*"interior" + 0.038*"method" + 0.038*"change" + 0.033*"immutable" + 0.030*"tuple" + 0.030*"container" + 0.020*"structure" + 0.020*"independent" + 0.020*"slice"
+INFO: topic diff=0.186070, rho=0.316228
+DEBUG: bound: at document #0
+INFO: -4.682 per-word bound, 25.7 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 7, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.038132284, 0.09408178, 0.095915526, 0.19753054, 0.023858182]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.038): 0.081*"method" + 0.042*"produce" + 0.042*"attribute" + 0.042*"mutable" + 0.023*"hook" + 0.023*"customize" + 0.023*"distinct" + 0.023*"general" + 0.023*"mutate" + 0.023*"call"
+INFO: topic #1 (0.094): 0.124*"class" + 0.080*"deepcopy" + 0.055*"dictionary" + 0.055*"answer" + 0.052*"copy" + 0.044*"value" + 0.040*"memo" + 0.025*"shallow" + 0.024*"lots_of_data" + 0.013*"field"
+INFO: topic #2 (0.096): 0.072*"object" + 0.061*"reference" + 0.061*"instance" + 0.038*"deepcopy" + 0.037*"df" + 0.034*"copy" + 0.032*"memory" + 0.028*"variable" + 0.024*"=" + 0.019*"dict_b"
+INFO: topic #3 (0.198): 0.231*"copy" + 0.166*"object" + 0.061*"shallow" + 0.054*"new" + 0.050*"list" + 0.032*"original" + 0.028*"deep" + 0.023*"deepcopy" + 0.017*"content" + 0.016*"datum"
+INFO: topic #4 (0.024): 0.053*"deep" + 0.042*"interior" + 0.042*"method" + 0.042*"change" + 0.036*"immutable" + 0.032*"container" + 0.032*"tuple" + 0.022*"slice" + 0.022*"structure" + 0.022*"return"
+INFO: topic diff=0.185705, rho=0.316228
+DEBUG: bound: at document #0
+INFO: -5.119 per-word bound, 34.7 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 8, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.035345223, 0.08489004, 0.093882866, 0.16467355, 0.022765672]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.035): 0.068*"method" + 0.036*"produce" + 0.036*"attribute" + 0.036*"mutable" + 0.020*"hook" + 0.020*"customize" + 0.020*"distinct" + 0.020*"general" + 0.020*"mutate" + 0.020*"call"
+INFO: topic #1 (0.085): 0.091*"class" + 0.084*"deepcopy" + 0.053*"dictionary" + 0.053*"answer" + 0.051*"copy" + 0.043*"memo" + 0.038*"value" + 0.032*"lots_of_data" + 0.025*"shallow" + 0.017*"item"
+INFO: topic #2 (0.094): 0.077*"object" + 0.059*"reference" + 0.059*"instance" + 0.045*"df" + 0.038*"copy" + 0.034*"deepcopy" + 0.034*"variable" + 0.025*"memory" + 0.023*"dict_b" + 0.020*"="
+INFO: topic #3 (0.165): 0.195*"copy" + 0.149*"object" + 0.056*"new" + 0.053*"shallow" + 0.050*"list" + 0.029*"original" + 0.022*"deep" + 0.022*"deepcopy" + 0.019*"name" + 0.016*"datum"
+INFO: topic #4 (0.023): 0.049*"deep" + 0.039*"interior" + 0.038*"method" + 0.038*"change" + 0.033*"immutable" + 0.030*"tuple" + 0.030*"container" + 0.020*"structure" + 0.020*"independent" + 0.020*"slice"
+INFO: topic diff=0.175486, rho=0.301511
+DEBUG: bound: at document #0
+INFO: -4.675 per-word bound, 25.5 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 8, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.038143285, 0.091858976, 0.09423576, 0.1964091, 0.023522891]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.038): 0.080*"method" + 0.042*"produce" + 0.042*"attribute" + 0.042*"mutable" + 0.023*"hook" + 0.023*"customize" + 0.023*"distinct" + 0.023*"general" + 0.023*"mutate" + 0.023*"call"
+INFO: topic #1 (0.092): 0.124*"class" + 0.078*"deepcopy" + 0.056*"dictionary" + 0.056*"answer" + 0.050*"copy" + 0.045*"value" + 0.040*"memo" + 0.024*"lots_of_data" + 0.024*"shallow" + 0.014*"solution"
+INFO: topic #2 (0.094): 0.072*"object" + 0.061*"reference" + 0.060*"instance" + 0.038*"deepcopy" + 0.037*"df" + 0.034*"copy" + 0.032*"memory" + 0.028*"variable" + 0.024*"=" + 0.020*"dict_b"
+INFO: topic #3 (0.196): 0.231*"copy" + 0.165*"object" + 0.061*"shallow" + 0.054*"new" + 0.050*"list" + 0.032*"original" + 0.028*"deep" + 0.024*"deepcopy" + 0.017*"content" + 0.016*"datum"
+INFO: topic #4 (0.024): 0.052*"deep" + 0.042*"interior" + 0.042*"method" + 0.042*"change" + 0.036*"immutable" + 0.032*"tuple" + 0.032*"container" + 0.022*"structure" + 0.022*"independent" + 0.022*"slice"
+INFO: topic diff=0.175251, rho=0.301511
+DEBUG: bound: at document #0
+INFO: -5.113 per-word bound, 34.6 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 9, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.03545729, 0.083497755, 0.092449814, 0.16498224, 0.022499949]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.035): 0.068*"method" + 0.036*"produce" + 0.036*"attribute" + 0.036*"mutable" + 0.020*"hook" + 0.020*"customize" + 0.020*"distinct" + 0.020*"general" + 0.020*"mutate" + 0.020*"call"
+INFO: topic #1 (0.083): 0.092*"class" + 0.083*"deepcopy" + 0.053*"dictionary" + 0.053*"answer" + 0.049*"copy" + 0.043*"memo" + 0.038*"value" + 0.032*"lots_of_data" + 0.024*"shallow" + 0.017*"item"
+INFO: topic #2 (0.092): 0.077*"object" + 0.059*"reference" + 0.059*"instance" + 0.045*"df" + 0.037*"copy" + 0.034*"deepcopy" + 0.034*"variable" + 0.026*"memory" + 0.023*"dict_b" + 0.020*"="
+INFO: topic #3 (0.165): 0.197*"copy" + 0.150*"object" + 0.056*"new" + 0.053*"shallow" + 0.050*"list" + 0.029*"original" + 0.023*"deep" + 0.023*"deepcopy" + 0.019*"name" + 0.016*"datum"
+INFO: topic #4 (0.022): 0.048*"deep" + 0.039*"interior" + 0.039*"method" + 0.039*"change" + 0.033*"immutable" + 0.030*"container" + 0.030*"tuple" + 0.020*"return" + 0.020*"structure" + 0.020*"course"
+INFO: topic diff=0.166608, rho=0.288675
+DEBUG: bound: at document #0
+INFO: -4.670 per-word bound, 25.4 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 9, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.038138453, 0.09016336, 0.09282384, 0.19532973, 0.023222217]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.038): 0.080*"method" + 0.042*"produce" + 0.041*"attribute" + 0.041*"mutable" + 0.022*"hook" + 0.022*"customize" + 0.022*"distinct" + 0.022*"general" + 0.022*"mutate" + 0.022*"call"
+INFO: topic #1 (0.090): 0.124*"class" + 0.077*"deepcopy" + 0.056*"dictionary" + 0.056*"answer" + 0.048*"copy" + 0.045*"value" + 0.040*"memo" + 0.025*"lots_of_data" + 0.024*"shallow" + 0.014*"avoid"
+INFO: topic #2 (0.093): 0.072*"object" + 0.061*"reference" + 0.058*"instance" + 0.038*"deepcopy" + 0.037*"df" + 0.034*"copy" + 0.032*"memory" + 0.029*"variable" + 0.024*"=" + 0.020*"dict_b"
+INFO: topic #3 (0.195): 0.230*"copy" + 0.165*"object" + 0.061*"shallow" + 0.054*"new" + 0.050*"list" + 0.032*"original" + 0.028*"deep" + 0.025*"deepcopy" + 0.017*"content" + 0.016*"datum"
+INFO: topic #4 (0.023): 0.052*"deep" + 0.042*"interior" + 0.042*"method" + 0.042*"change" + 0.036*"immutable" + 0.032*"container" + 0.032*"tuple" + 0.022*"return" + 0.022*"structure" + 0.022*"course"
+INFO: topic diff=0.166962, rho=0.288675
+DEBUG: starting a new internal lifecycle event log for LdaModel
+INFO: LdaModel lifecycle event {'msg': 'trained LdaModel<num_terms=147, num_topics=5, decay=0.5, chunksize=5> in 0.11s', 'datetime': '2023-04-25T15:14:20.262761', 'gensim': '4.3.1', 'python': '3.9.2 (default, Mar  4 2021, 10:15:47) \n[Clang 10.0.0 (clang-1000.10.44.4)]', 'platform': 'macOS-10.16-x86_64-i386-64bit', 'event': 'created'}
+INFO: using autotuned alpha, starting with [0.2, 0.2, 0.2, 0.2, 0.2]
+INFO: using serial LDA version on this node
+INFO: running online (multi-pass) LDA training, 5 topics, 10 passes over the supplied corpus of 10 documents, updating model once every 5 documents, evaluating perplexity every 5 documents, iterating 2000x with a convergence threshold of 0.001000
+DEBUG: bound: at document #0
+INFO: -7.448 per-word bound, 174.6 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 0, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.15189222, 0.09102541, 0.03175737, 0.1614464, 0.09660916]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.152): 0.090*"object" + 0.055*"copy" + 0.046*"deepcopy" + 0.034*"instance" + 0.034*"reference" + 0.025*"df" + 0.024*"override" + 0.024*"import" + 0.024*"board" + 0.024*"library"
+INFO: topic #1 (0.091): 0.108*"object" + 0.073*"foo" + 0.038*"copy" + 0.038*"deepcopy" + 0.038*"way" + 0.038*"args" + 0.038*"right" + 0.038*"foo(5" + 0.038*"exact" + 0.038*"module"
+INFO: topic #2 (0.032): 0.007*"object" + 0.007*"deepcopy" + 0.007*"copy" + 0.007*"foo" + 0.007*"name" + 0.007*"reference" + 0.007*"instance" + 0.007*"df" + 0.007*"new" + 0.007*"dictionary"
+INFO: topic #3 (0.161): 0.055*"new" + 0.055*"object" + 0.050*"name" + 0.049*"reference" + 0.042*"list" + 0.041*"df" + 0.036*"copy" + 0.035*"instance" + 0.028*"variable" + 0.028*"point"
+INFO: topic #4 (0.097): 0.094*"deepcopy" + 0.048*"copy" + 0.048*"answer" + 0.048*"memo" + 0.048*"dictionary" + 0.048*"lots_of_data" + 0.025*"shallow" + 0.025*"place" + 0.025*"solution" + 0.025*"avoid"
+INFO: topic diff=3.592231, rho=1.000000
+DEBUG: bound: at document #0
+INFO: -6.980 per-word bound, 126.2 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 0, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.13784757, 0.12823811, 0.043257896, 0.2141862, 0.11920511]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.138): 0.112*"copy" + 0.104*"object" + 0.049*"function" + 0.030*"instance" + 0.027*"deepcopy" + 0.015*"reference" + 0.012*"df" + 0.012*"method" + 0.011*"override" + 0.011*"import"
+INFO: topic #1 (0.128): 0.196*"object" + 0.115*"copy" + 0.036*"deepcopy" + 0.033*"method" + 0.026*"deep" + 0.018*"way" + 0.018*"module" + 0.017*"change" + 0.014*"immutable" + 0.014*"interior"
+INFO: topic #2 (0.043): 0.068*"deep" + 0.042*"method" + 0.036*"immutable" + 0.033*"change" + 0.029*"interior" + 0.025*"mutable" + 0.024*"content" + 0.022*"tuple" + 0.022*"container" + 0.020*"recursive"
+INFO: topic #3 (0.214): 0.130*"copy" + 0.087*"object" + 0.072*"new" + 0.068*"list" + 0.045*"original" + 0.040*"shallow" + 0.038*"reference" + 0.030*"memory" + 0.020*"case" + 0.020*"datum"
+INFO: topic #4 (0.119): 0.161*"copy" + 0.084*"class" + 0.081*"shallow" + 0.066*"deepcopy" + 0.033*"answer" + 0.030*"dictionary" + 0.028*"value" + 0.022*"memo" + 0.017*"method" + 0.016*"deep"
+INFO: topic diff=1.714671, rho=0.707107
+DEBUG: bound: at document #0
+INFO: -5.523 per-word bound, 46.0 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 1, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.10691523, 0.10212916, 0.0382102, 0.17150424, 0.09844612]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.107): 0.093*"copy" + 0.089*"object" + 0.047*"deepcopy" + 0.044*"function" + 0.023*"override" + 0.023*"import" + 0.023*"board" + 0.023*"library" + 0.023*"information" + 0.023*"basic"
+INFO: topic #1 (0.102): 0.168*"object" + 0.091*"copy" + 0.037*"deepcopy" + 0.031*"foo" + 0.024*"way" + 0.024*"module" + 0.024*"method" + 0.019*"deep" + 0.017*"args" + 0.017*"right"
+INFO: topic #2 (0.038): 0.054*"deep" + 0.034*"method" + 0.029*"immutable" + 0.027*"change" + 0.024*"interior" + 0.021*"mutable" + 0.020*"content" + 0.018*"tuple" + 0.018*"container" + 0.017*"recursive"
+INFO: topic #3 (0.172): 0.081*"copy" + 0.077*"object" + 0.058*"new" + 0.051*"list" + 0.047*"reference" + 0.033*"instance" + 0.030*"name" + 0.029*"df" + 0.028*"original" + 0.027*"memory"
+INFO: topic #4 (0.098): 0.115*"copy" + 0.077*"deepcopy" + 0.060*"class" + 0.058*"shallow" + 0.039*"answer" + 0.037*"dictionary" + 0.033*"memo" + 0.027*"value" + 0.026*"lots_of_data" + 0.014*"place"
+INFO: topic diff=0.522856, rho=0.500000
+DEBUG: bound: at document #0
+INFO: -5.132 per-word bound, 35.1 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 1, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.09253285, 0.13032568, 0.04767418, 0.20719856, 0.113496155]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.093): 0.069*"copy" + 0.065*"object" + 0.050*"function" + 0.034*"deepcopy" + 0.017*"override" + 0.017*"import" + 0.017*"board" + 0.017*"library" + 0.017*"information" + 0.017*"basic"
+INFO: topic #1 (0.130): 0.223*"object" + 0.140*"copy" + 0.043*"deepcopy" + 0.035*"method" + 0.018*"way" + 0.018*"module" + 0.018*"deep" + 0.013*"change" + 0.013*"different" + 0.013*"customize"
+INFO: topic #2 (0.048): 0.074*"deep" + 0.042*"method" + 0.040*"immutable" + 0.037*"change" + 0.032*"interior" + 0.027*"mutable" + 0.025*"tuple" + 0.025*"container" + 0.022*"recursive" + 0.019*"attribute"
+INFO: topic #3 (0.207): 0.125*"copy" + 0.087*"object" + 0.070*"new" + 0.067*"list" + 0.043*"original" + 0.042*"reference" + 0.034*"shallow" + 0.031*"memory" + 0.028*"instance" + 0.020*"case"
+INFO: topic #4 (0.113): 0.174*"copy" + 0.089*"shallow" + 0.087*"class" + 0.065*"deepcopy" + 0.035*"answer" + 0.032*"dictionary" + 0.030*"value" + 0.024*"memo" + 0.014*"method" + 0.013*"lots_of_data"
+INFO: topic diff=0.392194, rho=0.500000
+DEBUG: bound: at document #0
+INFO: -5.243 per-word bound, 37.9 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 2, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.08197382, 0.104827724, 0.042026013, 0.16962096, 0.09618092]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.082): 0.070*"copy" + 0.068*"object" + 0.052*"deepcopy" + 0.043*"function" + 0.027*"override" + 0.027*"import" + 0.027*"board" + 0.027*"library" + 0.027*"information" + 0.027*"basic"
+INFO: topic #1 (0.105): 0.191*"object" + 0.112*"copy" + 0.042*"deepcopy" + 0.029*"foo" + 0.026*"method" + 0.024*"way" + 0.024*"module" + 0.016*"args" + 0.016*"right" + 0.016*"foo(5"
+INFO: topic #2 (0.042): 0.063*"deep" + 0.036*"method" + 0.034*"immutable" + 0.032*"change" + 0.028*"interior" + 0.023*"mutable" + 0.022*"tuple" + 0.022*"container" + 0.020*"recursive" + 0.017*"attribute"
+INFO: topic #3 (0.170): 0.083*"copy" + 0.078*"object" + 0.059*"new" + 0.052*"list" + 0.048*"reference" + 0.036*"instance" + 0.029*"name" + 0.029*"original" + 0.029*"df" + 0.028*"memory"
+INFO: topic #4 (0.096): 0.127*"copy" + 0.076*"deepcopy" + 0.065*"shallow" + 0.064*"class" + 0.040*"answer" + 0.038*"dictionary" + 0.033*"memo" + 0.028*"value" + 0.026*"lots_of_data" + 0.014*"place"
+INFO: topic diff=0.393262, rho=0.447214
+DEBUG: bound: at document #0
+INFO: -4.983 per-word bound, 31.6 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 2, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.06794152, 0.12950236, 0.047058195, 0.19969961, 0.108683795]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.068): 0.051*"copy" + 0.049*"object" + 0.038*"deepcopy" + 0.032*"function" + 0.021*"override" + 0.021*"import" + 0.021*"board" + 0.021*"library" + 0.021*"information" + 0.021*"basic"
+INFO: topic #1 (0.130): 0.243*"object" + 0.154*"copy" + 0.051*"deepcopy" + 0.034*"method" + 0.019*"way" + 0.019*"module" + 0.017*"different" + 0.014*"foo" + 0.013*"hook" + 0.013*"customize"
+INFO: topic #2 (0.047): 0.069*"deep" + 0.044*"method" + 0.040*"change" + 0.037*"immutable" + 0.035*"interior" + 0.029*"mutable" + 0.026*"tuple" + 0.026*"container" + 0.024*"recursive" + 0.021*"attribute"
+INFO: topic #3 (0.200): 0.119*"copy" + 0.086*"object" + 0.068*"new" + 0.065*"list" + 0.043*"reference" + 0.042*"original" + 0.031*"shallow" + 0.031*"memory" + 0.030*"instance" + 0.021*"content"
+INFO: topic #4 (0.109): 0.183*"copy" + 0.094*"shallow" + 0.089*"class" + 0.064*"deepcopy" + 0.037*"answer" + 0.033*"dictionary" + 0.031*"value" + 0.026*"memo" + 0.014*"lots_of_data" + 0.010*"produce"
+INFO: topic diff=0.311913, rho=0.447214
+DEBUG: bound: at document #0
+INFO: -5.191 per-word bound, 36.5 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 3, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.06385637, 0.10538478, 0.041871835, 0.16616963, 0.093689725]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.064): 0.060*"copy" + 0.060*"object" + 0.054*"deepcopy" + 0.035*"function" + 0.029*"override" + 0.029*"import" + 0.029*"board" + 0.029*"library" + 0.029*"information" + 0.029*"basic"
+INFO: topic #1 (0.105): 0.208*"object" + 0.124*"copy" + 0.048*"deepcopy" + 0.029*"foo" + 0.026*"method" + 0.024*"way" + 0.024*"module" + 0.016*"args" + 0.016*"right" + 0.016*"foo(5"
+INFO: topic #2 (0.042): 0.061*"deep" + 0.039*"method" + 0.036*"change" + 0.033*"immutable" + 0.031*"interior" + 0.026*"mutable" + 0.024*"tuple" + 0.024*"container" + 0.022*"recursive" + 0.019*"attribute"
+INFO: topic #3 (0.166): 0.084*"copy" + 0.078*"object" + 0.059*"new" + 0.052*"list" + 0.048*"reference" + 0.037*"instance" + 0.029*"original" + 0.029*"name" + 0.028*"df" + 0.028*"memory"
+INFO: topic #4 (0.094): 0.136*"copy" + 0.074*"deepcopy" + 0.070*"shallow" + 0.066*"class" + 0.041*"answer" + 0.038*"dictionary" + 0.033*"memo" + 0.029*"value" + 0.026*"lots_of_data" + 0.014*"place"
+INFO: topic diff=0.303019, rho=0.408248
+DEBUG: bound: at document #0
+INFO: -4.900 per-word bound, 29.9 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 3, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.056046486, 0.12770605, 0.04648068, 0.19345652, 0.10498065]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.056): 0.045*"copy" + 0.044*"object" + 0.040*"deepcopy" + 0.026*"function" + 0.022*"override" + 0.022*"import" + 0.022*"board" + 0.022*"library" + 0.022*"information" + 0.022*"basic"
+INFO: topic #1 (0.128): 0.256*"object" + 0.159*"copy" + 0.056*"deepcopy" + 0.032*"method" + 0.021*"way" + 0.021*"module" + 0.020*"different" + 0.016*"foo" + 0.014*"hook" + 0.014*"customize"
+INFO: topic #2 (0.046): 0.067*"deep" + 0.046*"method" + 0.042*"change" + 0.036*"immutable" + 0.035*"interior" + 0.032*"mutable" + 0.027*"tuple" + 0.027*"container" + 0.026*"recursive" + 0.022*"attribute"
+INFO: topic #3 (0.193): 0.115*"copy" + 0.087*"object" + 0.068*"new" + 0.064*"list" + 0.043*"reference" + 0.041*"original" + 0.031*"instance" + 0.031*"memory" + 0.029*"shallow" + 0.022*"content"
+INFO: topic #4 (0.105): 0.189*"copy" + 0.096*"shallow" + 0.088*"class" + 0.063*"deepcopy" + 0.038*"answer" + 0.034*"dictionary" + 0.031*"value" + 0.026*"memo" + 0.015*"lots_of_data" + 0.011*"produce"
+INFO: topic diff=0.258246, rho=0.408248
+DEBUG: bound: at document #0
+INFO: -5.168 per-word bound, 35.9 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 4, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.05422718, 0.117300935, 0.041840296, 0.16577657, 0.09250774]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.054): 0.049*"deepcopy" + 0.044*"copy" + 0.040*"object" + 0.033*"function" + 0.030*"override" + 0.030*"import" + 0.030*"board" + 0.030*"library" + 0.030*"information" + 0.030*"basic"
+INFO: topic #1 (0.117): 0.224*"object" + 0.134*"copy" + 0.055*"deepcopy" + 0.029*"foo" + 0.025*"way" + 0.025*"method" + 0.024*"module" + 0.016*"args" + 0.016*"right" + 0.016*"foo(5"
+INFO: topic #2 (0.042): 0.060*"deep" + 0.042*"method" + 0.038*"change" + 0.032*"immutable" + 0.032*"interior" + 0.029*"mutable" + 0.025*"tuple" + 0.025*"container" + 0.024*"recursive" + 0.021*"attribute"
+INFO: topic #3 (0.166): 0.084*"copy" + 0.079*"object" + 0.059*"new" + 0.052*"list" + 0.048*"reference" + 0.037*"instance" + 0.030*"original" + 0.028*"name" + 0.028*"df" + 0.028*"memory"
+INFO: topic #4 (0.093): 0.144*"copy" + 0.073*"shallow" + 0.073*"deepcopy" + 0.068*"class" + 0.041*"answer" + 0.039*"dictionary" + 0.033*"memo" + 0.029*"value" + 0.026*"lots_of_data" + 0.014*"place"
+INFO: topic diff=0.231112, rho=0.377964
+DEBUG: bound: at document #0
+INFO: -4.858 per-word bound, 29.0 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 4, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.04906511, 0.13902631, 0.046153, 0.19145451, 0.10306024]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.049): 0.037*"deepcopy" + 0.034*"copy" + 0.031*"object" + 0.025*"function" + 0.024*"override" + 0.024*"import" + 0.024*"board" + 0.024*"library" + 0.024*"information" + 0.024*"basic"
+INFO: topic #1 (0.139): 0.265*"object" + 0.166*"copy" + 0.061*"deepcopy" + 0.029*"method" + 0.021*"different" + 0.021*"way" + 0.021*"module" + 0.016*"foo" + 0.014*"customize" + 0.014*"hook"
+INFO: topic #2 (0.046): 0.066*"deep" + 0.049*"method" + 0.043*"change" + 0.035*"interior" + 0.035*"immutable" + 0.033*"mutable" + 0.027*"tuple" + 0.027*"container" + 0.026*"recursive" + 0.024*"attribute"
+INFO: topic #3 (0.191): 0.112*"copy" + 0.086*"object" + 0.068*"new" + 0.063*"list" + 0.044*"reference" + 0.040*"original" + 0.032*"instance" + 0.031*"memory" + 0.027*"shallow" + 0.022*"content"
+INFO: topic #4 (0.103): 0.192*"copy" + 0.098*"shallow" + 0.088*"class" + 0.062*"deepcopy" + 0.038*"answer" + 0.034*"dictionary" + 0.031*"value" + 0.027*"memo" + 0.016*"lots_of_data" + 0.011*"produce"
+INFO: topic diff=0.219561, rho=0.377964
+DEBUG: bound: at document #0
+INFO: -5.151 per-word bound, 35.5 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 5, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.048162162, 0.12632953, 0.041864086, 0.16617703, 0.09189811]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.048): 0.042*"deepcopy" + 0.033*"function" + 0.032*"override" + 0.032*"import" + 0.032*"board" + 0.032*"library" + 0.032*"basic" + 0.032*"information" + 0.032*"look" + 0.032*"eq"
+INFO: topic #1 (0.126): 0.235*"object" + 0.143*"copy" + 0.061*"deepcopy" + 0.029*"foo" + 0.024*"way" + 0.024*"module" + 0.023*"method" + 0.017*"different" + 0.015*"args" + 0.015*"right"
+INFO: topic #2 (0.042): 0.060*"deep" + 0.044*"method" + 0.039*"change" + 0.032*"interior" + 0.032*"immutable" + 0.030*"mutable" + 0.025*"tuple" + 0.025*"container" + 0.024*"recursive" + 0.022*"attribute"
+INFO: topic #3 (0.166): 0.084*"copy" + 0.079*"object" + 0.060*"new" + 0.053*"list" + 0.048*"reference" + 0.037*"instance" + 0.030*"original" + 0.028*"memory" + 0.028*"name" + 0.028*"df"
+INFO: topic #4 (0.092): 0.148*"copy" + 0.076*"shallow" + 0.072*"deepcopy" + 0.069*"class" + 0.041*"answer" + 0.039*"dictionary" + 0.033*"memo" + 0.029*"value" + 0.025*"lots_of_data" + 0.014*"place"
+INFO: topic diff=0.189157, rho=0.353553
+DEBUG: bound: at document #0
+INFO: -4.836 per-word bound, 28.6 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 5, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.044380683, 0.1473415, 0.045928635, 0.19042638, 0.10181974]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.044): 0.032*"deepcopy" + 0.026*"function" + 0.025*"override" + 0.025*"import" + 0.025*"board" + 0.025*"library" + 0.025*"basic" + 0.025*"information" + 0.025*"look" + 0.025*"eq"
+INFO: topic #1 (0.147): 0.270*"object" + 0.173*"copy" + 0.066*"deepcopy" + 0.027*"method" + 0.022*"different" + 0.021*"way" + 0.021*"module" + 0.017*"foo" + 0.014*"customize" + 0.014*"hook"
+INFO: topic #2 (0.046): 0.066*"deep" + 0.050*"method" + 0.043*"change" + 0.035*"interior" + 0.034*"immutable" + 0.034*"mutable" + 0.027*"tuple" + 0.027*"container" + 0.026*"recursive" + 0.025*"attribute"
+INFO: topic #3 (0.190): 0.108*"copy" + 0.084*"object" + 0.068*"new" + 0.063*"list" + 0.044*"reference" + 0.040*"original" + 0.033*"instance" + 0.031*"memory" + 0.026*"shallow" + 0.022*"content"
+INFO: topic #4 (0.102): 0.192*"copy" + 0.100*"shallow" + 0.088*"class" + 0.061*"deepcopy" + 0.039*"answer" + 0.035*"dictionary" + 0.031*"value" + 0.027*"memo" + 0.016*"lots_of_data" + 0.011*"produce"
+INFO: topic diff=0.191156, rho=0.353553
+DEBUG: bound: at document #0
+INFO: -5.137 per-word bound, 35.2 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 6, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.04394885, 0.1329689, 0.041915927, 0.1668248, 0.09158597]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.044): 0.035*"deepcopy" + 0.033*"function" + 0.032*"override" + 0.032*"import" + 0.032*"board" + 0.032*"basic" + 0.032*"information" + 0.032*"library" + 0.032*"look" + 0.032*"eq"
+INFO: topic #1 (0.133): 0.241*"object" + 0.151*"copy" + 0.066*"deepcopy" + 0.028*"foo" + 0.024*"way" + 0.024*"module" + 0.021*"method" + 0.017*"different" + 0.015*"args" + 0.015*"right"
+INFO: topic #2 (0.042): 0.060*"deep" + 0.046*"method" + 0.040*"change" + 0.033*"interior" + 0.032*"immutable" + 0.031*"mutable" + 0.025*"tuple" + 0.025*"container" + 0.025*"recursive" + 0.023*"attribute"
+INFO: topic #3 (0.167): 0.083*"copy" + 0.078*"object" + 0.060*"new" + 0.053*"list" + 0.048*"reference" + 0.037*"instance" + 0.031*"original" + 0.028*"memory" + 0.028*"name" + 0.028*"df"
+INFO: topic #4 (0.092): 0.151*"copy" + 0.078*"shallow" + 0.070*"deepcopy" + 0.070*"class" + 0.041*"answer" + 0.039*"dictionary" + 0.033*"memo" + 0.029*"value" + 0.025*"lots_of_data" + 0.014*"place"
+INFO: topic diff=0.163609, rho=0.333333
+DEBUG: bound: at document #0
+INFO: -4.823 per-word bound, 28.3 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 6, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.040995397, 0.15325183, 0.045770187, 0.18981503, 0.10095828]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.041): 0.028*"deepcopy" + 0.026*"function" + 0.026*"override" + 0.026*"import" + 0.026*"board" + 0.026*"basic" + 0.026*"information" + 0.026*"library" + 0.026*"look" + 0.026*"eq"
+INFO: topic #1 (0.153): 0.272*"object" + 0.180*"copy" + 0.069*"deepcopy" + 0.025*"method" + 0.023*"different" + 0.021*"way" + 0.021*"module" + 0.017*"foo" + 0.014*"hook" + 0.014*"customize"
+INFO: topic #2 (0.046): 0.065*"deep" + 0.052*"method" + 0.043*"change" + 0.035*"interior" + 0.034*"mutable" + 0.034*"immutable" + 0.027*"tuple" + 0.027*"container" + 0.026*"recursive" + 0.025*"attribute"
+INFO: topic #3 (0.190): 0.105*"copy" + 0.082*"object" + 0.068*"new" + 0.063*"list" + 0.045*"reference" + 0.040*"original" + 0.033*"instance" + 0.031*"memory" + 0.025*"shallow" + 0.022*"content"
+INFO: topic #4 (0.101): 0.190*"copy" + 0.101*"shallow" + 0.089*"class" + 0.060*"deepcopy" + 0.039*"answer" + 0.036*"dictionary" + 0.031*"value" + 0.028*"memo" + 0.017*"lots_of_data" + 0.011*"produce"
+INFO: topic diff=0.170615, rho=0.333333
+DEBUG: bound: at document #0
+INFO: -5.126 per-word bound, 34.9 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 7, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.040832024, 0.13783136, 0.041981637, 0.16749768, 0.091426834]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.041): 0.033*"function" + 0.033*"override" + 0.033*"basic" + 0.033*"board" + 0.033*"information" + 0.033*"library" + 0.033*"import" + 0.033*"look" + 0.033*"eq" + 0.029*"deepcopy"
+INFO: topic #1 (0.138): 0.244*"object" + 0.158*"copy" + 0.069*"deepcopy" + 0.027*"foo" + 0.024*"way" + 0.024*"module" + 0.020*"method" + 0.018*"different" + 0.015*"right" + 0.015*"args"
+INFO: topic #2 (0.042): 0.060*"deep" + 0.048*"method" + 0.040*"change" + 0.033*"interior" + 0.032*"mutable" + 0.031*"immutable" + 0.025*"tuple" + 0.025*"container" + 0.025*"recursive" + 0.024*"attribute"
+INFO: topic #3 (0.167): 0.082*"copy" + 0.077*"object" + 0.060*"new" + 0.054*"list" + 0.048*"reference" + 0.037*"instance" + 0.031*"original" + 0.028*"memory" + 0.028*"name" + 0.028*"df"
+INFO: topic #4 (0.091): 0.151*"copy" + 0.080*"shallow" + 0.071*"class" + 0.069*"deepcopy" + 0.042*"answer" + 0.039*"dictionary" + 0.033*"memo" + 0.030*"value" + 0.025*"lots_of_data" + 0.014*"place"
+INFO: topic diff=0.149638, rho=0.316228
+DEBUG: bound: at document #0
+INFO: -4.814 per-word bound, 28.1 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 7, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.038422387, 0.15741399, 0.04565571, 0.18938203, 0.100312725]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.038): 0.027*"function" + 0.026*"override" + 0.026*"basic" + 0.026*"board" + 0.026*"information" + 0.026*"library" + 0.026*"import" + 0.026*"look" + 0.026*"eq" + 0.024*"deepcopy"
+INFO: topic #1 (0.157): 0.272*"object" + 0.187*"copy" + 0.071*"deepcopy" + 0.023*"method" + 0.023*"different" + 0.021*"way" + 0.021*"module" + 0.017*"foo" + 0.013*"hook" + 0.013*"customize"
+INFO: topic #2 (0.046): 0.065*"deep" + 0.052*"method" + 0.043*"change" + 0.035*"interior" + 0.034*"mutable" + 0.034*"immutable" + 0.026*"tuple" + 0.026*"container" + 0.026*"recursive" + 0.026*"attribute"
+INFO: topic #3 (0.189): 0.102*"copy" + 0.079*"object" + 0.068*"new" + 0.063*"list" + 0.045*"reference" + 0.040*"original" + 0.033*"instance" + 0.031*"memory" + 0.025*"shallow" + 0.022*"content"
+INFO: topic #4 (0.100): 0.186*"copy" + 0.103*"shallow" + 0.089*"class" + 0.059*"deepcopy" + 0.040*"answer" + 0.036*"dictionary" + 0.031*"value" + 0.028*"memo" + 0.017*"lots_of_data" + 0.011*"produce"
+INFO: topic diff=0.154983, rho=0.316228
+DEBUG: bound: at document #0
+INFO: -5.116 per-word bound, 34.7 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 8, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.038422827, 0.14141889, 0.042053893, 0.16811503, 0.09134154]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.038): 0.033*"function" + 0.033*"override" + 0.033*"basic" + 0.033*"board" + 0.033*"information" + 0.033*"library" + 0.033*"import" + 0.033*"look" + 0.033*"eq" + 0.024*"deepcopy"
+INFO: topic #1 (0.141): 0.245*"object" + 0.166*"copy" + 0.072*"deepcopy" + 0.027*"foo" + 0.023*"way" + 0.023*"module" + 0.019*"method" + 0.018*"different" + 0.014*"args" + 0.014*"exact"
+INFO: topic #2 (0.042): 0.060*"deep" + 0.048*"method" + 0.040*"change" + 0.033*"interior" + 0.032*"mutable" + 0.031*"immutable" + 0.025*"tuple" + 0.025*"container" + 0.025*"recursive" + 0.024*"attribute"
+INFO: topic #3 (0.168): 0.081*"copy" + 0.076*"object" + 0.061*"new" + 0.054*"list" + 0.048*"reference" + 0.037*"instance" + 0.031*"original" + 0.029*"memory" + 0.028*"name" + 0.028*"df"
+INFO: topic #4 (0.091): 0.150*"copy" + 0.083*"shallow" + 0.072*"class" + 0.068*"deepcopy" + 0.042*"answer" + 0.039*"dictionary" + 0.034*"memo" + 0.030*"value" + 0.025*"lots_of_data" + 0.014*"place"
+INFO: topic diff=0.140489, rho=0.301511
+DEBUG: bound: at document #0
+INFO: -4.809 per-word bound, 28.0 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 8, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.03639399, 0.16035672, 0.04557198, 0.189027, 0.09978965]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.036): 0.027*"function" + 0.027*"override" + 0.027*"basic" + 0.027*"board" + 0.027*"information" + 0.027*"library" + 0.027*"import" + 0.027*"look" + 0.027*"eq" + 0.020*"deepcopy"
+INFO: topic #1 (0.160): 0.271*"object" + 0.194*"copy" + 0.073*"deepcopy" + 0.023*"different" + 0.022*"method" + 0.020*"way" + 0.020*"module" + 0.017*"foo" + 0.013*"hook" + 0.013*"customize"
+INFO: topic #2 (0.046): 0.065*"deep" + 0.052*"method" + 0.043*"change" + 0.035*"interior" + 0.034*"mutable" + 0.033*"immutable" + 0.026*"tuple" + 0.026*"container" + 0.026*"recursive" + 0.026*"attribute"
+INFO: topic #3 (0.189): 0.099*"copy" + 0.077*"object" + 0.068*"new" + 0.063*"list" + 0.045*"reference" + 0.040*"original" + 0.034*"instance" + 0.031*"memory" + 0.024*"shallow" + 0.022*"content"
+INFO: topic #4 (0.100): 0.182*"copy" + 0.105*"shallow" + 0.090*"class" + 0.058*"deepcopy" + 0.040*"answer" + 0.037*"dictionary" + 0.032*"value" + 0.029*"memo" + 0.018*"lots_of_data" + 0.010*"produce"
+INFO: topic diff=0.142470, rho=0.301511
+DEBUG: bound: at document #0
+INFO: -5.107 per-word bound, 34.5 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 9, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.036499217, 0.14411035, 0.042129036, 0.16865723, 0.09128496]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.036): 0.033*"function" + 0.033*"override" + 0.033*"basic" + 0.033*"board" + 0.033*"information" + 0.033*"library" + 0.033*"import" + 0.033*"look" + 0.033*"eq" + 0.020*"deepcopy"
+INFO: topic #1 (0.144): 0.246*"object" + 0.173*"copy" + 0.074*"deepcopy" + 0.026*"foo" + 0.023*"way" + 0.023*"module" + 0.019*"different" + 0.018*"method" + 0.014*"exact" + 0.014*"args"
+INFO: topic #2 (0.042): 0.060*"deep" + 0.049*"method" + 0.040*"change" + 0.032*"interior" + 0.032*"mutable" + 0.031*"immutable" + 0.025*"tuple" + 0.025*"container" + 0.025*"recursive" + 0.024*"attribute"
+INFO: topic #3 (0.169): 0.080*"copy" + 0.074*"object" + 0.061*"new" + 0.055*"list" + 0.049*"reference" + 0.037*"instance" + 0.032*"original" + 0.029*"memory" + 0.028*"name" + 0.028*"df"
+INFO: topic #4 (0.091): 0.148*"copy" + 0.085*"shallow" + 0.073*"class" + 0.067*"deepcopy" + 0.042*"answer" + 0.040*"dictionary" + 0.034*"memo" + 0.030*"value" + 0.025*"lots_of_data" + 0.014*"need"
+INFO: topic diff=0.133275, rho=0.288675
+DEBUG: bound: at document #0
+INFO: -4.804 per-word bound, 27.9 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 9, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.034749996, 0.1624636, 0.045510415, 0.18870968, 0.09933478]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.035): 0.027*"function" + 0.027*"override" + 0.027*"basic" + 0.027*"board" + 0.027*"information" + 0.027*"library" + 0.027*"import" + 0.027*"look" + 0.027*"eq" + 0.017*"deepcopy"
+INFO: topic #1 (0.162): 0.270*"object" + 0.202*"copy" + 0.074*"deepcopy" + 0.023*"different" + 0.021*"method" + 0.020*"way" + 0.020*"module" + 0.017*"foo" + 0.013*"hook" + 0.013*"customize"
+INFO: topic #2 (0.046): 0.064*"deep" + 0.052*"method" + 0.043*"change" + 0.034*"interior" + 0.034*"mutable" + 0.033*"immutable" + 0.026*"tuple" + 0.026*"container" + 0.026*"recursive" + 0.026*"attribute"
+INFO: topic #3 (0.189): 0.098*"copy" + 0.076*"object" + 0.068*"new" + 0.063*"list" + 0.046*"reference" + 0.040*"original" + 0.034*"instance" + 0.031*"memory" + 0.024*"shallow" + 0.022*"content"
+INFO: topic #4 (0.099): 0.176*"copy" + 0.107*"shallow" + 0.091*"class" + 0.058*"deepcopy" + 0.041*"answer" + 0.038*"dictionary" + 0.032*"value" + 0.030*"memo" + 0.018*"lots_of_data" + 0.010*"several"
+INFO: topic diff=0.131681, rho=0.288675
+DEBUG: starting a new internal lifecycle event log for LdaModel
+INFO: LdaModel lifecycle event {'msg': 'trained LdaModel<num_terms=147, num_topics=5, decay=0.5, chunksize=5> in 0.15s', 'datetime': '2023-04-25T15:14:20.410339', 'gensim': '4.3.1', 'python': '3.9.2 (default, Mar  4 2021, 10:15:47) \n[Clang 10.0.0 (clang-1000.10.44.4)]', 'platform': 'macOS-10.16-x86_64-i386-64bit', 'event': 'created'}
+INFO: using autotuned alpha, starting with [0.2, 0.2, 0.2, 0.2, 0.2]
+INFO: using serial LDA version on this node
+INFO: running online (multi-pass) LDA training, 5 topics, 10 passes over the supplied corpus of 10 documents, updating model once every 5 documents, evaluating perplexity every 5 documents, iterating 2000x with a convergence threshold of 0.001000
+DEBUG: bound: at document #0
+INFO: -7.439 per-word bound, 173.5 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 0, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.21830839, 0.02687259, 0.09278585, 0.026689395, 0.086491376]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.218): 0.070*"object" + 0.051*"deepcopy" + 0.041*"reference" + 0.041*"instance" + 0.041*"df" + 0.041*"copy" + 0.031*"variable" + 0.031*"dictionary" + 0.021*"dict_b" + 0.021*"lots_of_data"
+INFO: topic #1 (0.027): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"name" + 0.007*"foo" + 0.007*"df" + 0.007*"memo" + 0.007*"replica" + 0.007*"new" + 0.007*"dictionary"
+INFO: topic #2 (0.093): 0.086*"new" + 0.065*"list" + 0.065*"name" + 0.044*"copy" + 0.044*"object" + 0.044*"point" + 0.023*"reference" + 0.023*"shallow" + 0.023*"assignment" + 0.023*"original"
+INFO: topic #3 (0.027): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"name" + 0.007*"replica" + 0.007*"foo" + 0.007*"answer" + 0.007*"reference" + 0.007*"dictionary" + 0.007*"list"
+INFO: topic #4 (0.086): 0.071*"object" + 0.071*"deepcopy" + 0.071*"copy" + 0.037*"function" + 0.037*"information" + 0.037*"look" + 0.037*"eq" + 0.037*"library" + 0.037*"import" + 0.037*"basic"
+INFO: topic diff=3.522755, rho=1.000000
+DEBUG: bound: at document #0
+INFO: -6.839 per-word bound, 114.5 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 0, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.19553423, 0.024156533, 0.12773675, 0.032242585, 0.104892865]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.196): 0.099*"object" + 0.082*"copy" + 0.069*"class" + 0.050*"deepcopy" + 0.036*"instance" + 0.034*"reference" + 0.032*"dictionary" + 0.027*"answer" + 0.025*"shallow" + 0.023*"value"
+INFO: topic #1 (0.024): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"name" + 0.007*"foo" + 0.007*"df" + 0.007*"memo" + 0.007*"replica" + 0.007*"new" + 0.007*"dictionary"
+INFO: topic #2 (0.128): 0.133*"copy" + 0.075*"shallow" + 0.071*"new" + 0.071*"object" + 0.067*"list" + 0.044*"original" + 0.028*"deep" + 0.025*"content" + 0.020*"datum" + 0.020*"case"
+INFO: topic #3 (0.032): 0.055*"deep" + 0.050*"method" + 0.035*"change" + 0.029*"mutable" + 0.028*"immutable" + 0.028*"interior" + 0.023*"attribute" + 0.022*"recursive" + 0.022*"container" + 0.022*"tuple"
+INFO: topic #4 (0.105): 0.198*"copy" + 0.132*"object" + 0.047*"deepcopy" + 0.034*"method" + 0.029*"deep" + 0.024*"function" + 0.019*"change" + 0.016*"immutable" + 0.016*"interior" + 0.014*"mutable"
+INFO: topic diff=1.468315, rho=0.707107
+DEBUG: bound: at document #0
+INFO: -5.449 per-word bound, 43.7 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 1, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.18283828, 0.022435568, 0.099328615, 0.029178813, 0.086605474]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.183): 0.083*"object" + 0.058*"copy" + 0.050*"deepcopy" + 0.039*"instance" + 0.038*"reference" + 0.036*"class" + 0.031*"dictionary" + 0.031*"df" + 0.024*"answer" + 0.023*"variable"
+INFO: topic #1 (0.022): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"name" + 0.007*"foo" + 0.007*"df" + 0.007*"memo" + 0.007*"replica" + 0.007*"new" + 0.007*"dictionary"
+INFO: topic #2 (0.099): 0.101*"copy" + 0.076*"new" + 0.067*"list" + 0.061*"object" + 0.057*"shallow" + 0.037*"original" + 0.030*"name" + 0.021*"datum" + 0.021*"case" + 0.021*"point"
+INFO: topic #3 (0.029): 0.043*"deep" + 0.039*"method" + 0.028*"change" + 0.024*"mutable" + 0.023*"immutable" + 0.023*"interior" + 0.019*"attribute" + 0.019*"recursive" + 0.018*"container" + 0.018*"tuple"
+INFO: topic #4 (0.087): 0.162*"copy" + 0.114*"object" + 0.054*"deepcopy" + 0.028*"function" + 0.025*"method" + 0.022*"deep" + 0.014*"information" + 0.014*"look" + 0.014*"eq" + 0.014*"library"
+INFO: topic diff=0.416160, rho=0.500000
+DEBUG: bound: at document #0
+INFO: -4.954 per-word bound, 31.0 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 1, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.17766736, 0.021095667, 0.12346556, 0.033371493, 0.0998129]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.178): 0.087*"object" + 0.070*"class" + 0.062*"copy" + 0.052*"deepcopy" + 0.039*"instance" + 0.038*"reference" + 0.034*"dictionary" + 0.029*"answer" + 0.024*"value" + 0.023*"memory"
+INFO: topic #1 (0.021): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"name" + 0.007*"foo" + 0.007*"df" + 0.007*"memo" + 0.007*"replica" + 0.007*"new" + 0.007*"dictionary"
+INFO: topic #2 (0.123): 0.131*"copy" + 0.087*"shallow" + 0.078*"new" + 0.073*"list" + 0.066*"object" + 0.048*"original" + 0.030*"deep" + 0.027*"content" + 0.022*"datum" + 0.022*"case"
+INFO: topic #3 (0.033): 0.050*"deep" + 0.049*"method" + 0.036*"change" + 0.033*"mutable" + 0.027*"attribute" + 0.027*"interior" + 0.025*"immutable" + 0.024*"recursive" + 0.021*"container" + 0.021*"tuple"
+INFO: topic #4 (0.100): 0.209*"copy" + 0.144*"object" + 0.044*"deepcopy" + 0.035*"method" + 0.028*"deep" + 0.022*"function" + 0.019*"change" + 0.017*"interior" + 0.015*"immutable" + 0.013*"tuple"
+INFO: topic diff=0.326073, rho=0.500000
+DEBUG: bound: at document #0
+INFO: -5.325 per-word bound, 40.1 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 2, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.17049116, 0.019891812, 0.09906656, 0.030362027, 0.08475731]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.170): 0.078*"object" + 0.051*"deepcopy" + 0.050*"copy" + 0.040*"instance" + 0.039*"reference" + 0.038*"class" + 0.032*"dictionary" + 0.031*"df" + 0.024*"answer" + 0.023*"variable"
+INFO: topic #1 (0.020): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"name" + 0.007*"foo" + 0.007*"df" + 0.007*"memo" + 0.007*"replica" + 0.007*"new" + 0.007*"dictionary"
+INFO: topic #2 (0.099): 0.102*"copy" + 0.080*"new" + 0.071*"list" + 0.066*"shallow" + 0.059*"object" + 0.040*"original" + 0.030*"name" + 0.023*"datum" + 0.022*"case" + 0.021*"point"
+INFO: topic #3 (0.030): 0.042*"deep" + 0.040*"method" + 0.031*"change" + 0.028*"mutable" + 0.023*"attribute" + 0.023*"interior" + 0.021*"immutable" + 0.021*"recursive" + 0.018*"container" + 0.018*"tuple"
+INFO: topic #4 (0.085): 0.177*"copy" + 0.127*"object" + 0.051*"deepcopy" + 0.028*"method" + 0.026*"function" + 0.022*"deep" + 0.015*"change" + 0.014*"interior" + 0.013*"information" + 0.013*"look"
+INFO: topic diff=0.327530, rho=0.447214
+DEBUG: bound: at document #0
+INFO: -4.870 per-word bound, 29.2 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 2, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.16869429, 0.018942999, 0.120030455, 0.034170017, 0.09645789]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.169): 0.081*"object" + 0.069*"class" + 0.054*"copy" + 0.053*"deepcopy" + 0.040*"instance" + 0.039*"reference" + 0.034*"dictionary" + 0.029*"answer" + 0.025*"memory" + 0.024*"value"
+INFO: topic #1 (0.019): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"name" + 0.007*"foo" + 0.007*"df" + 0.007*"memo" + 0.007*"replica" + 0.007*"new" + 0.007*"dictionary"
+INFO: topic #2 (0.120): 0.124*"copy" + 0.094*"shallow" + 0.082*"new" + 0.078*"list" + 0.060*"object" + 0.050*"original" + 0.031*"deep" + 0.028*"content" + 0.024*"datum" + 0.024*"case"
+INFO: topic #3 (0.034): 0.049*"method" + 0.044*"deep" + 0.038*"mutable" + 0.035*"change" + 0.033*"attribute" + 0.027*"produce" + 0.025*"recursive" + 0.022*"interior" + 0.021*"custom" + 0.020*"immutable"
+INFO: topic #4 (0.096): 0.205*"copy" + 0.143*"object" + 0.041*"deepcopy" + 0.035*"method" + 0.030*"deep" + 0.020*"function" + 0.020*"change" + 0.020*"interior" + 0.017*"immutable" + 0.015*"container"
+INFO: topic diff=0.275031, rho=0.447214
+DEBUG: bound: at document #0
+INFO: -5.287 per-word bound, 39.1 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 3, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.16375595, 0.018042639, 0.09867209, 0.031244082, 0.08351403]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.164): 0.076*"object" + 0.052*"deepcopy" + 0.047*"copy" + 0.040*"instance" + 0.040*"reference" + 0.040*"class" + 0.032*"dictionary" + 0.031*"df" + 0.025*"answer" + 0.023*"variable"
+INFO: topic #1 (0.018): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"name" + 0.007*"foo" + 0.007*"df" + 0.007*"memo" + 0.007*"replica" + 0.007*"new" + 0.007*"dictionary"
+INFO: topic #2 (0.099): 0.099*"copy" + 0.083*"new" + 0.074*"list" + 0.072*"shallow" + 0.055*"object" + 0.042*"original" + 0.031*"name" + 0.023*"datum" + 0.023*"case" + 0.022*"deep"
+INFO: topic #3 (0.031): 0.041*"method" + 0.037*"deep" + 0.032*"mutable" + 0.030*"change" + 0.028*"attribute" + 0.023*"produce" + 0.022*"recursive" + 0.020*"interior" + 0.018*"custom" + 0.018*"immutable"
+INFO: topic #4 (0.084): 0.179*"copy" + 0.129*"object" + 0.047*"deepcopy" + 0.029*"method" + 0.025*"deep" + 0.024*"function" + 0.017*"change" + 0.017*"interior" + 0.015*"immutable" + 0.013*"tuple"
+INFO: topic diff=0.261532, rho=0.408248
+DEBUG: bound: at document #0
+INFO: -4.766 per-word bound, 27.2 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 3, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.16263533, 0.01731707, 0.11726515, 0.0319033, 0.09401664]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.163): 0.078*"object" + 0.067*"class" + 0.053*"deepcopy" + 0.050*"copy" + 0.040*"instance" + 0.040*"reference" + 0.034*"dictionary" + 0.029*"answer" + 0.026*"memory" + 0.024*"value"
+INFO: topic #1 (0.017): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"name" + 0.007*"foo" + 0.007*"df" + 0.007*"memo" + 0.007*"replica" + 0.007*"new" + 0.007*"dictionary"
+INFO: topic #2 (0.117): 0.117*"copy" + 0.097*"shallow" + 0.085*"new" + 0.080*"list" + 0.054*"object" + 0.052*"original" + 0.031*"deep" + 0.029*"content" + 0.024*"datum" + 0.024*"case"
+INFO: topic #3 (0.032): 0.050*"method" + 0.040*"mutable" + 0.039*"attribute" + 0.038*"produce" + 0.030*"deep" + 0.027*"change" + 0.024*"recursive" + 0.022*"custom" + 0.020*"general" + 0.020*"call"
+INFO: topic #4 (0.094): 0.187*"copy" + 0.131*"object" + 0.036*"method" + 0.036*"deepcopy" + 0.036*"deep" + 0.024*"change" + 0.023*"interior" + 0.020*"immutable" + 0.018*"tuple" + 0.018*"container"
+INFO: topic diff=0.272584, rho=0.408248
+DEBUG: bound: at document #0
+INFO: -5.255 per-word bound, 38.2 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 4, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.15871173, 0.016608916, 0.098062366, 0.029502455, 0.08246994]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.159): 0.075*"object" + 0.052*"deepcopy" + 0.046*"copy" + 0.041*"class" + 0.040*"instance" + 0.040*"reference" + 0.033*"dictionary" + 0.031*"df" + 0.025*"answer" + 0.023*"variable"
+INFO: topic #1 (0.017): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"name" + 0.007*"foo" + 0.007*"df" + 0.007*"memo" + 0.007*"replica" + 0.007*"new" + 0.007*"dictionary"
+INFO: topic #2 (0.098): 0.096*"copy" + 0.085*"new" + 0.076*"list" + 0.076*"shallow" + 0.051*"object" + 0.043*"original" + 0.031*"name" + 0.024*"datum" + 0.024*"case" + 0.023*"deep"
+INFO: topic #3 (0.030): 0.041*"method" + 0.033*"mutable" + 0.032*"attribute" + 0.031*"produce" + 0.025*"deep" + 0.023*"change" + 0.020*"recursive" + 0.019*"custom" + 0.017*"general" + 0.017*"call"
+INFO: topic #4 (0.082): 0.169*"copy" + 0.122*"object" + 0.041*"deepcopy" + 0.031*"method" + 0.031*"deep" + 0.021*"change" + 0.021*"function" + 0.020*"interior" + 0.018*"immutable" + 0.016*"tuple"
+INFO: topic diff=0.211529, rho=0.377964
+DEBUG: bound: at document #0
+INFO: -4.668 per-word bound, 25.4 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 4, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.15841767, 0.016035624, 0.11505618, 0.03015647, 0.09213368]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.158): 0.077*"object" + 0.065*"class" + 0.053*"deepcopy" + 0.048*"copy" + 0.040*"instance" + 0.040*"reference" + 0.034*"dictionary" + 0.028*"answer" + 0.026*"memory" + 0.024*"value"
+INFO: topic #1 (0.016): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"name" + 0.007*"foo" + 0.007*"df" + 0.007*"memo" + 0.007*"replica" + 0.007*"new" + 0.007*"dictionary"
+INFO: topic #2 (0.115): 0.114*"copy" + 0.099*"shallow" + 0.087*"new" + 0.081*"list" + 0.052*"original" + 0.052*"object" + 0.030*"deep" + 0.029*"content" + 0.025*"datum" + 0.025*"case"
+INFO: topic #3 (0.030): 0.049*"method" + 0.043*"produce" + 0.042*"attribute" + 0.040*"mutable" + 0.023*"factory" + 0.023*"create" + 0.023*"mutate" + 0.023*"general" + 0.023*"note" + 0.023*"implement"
+INFO: topic #4 (0.092): 0.181*"copy" + 0.127*"object" + 0.038*"deep" + 0.036*"method" + 0.034*"deepcopy" + 0.026*"change" + 0.024*"interior" + 0.022*"immutable" + 0.018*"tuple" + 0.018*"container"
+INFO: topic diff=0.226058, rho=0.377964
+DEBUG: bound: at document #0
+INFO: -5.234 per-word bound, 37.6 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 5, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.15510365, 0.015460248, 0.097534016, 0.028123653, 0.08164716]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.155): 0.074*"object" + 0.052*"deepcopy" + 0.045*"copy" + 0.042*"class" + 0.041*"instance" + 0.040*"reference" + 0.033*"dictionary" + 0.031*"df" + 0.025*"answer" + 0.023*"variable"
+INFO: topic #1 (0.015): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"name" + 0.007*"foo" + 0.007*"df" + 0.007*"memo" + 0.007*"replica" + 0.007*"new" + 0.007*"dictionary"
+INFO: topic #2 (0.098): 0.094*"copy" + 0.087*"new" + 0.078*"shallow" + 0.077*"list" + 0.050*"object" + 0.044*"original" + 0.031*"name" + 0.024*"datum" + 0.024*"case" + 0.022*"deep"
+INFO: topic #3 (0.028): 0.040*"method" + 0.036*"produce" + 0.035*"attribute" + 0.033*"mutable" + 0.020*"factory" + 0.020*"create" + 0.020*"mutate" + 0.020*"general" + 0.020*"note" + 0.020*"implement"
+INFO: topic #4 (0.082): 0.165*"copy" + 0.119*"object" + 0.039*"deepcopy" + 0.033*"deep" + 0.032*"method" + 0.023*"change" + 0.021*"interior" + 0.020*"function" + 0.019*"immutable" + 0.016*"container"
+INFO: topic diff=0.176002, rho=0.353553
+DEBUG: bound: at document #0
+INFO: -4.637 per-word bound, 24.9 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 5, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.1552147, 0.014992785, 0.113273375, 0.02876166, 0.09064484]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.155): 0.077*"object" + 0.064*"class" + 0.053*"deepcopy" + 0.047*"copy" + 0.041*"instance" + 0.040*"reference" + 0.034*"dictionary" + 0.027*"answer" + 0.026*"memory" + 0.023*"value"
+INFO: topic #1 (0.015): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"name" + 0.007*"foo" + 0.007*"df" + 0.007*"memo" + 0.007*"replica" + 0.007*"new" + 0.007*"dictionary"
+INFO: topic #2 (0.113): 0.111*"copy" + 0.100*"shallow" + 0.087*"new" + 0.082*"list" + 0.052*"original" + 0.051*"object" + 0.029*"deep" + 0.029*"content" + 0.025*"datum" + 0.025*"case"
+INFO: topic #3 (0.029): 0.047*"method" + 0.046*"produce" + 0.043*"attribute" + 0.040*"mutable" + 0.025*"distinct" + 0.025*"call" + 0.025*"general" + 0.025*"note" + 0.025*"factory" + 0.025*"implement"
+INFO: topic #4 (0.091): 0.178*"copy" + 0.126*"object" + 0.040*"deep" + 0.037*"method" + 0.033*"deepcopy" + 0.027*"change" + 0.024*"interior" + 0.022*"immutable" + 0.018*"tuple" + 0.018*"container"
+INFO: topic diff=0.192868, rho=0.353553
+DEBUG: bound: at document #0
+INFO: -5.219 per-word bound, 37.2 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 6, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.15231445, 0.0145135475, 0.09708835, 0.026999665, 0.08098805]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.152): 0.074*"object" + 0.052*"deepcopy" + 0.045*"copy" + 0.042*"class" + 0.041*"instance" + 0.040*"reference" + 0.033*"dictionary" + 0.031*"df" + 0.025*"answer" + 0.023*"variable"
+INFO: topic #1 (0.015): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"name" + 0.007*"foo" + 0.007*"df" + 0.007*"memo" + 0.007*"replica" + 0.007*"new" + 0.007*"dictionary"
+INFO: topic #2 (0.097): 0.094*"copy" + 0.087*"new" + 0.080*"shallow" + 0.077*"list" + 0.049*"object" + 0.045*"original" + 0.031*"name" + 0.025*"datum" + 0.024*"case" + 0.022*"deep"
+INFO: topic #3 (0.027): 0.039*"method" + 0.038*"produce" + 0.036*"attribute" + 0.033*"mutable" + 0.021*"distinct" + 0.021*"call" + 0.021*"general" + 0.021*"note" + 0.021*"factory" + 0.021*"implement"
+INFO: topic #4 (0.081): 0.165*"copy" + 0.119*"object" + 0.038*"deepcopy" + 0.035*"deep" + 0.032*"method" + 0.024*"change" + 0.022*"interior" + 0.020*"immutable" + 0.019*"function" + 0.017*"tuple"
+INFO: topic diff=0.155262, rho=0.333333
+DEBUG: bound: at document #0
+INFO: -4.623 per-word bound, 24.6 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 6, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.15258856, 0.014123014, 0.11180251, 0.027617438, 0.08943327]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.153): 0.076*"object" + 0.062*"class" + 0.053*"deepcopy" + 0.046*"copy" + 0.041*"instance" + 0.040*"reference" + 0.034*"dictionary" + 0.026*"memory" + 0.026*"answer" + 0.024*"df"
+INFO: topic #1 (0.014): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"name" + 0.007*"foo" + 0.007*"df" + 0.007*"memo" + 0.007*"new" + 0.007*"replica" + 0.007*"dictionary"
+INFO: topic #2 (0.112): 0.110*"copy" + 0.100*"shallow" + 0.088*"new" + 0.082*"list" + 0.052*"original" + 0.050*"object" + 0.029*"content" + 0.028*"deep" + 0.025*"datum" + 0.025*"case"
+INFO: topic #3 (0.028): 0.047*"produce" + 0.045*"method" + 0.043*"attribute" + 0.039*"mutable" + 0.025*"altered" + 0.025*"mutate" + 0.025*"note" + 0.025*"implement" + 0.025*"distinct" + 0.025*"call"
+INFO: topic #4 (0.089): 0.177*"copy" + 0.125*"object" + 0.040*"deep" + 0.037*"method" + 0.033*"deepcopy" + 0.028*"change" + 0.024*"interior" + 0.022*"immutable" + 0.018*"tuple" + 0.018*"container"
+INFO: topic diff=0.170327, rho=0.333333
+DEBUG: bound: at document #0
+INFO: -5.206 per-word bound, 36.9 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 7, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.15000235, 0.013715957, 0.09670623, 0.026062245, 0.08044469]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.150): 0.074*"object" + 0.052*"deepcopy" + 0.044*"copy" + 0.042*"class" + 0.041*"instance" + 0.041*"reference" + 0.033*"dictionary" + 0.030*"df" + 0.024*"answer" + 0.023*"variable"
+INFO: topic #1 (0.014): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"name" + 0.007*"foo" + 0.007*"df" + 0.007*"memo" + 0.007*"new" + 0.007*"replica" + 0.007*"dictionary"
+INFO: topic #2 (0.097): 0.094*"copy" + 0.087*"new" + 0.081*"shallow" + 0.078*"list" + 0.048*"object" + 0.045*"original" + 0.030*"name" + 0.025*"datum" + 0.025*"case" + 0.022*"content"
+INFO: topic #3 (0.026): 0.039*"produce" + 0.037*"method" + 0.036*"attribute" + 0.032*"mutable" + 0.022*"altered" + 0.022*"mutate" + 0.022*"note" + 0.022*"implement" + 0.022*"distinct" + 0.022*"call"
+INFO: topic #4 (0.080): 0.164*"copy" + 0.118*"object" + 0.038*"deepcopy" + 0.036*"deep" + 0.033*"method" + 0.025*"change" + 0.022*"interior" + 0.020*"immutable" + 0.019*"function" + 0.017*"container"
+INFO: topic diff=0.146847, rho=0.316228
+DEBUG: bound: at document #0
+INFO: -4.613 per-word bound, 24.5 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 7, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.15021822, 0.013383211, 0.11055374, 0.026657995, 0.08841593]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.150): 0.076*"object" + 0.060*"class" + 0.054*"deepcopy" + 0.046*"copy" + 0.041*"instance" + 0.041*"reference" + 0.034*"dictionary" + 0.026*"memory" + 0.024*"df" + 0.023*"answer"
+INFO: topic #1 (0.013): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"name" + 0.007*"foo" + 0.007*"memo" + 0.007*"df" + 0.007*"replica" + 0.007*"new" + 0.007*"dictionary"
+INFO: topic #2 (0.111): 0.108*"copy" + 0.100*"shallow" + 0.088*"new" + 0.082*"list" + 0.052*"original" + 0.049*"object" + 0.028*"content" + 0.028*"deep" + 0.025*"datum" + 0.025*"case"
+INFO: topic #3 (0.027): 0.048*"produce" + 0.044*"attribute" + 0.043*"method" + 0.038*"mutable" + 0.026*"singleton" + 0.026*"implement" + 0.026*"note" + 0.026*"factory" + 0.026*"general" + 0.026*"mutate"
+INFO: topic #4 (0.088): 0.176*"copy" + 0.124*"object" + 0.041*"deep" + 0.037*"method" + 0.033*"deepcopy" + 0.028*"change" + 0.024*"interior" + 0.022*"immutable" + 0.018*"container" + 0.018*"tuple"
+INFO: topic diff=0.155989, rho=0.316228
+DEBUG: bound: at document #0
+INFO: -5.195 per-word bound, 36.6 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 8, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.14790629, 0.013031907, 0.09636264, 0.02526531, 0.07997832]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.148): 0.074*"object" + 0.052*"deepcopy" + 0.044*"copy" + 0.042*"class" + 0.041*"instance" + 0.041*"reference" + 0.033*"dictionary" + 0.031*"df" + 0.023*"variable" + 0.022*"answer"
+INFO: topic #1 (0.013): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"name" + 0.007*"foo" + 0.007*"df" + 0.007*"memo" + 0.007*"dictionary" + 0.007*"new" + 0.007*"replica"
+INFO: topic #2 (0.096): 0.093*"copy" + 0.088*"new" + 0.082*"shallow" + 0.078*"list" + 0.048*"object" + 0.045*"original" + 0.030*"name" + 0.025*"datum" + 0.025*"case" + 0.022*"content"
+INFO: topic #3 (0.025): 0.040*"produce" + 0.037*"attribute" + 0.036*"method" + 0.032*"mutable" + 0.022*"note" + 0.022*"create" + 0.022*"altered" + 0.022*"implement" + 0.022*"call" + 0.022*"mutate"
+INFO: topic #4 (0.080): 0.164*"copy" + 0.118*"object" + 0.037*"deepcopy" + 0.037*"deep" + 0.033*"method" + 0.025*"change" + 0.022*"interior" + 0.020*"immutable" + 0.019*"function" + 0.017*"container"
+INFO: topic diff=0.140862, rho=0.301511
+DEBUG: bound: at document #0
+INFO: -4.604 per-word bound, 24.3 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 8, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.14778021, 0.012743562, 0.10944653, 0.025837809, 0.08752829]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.148): 0.075*"object" + 0.057*"class" + 0.054*"deepcopy" + 0.045*"copy" + 0.042*"instance" + 0.041*"reference" + 0.033*"dictionary" + 0.025*"memory" + 0.025*"df" + 0.022*"value"
+INFO: topic #1 (0.013): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"name" + 0.007*"foo" + 0.007*"memo" + 0.007*"df" + 0.007*"dictionary" + 0.007*"replica" + 0.007*"new"
+INFO: topic #2 (0.109): 0.107*"copy" + 0.101*"shallow" + 0.088*"new" + 0.082*"list" + 0.052*"original" + 0.049*"object" + 0.028*"content" + 0.027*"deep" + 0.025*"datum" + 0.025*"case"
+INFO: topic #3 (0.026): 0.049*"produce" + 0.043*"attribute" + 0.041*"method" + 0.037*"mutable" + 0.026*"implement" + 0.026*"distinct" + 0.026*"create" + 0.026*"factory" + 0.026*"general" + 0.026*"note"
+INFO: topic #4 (0.088): 0.175*"copy" + 0.124*"object" + 0.041*"deep" + 0.037*"method" + 0.033*"deepcopy" + 0.028*"change" + 0.024*"interior" + 0.022*"immutable" + 0.018*"container" + 0.018*"tuple"
+INFO: topic diff=0.146708, rho=0.301511
+DEBUG: bound: at document #0
+INFO: -5.186 per-word bound, 36.4 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 9, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.14574717, 0.0124362875, 0.09602207, 0.02457566, 0.07955281]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.146): 0.073*"object" + 0.053*"deepcopy" + 0.043*"copy" + 0.041*"instance" + 0.041*"reference" + 0.040*"class" + 0.032*"dictionary" + 0.031*"df" + 0.023*"variable" + 0.021*"memo"
+INFO: topic #1 (0.012): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"name" + 0.007*"df" + 0.007*"foo" + 0.007*"memo" + 0.007*"new" + 0.007*"dictionary" + 0.007*"replica"
+INFO: topic #2 (0.096): 0.093*"copy" + 0.088*"new" + 0.083*"shallow" + 0.078*"list" + 0.048*"object" + 0.045*"original" + 0.030*"name" + 0.025*"datum" + 0.025*"case" + 0.022*"content"
+INFO: topic #3 (0.025): 0.041*"produce" + 0.037*"attribute" + 0.035*"method" + 0.031*"mutable" + 0.023*"implement" + 0.023*"distinct" + 0.023*"create" + 0.023*"factory" + 0.023*"general" + 0.023*"note"
+INFO: topic #4 (0.080): 0.164*"copy" + 0.118*"object" + 0.037*"deepcopy" + 0.037*"deep" + 0.034*"method" + 0.026*"change" + 0.022*"interior" + 0.020*"immutable" + 0.018*"function" + 0.016*"container"
+INFO: topic diff=0.135319, rho=0.288675
+DEBUG: bound: at document #0
+INFO: -4.588 per-word bound, 24.1 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 9, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.13265543, 0.012163001, 0.1072559, 0.025047159, 0.0859279]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.133): 0.074*"object" + 0.054*"deepcopy" + 0.051*"class" + 0.044*"copy" + 0.043*"instance" + 0.043*"reference" + 0.027*"dictionary" + 0.026*"df" + 0.025*"memory" + 0.022*"memo"
+INFO: topic #1 (0.012): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"name" + 0.007*"foo" + 0.007*"df" + 0.007*"memo" + 0.007*"dictionary" + 0.007*"answer" + 0.007*"replica"
+INFO: topic #2 (0.107): 0.106*"copy" + 0.101*"shallow" + 0.088*"new" + 0.082*"list" + 0.052*"original" + 0.048*"object" + 0.028*"content" + 0.027*"deep" + 0.025*"datum" + 0.025*"case"
+INFO: topic #3 (0.025): 0.049*"produce" + 0.043*"attribute" + 0.039*"method" + 0.036*"mutable" + 0.026*"mutate" + 0.026*"implement" + 0.026*"note" + 0.026*"general" + 0.026*"factory" + 0.026*"singleton"
+INFO: topic #4 (0.086): 0.173*"copy" + 0.123*"object" + 0.040*"deep" + 0.037*"method" + 0.033*"deepcopy" + 0.028*"change" + 0.023*"interior" + 0.021*"immutable" + 0.018*"tuple" + 0.018*"container"
+INFO: topic diff=0.143243, rho=0.288675
+DEBUG: starting a new internal lifecycle event log for LdaModel
+INFO: LdaModel lifecycle event {'msg': 'trained LdaModel<num_terms=147, num_topics=5, decay=0.5, chunksize=5> in 0.12s', 'datetime': '2023-04-25T15:14:20.531289', 'gensim': '4.3.1', 'python': '3.9.2 (default, Mar  4 2021, 10:15:47) \n[Clang 10.0.0 (clang-1000.10.44.4)]', 'platform': 'macOS-10.16-x86_64-i386-64bit', 'event': 'created'}
+INFO: using autotuned alpha, starting with [0.2, 0.2, 0.2, 0.2, 0.2]
+INFO: using serial LDA version on this node
+INFO: running online (multi-pass) LDA training, 5 topics, 10 passes over the supplied corpus of 10 documents, updating model once every 5 documents, evaluating perplexity every 5 documents, iterating 2000x with a convergence threshold of 0.001000
+DEBUG: bound: at document #0
+INFO: -7.426 per-word bound, 171.9 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 0, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.026924238, 0.09456012, 0.15219226, 0.09136268, 0.08605875]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.027): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"reference" + 0.007*"foo" + 0.007*"name" + 0.007*"new" + 0.007*"import" + 0.007*"way" + 0.007*"list"
+INFO: topic #1 (0.095): 0.071*"object" + 0.071*"instance" + 0.071*"reference" + 0.071*"df" + 0.054*"variable" + 0.036*"dict_b" + 0.019*"copy" + 0.019*"name" + 0.019*"good" + 0.019*"dictionary"
+INFO: topic #2 (0.152): 0.065*"object" + 0.065*"new" + 0.065*"copy" + 0.049*"list" + 0.049*"name" + 0.033*"point" + 0.033*"deepcopy" + 0.018*"reference" + 0.018*"good" + 0.018*"shallow"
+INFO: topic #3 (0.091): 0.094*"deepcopy" + 0.048*"copy" + 0.048*"dictionary" + 0.048*"answer" + 0.048*"lots_of_data" + 0.048*"memo" + 0.025*"item" + 0.025*"selection" + 0.025*"field" + 0.025*"help"
+INFO: topic #4 (0.086): 0.108*"object" + 0.073*"foo" + 0.038*"copy" + 0.038*"deepcopy" + 0.038*"replica" + 0.038*"foo(5" + 0.038*"right" + 0.038*"exact" + 0.038*"module" + 0.038*"args"
+INFO: topic diff=3.740963, rho=1.000000
+DEBUG: bound: at document #0
+INFO: -6.881 per-word bound, 117.9 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 0, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.036804013, 0.0957632, 0.20182657, 0.1111363, 0.10374682]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.037): 0.070*"deep" + 0.047*"method" + 0.037*"change" + 0.037*"immutable" + 0.033*"interior" + 0.026*"mutable" + 0.025*"tuple" + 0.025*"container" + 0.022*"recursive" + 0.019*"attribute"
+INFO: topic #1 (0.096): 0.078*"instance" + 0.074*"reference" + 0.064*"object" + 0.037*"df" + 0.037*"memory" + 0.032*"=" + 0.029*"variable" + 0.020*"dict_b" + 0.019*"copy" + 0.012*"name"
+INFO: topic #2 (0.202): 0.208*"copy" + 0.148*"object" + 0.052*"new" + 0.050*"list" + 0.048*"shallow" + 0.033*"original" + 0.020*"deepcopy" + 0.019*"deep" + 0.015*"datum" + 0.015*"case"
+INFO: topic #3 (0.111): 0.113*"copy" + 0.101*"class" + 0.065*"deepcopy" + 0.053*"shallow" + 0.040*"dictionary" + 0.040*"answer" + 0.034*"value" + 0.027*"memo" + 0.016*"method" + 0.014*"deep"
+INFO: topic #4 (0.104): 0.115*"object" + 0.049*"deepcopy" + 0.042*"copy" + 0.038*"method" + 0.035*"way" + 0.035*"module" + 0.026*"hook" + 0.026*"customize" + 0.022*"foo" + 0.013*"replica"
+INFO: topic diff=1.466088, rho=0.707107
+DEBUG: bound: at document #0
+INFO: -5.281 per-word bound, 38.9 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 1, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.032899667, 0.08285698, 0.15547407, 0.09157176, 0.08655888]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.033): 0.057*"deep" + 0.039*"method" + 0.031*"change" + 0.031*"immutable" + 0.028*"interior" + 0.023*"mutable" + 0.022*"tuple" + 0.022*"container" + 0.019*"recursive" + 0.016*"attribute"
+INFO: topic #1 (0.083): 0.074*"instance" + 0.072*"reference" + 0.069*"object" + 0.059*"df" + 0.044*"variable" + 0.030*"dict_b" + 0.026*"memory" + 0.024*"=" + 0.019*"copy" + 0.016*"dictionary"
+INFO: topic #2 (0.155): 0.158*"copy" + 0.120*"object" + 0.057*"new" + 0.050*"list" + 0.038*"shallow" + 0.028*"original" + 0.025*"deepcopy" + 0.023*"name" + 0.016*"datum" + 0.016*"case"
+INFO: topic #3 (0.092): 0.083*"copy" + 0.078*"deepcopy" + 0.066*"class" + 0.044*"dictionary" + 0.044*"answer" + 0.041*"shallow" + 0.036*"memo" + 0.030*"value" + 0.029*"lots_of_data" + 0.016*"item"
+INFO: topic #4 (0.087): 0.111*"object" + 0.047*"foo" + 0.044*"deepcopy" + 0.040*"copy" + 0.037*"way" + 0.037*"module" + 0.025*"replica" + 0.025*"foo(5" + 0.025*"right" + 0.025*"exact"
+INFO: topic diff=0.434834, rho=0.500000
+DEBUG: bound: at document #0
+INFO: -4.947 per-word bound, 30.8 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 1, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.03772998, 0.085111566, 0.19015072, 0.10426056, 0.09781681]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.038): 0.063*"deep" + 0.053*"method" + 0.041*"change" + 0.034*"interior" + 0.033*"immutable" + 0.031*"mutable" + 0.026*"tuple" + 0.026*"container" + 0.025*"recursive" + 0.023*"attribute"
+INFO: topic #1 (0.085): 0.078*"instance" + 0.076*"reference" + 0.059*"object" + 0.040*"memory" + 0.040*"df" + 0.032*"=" + 0.031*"variable" + 0.022*"dict_b" + 0.016*"copy" + 0.012*"dictionary"
+INFO: topic #2 (0.190): 0.223*"copy" + 0.155*"object" + 0.054*"shallow" + 0.053*"new" + 0.050*"list" + 0.033*"original" + 0.022*"deepcopy" + 0.020*"deep" + 0.017*"content" + 0.015*"datum"
+INFO: topic #3 (0.104): 0.114*"class" + 0.093*"copy" + 0.069*"deepcopy" + 0.047*"dictionary" + 0.047*"answer" + 0.044*"shallow" + 0.039*"value" + 0.032*"memo" + 0.017*"lots_of_data" + 0.011*"method"
+INFO: topic #4 (0.098): 0.097*"object" + 0.060*"deepcopy" + 0.039*"way" + 0.038*"module" + 0.032*"method" + 0.028*"copy" + 0.028*"customize" + 0.028*"hook" + 0.027*"foo" + 0.015*"print"
+INFO: topic diff=0.359807, rho=0.500000
+DEBUG: bound: at document #0
+INFO: -5.138 per-word bound, 35.2 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 2, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.033974435, 0.07638302, 0.15316607, 0.08875729, 0.08405749]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.034): 0.055*"deep" + 0.046*"method" + 0.036*"change" + 0.030*"interior" + 0.029*"immutable" + 0.027*"mutable" + 0.023*"tuple" + 0.023*"container" + 0.022*"recursive" + 0.020*"attribute"
+INFO: topic #1 (0.076): 0.074*"instance" + 0.073*"reference" + 0.066*"object" + 0.058*"df" + 0.044*"variable" + 0.030*"dict_b" + 0.028*"memory" + 0.024*"=" + 0.018*"copy" + 0.016*"dictionary"
+INFO: topic #2 (0.153): 0.175*"copy" + 0.128*"object" + 0.057*"new" + 0.050*"list" + 0.043*"shallow" + 0.028*"original" + 0.025*"deepcopy" + 0.021*"name" + 0.016*"datum" + 0.016*"case"
+INFO: topic #3 (0.089): 0.080*"deepcopy" + 0.075*"class" + 0.073*"copy" + 0.047*"dictionary" + 0.047*"answer" + 0.039*"memo" + 0.036*"shallow" + 0.033*"value" + 0.031*"lots_of_data" + 0.016*"item"
+INFO: topic #4 (0.084): 0.102*"object" + 0.050*"deepcopy" + 0.048*"foo" + 0.039*"way" + 0.038*"module" + 0.032*"copy" + 0.026*"replica" + 0.026*"foo(5" + 0.026*"right" + 0.026*"exact"
+INFO: topic diff=0.333210, rho=0.447214
+DEBUG: bound: at document #0
+INFO: -4.839 per-word bound, 28.6 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 2, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.038382508, 0.07897519, 0.18321563, 0.0994537, 0.09381652]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.038): 0.059*"deep" + 0.056*"method" + 0.042*"change" + 0.034*"interior" + 0.033*"mutable" + 0.031*"immutable" + 0.026*"tuple" + 0.026*"container" + 0.026*"recursive" + 0.025*"attribute"
+INFO: topic #1 (0.079): 0.078*"instance" + 0.077*"reference" + 0.058*"object" + 0.042*"df" + 0.041*"memory" + 0.032*"variable" + 0.031*"=" + 0.022*"dict_b" + 0.016*"copy" + 0.013*"dictionary"
+INFO: topic #2 (0.183): 0.233*"copy" + 0.158*"object" + 0.058*"shallow" + 0.054*"new" + 0.051*"list" + 0.033*"original" + 0.023*"deepcopy" + 0.021*"deep" + 0.018*"content" + 0.015*"datum"
+INFO: topic #3 (0.099): 0.123*"class" + 0.076*"copy" + 0.071*"deepcopy" + 0.051*"dictionary" + 0.051*"answer" + 0.042*"value" + 0.037*"shallow" + 0.036*"memo" + 0.020*"lots_of_data" + 0.011*"item"
+INFO: topic #4 (0.094): 0.092*"object" + 0.066*"deepcopy" + 0.040*"way" + 0.037*"module" + 0.029*"method" + 0.029*"foo" + 0.027*"customize" + 0.027*"hook" + 0.024*"copy" + 0.019*"whole"
+INFO: topic diff=0.284249, rho=0.447214
+DEBUG: bound: at document #0
+INFO: -5.086 per-word bound, 34.0 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 3, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.03477814, 0.0723318, 0.15167621, 0.08655624, 0.08222804]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.035): 0.052*"deep" + 0.050*"method" + 0.037*"change" + 0.031*"interior" + 0.030*"mutable" + 0.028*"immutable" + 0.024*"tuple" + 0.024*"container" + 0.023*"recursive" + 0.022*"attribute"
+INFO: topic #1 (0.072): 0.075*"instance" + 0.074*"reference" + 0.065*"object" + 0.057*"df" + 0.044*"variable" + 0.030*"dict_b" + 0.030*"memory" + 0.025*"=" + 0.017*"copy" + 0.016*"strong"
+INFO: topic #2 (0.152): 0.187*"copy" + 0.132*"object" + 0.057*"new" + 0.050*"list" + 0.047*"shallow" + 0.029*"original" + 0.026*"deepcopy" + 0.021*"name" + 0.016*"datum" + 0.016*"case"
+INFO: topic #3 (0.087): 0.081*"class" + 0.081*"deepcopy" + 0.064*"copy" + 0.050*"dictionary" + 0.050*"answer" + 0.041*"memo" + 0.035*"value" + 0.032*"shallow" + 0.032*"lots_of_data" + 0.017*"selection"
+INFO: topic #4 (0.082): 0.098*"object" + 0.055*"deepcopy" + 0.047*"foo" + 0.039*"way" + 0.038*"module" + 0.030*"copy" + 0.025*"replica" + 0.025*"foo(5" + 0.025*"right" + 0.025*"exact"
+INFO: topic diff=0.264471, rho=0.408248
+DEBUG: bound: at document #0
+INFO: -4.793 per-word bound, 27.7 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 3, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.038852658, 0.07495633, 0.1787116, 0.09604266, 0.09106452]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.039): 0.057*"method" + 0.056*"deep" + 0.042*"change" + 0.034*"interior" + 0.034*"mutable" + 0.029*"immutable" + 0.026*"tuple" + 0.026*"container" + 0.026*"recursive" + 0.025*"attribute"
+INFO: topic #1 (0.075): 0.079*"instance" + 0.077*"reference" + 0.057*"object" + 0.044*"df" + 0.041*"memory" + 0.034*"variable" + 0.031*"=" + 0.023*"dict_b" + 0.016*"copy" + 0.013*"strong"
+INFO: topic #2 (0.179): 0.238*"copy" + 0.158*"object" + 0.060*"shallow" + 0.054*"new" + 0.051*"list" + 0.033*"original" + 0.023*"deepcopy" + 0.021*"deep" + 0.018*"content" + 0.016*"datum"
+INFO: topic #3 (0.096): 0.126*"class" + 0.072*"deepcopy" + 0.065*"copy" + 0.054*"dictionary" + 0.054*"answer" + 0.044*"value" + 0.038*"memo" + 0.032*"shallow" + 0.021*"lots_of_data" + 0.012*"selection"
+INFO: topic #4 (0.091): 0.090*"object" + 0.069*"deepcopy" + 0.039*"way" + 0.036*"module" + 0.030*"foo" + 0.027*"method" + 0.026*"customize" + 0.026*"hook" + 0.022*"copy" + 0.021*"whole"
+INFO: topic diff=0.235879, rho=0.408248
+DEBUG: bound: at document #0
+INFO: -5.057 per-word bound, 33.3 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 4, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.03539402, 0.06955294, 0.1507124, 0.08490609, 0.08093527]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.035): 0.052*"method" + 0.051*"deep" + 0.038*"change" + 0.031*"interior" + 0.031*"mutable" + 0.027*"immutable" + 0.024*"tuple" + 0.024*"container" + 0.024*"recursive" + 0.023*"attribute"
+INFO: topic #1 (0.070): 0.075*"instance" + 0.074*"reference" + 0.064*"object" + 0.057*"df" + 0.044*"variable" + 0.030*"memory" + 0.030*"dict_b" + 0.025*"=" + 0.017*"copy" + 0.016*"strong"
+INFO: topic #2 (0.151): 0.194*"copy" + 0.135*"object" + 0.057*"new" + 0.051*"list" + 0.049*"shallow" + 0.029*"original" + 0.026*"deepcopy" + 0.021*"name" + 0.016*"deep" + 0.016*"datum"
+INFO: topic #3 (0.085): 0.085*"class" + 0.081*"deepcopy" + 0.058*"copy" + 0.051*"dictionary" + 0.051*"answer" + 0.042*"memo" + 0.036*"value" + 0.032*"lots_of_data" + 0.029*"shallow" + 0.017*"selection"
+INFO: topic #4 (0.081): 0.097*"object" + 0.057*"deepcopy" + 0.046*"foo" + 0.039*"way" + 0.037*"module" + 0.028*"copy" + 0.025*"replica" + 0.025*"foo(5" + 0.025*"right" + 0.025*"exact"
+INFO: topic diff=0.217075, rho=0.377964
+DEBUG: bound: at document #0
+INFO: -4.769 per-word bound, 27.3 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 4, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.039196894, 0.07212463, 0.17553058, 0.093560204, 0.0888437]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.039): 0.058*"method" + 0.054*"deep" + 0.042*"change" + 0.034*"interior" + 0.034*"mutable" + 0.028*"immutable" + 0.026*"tuple" + 0.026*"container" + 0.026*"recursive" + 0.026*"attribute"
+INFO: topic #1 (0.072): 0.079*"instance" + 0.077*"reference" + 0.057*"object" + 0.045*"df" + 0.041*"memory" + 0.034*"variable" + 0.031*"=" + 0.024*"dict_b" + 0.016*"copy" + 0.013*"strong"
+INFO: topic #2 (0.176): 0.239*"copy" + 0.158*"object" + 0.061*"shallow" + 0.054*"new" + 0.051*"list" + 0.033*"original" + 0.024*"deepcopy" + 0.022*"deep" + 0.018*"content" + 0.016*"datum"
+INFO: topic #3 (0.094): 0.127*"class" + 0.072*"deepcopy" + 0.057*"copy" + 0.055*"dictionary" + 0.055*"answer" + 0.045*"value" + 0.039*"memo" + 0.028*"shallow" + 0.023*"lots_of_data" + 0.013*"selection"
+INFO: topic #4 (0.089): 0.089*"object" + 0.070*"deepcopy" + 0.039*"way" + 0.032*"module" + 0.030*"foo" + 0.026*"method" + 0.026*"customize" + 0.026*"hook" + 0.023*"b" + 0.023*"print"
+INFO: topic diff=0.204005, rho=0.377964
+DEBUG: bound: at document #0
+INFO: -5.038 per-word bound, 32.9 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 5, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.035874877, 0.06753616, 0.15007646, 0.08367356, 0.07982413]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.036): 0.053*"method" + 0.050*"deep" + 0.039*"change" + 0.032*"interior" + 0.031*"mutable" + 0.026*"immutable" + 0.024*"tuple" + 0.024*"container" + 0.024*"recursive" + 0.024*"attribute"
+INFO: topic #1 (0.068): 0.075*"instance" + 0.074*"reference" + 0.063*"object" + 0.057*"df" + 0.044*"variable" + 0.031*"memory" + 0.030*"dict_b" + 0.025*"=" + 0.017*"copy" + 0.016*"strong"
+INFO: topic #2 (0.150): 0.198*"copy" + 0.136*"object" + 0.057*"new" + 0.051*"shallow" + 0.051*"list" + 0.029*"original" + 0.026*"deepcopy" + 0.020*"name" + 0.017*"deep" + 0.016*"datum"
+INFO: topic #3 (0.084): 0.088*"class" + 0.081*"deepcopy" + 0.054*"copy" + 0.052*"dictionary" + 0.052*"answer" + 0.043*"memo" + 0.037*"value" + 0.032*"lots_of_data" + 0.027*"shallow" + 0.017*"selection"
+INFO: topic #4 (0.080): 0.096*"object" + 0.059*"deepcopy" + 0.046*"foo" + 0.039*"way" + 0.034*"module" + 0.028*"copy" + 0.025*"replica" + 0.025*"foo(5" + 0.025*"exact" + 0.025*"right"
+INFO: topic diff=0.185293, rho=0.353553
+DEBUG: bound: at document #0
+INFO: -4.750 per-word bound, 26.9 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 5, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.039392848, 0.069820516, 0.1721146, 0.09137019, 0.081580326]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.039): 0.058*"method" + 0.053*"deep" + 0.042*"change" + 0.034*"interior" + 0.034*"mutable" + 0.028*"immutable" + 0.026*"tuple" + 0.026*"container" + 0.026*"recursive" + 0.026*"attribute"
+INFO: topic #1 (0.070): 0.079*"instance" + 0.077*"reference" + 0.057*"object" + 0.046*"df" + 0.041*"memory" + 0.035*"variable" + 0.031*"=" + 0.024*"dict_b" + 0.016*"copy" + 0.014*"strong"
+INFO: topic #2 (0.172): 0.240*"copy" + 0.158*"object" + 0.062*"shallow" + 0.054*"new" + 0.051*"list" + 0.033*"original" + 0.024*"deepcopy" + 0.022*"deep" + 0.018*"content" + 0.016*"datum"
+INFO: topic #3 (0.091): 0.127*"class" + 0.072*"deepcopy" + 0.056*"dictionary" + 0.056*"answer" + 0.053*"copy" + 0.045*"value" + 0.040*"memo" + 0.026*"shallow" + 0.023*"lots_of_data" + 0.013*"field"
+INFO: topic #4 (0.082): 0.089*"object" + 0.071*"deepcopy" + 0.039*"way" + 0.031*"foo" + 0.026*"method" + 0.026*"customize" + 0.026*"hook" + 0.024*"whole" + 0.024*"b" + 0.024*"print"
+INFO: topic diff=0.182806, rho=0.353553
+DEBUG: bound: at document #0
+INFO: -5.025 per-word bound, 32.6 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 6, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.036185604, 0.06577605, 0.14862873, 0.08238384, 0.07465571]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.036): 0.054*"method" + 0.049*"deep" + 0.039*"change" + 0.032*"interior" + 0.032*"mutable" + 0.026*"immutable" + 0.024*"tuple" + 0.024*"container" + 0.024*"recursive" + 0.024*"attribute"
+INFO: topic #1 (0.066): 0.076*"instance" + 0.075*"reference" + 0.063*"object" + 0.057*"df" + 0.043*"variable" + 0.031*"memory" + 0.030*"dict_b" + 0.025*"=" + 0.017*"copy" + 0.016*"intentional"
+INFO: topic #2 (0.149): 0.201*"copy" + 0.137*"object" + 0.057*"new" + 0.052*"shallow" + 0.051*"list" + 0.029*"original" + 0.026*"deepcopy" + 0.020*"name" + 0.018*"deep" + 0.016*"datum"
+INFO: topic #3 (0.082): 0.090*"class" + 0.080*"deepcopy" + 0.053*"dictionary" + 0.053*"answer" + 0.051*"copy" + 0.043*"memo" + 0.038*"value" + 0.032*"lots_of_data" + 0.026*"shallow" + 0.018*"item"
+INFO: topic #4 (0.075): 0.096*"object" + 0.060*"deepcopy" + 0.045*"foo" + 0.039*"way" + 0.029*"module" + 0.027*"copy" + 0.024*"replica" + 0.024*"foo(5" + 0.024*"exact" + 0.024*"right"
+INFO: topic diff=0.168055, rho=0.333333
+DEBUG: bound: at document #0
+INFO: -4.737 per-word bound, 26.7 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 6, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.039505053, 0.06799771, 0.16918832, 0.089576155, 0.0766955]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.040): 0.058*"method" + 0.052*"deep" + 0.042*"change" + 0.034*"interior" + 0.034*"mutable" + 0.027*"immutable" + 0.026*"tuple" + 0.026*"container" + 0.026*"recursive" + 0.026*"attribute"
+INFO: topic #1 (0.068): 0.079*"instance" + 0.077*"reference" + 0.057*"object" + 0.047*"df" + 0.040*"memory" + 0.036*"variable" + 0.030*"=" + 0.025*"dict_b" + 0.016*"copy" + 0.014*"intentional"
+INFO: topic #2 (0.169): 0.240*"copy" + 0.157*"object" + 0.062*"shallow" + 0.054*"new" + 0.051*"list" + 0.032*"original" + 0.024*"deepcopy" + 0.022*"deep" + 0.018*"content" + 0.016*"datum"
+INFO: topic #3 (0.090): 0.127*"class" + 0.072*"deepcopy" + 0.056*"dictionary" + 0.056*"answer" + 0.050*"copy" + 0.045*"value" + 0.040*"memo" + 0.025*"shallow" + 0.024*"lots_of_data" + 0.013*"selection"
+INFO: topic #4 (0.077): 0.089*"object" + 0.071*"deepcopy" + 0.039*"way" + 0.032*"foo" + 0.025*"method" + 0.025*"customize" + 0.025*"hook" + 0.025*"b" + 0.025*"print" + 0.025*"whole"
+INFO: topic diff=0.164378, rho=0.333333
+DEBUG: bound: at document #0
+INFO: -5.015 per-word bound, 32.3 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 7, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.036411162, 0.06436948, 0.1473546, 0.081317164, 0.071046546]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.036): 0.054*"method" + 0.048*"deep" + 0.039*"change" + 0.032*"interior" + 0.032*"mutable" + 0.025*"immutable" + 0.024*"tuple" + 0.024*"container" + 0.024*"recursive" + 0.024*"attribute"
+INFO: topic #1 (0.064): 0.076*"instance" + 0.075*"reference" + 0.063*"object" + 0.057*"df" + 0.043*"variable" + 0.031*"memory" + 0.030*"dict_b" + 0.026*"=" + 0.017*"copy" + 0.016*"address"
+INFO: topic #2 (0.147): 0.203*"copy" + 0.138*"object" + 0.057*"new" + 0.053*"shallow" + 0.051*"list" + 0.029*"original" + 0.026*"deepcopy" + 0.020*"name" + 0.018*"deep" + 0.016*"datum"
+INFO: topic #3 (0.081): 0.091*"class" + 0.080*"deepcopy" + 0.053*"dictionary" + 0.053*"answer" + 0.049*"copy" + 0.043*"memo" + 0.038*"value" + 0.032*"lots_of_data" + 0.025*"shallow" + 0.018*"field"
+INFO: topic #4 (0.071): 0.095*"object" + 0.060*"deepcopy" + 0.045*"foo" + 0.039*"way" + 0.027*"copy" + 0.026*"module" + 0.024*"replica" + 0.024*"foo(5" + 0.024*"right" + 0.024*"exact"
+INFO: topic diff=0.156003, rho=0.316228
+DEBUG: bound: at document #0
+INFO: -4.730 per-word bound, 26.5 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 7, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.039560173, 0.06652704, 0.16669224, 0.088096775, 0.07319517]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.040): 0.058*"method" + 0.051*"deep" + 0.042*"change" + 0.034*"interior" + 0.034*"mutable" + 0.027*"immutable" + 0.026*"tuple" + 0.026*"container" + 0.026*"recursive" + 0.026*"attribute"
+INFO: topic #1 (0.067): 0.079*"instance" + 0.077*"reference" + 0.057*"object" + 0.047*"df" + 0.040*"memory" + 0.036*"variable" + 0.030*"=" + 0.025*"dict_b" + 0.016*"copy" + 0.014*"address"
+INFO: topic #2 (0.167): 0.239*"copy" + 0.157*"object" + 0.062*"shallow" + 0.054*"new" + 0.051*"list" + 0.032*"original" + 0.024*"deepcopy" + 0.023*"deep" + 0.018*"content" + 0.016*"datum"
+INFO: topic #3 (0.088): 0.126*"class" + 0.073*"deepcopy" + 0.056*"dictionary" + 0.056*"answer" + 0.048*"copy" + 0.045*"value" + 0.041*"memo" + 0.024*"lots_of_data" + 0.024*"shallow" + 0.014*"selection"
+INFO: topic #4 (0.073): 0.090*"object" + 0.071*"deepcopy" + 0.039*"way" + 0.032*"foo" + 0.025*"method" + 0.025*"customize" + 0.025*"hook" + 0.025*"whole" + 0.025*"b" + 0.025*"print"
+INFO: topic diff=0.153154, rho=0.316228
+DEBUG: bound: at document #0
+INFO: -5.005 per-word bound, 32.1 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 8, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.036575504, 0.06322676, 0.14627406, 0.08043454, 0.06839697]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.037): 0.054*"method" + 0.048*"deep" + 0.039*"change" + 0.032*"interior" + 0.032*"mutable" + 0.025*"immutable" + 0.024*"tuple" + 0.024*"container" + 0.024*"recursive" + 0.024*"attribute"
+INFO: topic #1 (0.063): 0.076*"instance" + 0.075*"reference" + 0.063*"object" + 0.057*"df" + 0.043*"variable" + 0.031*"memory" + 0.030*"dict_b" + 0.026*"=" + 0.017*"copy" + 0.016*"delete"
+INFO: topic #2 (0.146): 0.204*"copy" + 0.138*"object" + 0.057*"new" + 0.053*"shallow" + 0.051*"list" + 0.029*"original" + 0.026*"deepcopy" + 0.020*"name" + 0.018*"deep" + 0.016*"datum"
+INFO: topic #3 (0.080): 0.092*"class" + 0.080*"deepcopy" + 0.053*"dictionary" + 0.053*"answer" + 0.048*"copy" + 0.043*"memo" + 0.038*"value" + 0.032*"lots_of_data" + 0.024*"shallow" + 0.017*"field"
+INFO: topic #4 (0.068): 0.095*"object" + 0.061*"deepcopy" + 0.045*"foo" + 0.039*"way" + 0.027*"copy" + 0.025*"module" + 0.024*"replica" + 0.024*"foo(5" + 0.024*"exact" + 0.024*"args"
+INFO: topic diff=0.146824, rho=0.301511
+DEBUG: bound: at document #0
+INFO: -4.725 per-word bound, 26.4 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 8, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.039576564, 0.06532084, 0.16457996, 0.08686644, 0.07057491]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.040): 0.058*"method" + 0.051*"deep" + 0.042*"change" + 0.034*"interior" + 0.034*"mutable" + 0.026*"immutable" + 0.026*"tuple" + 0.026*"container" + 0.026*"recursive" + 0.026*"attribute"
+INFO: topic #1 (0.065): 0.079*"instance" + 0.077*"reference" + 0.057*"object" + 0.047*"df" + 0.039*"memory" + 0.036*"variable" + 0.030*"=" + 0.025*"dict_b" + 0.016*"copy" + 0.014*"collector"
+INFO: topic #2 (0.165): 0.238*"copy" + 0.156*"object" + 0.062*"shallow" + 0.055*"new" + 0.051*"list" + 0.032*"original" + 0.024*"deepcopy" + 0.023*"deep" + 0.017*"content" + 0.016*"datum"
+INFO: topic #3 (0.087): 0.126*"class" + 0.073*"deepcopy" + 0.056*"dictionary" + 0.056*"answer" + 0.047*"copy" + 0.045*"value" + 0.041*"memo" + 0.025*"lots_of_data" + 0.023*"shallow" + 0.014*"need"
+INFO: topic #4 (0.071): 0.090*"object" + 0.071*"deepcopy" + 0.039*"way" + 0.033*"foo" + 0.025*"method" + 0.025*"customize" + 0.025*"hook" + 0.025*"whole" + 0.025*"print" + 0.025*"b"
+INFO: topic diff=0.144345, rho=0.301511
+DEBUG: bound: at document #0
+INFO: -4.997 per-word bound, 31.9 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 9, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.03669564, 0.062285427, 0.14538635, 0.079701655, 0.06638127]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.037): 0.054*"method" + 0.047*"deep" + 0.039*"change" + 0.032*"interior" + 0.032*"mutable" + 0.025*"immutable" + 0.024*"tuple" + 0.024*"container" + 0.024*"recursive" + 0.024*"attribute"
+INFO: topic #1 (0.062): 0.076*"instance" + 0.075*"reference" + 0.062*"object" + 0.057*"df" + 0.043*"variable" + 0.031*"memory" + 0.030*"dict_b" + 0.026*"=" + 0.017*"copy" + 0.016*"collector"
+INFO: topic #2 (0.145): 0.205*"copy" + 0.139*"object" + 0.057*"new" + 0.053*"shallow" + 0.051*"list" + 0.029*"original" + 0.026*"deepcopy" + 0.019*"name" + 0.019*"deep" + 0.016*"datum"
+INFO: topic #3 (0.080): 0.093*"class" + 0.079*"deepcopy" + 0.054*"dictionary" + 0.054*"answer" + 0.047*"copy" + 0.043*"memo" + 0.038*"value" + 0.032*"lots_of_data" + 0.024*"shallow" + 0.017*"several"
+INFO: topic #4 (0.066): 0.095*"object" + 0.061*"deepcopy" + 0.045*"foo" + 0.039*"way" + 0.027*"copy" + 0.025*"module" + 0.024*"replica" + 0.024*"right" + 0.024*"args" + 0.024*"exact"
+INFO: topic diff=0.139296, rho=0.288675
+DEBUG: bound: at document #0
+INFO: -4.721 per-word bound, 26.4 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 9, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.039566975, 0.06431832, 0.16280867, 0.085834794, 0.06855]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.040): 0.058*"method" + 0.050*"deep" + 0.042*"change" + 0.034*"interior" + 0.034*"mutable" + 0.026*"immutable" + 0.026*"tuple" + 0.026*"container" + 0.026*"recursive" + 0.026*"attribute"
+INFO: topic #1 (0.064): 0.079*"instance" + 0.077*"reference" + 0.057*"object" + 0.048*"df" + 0.039*"memory" + 0.036*"variable" + 0.030*"=" + 0.025*"dict_b" + 0.016*"copy" + 0.014*"collector"
+INFO: topic #2 (0.163): 0.238*"copy" + 0.155*"object" + 0.062*"shallow" + 0.055*"new" + 0.051*"list" + 0.032*"original" + 0.025*"deepcopy" + 0.023*"deep" + 0.017*"content" + 0.016*"datum"
+INFO: topic #3 (0.086): 0.125*"class" + 0.073*"deepcopy" + 0.056*"dictionary" + 0.056*"answer" + 0.046*"copy" + 0.044*"value" + 0.041*"memo" + 0.025*"lots_of_data" + 0.023*"shallow" + 0.014*"doubt"
+INFO: topic #4 (0.069): 0.090*"object" + 0.071*"deepcopy" + 0.039*"way" + 0.033*"foo" + 0.025*"method" + 0.025*"hook" + 0.025*"customize" + 0.024*"print" + 0.024*"b" + 0.024*"whole"
+INFO: topic diff=0.136987, rho=0.288675
+DEBUG: starting a new internal lifecycle event log for LdaModel
+INFO: LdaModel lifecycle event {'msg': 'trained LdaModel<num_terms=147, num_topics=5, decay=0.5, chunksize=5> in 0.13s', 'datetime': '2023-04-25T15:14:20.661858', 'gensim': '4.3.1', 'python': '3.9.2 (default, Mar  4 2021, 10:15:47) \n[Clang 10.0.0 (clang-1000.10.44.4)]', 'platform': 'macOS-10.16-x86_64-i386-64bit', 'event': 'created'}
+INFO: using autotuned alpha, starting with [0.2, 0.2, 0.2, 0.2, 0.2]
+INFO: using serial LDA version on this node
+INFO: running online (multi-pass) LDA training, 5 topics, 10 passes over the supplied corpus of 10 documents, updating model once every 5 documents, evaluating perplexity every 5 documents, iterating 2000x with a convergence threshold of 0.001000
+DEBUG: bound: at document #0
+INFO: -7.428 per-word bound, 172.3 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 0, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.026741222, 0.091431476, 0.2789816, 0.026681334, 0.026766226]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.027): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"name" + 0.007*"reference" + 0.007*"foo" + 0.007*"new" + 0.007*"instance" + 0.007*"df" + 0.007*"exact"
+INFO: topic #1 (0.091): 0.094*"deepcopy" + 0.048*"copy" + 0.048*"lots_of_data" + 0.048*"dictionary" + 0.048*"answer" + 0.048*"memo" + 0.025*"shallow" + 0.025*"solution" + 0.025*"selection" + 0.025*"several"
+INFO: topic #2 (0.279): 0.093*"object" + 0.051*"copy" + 0.043*"reference" + 0.034*"df" + 0.034*"instance" + 0.034*"name" + 0.034*"new" + 0.026*"variable" + 0.026*"list" + 0.026*"deepcopy"
+INFO: topic #3 (0.027): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"new" + 0.007*"reference" + 0.007*"foo(5" + 0.007*"foo" + 0.007*"name" + 0.007*"memo" + 0.007*"assignment"
+INFO: topic #4 (0.027): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"foo" + 0.007*"reference" + 0.007*"basic" + 0.007*"eq" + 0.007*"dictionary" + 0.007*"instance" + 0.007*"new"
+INFO: topic diff=3.370330, rho=1.000000
+DEBUG: bound: at document #0
+INFO: -6.869 per-word bound, 116.9 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 0, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.03666044, 0.11380927, 0.37957352, 0.02851396, 0.02448858]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.037): 0.077*"deep" + 0.045*"method" + 0.044*"immutable" + 0.035*"interior" + 0.035*"change" + 0.027*"tuple" + 0.027*"container" + 0.026*"content" + 0.019*"recursive" + 0.019*"mutable"
+INFO: topic #1 (0.114): 0.150*"copy" + 0.087*"class" + 0.076*"shallow" + 0.064*"deepcopy" + 0.034*"answer" + 0.030*"value" + 0.029*"dictionary" + 0.023*"memo" + 0.017*"method" + 0.016*"deep"
+INFO: topic #2 (0.380): 0.176*"copy" + 0.176*"object" + 0.047*"new" + 0.045*"list" + 0.030*"shallow" + 0.030*"original" + 0.028*"reference" + 0.025*"deepcopy" + 0.021*"memory" + 0.020*"instance"
+INFO: topic #3 (0.029): 0.057*"method" + 0.039*"produce" + 0.039*"mutable" + 0.039*"attribute" + 0.022*"recursive" + 0.022*"custom" + 0.022*"altered" + 0.022*"state" + 0.022*"deep" + 0.022*"change"
+INFO: topic #4 (0.024): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"foo" + 0.007*"reference" + 0.007*"basic" + 0.007*"eq" + 0.007*"dictionary" + 0.007*"instance" + 0.007*"new"
+INFO: topic diff=1.375961, rho=0.707107
+DEBUG: bound: at document #0
+INFO: -5.526 per-word bound, 46.1 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 1, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.03314231, 0.09640902, 0.3459111, 0.026383933, 0.022916986]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.033): 0.064*"deep" + 0.038*"method" + 0.037*"immutable" + 0.030*"interior" + 0.030*"change" + 0.023*"tuple" + 0.023*"container" + 0.022*"content" + 0.016*"recursive" + 0.016*"mutable"
+INFO: topic #1 (0.096): 0.107*"copy" + 0.077*"deepcopy" + 0.061*"class" + 0.055*"shallow" + 0.040*"answer" + 0.037*"dictionary" + 0.033*"memo" + 0.028*"value" + 0.027*"lots_of_data" + 0.014*"solution"
+INFO: topic #2 (0.346): 0.136*"object" + 0.117*"copy" + 0.041*"new" + 0.036*"list" + 0.035*"reference" + 0.027*"instance" + 0.026*"deepcopy" + 0.021*"df" + 0.021*"name" + 0.020*"shallow"
+INFO: topic #3 (0.026): 0.039*"method" + 0.027*"produce" + 0.027*"mutable" + 0.027*"attribute" + 0.016*"recursive" + 0.016*"custom" + 0.016*"altered" + 0.016*"state" + 0.016*"deep" + 0.016*"change"
+INFO: topic #4 (0.023): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"foo" + 0.007*"reference" + 0.007*"basic" + 0.007*"eq" + 0.007*"dictionary" + 0.007*"instance" + 0.007*"new"
+INFO: topic diff=0.390014, rho=0.500000
+DEBUG: bound: at document #0
+INFO: -4.882 per-word bound, 29.5 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 1, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.041658066, 0.11186743, 0.41652998, 0.027749412, 0.02177137]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.042): 0.079*"deep" + 0.045*"immutable" + 0.045*"method" + 0.037*"interior" + 0.036*"change" + 0.028*"tuple" + 0.028*"container" + 0.025*"content" + 0.019*"string" + 0.019*"structure"
+INFO: topic #1 (0.112): 0.146*"copy" + 0.100*"class" + 0.078*"shallow" + 0.067*"deepcopy" + 0.041*"answer" + 0.035*"value" + 0.033*"dictionary" + 0.028*"memo" + 0.015*"lots_of_data" + 0.012*"method"
+INFO: topic #2 (0.417): 0.184*"copy" + 0.175*"object" + 0.048*"new" + 0.045*"list" + 0.033*"shallow" + 0.029*"original" + 0.029*"deepcopy" + 0.029*"reference" + 0.022*"memory" + 0.021*"instance"
+INFO: topic #3 (0.028): 0.060*"method" + 0.045*"produce" + 0.044*"attribute" + 0.043*"mutable" + 0.024*"general" + 0.024*"create" + 0.024*"altered" + 0.024*"call" + 0.024*"factory" + 0.024*"distinct"
+INFO: topic #4 (0.022): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"foo" + 0.007*"reference" + 0.007*"basic" + 0.007*"eq" + 0.007*"dictionary" + 0.007*"instance" + 0.007*"new"
+INFO: topic diff=0.323859, rho=0.500000
+DEBUG: bound: at document #0
+INFO: -5.391 per-word bound, 42.0 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 2, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.037641406, 0.09730389, 0.37081316, 0.025964515, 0.020672169]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.038): 0.068*"deep" + 0.040*"immutable" + 0.039*"method" + 0.033*"interior" + 0.032*"change" + 0.025*"tuple" + 0.025*"container" + 0.022*"content" + 0.017*"string" + 0.017*"structure"
+INFO: topic #1 (0.097): 0.106*"copy" + 0.078*"deepcopy" + 0.070*"class" + 0.057*"shallow" + 0.044*"answer" + 0.039*"dictionary" + 0.036*"memo" + 0.031*"value" + 0.028*"lots_of_data" + 0.015*"solution"
+INFO: topic #2 (0.371): 0.140*"object" + 0.127*"copy" + 0.042*"new" + 0.037*"list" + 0.035*"reference" + 0.028*"deepcopy" + 0.027*"instance" + 0.023*"shallow" + 0.021*"df" + 0.021*"name"
+INFO: topic #3 (0.026): 0.044*"method" + 0.033*"produce" + 0.033*"attribute" + 0.032*"mutable" + 0.019*"general" + 0.019*"create" + 0.019*"altered" + 0.019*"call" + 0.019*"factory" + 0.019*"distinct"
+INFO: topic #4 (0.021): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"foo" + 0.007*"reference" + 0.007*"basic" + 0.007*"eq" + 0.007*"dictionary" + 0.007*"instance" + 0.007*"new"
+INFO: topic diff=0.301293, rho=0.447214
+DEBUG: bound: at document #0
+INFO: -4.807 per-word bound, 28.0 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 2, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.04614234, 0.11057319, 0.43469518, 0.027207071, 0.019849578]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.046): 0.080*"deep" + 0.046*"immutable" + 0.045*"method" + 0.037*"interior" + 0.037*"change" + 0.028*"container" + 0.028*"tuple" + 0.025*"content" + 0.019*"structure" + 0.019*"slice"
+INFO: topic #1 (0.111): 0.131*"copy" + 0.110*"class" + 0.074*"shallow" + 0.068*"deepcopy" + 0.046*"answer" + 0.038*"value" + 0.035*"dictionary" + 0.032*"memo" + 0.017*"lots_of_data" + 0.010*"solution"
+INFO: topic #2 (0.435): 0.189*"copy" + 0.172*"object" + 0.047*"new" + 0.044*"list" + 0.036*"shallow" + 0.032*"deepcopy" + 0.029*"reference" + 0.029*"original" + 0.022*"instance" + 0.021*"memory"
+INFO: topic #3 (0.027): 0.063*"method" + 0.046*"produce" + 0.045*"attribute" + 0.044*"mutable" + 0.025*"general" + 0.025*"mutate" + 0.025*"call" + 0.025*"create" + 0.025*"distinct" + 0.025*"factory"
+INFO: topic #4 (0.020): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"foo" + 0.007*"reference" + 0.007*"basic" + 0.007*"eq" + 0.007*"dictionary" + 0.007*"instance" + 0.007*"new"
+INFO: topic diff=0.252864, rho=0.447214
+DEBUG: bound: at document #0
+INFO: -5.337 per-word bound, 40.4 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 3, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.041672762, 0.0978321, 0.3858763, 0.02564987, 0.019020265]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.042): 0.070*"deep" + 0.041*"immutable" + 0.040*"method" + 0.033*"interior" + 0.033*"change" + 0.026*"container" + 0.026*"tuple" + 0.023*"content" + 0.018*"structure" + 0.018*"slice"
+INFO: topic #1 (0.098): 0.098*"copy" + 0.078*"deepcopy" + 0.076*"class" + 0.055*"shallow" + 0.047*"answer" + 0.040*"dictionary" + 0.038*"memo" + 0.033*"value" + 0.030*"lots_of_data" + 0.016*"solution"
+INFO: topic #2 (0.386): 0.141*"object" + 0.135*"copy" + 0.042*"new" + 0.037*"list" + 0.035*"reference" + 0.029*"deepcopy" + 0.026*"instance" + 0.026*"shallow" + 0.021*"original" + 0.020*"df"
+INFO: topic #3 (0.026): 0.049*"method" + 0.036*"produce" + 0.035*"attribute" + 0.035*"mutable" + 0.020*"general" + 0.020*"mutate" + 0.020*"call" + 0.020*"create" + 0.020*"distinct" + 0.020*"factory"
+INFO: topic #4 (0.019): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"foo" + 0.007*"reference" + 0.007*"basic" + 0.007*"eq" + 0.007*"dictionary" + 0.007*"instance" + 0.007*"new"
+INFO: topic diff=0.235385, rho=0.408248
+DEBUG: bound: at document #0
+INFO: -4.774 per-word bound, 27.4 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 3, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.0501254, 0.10970354, 0.44511354, 0.026795672, 0.01839102]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.050): 0.080*"deep" + 0.046*"immutable" + 0.045*"method" + 0.037*"interior" + 0.037*"change" + 0.028*"container" + 0.028*"tuple" + 0.026*"content" + 0.019*"structure" + 0.019*"slice"
+INFO: topic #1 (0.110): 0.116*"class" + 0.113*"copy" + 0.068*"deepcopy" + 0.067*"shallow" + 0.049*"answer" + 0.041*"value" + 0.036*"dictionary" + 0.034*"memo" + 0.020*"lots_of_data" + 0.011*"solution"
+INFO: topic #2 (0.445): 0.193*"copy" + 0.168*"object" + 0.046*"new" + 0.043*"list" + 0.039*"shallow" + 0.033*"deepcopy" + 0.029*"reference" + 0.028*"original" + 0.022*"instance" + 0.021*"memory"
+INFO: topic #3 (0.027): 0.065*"method" + 0.046*"produce" + 0.045*"attribute" + 0.045*"mutable" + 0.025*"general" + 0.025*"mutate" + 0.025*"call" + 0.025*"create" + 0.025*"distinct" + 0.025*"factory"
+INFO: topic #4 (0.018): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"foo" + 0.007*"reference" + 0.007*"basic" + 0.007*"eq" + 0.007*"dictionary" + 0.007*"instance" + 0.007*"new"
+INFO: topic diff=0.203585, rho=0.408248
+DEBUG: bound: at document #0
+INFO: -5.308 per-word bound, 39.6 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 4, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.04526656, 0.09825614, 0.39654344, 0.025403406, 0.01773478]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.045): 0.072*"deep" + 0.041*"immutable" + 0.041*"method" + 0.034*"interior" + 0.033*"change" + 0.026*"container" + 0.026*"tuple" + 0.024*"content" + 0.018*"structure" + 0.018*"slice"
+INFO: topic #1 (0.098): 0.088*"copy" + 0.081*"class" + 0.078*"deepcopy" + 0.051*"shallow" + 0.049*"answer" + 0.041*"dictionary" + 0.040*"memo" + 0.035*"value" + 0.031*"lots_of_data" + 0.016*"solution"
+INFO: topic #2 (0.397): 0.142*"copy" + 0.141*"object" + 0.042*"new" + 0.037*"list" + 0.034*"reference" + 0.031*"deepcopy" + 0.028*"shallow" + 0.026*"instance" + 0.021*"original" + 0.020*"df"
+INFO: topic #3 (0.025): 0.051*"method" + 0.037*"produce" + 0.036*"attribute" + 0.036*"mutable" + 0.020*"general" + 0.020*"mutate" + 0.020*"call" + 0.020*"create" + 0.020*"distinct" + 0.020*"factory"
+INFO: topic #4 (0.018): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"foo" + 0.007*"reference" + 0.007*"basic" + 0.007*"eq" + 0.007*"dictionary" + 0.007*"instance" + 0.007*"new"
+INFO: topic diff=0.195727, rho=0.377964
+DEBUG: bound: at document #0
+INFO: -4.754 per-word bound, 27.0 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 4, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.053643234, 0.109152615, 0.45238155, 0.026471963, 0.017232655]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.054): 0.080*"deep" + 0.046*"immutable" + 0.045*"method" + 0.037*"interior" + 0.037*"change" + 0.028*"container" + 0.028*"tuple" + 0.027*"content" + 0.019*"structure" + 0.019*"slice"
+INFO: topic #1 (0.109): 0.120*"class" + 0.097*"copy" + 0.068*"deepcopy" + 0.059*"shallow" + 0.052*"answer" + 0.042*"value" + 0.037*"dictionary" + 0.037*"memo" + 0.021*"lots_of_data" + 0.012*"solution"
+INFO: topic #2 (0.452): 0.195*"copy" + 0.165*"object" + 0.045*"new" + 0.043*"list" + 0.041*"shallow" + 0.034*"deepcopy" + 0.029*"reference" + 0.027*"original" + 0.022*"instance" + 0.021*"memory"
+INFO: topic #3 (0.026): 0.065*"method" + 0.045*"produce" + 0.045*"attribute" + 0.045*"mutable" + 0.024*"general" + 0.024*"mutate" + 0.024*"call" + 0.024*"create" + 0.024*"distinct" + 0.024*"factory"
+INFO: topic #4 (0.017): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"foo" + 0.007*"reference" + 0.007*"basic" + 0.007*"eq" + 0.007*"dictionary" + 0.007*"instance" + 0.007*"new"
+INFO: topic diff=0.175363, rho=0.377964
+DEBUG: bound: at document #0
+INFO: -5.288 per-word bound, 39.1 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 5, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.048462644, 0.098678164, 0.40524498, 0.025206232, 0.016695933]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.048): 0.073*"deep" + 0.042*"immutable" + 0.041*"method" + 0.034*"interior" + 0.034*"change" + 0.026*"container" + 0.026*"tuple" + 0.025*"content" + 0.018*"structure" + 0.018*"slice"
+INFO: topic #1 (0.099): 0.084*"class" + 0.079*"copy" + 0.077*"deepcopy" + 0.050*"answer" + 0.046*"shallow" + 0.041*"dictionary" + 0.041*"memo" + 0.036*"value" + 0.031*"lots_of_data" + 0.017*"solution"
+INFO: topic #2 (0.405): 0.147*"copy" + 0.141*"object" + 0.042*"new" + 0.037*"list" + 0.034*"reference" + 0.031*"deepcopy" + 0.031*"shallow" + 0.026*"instance" + 0.021*"original" + 0.020*"memory"
+INFO: topic #3 (0.025): 0.053*"method" + 0.037*"produce" + 0.037*"attribute" + 0.037*"mutable" + 0.021*"general" + 0.021*"mutate" + 0.021*"call" + 0.021*"create" + 0.021*"distinct" + 0.021*"factory"
+INFO: topic #4 (0.017): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"foo" + 0.007*"reference" + 0.007*"basic" + 0.007*"dictionary" + 0.007*"eq" + 0.007*"instance" + 0.007*"new"
+INFO: topic diff=0.171691, rho=0.353553
+DEBUG: bound: at document #0
+INFO: -4.741 per-word bound, 26.7 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 5, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.05674239, 0.10882849, 0.4583657, 0.026211463, 0.01628275]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.057): 0.080*"deep" + 0.046*"immutable" + 0.045*"method" + 0.037*"interior" + 0.037*"change" + 0.028*"container" + 0.028*"tuple" + 0.027*"content" + 0.019*"structure" + 0.019*"slice"
+INFO: topic #1 (0.109): 0.122*"class" + 0.084*"copy" + 0.068*"deepcopy" + 0.053*"answer" + 0.051*"shallow" + 0.043*"value" + 0.038*"memo" + 0.037*"dictionary" + 0.022*"lots_of_data" + 0.012*"solution"
+INFO: topic #2 (0.458): 0.196*"copy" + 0.163*"object" + 0.045*"new" + 0.043*"shallow" + 0.042*"list" + 0.035*"deepcopy" + 0.029*"reference" + 0.027*"original" + 0.022*"instance" + 0.021*"memory"
+INFO: topic #3 (0.026): 0.065*"method" + 0.045*"produce" + 0.045*"attribute" + 0.045*"mutable" + 0.024*"general" + 0.024*"mutate" + 0.024*"call" + 0.024*"create" + 0.024*"distinct" + 0.024*"factory"
+INFO: topic #4 (0.016): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"foo" + 0.007*"reference" + 0.007*"basic" + 0.007*"eq" + 0.007*"instance" + 0.007*"dictionary" + 0.007*"new"
+INFO: topic diff=0.159026, rho=0.353553
+DEBUG: bound: at document #0
+INFO: -5.274 per-word bound, 38.7 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 6, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.051303104, 0.09911546, 0.41294205, 0.025046386, 0.01583285]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.051): 0.073*"deep" + 0.042*"immutable" + 0.042*"method" + 0.034*"interior" + 0.034*"change" + 0.026*"container" + 0.026*"tuple" + 0.025*"content" + 0.018*"structure" + 0.018*"slice"
+INFO: topic #1 (0.099): 0.087*"class" + 0.077*"deepcopy" + 0.071*"copy" + 0.052*"answer" + 0.042*"memo" + 0.042*"shallow" + 0.041*"dictionary" + 0.037*"value" + 0.032*"lots_of_data" + 0.017*"selection"
+INFO: topic #2 (0.413): 0.151*"copy" + 0.141*"object" + 0.042*"new" + 0.037*"list" + 0.033*"reference" + 0.033*"shallow" + 0.032*"deepcopy" + 0.026*"instance" + 0.021*"original" + 0.020*"memory"
+INFO: topic #3 (0.025): 0.054*"method" + 0.037*"produce" + 0.037*"attribute" + 0.037*"mutable" + 0.021*"general" + 0.021*"mutate" + 0.021*"call" + 0.021*"create" + 0.021*"distinct" + 0.021*"factory"
+INFO: topic #4 (0.016): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"foo" + 0.007*"reference" + 0.007*"basic" + 0.007*"eq" + 0.007*"instance" + 0.007*"dictionary" + 0.007*"information"
+INFO: topic diff=0.155468, rho=0.333333
+DEBUG: bound: at document #0
+INFO: -4.731 per-word bound, 26.6 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 6, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.059471063, 0.108668976, 0.4637361, 0.025998497, 0.01548479]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.059): 0.080*"deep" + 0.045*"immutable" + 0.045*"method" + 0.037*"interior" + 0.037*"change" + 0.028*"container" + 0.028*"tuple" + 0.027*"content" + 0.019*"structure" + 0.019*"slice"
+INFO: topic #1 (0.109): 0.124*"class" + 0.074*"copy" + 0.068*"deepcopy" + 0.055*"answer" + 0.044*"shallow" + 0.044*"value" + 0.039*"memo" + 0.037*"dictionary" + 0.023*"lots_of_data" + 0.013*"solution"
+INFO: topic #2 (0.464): 0.196*"copy" + 0.161*"object" + 0.045*"shallow" + 0.045*"new" + 0.042*"list" + 0.035*"deepcopy" + 0.029*"reference" + 0.026*"original" + 0.022*"instance" + 0.020*"memory"
+INFO: topic #3 (0.026): 0.065*"method" + 0.045*"produce" + 0.045*"attribute" + 0.045*"mutable" + 0.024*"general" + 0.024*"mutate" + 0.024*"call" + 0.024*"create" + 0.024*"distinct" + 0.024*"factory"
+INFO: topic #4 (0.015): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"foo" + 0.007*"reference" + 0.007*"basic" + 0.007*"dictionary" + 0.007*"eq" + 0.007*"instance" + 0.007*"information"
+INFO: topic diff=0.147303, rho=0.333333
+DEBUG: bound: at document #0
+INFO: -5.263 per-word bound, 38.4 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 7, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.053827766, 0.09956506, 0.419907, 0.024915392, 0.015100304]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.054): 0.074*"deep" + 0.042*"immutable" + 0.042*"method" + 0.034*"interior" + 0.034*"change" + 0.026*"container" + 0.026*"tuple" + 0.026*"content" + 0.018*"structure" + 0.018*"slice"
+INFO: topic #1 (0.100): 0.090*"class" + 0.077*"deepcopy" + 0.064*"copy" + 0.052*"answer" + 0.042*"memo" + 0.041*"dictionary" + 0.038*"value" + 0.038*"shallow" + 0.032*"lots_of_data" + 0.017*"solution"
+INFO: topic #2 (0.420): 0.153*"copy" + 0.141*"object" + 0.042*"new" + 0.037*"list" + 0.034*"shallow" + 0.033*"reference" + 0.032*"deepcopy" + 0.025*"instance" + 0.021*"original" + 0.020*"memory"
+INFO: topic #3 (0.025): 0.054*"method" + 0.038*"produce" + 0.038*"attribute" + 0.038*"mutable" + 0.021*"general" + 0.021*"mutate" + 0.021*"call" + 0.021*"create" + 0.021*"distinct" + 0.021*"factory"
+INFO: topic #4 (0.015): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"foo" + 0.007*"basic" + 0.007*"reference" + 0.007*"instance" + 0.007*"dictionary" + 0.007*"eq" + 0.007*"memo"
+INFO: topic diff=0.143835, rho=0.316228
+DEBUG: bound: at document #0
+INFO: -4.724 per-word bound, 26.4 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 7, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.061873965, 0.10862604, 0.4686368, 0.025822073, 0.014801626]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.062): 0.080*"deep" + 0.045*"immutable" + 0.045*"method" + 0.037*"interior" + 0.037*"change" + 0.028*"container" + 0.028*"tuple" + 0.028*"content" + 0.019*"structure" + 0.019*"slice"
+INFO: topic #1 (0.109): 0.125*"class" + 0.068*"deepcopy" + 0.066*"copy" + 0.056*"answer" + 0.045*"value" + 0.040*"memo" + 0.039*"shallow" + 0.036*"dictionary" + 0.024*"lots_of_data" + 0.013*"time"
+INFO: topic #2 (0.469): 0.196*"copy" + 0.160*"object" + 0.046*"shallow" + 0.044*"new" + 0.041*"list" + 0.035*"deepcopy" + 0.029*"reference" + 0.026*"original" + 0.022*"instance" + 0.020*"memory"
+INFO: topic #3 (0.026): 0.065*"method" + 0.045*"produce" + 0.044*"attribute" + 0.044*"mutable" + 0.024*"general" + 0.024*"mutate" + 0.024*"call" + 0.024*"create" + 0.024*"distinct" + 0.024*"factory"
+INFO: topic #4 (0.015): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"foo" + 0.007*"reference" + 0.007*"basic" + 0.007*"dictionary" + 0.007*"instance" + 0.007*"eq" + 0.007*"new"
+INFO: topic diff=0.138183, rho=0.316228
+DEBUG: bound: at document #0
+INFO: -5.254 per-word bound, 38.2 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 8, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.056075204, 0.100025006, 0.42638534, 0.02480736, 0.014467982]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.056): 0.074*"deep" + 0.042*"immutable" + 0.042*"method" + 0.034*"interior" + 0.034*"change" + 0.026*"container" + 0.026*"tuple" + 0.026*"content" + 0.018*"structure" + 0.018*"slice"
+INFO: topic #1 (0.100): 0.091*"class" + 0.077*"deepcopy" + 0.060*"copy" + 0.053*"answer" + 0.043*"memo" + 0.040*"dictionary" + 0.038*"value" + 0.034*"shallow" + 0.032*"lots_of_data" + 0.017*"field"
+INFO: topic #2 (0.426): 0.156*"copy" + 0.141*"object" + 0.041*"new" + 0.037*"list" + 0.036*"shallow" + 0.033*"reference" + 0.032*"deepcopy" + 0.025*"instance" + 0.021*"original" + 0.020*"memory"
+INFO: topic #3 (0.025): 0.055*"method" + 0.038*"produce" + 0.038*"attribute" + 0.038*"mutable" + 0.021*"general" + 0.021*"mutate" + 0.021*"call" + 0.021*"create" + 0.021*"distinct" + 0.021*"factory"
+INFO: topic #4 (0.014): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"foo" + 0.007*"reference" + 0.007*"basic" + 0.007*"dictionary" + 0.007*"instance" + 0.007*"eq" + 0.007*"new"
+INFO: topic diff=0.134875, rho=0.301511
+DEBUG: bound: at document #0
+INFO: -4.718 per-word bound, 26.3 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 8, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.06399383, 0.1086709, 0.47324595, 0.025674615, 0.01420782]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.064): 0.080*"deep" + 0.045*"immutable" + 0.045*"method" + 0.037*"interior" + 0.037*"change" + 0.028*"container" + 0.028*"tuple" + 0.028*"content" + 0.019*"structure" + 0.019*"slice"
+INFO: topic #1 (0.109): 0.125*"class" + 0.068*"deepcopy" + 0.061*"copy" + 0.056*"answer" + 0.045*"value" + 0.041*"memo" + 0.036*"dictionary" + 0.035*"shallow" + 0.025*"lots_of_data" + 0.014*"field"
+INFO: topic #2 (0.473): 0.196*"copy" + 0.159*"object" + 0.047*"shallow" + 0.044*"new" + 0.041*"list" + 0.035*"deepcopy" + 0.029*"reference" + 0.026*"original" + 0.022*"instance" + 0.020*"memory"
+INFO: topic #3 (0.026): 0.065*"method" + 0.044*"produce" + 0.044*"attribute" + 0.044*"mutable" + 0.024*"general" + 0.024*"mutate" + 0.024*"call" + 0.024*"create" + 0.024*"distinct" + 0.024*"factory"
+INFO: topic #4 (0.014): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"foo" + 0.007*"reference" + 0.007*"basic" + 0.007*"dictionary" + 0.007*"instance" + 0.007*"eq" + 0.007*"new"
+INFO: topic diff=0.130862, rho=0.301511
+DEBUG: bound: at document #0
+INFO: -5.246 per-word bound, 38.0 perplexity estimate based on a held-out corpus of 5 documents with 134 words
+INFO: PROGRESS: pass 9, at document #5/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.058078658, 0.10048765, 0.43234286, 0.024717616, 0.013914548]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.058): 0.074*"deep" + 0.042*"immutable" + 0.042*"method" + 0.034*"interior" + 0.034*"change" + 0.026*"container" + 0.026*"tuple" + 0.026*"content" + 0.018*"structure" + 0.018*"slice"
+INFO: topic #1 (0.100): 0.093*"class" + 0.076*"deepcopy" + 0.056*"copy" + 0.054*"answer" + 0.043*"memo" + 0.040*"dictionary" + 0.039*"value" + 0.032*"lots_of_data" + 0.032*"shallow" + 0.017*"place"
+INFO: topic #2 (0.432): 0.157*"copy" + 0.141*"object" + 0.041*"new" + 0.037*"list" + 0.037*"shallow" + 0.033*"reference" + 0.033*"deepcopy" + 0.025*"instance" + 0.021*"original" + 0.019*"memory"
+INFO: topic #3 (0.025): 0.055*"method" + 0.038*"produce" + 0.038*"attribute" + 0.038*"mutable" + 0.021*"general" + 0.021*"call" + 0.021*"altered" + 0.021*"distinct" + 0.021*"factory" + 0.021*"mutate"
+INFO: topic #4 (0.014): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"foo" + 0.007*"reference" + 0.007*"basic" + 0.007*"new" + 0.007*"df" + 0.007*"instance" + 0.007*"dictionary"
+INFO: topic diff=0.127681, rho=0.288675
+DEBUG: bound: at document #0
+INFO: -4.713 per-word bound, 26.2 perplexity estimate based on a held-out corpus of 5 documents with 259 words
+INFO: PROGRESS: pass 9, at document #10/10
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.06586669, 0.108776726, 0.4775022, 0.025550215, 0.013685129]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 10 documents
+INFO: topic #0 (0.066): 0.080*"deep" + 0.045*"immutable" + 0.045*"method" + 0.036*"interior" + 0.036*"change" + 0.028*"container" + 0.028*"tuple" + 0.028*"content" + 0.019*"structure" + 0.019*"slice"
+INFO: topic #1 (0.109): 0.125*"class" + 0.068*"deepcopy" + 0.057*"copy" + 0.057*"answer" + 0.045*"value" + 0.041*"memo" + 0.036*"dictionary" + 0.033*"shallow" + 0.025*"lots_of_data" + 0.014*"solution"
+INFO: topic #2 (0.478): 0.196*"copy" + 0.158*"object" + 0.047*"shallow" + 0.044*"new" + 0.041*"list" + 0.035*"deepcopy" + 0.029*"reference" + 0.026*"original" + 0.022*"instance" + 0.020*"memory"
+INFO: topic #3 (0.026): 0.065*"method" + 0.044*"produce" + 0.044*"attribute" + 0.044*"mutable" + 0.024*"general" + 0.024*"create" + 0.024*"altered" + 0.024*"call" + 0.024*"factory" + 0.024*"distinct"
+INFO: topic #4 (0.014): 0.007*"object" + 0.007*"copy" + 0.007*"deepcopy" + 0.007*"basic" + 0.007*"reference" + 0.007*"foo" + 0.007*"new" + 0.007*"memo" + 0.007*"eq" + 0.007*"df"
+INFO: topic diff=0.124573, rho=0.288675
+DEBUG: starting a new internal lifecycle event log for LdaModel
+INFO: LdaModel lifecycle event {'msg': 'trained LdaModel<num_terms=147, num_topics=5, decay=0.5, chunksize=5> in 0.13s', 'datetime': '2023-04-25T15:14:20.790227', 'gensim': '4.3.1', 'python': '3.9.2 (default, Mar  4 2021, 10:15:47) \n[Clang 10.0.0 (clang-1000.10.44.4)]', 'platform': 'macOS-10.16-x86_64-i386-64bit', 'event': 'created'}
+INFO: generating a 25 x 25 asymmetric distance matrix...
+INFO: the given threshold of None covered on average 86.5% of tokens
+INFO: fitting the clustering model, using 2 for min_samples
+INFO: generating stable topics, using 2 for min_cores
+INFO: found 4 clusters
+INFO: found 4 stable topics
+INFO: generating classic gensim model representation based on results from the ensemble
+INFO: using autotuned alpha, starting with [0.25, 0.25, 0.25, 0.25]
+INFO: using serial LDA version on this node
+INFO: running online (multi-pass) LDA training, 4 topics, 0 passes over the supplied corpus of 10 documents, updating model once every 5 documents, evaluating perplexity every 5 documents, iterating 2000x with a convergence threshold of 0.001000
+WARNING: too few updates, training might not converge; consider increasing the number of passes or iterations to improve accuracy
+DEBUG: starting a new internal lifecycle event log for LdaModel
+INFO: LdaModel lifecycle event {'msg': 'trained LdaModel<num_terms=147, num_topics=4, decay=0.5, chunksize=5> in 0.00s', 'datetime': '2023-04-25T15:14:20.828280', 'gensim': '4.3.1', 'python': '3.9.2 (default, Mar  4 2021, 10:15:47) \n[Clang 10.0.0 (clang-1000.10.44.4)]', 'platform': 'macOS-10.16-x86_64-i386-64bit', 'event': 'created'}
+DEBUG: Setting topics to those of the model: <gensim.models.ensemblelda.EnsembleLda object at 0x131156310>
+INFO: measuring u_mass...
+INFO: Coherence u_mass: -0.5935
+INFO: Coherence u_mass per-topic: [-0.8109813153632977, -0.7126386060894551, -0.47664439176005885, -0.3737551645150541]
+DEBUG: starting a new internal lifecycle event log for EnsembleLda
+INFO: EnsembleLda lifecycle event {'fname_or_handle': 'model/elda/10/model', 'separately': 'None', 'sep_limit': 10485760, 'ignore': frozenset({'topic_model_class'}), 'datetime': '2023-04-25T15:14:20.831341', 'gensim': '4.3.1', 'python': '3.9.2 (default, Mar  4 2021, 10:15:47) \n[Clang 10.0.0 (clang-1000.10.44.4)]', 'platform': 'macOS-10.16-x86_64-i386-64bit', 'event': 'saving'}
+INFO: not storing attribute topic_model_class
+DEBUG: {'uri': 'model/elda/10/model', 'mode': 'wb', 'buffering': -1, 'encoding': None, 'errors': None, 'newline': None, 'closefd': True, 'opener': None, 'compression': 'infer_from_extension', 'transport_params': None}
+INFO: saved model/elda/10/model
+INFO: topic #0 (0.250): 0.125*"class" + 0.073*"deepcopy" + 0.056*"answer" + 0.050*"copy" + 0.049*"dictionary" + 0.045*"value" + 0.041*"memo" + 0.026*"shallow" + 0.025*"lots_of_data" + 0.014*"need"
+INFO: topic #1 (0.250): 0.221*"copy" + 0.159*"object" + 0.057*"shallow" + 0.051*"new" + 0.047*"list" + 0.030*"original" + 0.028*"deepcopy" + 0.017*"deep" + 0.017*"reference" + 0.015*"memory"
+INFO: topic #2 (0.250): 0.061*"deep" + 0.049*"method" + 0.041*"change" + 0.037*"interior" + 0.035*"immutable" + 0.028*"tuple" + 0.028*"container" + 0.027*"mutable" + 0.023*"recursive" + 0.019*"structure"
+INFO: topic #3 (0.250): 0.061*"method" + 0.045*"produce" + 0.043*"attribute" + 0.041*"mutable" + 0.024*"implement" + 0.024*"general" + 0.024*"call" + 0.024*"state" + 0.024*"altered" + 0.024*"factory"
+INFO: Question Similarity: [0.1959053874015808, 0.17413294315338135, 0.0930936336517334, 0.1420188546180725, 0.09221601486206055, 0.1343625783920288, 0.044537901878356934, 0.1096653938293457, 0.12416106462478638, 0.30900347232818604]
+INFO: 42143502: -0.17089373864481058
+INFO: 29398459: -0.2668328793043424
+INFO: 68737463: -0.27614978031913895
+INFO: 56478412: -0.30060572304350397
+INFO: 73328910: -0.3306116421412585
+INFO: 26014778: -0.436118547327371
+INFO: 23581063: -0.4704624042416043
+INFO: 68746763: -0.49638458180962675
+INFO: Recommended Keywords
+INFO: instance score: -0.80253494
+INFO: change score: -0.79557264
+INFO: reference score: -0.77635235
+INFO: original score: -0.75664705
+INFO: function score: -0.7557762
+INFO: method score: -0.7503891
+INFO: need score: -0.7498266
+INFO: source score: -0.7196761
+INFO: whole score: -0.71467155
+INFO: exact score: -0.7074457
+INFO: attribute score: -0.7060859
+INFO: implement score: -0.692709
+INFO: different score: -0.68119043
+INFO: immutable score: -0.67816937
+INFO: produce score: -0.65578026
+INFO: way score: -0.6555655
+INFO: answer score: -0.6487606
+INFO: copy score: -0.63912535
+INFO: difference score: -0.6348515
+INFO: general score: -0.6130455
+INFO: basic score: -0.60997576
+INFO: look score: -0.60185504
+INFO: solution score: -0.59494764
+INFO: object score: -0.5946581
+INFO: element score: -0.59393847
+INFO: point score: -0.5928828
+INFO: item score: -0.58764285
+INFO: new score: -0.5817927
+INFO: memory score: -0.579926
+INFO: avoid score: -0.57221925
+INFO: case score: -0.5665535
+INFO: individual score: -0.5653844
+INFO: deep score: -0.5599021
+INFO: tuple score: -0.5564776
+INFO: doubt score: -0.5562852
+INFO: mutable score: -0.5427931
+INFO: name score: -0.5347166
+INFO: memo score: -0.5335744
+INFO: information score: -0.5142031
+INFO: content score: -0.5139635
+INFO: related score: -0.5097614
+INFO: documentation score: -0.4874215
+INFO: address score: -0.48336306
+INFO: dictionary score: -0.47785035
+INFO: detail score: -0.4698353
+INFO: explanation score: -0.46837246
+INFO: list score: -0.461674
+INFO: help score: -0.45368788
+INFO: test score: -0.43694273
+INFO: nested score: -0.42681178
+INFO: slice score: -0.42230994
+INFO: selection score: -0.41907617
+INFO: copying score: -0.4175345
+INFO: print score: -0.41375446
+INFO: outer score: -0.4108332
+INFO: time score: -0.4069443
+INFO: customize score: -0.40394917
+INFO: interior score: -0.397224
+INFO: class score: -0.38304126
+INFO: independent score: -0.37872073
+INFO: multiple score: -0.37835738
+INFO: variable score: -0.37181437
+INFO: classed score: -0.37079403
+INFO: many score: -0.36010674
+INFO: string score: -0.3540742
+INFO: value score: -0.35142383
+INFO: question score: -0.35073087
+INFO: override score: -0.3488222
+INFO: replica score: -0.34557477
+INFO: module score: -0.34216273
+INFO: datum score: -0.33329514
+INFO: library score: -0.33092242
+INFO: shallow score: -0.32965696
+INFO: field score: -0.30961457
+INFO: pointer score: -0.2965214
+INFO: assignment score: -0.29069972
+INFO: mutate score: -0.2872405
+INFO: import score: -0.2815874
+INFO: container score: -0.2797355
+INFO: right score: -0.27321145
+INFO: board score: -0.25674817
+INFO: work score: -0.24681827
+INFO: recursive score: -0.22055595
+INFO: course score: -0.20708016
+INFO: place score: -0.17032671
+INFO: foo score: -0.16711144
+INFO: several score: -0.16351743
+INFO: nice score: -0.15405068
+INFO: b score: -0.14952976
+INFO: args score: -0.12524624
+INFO: hook score: -0.114832655
+INFO: member score: -0.10458628
+INFO: story score: -0.077893436
+INFO: dict_b score: -0.0
+INFO: deepcopy score: -0.0
+INFO: foo(5 score: -0.0
+INFO: lots_of_data score: -0.0
+INFO: = score: 0.033306137
+INFO: eq score: 0.033733144
+INFO: df score: 0.047667697
+INFO: ============================================================
