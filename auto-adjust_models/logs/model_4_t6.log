@@ -1,0 +1,353 @@
+INFO: ---Start Analyzing---
+INFO: ---Train for 6 Topics---
+INFO: adding document #0 to Dictionary<0 unique tokens: []>
+INFO: built Dictionary<208 unique tokens: ['answer', 'code', 'function', 'global', 'main']...> from 7 documents (total 476 corpus positions)
+DEBUG: starting a new internal lifecycle event log for Dictionary
+INFO: Dictionary lifecycle event {'msg': "built Dictionary<208 unique tokens: ['answer', 'code', 'function', 'global', 'main']...> from 7 documents (total 476 corpus positions)", 'datetime': '2023-04-25T06:36:17.962837', 'gensim': '4.3.1', 'python': '3.9.2 (default, Mar  4 2021, 10:15:47) \n[Clang 10.0.0 (clang-1000.10.44.4)]', 'platform': 'macOS-10.16-x86_64-i386-64bit', 'event': 'created'}
+INFO: using autotuned alpha, starting with [0.16666667, 0.16666667, 0.16666667, 0.16666667, 0.16666667, 0.16666667]
+INFO: using serial LDA version on this node
+INFO: running online (multi-pass) LDA training, 6 topics, 10 passes over the supplied corpus of 7 documents, updating model once every 5 documents, evaluating perplexity every 5 documents, iterating 2000x with a convergence threshold of 0.001000
+DEBUG: bound: at document #0
+INFO: -11.121 per-word bound, 2226.7 perplexity estimate based on a held-out corpus of 5 documents with 135 words
+INFO: PROGRESS: pass 0, at document #5/7
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.05941485, 0.20268561, 0.107691586, 0.059400044, 0.1471382, 0.05947855]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 7 documents
+INFO: topic #0 (0.059): 0.005*"global" + 0.005*"module" + 0.005*"variable" + 0.005*"direction" + 0.005*"file" + 0.005*"import" + 0.005*"definition" + 0.005*"code" + 0.005*"visibility" + 0.005*"database"
+INFO: topic #3 (0.059): 0.005*"global" + 0.005*"module" + 0.005*"file" + 0.005*"variable" + 0.005*"import" + 0.005*"database" + 0.005*"definition" + 0.005*"direction" + 0.005*"code" + 0.005*"visibility"
+INFO: topic #2 (0.108): 0.076*"module" + 0.076*"global" + 0.027*"file" + 0.027*"visibility" + 0.027*"variable" + 0.027*"c" + 0.027*"many" + 0.027*"implementation" + 0.027*"people" + 0.027*"static"
+INFO: topic #4 (0.147): 0.099*"global" + 0.041*"import" + 0.041*"file" + 0.027*"solution" + 0.027*"code" + 0.027*"test" + 0.027*"file2.py" + 0.027*"execute" + 0.027*"copy" + 0.027*"alterd"
+INFO: topic #1 (0.203): 0.056*"global" + 0.048*"module" + 0.044*"variable" + 0.028*"import" + 0.025*"level" + 0.025*"entity" + 0.025*"namespace" + 0.025*"constant" + 0.017*"instance" + 0.017*"first_var"
+INFO: topic diff=4.160748, rho=1.000000
+DEBUG: bound: at document #0
+INFO: -7.857 per-word bound, 231.9 perplexity estimate based on a held-out corpus of 2 documents with 341 words
+INFO: PROGRESS: pass 0, at document #7/7
+DEBUG: performing inference on a chunk of 2 documents
+DEBUG: 2/2 documents converged within 2000 iterations
+INFO: optimized alpha [0.073370785, 0.29809391, 0.16889596, 0.04614564, 0.14436625, 0.04618928]
+DEBUG: updating topics
+INFO: merging changes from 2 documents into a model of 7 documents
+INFO: topic #3 (0.046): 0.005*"global" + 0.005*"module" + 0.005*"file" + 0.005*"variable" + 0.005*"import" + 0.005*"database" + 0.005*"definition" + 0.005*"direction" + 0.005*"code" + 0.005*"visibility"
+INFO: topic #5 (0.046): 0.005*"global" + 0.005*"module" + 0.005*"variable" + 0.005*"file" + 0.005*"import" + 0.005*"visibility" + 0.005*"code" + 0.005*"definition" + 0.005*"database" + 0.005*"problem"
+INFO: topic #4 (0.144): 0.097*"global" + 0.055*"solution" + 0.041*"import" + 0.029*"test" + 0.026*"name" + 0.026*"database" + 0.023*"variable" + 0.020*"file" + 0.012*"scope" + 0.010*"code"
+INFO: topic #2 (0.169): 0.151*"module" + 0.064*"global" + 0.036*"variable" + 0.033*"name" + 0.027*"documentation" + 0.027*"config" + 0.019*"object" + 0.018*"many" + 0.018*"people" + 0.016*"way"
+INFO: topic #1 (0.298): 0.138*"variable" + 0.088*"module" + 0.077*"function" + 0.073*"global" + 0.043*"import" + 0.032*"value" + 0.032*"assign" + 0.028*"access" + 0.027*"local" + 0.021*"example"
+INFO: topic diff=1.879155, rho=0.707107
+DEBUG: bound: at document #0
+DEBUG: bound: at document #5
+INFO: Epoch 0: Perplexity estimate: 52.79747896756312
+DEBUG: Setting topics to those of the model: LdaModel<num_terms=208, num_topics=6, decay=0.5, chunksize=5>
+INFO: Epoch 0: Coherence estimate: -3.1329263481770275
+DEBUG: bound: at document #0
+INFO: -7.517 per-word bound, 183.1 perplexity estimate based on a held-out corpus of 5 documents with 135 words
+INFO: PROGRESS: pass 1, at document #5/7
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.060412563, 0.23882225, 0.12937352, 0.040995784, 0.1370069, 0.041029707]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 7 documents
+INFO: topic #5 (0.041): 0.005*"global" + 0.005*"module" + 0.005*"variable" + 0.005*"file" + 0.005*"import" + 0.005*"visibility" + 0.005*"code" + 0.005*"definition" + 0.005*"database" + 0.005*"problem"
+INFO: topic #3 (0.041): 0.005*"global" + 0.005*"module" + 0.005*"file" + 0.005*"variable" + 0.005*"import" + 0.005*"database" + 0.005*"definition" + 0.005*"direction" + 0.005*"code" + 0.005*"visibility"
+INFO: topic #2 (0.129): 0.130*"module" + 0.068*"global" + 0.034*"variable" + 0.024*"name" + 0.021*"many" + 0.021*"people" + 0.020*"documentation" + 0.020*"config" + 0.014*"object" + 0.014*"file"
+INFO: topic #4 (0.137): 0.095*"global" + 0.043*"import" + 0.042*"solution" + 0.032*"file" + 0.027*"test" + 0.026*"database" + 0.023*"variable" + 0.016*"code" + 0.016*"name" + 0.014*"file2.py"
+INFO: topic #1 (0.239): 0.109*"variable" + 0.077*"module" + 0.068*"global" + 0.057*"function" + 0.037*"import" + 0.025*"value" + 0.025*"assign" + 0.024*"access" + 0.021*"local" + 0.020*"level"
+INFO: topic diff=0.447930, rho=0.542326
+DEBUG: bound: at document #0
+INFO: -5.179 per-word bound, 36.2 perplexity estimate based on a held-out corpus of 2 documents with 341 words
+INFO: PROGRESS: pass 1, at document #7/7
+DEBUG: performing inference on a chunk of 2 documents
+DEBUG: 2/2 documents converged within 2000 iterations
+INFO: optimized alpha [0.071656205, 0.3122619, 0.17406489, 0.036174234, 0.12913428, 0.036200196]
+DEBUG: updating topics
+INFO: merging changes from 2 documents into a model of 7 documents
+INFO: topic #3 (0.036): 0.005*"global" + 0.005*"module" + 0.005*"file" + 0.005*"variable" + 0.005*"import" + 0.005*"database" + 0.005*"definition" + 0.005*"direction" + 0.005*"code" + 0.005*"visibility"
+INFO: topic #5 (0.036): 0.005*"global" + 0.005*"module" + 0.005*"variable" + 0.005*"file" + 0.005*"import" + 0.005*"visibility" + 0.005*"code" + 0.005*"definition" + 0.005*"database" + 0.005*"problem"
+INFO: topic #4 (0.129): 0.084*"solution" + 0.074*"global" + 0.036*"file" + 0.033*"import" + 0.024*"database" + 0.022*"test" + 0.018*"variable" + 0.012*"name" + 0.012*"code" + 0.010*"file2.py"
+INFO: topic #2 (0.174): 0.158*"module" + 0.046*"global" + 0.040*"documentation" + 0.040*"config" + 0.026*"name" + 0.024*"many" + 0.024*"people" + 0.022*"object" + 0.022*"way" + 0.022*"single"
+INFO: topic #1 (0.312): 0.151*"variable" + 0.102*"module" + 0.095*"global" + 0.079*"function" + 0.048*"import" + 0.032*"value" + 0.032*"assign" + 0.028*"access" + 0.027*"local" + 0.022*"example"
+INFO: topic diff=0.421607, rho=0.542326
+DEBUG: bound: at document #0
+DEBUG: bound: at document #5
+INFO: Epoch 1: Perplexity estimate: 46.810747731946144
+DEBUG: Setting topics to those of the model: LdaModel<num_terms=208, num_topics=6, decay=0.5, chunksize=5>
+INFO: Epoch 1: Coherence estimate: -3.1961628343489714
+DEBUG: bound: at document #0
+INFO: -7.156 per-word bound, 142.6 perplexity estimate based on a held-out corpus of 5 documents with 135 words
+INFO: PROGRESS: pass 2, at document #5/7
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.061011918, 0.2824158, 0.13798426, 0.03344635, 0.12702076, 0.0334684]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 7 documents
+INFO: topic #3 (0.033): 0.005*"global" + 0.005*"module" + 0.005*"file" + 0.005*"variable" + 0.005*"import" + 0.005*"database" + 0.005*"definition" + 0.005*"direction" + 0.005*"code" + 0.005*"visibility"
+INFO: topic #5 (0.033): 0.005*"global" + 0.005*"module" + 0.005*"variable" + 0.005*"file" + 0.005*"import" + 0.005*"visibility" + 0.005*"code" + 0.005*"definition" + 0.005*"database" + 0.005*"problem"
+INFO: topic #4 (0.127): 0.083*"global" + 0.056*"solution" + 0.042*"file" + 0.038*"import" + 0.024*"database" + 0.024*"test" + 0.018*"code" + 0.017*"file2.py" + 0.017*"execute" + 0.017*"copy"
+INFO: topic #2 (0.138): 0.134*"module" + 0.055*"global" + 0.029*"config" + 0.029*"documentation" + 0.025*"many" + 0.025*"people" + 0.020*"variable" + 0.019*"name" + 0.016*"object" + 0.016*"single"
+INFO: topic #1 (0.282): 0.124*"variable" + 0.089*"module" + 0.086*"global" + 0.061*"function" + 0.042*"import" + 0.026*"value" + 0.026*"assign" + 0.025*"access" + 0.022*"local" + 0.020*"level"
+INFO: topic diff=0.308409, rho=0.476731
+DEBUG: bound: at document #0
+INFO: -5.053 per-word bound, 33.2 perplexity estimate based on a held-out corpus of 2 documents with 341 words
+INFO: PROGRESS: pass 2, at document #7/7
+DEBUG: performing inference on a chunk of 2 documents
+DEBUG: 2/2 documents converged within 2000 iterations
+INFO: optimized alpha [0.07116805, 0.34967393, 0.17737672, 0.030674176, 0.122678354, 0.030692575]
+DEBUG: updating topics
+INFO: merging changes from 2 documents into a model of 7 documents
+INFO: topic #3 (0.031): 0.005*"global" + 0.005*"module" + 0.005*"file" + 0.005*"variable" + 0.005*"import" + 0.005*"database" + 0.005*"definition" + 0.005*"direction" + 0.005*"code" + 0.005*"visibility"
+INFO: topic #5 (0.031): 0.005*"global" + 0.005*"module" + 0.005*"variable" + 0.005*"file" + 0.005*"import" + 0.005*"visibility" + 0.005*"code" + 0.005*"definition" + 0.005*"database" + 0.005*"problem"
+INFO: topic #4 (0.123): 0.093*"solution" + 0.061*"global" + 0.042*"file" + 0.027*"import" + 0.019*"database" + 0.018*"test" + 0.013*"code" + 0.012*"file2.py" + 0.012*"execute" + 0.012*"copy"
+INFO: topic #2 (0.177): 0.156*"module" + 0.044*"documentation" + 0.044*"config" + 0.038*"global" + 0.025*"many" + 0.025*"people" + 0.024*"way" + 0.024*"single" + 0.023*"name" + 0.023*"object"
+INFO: topic #1 (0.350): 0.157*"variable" + 0.108*"module" + 0.104*"global" + 0.080*"function" + 0.050*"import" + 0.033*"value" + 0.033*"assign" + 0.029*"access" + 0.028*"local" + 0.022*"example"
+INFO: topic diff=0.303377, rho=0.476731
+DEBUG: bound: at document #0
+DEBUG: bound: at document #5
+INFO: Epoch 2: Perplexity estimate: 45.51635549187865
+DEBUG: Setting topics to those of the model: LdaModel<num_terms=208, num_topics=6, decay=0.5, chunksize=5>
+INFO: Epoch 2: Coherence estimate: -3.2019725229337013
+DEBUG: bound: at document #0
+INFO: -7.060 per-word bound, 133.4 perplexity estimate based on a held-out corpus of 5 documents with 135 words
+INFO: PROGRESS: pass 3, at document #5/7
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.062318165, 0.35474852, 0.14674512, 0.029020185, 0.12369278, 0.029036602]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 7 documents
+INFO: topic #3 (0.029): 0.005*"global" + 0.005*"module" + 0.005*"file" + 0.005*"variable" + 0.005*"import" + 0.005*"database" + 0.005*"definition" + 0.005*"direction" + 0.005*"code" + 0.005*"visibility"
+INFO: topic #5 (0.029): 0.005*"global" + 0.005*"module" + 0.005*"variable" + 0.005*"file" + 0.005*"import" + 0.005*"visibility" + 0.005*"code" + 0.005*"definition" + 0.005*"database" + 0.005*"problem"
+INFO: topic #4 (0.124): 0.076*"global" + 0.062*"solution" + 0.045*"file" + 0.033*"import" + 0.021*"test" + 0.020*"database" + 0.019*"code" + 0.018*"file2.py" + 0.018*"execute" + 0.018*"copy"
+INFO: topic #2 (0.147): 0.134*"module" + 0.043*"global" + 0.033*"documentation" + 0.033*"config" + 0.026*"many" + 0.026*"people" + 0.018*"way" + 0.018*"single" + 0.018*"name" + 0.018*"object"
+INFO: topic #1 (0.355): 0.133*"variable" + 0.095*"global" + 0.094*"module" + 0.063*"function" + 0.045*"import" + 0.027*"value" + 0.027*"assign" + 0.026*"access" + 0.023*"local" + 0.020*"level"
+INFO: topic diff=0.204302, rho=0.430331
+DEBUG: bound: at document #0
+INFO: -5.012 per-word bound, 32.3 perplexity estimate based on a held-out corpus of 2 documents with 341 words
+INFO: PROGRESS: pass 3, at document #7/7
+DEBUG: performing inference on a chunk of 2 documents
+DEBUG: 2/2 documents converged within 2000 iterations
+INFO: optimized alpha [0.07177598, 0.41391993, 0.18197502, 0.027171303, 0.12055732, 0.027185634]
+DEBUG: updating topics
+INFO: merging changes from 2 documents into a model of 7 documents
+INFO: topic #5 (0.027): 0.005*"global" + 0.005*"module" + 0.005*"variable" + 0.005*"file" + 0.005*"import" + 0.005*"visibility" + 0.005*"code" + 0.005*"definition" + 0.005*"database" + 0.005*"problem"
+INFO: topic #3 (0.027): 0.005*"global" + 0.005*"module" + 0.005*"file" + 0.005*"variable" + 0.005*"import" + 0.005*"database" + 0.005*"definition" + 0.005*"direction" + 0.005*"code" + 0.005*"visibility"
+INFO: topic #4 (0.121): 0.091*"solution" + 0.055*"global" + 0.042*"file" + 0.024*"import" + 0.016*"test" + 0.016*"database" + 0.014*"code" + 0.013*"file2.py" + 0.013*"execute" + 0.013*"copy"
+INFO: topic #2 (0.182): 0.154*"module" + 0.045*"documentation" + 0.045*"config" + 0.031*"global" + 0.024*"single" + 0.024*"way" + 0.024*"object" + 0.023*"available" + 0.023*"application" + 0.023*"cfg"
+INFO: topic #1 (0.414): 0.159*"variable" + 0.111*"module" + 0.108*"global" + 0.080*"function" + 0.051*"import" + 0.033*"value" + 0.033*"assign" + 0.029*"access" + 0.028*"local" + 0.022*"example"
+INFO: topic diff=0.227275, rho=0.430331
+DEBUG: bound: at document #0
+DEBUG: bound: at document #5
+INFO: Epoch 3: Perplexity estimate: 44.58500782831567
+DEBUG: Setting topics to those of the model: LdaModel<num_terms=208, num_topics=6, decay=0.5, chunksize=5>
+INFO: Epoch 3: Coherence estimate: -2.8409245655428563
+DEBUG: bound: at document #0
+INFO: -7.003 per-word bound, 128.3 perplexity estimate based on a held-out corpus of 5 documents with 135 words
+INFO: PROGRESS: pass 4, at document #5/7
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.06424776, 0.45206153, 0.15645836, 0.026085466, 0.123510376, 0.026098652]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 7 documents
+INFO: topic #3 (0.026): 0.005*"global" + 0.005*"module" + 0.005*"file" + 0.005*"variable" + 0.005*"import" + 0.005*"database" + 0.005*"definition" + 0.005*"direction" + 0.005*"code" + 0.005*"visibility"
+INFO: topic #5 (0.026): 0.005*"global" + 0.005*"module" + 0.005*"variable" + 0.005*"file" + 0.005*"import" + 0.005*"visibility" + 0.005*"code" + 0.005*"definition" + 0.005*"database" + 0.005*"problem"
+INFO: topic #4 (0.124): 0.065*"solution" + 0.059*"global" + 0.046*"file" + 0.026*"import" + 0.019*"file2.py" + 0.019*"execute" + 0.019*"copy" + 0.019*"alterd" + 0.019*"direction" + 0.019*"definition"
+INFO: topic #2 (0.156): 0.133*"module" + 0.035*"global" + 0.035*"config" + 0.035*"documentation" + 0.025*"many" + 0.025*"people" + 0.019*"single" + 0.019*"way" + 0.019*"object" + 0.018*"special"
+INFO: topic #1 (0.452): 0.136*"variable" + 0.101*"global" + 0.097*"module" + 0.065*"function" + 0.047*"import" + 0.028*"value" + 0.028*"assign" + 0.026*"access" + 0.024*"local" + 0.020*"level"
+INFO: topic diff=0.158089, rho=0.395285
+DEBUG: bound: at document #0
+INFO: -4.979 per-word bound, 31.5 perplexity estimate based on a held-out corpus of 2 documents with 341 words
+INFO: PROGRESS: pass 4, at document #7/7
+DEBUG: performing inference on a chunk of 2 documents
+DEBUG: 2/2 documents converged within 2000 iterations
+INFO: optimized alpha [0.072288394, 0.45535773, 0.15051626, 0.02457734, 0.09045248, 0.024589004]
+DEBUG: updating topics
+INFO: merging changes from 2 documents into a model of 7 documents
+INFO: topic #3 (0.025): 0.005*"global" + 0.005*"module" + 0.005*"file" + 0.005*"variable" + 0.005*"import" + 0.005*"database" + 0.005*"definition" + 0.005*"direction" + 0.005*"code" + 0.005*"visibility"
+INFO: topic #5 (0.025): 0.005*"global" + 0.005*"module" + 0.005*"variable" + 0.005*"file" + 0.005*"import" + 0.005*"visibility" + 0.005*"code" + 0.005*"definition" + 0.005*"database" + 0.005*"problem"
+INFO: topic #4 (0.090): 0.047*"solution" + 0.043*"global" + 0.034*"file" + 0.019*"import" + 0.015*"file2.py" + 0.015*"execute" + 0.015*"copy" + 0.015*"alterd" + 0.015*"direction" + 0.015*"definition"
+INFO: topic #2 (0.151): 0.151*"module" + 0.047*"documentation" + 0.047*"config" + 0.026*"global" + 0.025*"single" + 0.025*"way" + 0.024*"object" + 0.024*"cfg" + 0.024*"canonical" + 0.024*"available"
+INFO: topic #1 (0.455): 0.159*"variable" + 0.112*"module" + 0.111*"global" + 0.080*"function" + 0.052*"import" + 0.033*"value" + 0.033*"assign" + 0.029*"access" + 0.028*"local" + 0.022*"example"
+INFO: topic diff=0.196557, rho=0.395285
+DEBUG: bound: at document #0
+DEBUG: bound: at document #5
+INFO: Epoch 4: Perplexity estimate: 43.729170098618226
+DEBUG: Setting topics to those of the model: LdaModel<num_terms=208, num_topics=6, decay=0.5, chunksize=5>
+INFO: Epoch 4: Coherence estimate: -3.687304147105492
+DEBUG: bound: at document #0
+INFO: -6.968 per-word bound, 125.2 perplexity estimate based on a held-out corpus of 5 documents with 135 words
+INFO: PROGRESS: pass 5, at document #5/7
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.0653308, 0.4994042, 0.13639647, 0.023767618, 0.09535674, 0.023778513]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 7 documents
+INFO: topic #3 (0.024): 0.005*"global" + 0.005*"module" + 0.005*"file" + 0.005*"variable" + 0.005*"import" + 0.005*"database" + 0.005*"direction" + 0.005*"definition" + 0.005*"code" + 0.005*"visibility"
+INFO: topic #5 (0.024): 0.005*"global" + 0.005*"module" + 0.005*"variable" + 0.005*"file" + 0.005*"import" + 0.005*"visibility" + 0.005*"code" + 0.005*"definition" + 0.005*"database" + 0.005*"problem"
+INFO: topic #4 (0.095): 0.041*"file" + 0.041*"global" + 0.040*"solution" + 0.021*"file2.py" + 0.021*"copy" + 0.021*"execute" + 0.021*"alterd" + 0.021*"direction" + 0.021*"definition" + 0.021*"problem"
+INFO: topic #2 (0.136): 0.132*"module" + 0.037*"config" + 0.037*"documentation" + 0.028*"global" + 0.020*"single" + 0.020*"way" + 0.019*"object" + 0.019*"available" + 0.019*"canonical" + 0.019*"information"
+INFO: topic #1 (0.499): 0.137*"variable" + 0.106*"global" + 0.099*"module" + 0.065*"function" + 0.048*"import" + 0.028*"assign" + 0.028*"value" + 0.026*"access" + 0.024*"local" + 0.020*"level"
+INFO: topic diff=0.135439, rho=0.367607
+DEBUG: bound: at document #0
+INFO: -4.942 per-word bound, 30.7 perplexity estimate based on a held-out corpus of 2 documents with 341 words
+INFO: PROGRESS: pass 5, at document #7/7
+DEBUG: performing inference on a chunk of 2 documents
+DEBUG: 2/2 documents converged within 2000 iterations
+INFO: optimized alpha [0.07282173, 0.48306894, 0.13507514, 0.022597779, 0.076754525, 0.022607602]
+DEBUG: updating topics
+INFO: merging changes from 2 documents into a model of 7 documents
+INFO: topic #5 (0.023): 0.005*"global" + 0.005*"module" + 0.005*"variable" + 0.005*"file" + 0.005*"import" + 0.005*"visibility" + 0.005*"code" + 0.005*"definition" + 0.005*"database" + 0.005*"problem"
+INFO: topic #3 (0.023): 0.005*"global" + 0.005*"module" + 0.005*"file" + 0.005*"variable" + 0.005*"import" + 0.005*"database" + 0.005*"definition" + 0.005*"code" + 0.005*"direction" + 0.005*"visibility"
+INFO: topic #4 (0.077): 0.030*"file" + 0.030*"global" + 0.030*"solution" + 0.016*"file2.py" + 0.016*"execute" + 0.016*"copy" + 0.016*"alterd" + 0.016*"direction" + 0.016*"definition" + 0.016*"problem"
+INFO: topic #2 (0.135): 0.149*"module" + 0.047*"config" + 0.047*"documentation" + 0.025*"single" + 0.025*"way" + 0.025*"object" + 0.025*"application" + 0.025*"available" + 0.025*"cfg" + 0.025*"special"
+INFO: topic #1 (0.483): 0.158*"variable" + 0.114*"global" + 0.112*"module" + 0.079*"function" + 0.052*"import" + 0.033*"value" + 0.033*"assign" + 0.029*"access" + 0.027*"local" + 0.022*"example"
+INFO: topic diff=0.163763, rho=0.367607
+DEBUG: bound: at document #0
+DEBUG: bound: at document #5
+INFO: Epoch 5: Perplexity estimate: 43.45415523433429
+DEBUG: Setting topics to those of the model: LdaModel<num_terms=208, num_topics=6, decay=0.5, chunksize=5>
+INFO: Epoch 5: Coherence estimate: -4.227407518097228
+DEBUG: bound: at document #0
+INFO: -6.945 per-word bound, 123.2 perplexity estimate based on a held-out corpus of 5 documents with 135 words
+INFO: PROGRESS: pass 6, at document #5/7
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.066289924, 0.52952075, 0.12553419, 0.021964349, 0.08168104, 0.021973621]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 7 documents
+INFO: topic #3 (0.022): 0.005*"global" + 0.005*"module" + 0.005*"file" + 0.005*"variable" + 0.005*"import" + 0.005*"database" + 0.005*"definition" + 0.005*"direction" + 0.005*"code" + 0.005*"visibility"
+INFO: topic #5 (0.022): 0.005*"global" + 0.005*"module" + 0.005*"variable" + 0.005*"file" + 0.005*"import" + 0.005*"visibility" + 0.005*"code" + 0.005*"definition" + 0.005*"database" + 0.005*"problem"
+INFO: topic #4 (0.082): 0.038*"file" + 0.030*"solution" + 0.027*"global" + 0.022*"file2.py" + 0.022*"copy" + 0.022*"execute" + 0.022*"alterd" + 0.022*"direction" + 0.022*"definition" + 0.022*"problem"
+INFO: topic #2 (0.126): 0.131*"module" + 0.038*"config" + 0.038*"documentation" + 0.022*"global" + 0.020*"single" + 0.020*"way" + 0.020*"object" + 0.020*"available" + 0.020*"canonical" + 0.020*"information"
+INFO: topic #1 (0.530): 0.138*"variable" + 0.110*"global" + 0.100*"module" + 0.065*"function" + 0.049*"import" + 0.028*"assign" + 0.028*"value" + 0.026*"access" + 0.024*"local" + 0.020*"level"
+INFO: topic diff=0.127746, rho=0.345033
+DEBUG: bound: at document #0
+INFO: -4.931 per-word bound, 30.5 perplexity estimate based on a held-out corpus of 2 documents with 341 words
+INFO: PROGRESS: pass 6, at document #7/7
+DEBUG: performing inference on a chunk of 2 documents
+DEBUG: 2/2 documents converged within 2000 iterations
+INFO: optimized alpha [0.07328698, 0.49862593, 0.12592319, 0.021018386, 0.068715885, 0.021026857]
+DEBUG: updating topics
+INFO: merging changes from 2 documents into a model of 7 documents
+INFO: topic #3 (0.021): 0.005*"global" + 0.005*"module" + 0.005*"file" + 0.005*"variable" + 0.005*"import" + 0.005*"definition" + 0.005*"database" + 0.005*"direction" + 0.005*"code" + 0.005*"visibility"
+INFO: topic #5 (0.021): 0.005*"global" + 0.005*"module" + 0.005*"variable" + 0.005*"file" + 0.005*"import" + 0.005*"visibility" + 0.005*"code" + 0.005*"definition" + 0.005*"database" + 0.005*"problem"
+INFO: topic #0 (0.073): 0.065*"name" + 0.028*"scope" + 0.022*"explicit" + 0.022*"keyword" + 0.017*"class" + 0.017*"none" + 0.017*"mymodule" + 0.017*"underscores" + 0.017*"var" + 0.017*"object"
+INFO: topic #2 (0.126): 0.148*"module" + 0.048*"config" + 0.048*"documentation" + 0.025*"single" + 0.025*"way" + 0.025*"object" + 0.025*"application" + 0.025*"available" + 0.025*"cfg" + 0.025*"special"
+INFO: topic #1 (0.499): 0.157*"variable" + 0.116*"global" + 0.112*"module" + 0.078*"function" + 0.052*"import" + 0.032*"assign" + 0.032*"value" + 0.029*"access" + 0.027*"local" + 0.022*"example"
+INFO: topic diff=0.144174, rho=0.345033
+DEBUG: bound: at document #0
+DEBUG: bound: at document #5
+INFO: Epoch 6: Perplexity estimate: 43.276854203643275
+DEBUG: Setting topics to those of the model: LdaModel<num_terms=208, num_topics=6, decay=0.5, chunksize=5>
+INFO: Epoch 6: Coherence estimate: -4.214810490757738
+DEBUG: bound: at document #0
+INFO: -6.926 per-word bound, 121.6 perplexity estimate based on a held-out corpus of 5 documents with 135 words
+INFO: PROGRESS: pass 7, at document #5/7
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.067082465, 0.5457177, 0.11870891, 0.020504346, 0.07338148, 0.020512404]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 7 documents
+INFO: topic #3 (0.021): 0.005*"global" + 0.005*"module" + 0.005*"file" + 0.005*"variable" + 0.005*"import" + 0.005*"database" + 0.005*"direction" + 0.005*"definition" + 0.005*"code" + 0.005*"visibility"
+INFO: topic #5 (0.021): 0.005*"global" + 0.005*"module" + 0.005*"variable" + 0.005*"file" + 0.005*"import" + 0.005*"visibility" + 0.005*"code" + 0.005*"definition" + 0.005*"problem" + 0.005*"database"
+INFO: topic #4 (0.073): 0.036*"file" + 0.026*"solution" + 0.022*"direction" + 0.022*"file2.py" + 0.022*"copy" + 0.022*"execute" + 0.022*"alterd" + 0.022*"definition" + 0.022*"problem" + 0.017*"global"
+INFO: topic #2 (0.119): 0.130*"module" + 0.038*"config" + 0.038*"documentation" + 0.020*"single" + 0.020*"way" + 0.020*"object" + 0.020*"application" + 0.020*"available" + 0.020*"cfg" + 0.020*"special"
+INFO: topic #1 (0.546): 0.138*"variable" + 0.112*"global" + 0.101*"module" + 0.065*"function" + 0.049*"import" + 0.028*"assign" + 0.028*"value" + 0.026*"access" + 0.024*"local" + 0.020*"level"
+INFO: topic diff=0.121718, rho=0.326164
+DEBUG: bound: at document #0
+INFO: -4.924 per-word bound, 30.4 perplexity estimate based on a held-out corpus of 2 documents with 341 words
+INFO: PROGRESS: pass 7, at document #7/7
+DEBUG: performing inference on a chunk of 2 documents
+DEBUG: 2/2 documents converged within 2000 iterations
+INFO: optimized alpha [0.07365842, 0.5066511, 0.11987387, 0.019718735, 0.06339248, 0.019726174]
+DEBUG: updating topics
+INFO: merging changes from 2 documents into a model of 7 documents
+INFO: topic #5 (0.020): 0.005*"global" + 0.005*"module" + 0.005*"variable" + 0.005*"file" + 0.005*"import" + 0.005*"visibility" + 0.005*"code" + 0.005*"definition" + 0.005*"database" + 0.005*"problem"
+INFO: topic #3 (0.020): 0.005*"global" + 0.005*"module" + 0.005*"file" + 0.005*"variable" + 0.005*"import" + 0.005*"definition" + 0.005*"database" + 0.005*"direction" + 0.005*"code" + 0.005*"visibility"
+INFO: topic #0 (0.074): 0.065*"name" + 0.028*"scope" + 0.022*"explicit" + 0.022*"keyword" + 0.017*"class" + 0.017*"none" + 0.017*"mymodule" + 0.017*"underscores" + 0.017*"var" + 0.017*"object"
+INFO: topic #2 (0.120): 0.146*"module" + 0.048*"config" + 0.048*"documentation" + 0.025*"single" + 0.025*"way" + 0.025*"object" + 0.025*"application" + 0.025*"available" + 0.025*"cfg" + 0.025*"special"
+INFO: topic #1 (0.507): 0.157*"variable" + 0.117*"global" + 0.112*"module" + 0.078*"function" + 0.052*"import" + 0.032*"assign" + 0.032*"value" + 0.028*"access" + 0.027*"local" + 0.022*"example"
+INFO: topic diff=0.130489, rho=0.326164
+DEBUG: bound: at document #0
+DEBUG: bound: at document #5
+INFO: Epoch 7: Perplexity estimate: 43.13479022767983
+DEBUG: Setting topics to those of the model: LdaModel<num_terms=208, num_topics=6, decay=0.5, chunksize=5>
+INFO: Epoch 7: Coherence estimate: -4.168357467481456
+DEBUG: bound: at document #0
+INFO: -6.909 per-word bound, 120.2 perplexity estimate based on a held-out corpus of 5 documents with 135 words
+INFO: PROGRESS: pass 8, at document #5/7
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.067719564, 0.5532554, 0.114020966, 0.019289957, 0.067768216, 0.019297075]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 7 documents
+INFO: topic #3 (0.019): 0.005*"global" + 0.005*"module" + 0.005*"file" + 0.005*"variable" + 0.005*"import" + 0.005*"approach" + 0.005*"alterd" + 0.005*"definition" + 0.005*"database" + 0.005*"solution"
+INFO: topic #5 (0.019): 0.005*"global" + 0.005*"module" + 0.005*"variable" + 0.005*"file" + 0.005*"import" + 0.005*"visibility" + 0.005*"copy" + 0.005*"definition" + 0.005*"direction" + 0.005*"test"
+INFO: topic #4 (0.068): 0.034*"file" + 0.024*"solution" + 0.023*"direction" + 0.023*"definition" + 0.023*"problem" + 0.023*"copy" + 0.023*"alterd" + 0.023*"execute" + 0.023*"file2.py" + 0.011*"global"
+INFO: topic #2 (0.114): 0.130*"module" + 0.039*"config" + 0.039*"documentation" + 0.021*"single" + 0.021*"way" + 0.021*"object" + 0.021*"application" + 0.021*"available" + 0.021*"cfg" + 0.021*"special"
+INFO: topic #1 (0.553): 0.138*"variable" + 0.113*"global" + 0.101*"module" + 0.066*"function" + 0.050*"import" + 0.028*"assign" + 0.028*"value" + 0.026*"access" + 0.024*"local" + 0.020*"level"
+INFO: topic diff=0.116558, rho=0.310087
+DEBUG: bound: at document #0
+INFO: -4.920 per-word bound, 30.3 perplexity estimate based on a held-out corpus of 2 documents with 341 words
+INFO: PROGRESS: pass 8, at document #7/7
+DEBUG: performing inference on a chunk of 2 documents
+DEBUG: 2/2 documents converged within 2000 iterations
+INFO: optimized alpha [0.07393912, 0.5106093, 0.11558978, 0.01862467, 0.059608337, 0.018631296]
+DEBUG: updating topics
+INFO: merging changes from 2 documents into a model of 7 documents
+INFO: topic #5 (0.019): 0.005*"global" + 0.005*"module" + 0.005*"variable" + 0.005*"file" + 0.005*"database" + 0.005*"problem" + 0.005*"direction" + 0.005*"definition" + 0.005*"test" + 0.005*"import"
+INFO: topic #3 (0.019): 0.005*"global" + 0.005*"module" + 0.005*"file" + 0.005*"database" + 0.005*"direction" + 0.005*"definition" + 0.005*"import" + 0.005*"code" + 0.005*"visibility" + 0.005*"variable"
+INFO: topic #0 (0.074): 0.065*"name" + 0.028*"scope" + 0.022*"explicit" + 0.022*"keyword" + 0.017*"class" + 0.017*"none" + 0.017*"mymodule" + 0.017*"underscores" + 0.017*"var" + 0.017*"object"
+INFO: topic #2 (0.116): 0.145*"module" + 0.048*"config" + 0.048*"documentation" + 0.025*"single" + 0.025*"way" + 0.025*"cfg" + 0.025*"special" + 0.025*"application" + 0.025*"available" + 0.025*"canonical"
+INFO: topic #1 (0.511): 0.156*"variable" + 0.117*"global" + 0.112*"module" + 0.077*"function" + 0.052*"import" + 0.032*"assign" + 0.032*"value" + 0.028*"access" + 0.027*"local" + 0.022*"example"
+INFO: topic diff=0.120476, rho=0.310087
+DEBUG: bound: at document #0
+DEBUG: bound: at document #5
+INFO: Epoch 8: Perplexity estimate: 43.01743728469966
+DEBUG: Setting topics to those of the model: LdaModel<num_terms=208, num_topics=6, decay=0.5, chunksize=5>
+INFO: Epoch 8: Coherence estimate: -4.010312784901813
+DEBUG: bound: at document #0
+INFO: -6.893 per-word bound, 118.9 perplexity estimate based on a held-out corpus of 5 documents with 135 words
+INFO: PROGRESS: pass 9, at document #5/7
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.06822704, 0.5560891, 0.1106116, 0.018259503, 0.063717335, 0.01826587]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 7 documents
+INFO: topic #3 (0.018): 0.005*"global" + 0.005*"module" + 0.005*"direction" + 0.005*"database" + 0.005*"file" + 0.005*"definition" + 0.005*"import" + 0.005*"variable" + 0.005*"code" + 0.005*"test"
+INFO: topic #5 (0.018): 0.005*"global" + 0.005*"module" + 0.005*"variable" + 0.005*"visibility" + 0.005*"import" + 0.005*"file" + 0.005*"code" + 0.005*"definition" + 0.005*"implementation" + 0.005*"approach"
+INFO: topic #0 (0.068): 0.063*"name" + 0.027*"scope" + 0.022*"explicit" + 0.022*"keyword" + 0.016*"class" + 0.016*"none" + 0.016*"mymodule" + 0.016*"underscores" + 0.016*"var" + 0.016*"object"
+INFO: topic #2 (0.111): 0.130*"module" + 0.040*"config" + 0.040*"documentation" + 0.021*"way" + 0.021*"single" + 0.021*"cfg" + 0.021*"special" + 0.021*"application" + 0.021*"available" + 0.021*"canonical"
+INFO: topic #1 (0.556): 0.139*"variable" + 0.114*"global" + 0.102*"module" + 0.066*"function" + 0.050*"import" + 0.028*"assign" + 0.028*"value" + 0.026*"access" + 0.024*"local" + 0.020*"level"
+INFO: topic diff=0.111783, rho=0.296174
+DEBUG: bound: at document #0
+INFO: -4.917 per-word bound, 30.2 perplexity estimate based on a held-out corpus of 2 documents with 341 words
+INFO: PROGRESS: pass 9, at document #7/7
+DEBUG: performing inference on a chunk of 2 documents
+DEBUG: 2/2 documents converged within 2000 iterations
+INFO: optimized alpha [0.07414213, 0.5124831, 0.11240599, 0.017687315, 0.056788445, 0.017693283]
+DEBUG: updating topics
+INFO: merging changes from 2 documents into a model of 7 documents
+INFO: topic #5 (0.018): 0.005*"global" + 0.005*"import" + 0.005*"module" + 0.005*"variable" + 0.005*"file" + 0.005*"problem" + 0.005*"visibility" + 0.005*"answer" + 0.005*"direction" + 0.005*"definition"
+INFO: topic #3 (0.018): 0.005*"global" + 0.005*"file" + 0.005*"module" + 0.005*"variable" + 0.005*"import" + 0.005*"copy" + 0.005*"definition" + 0.005*"database" + 0.005*"solution" + 0.005*"direction"
+INFO: topic #0 (0.074): 0.066*"name" + 0.028*"scope" + 0.022*"explicit" + 0.022*"keyword" + 0.017*"class" + 0.017*"none" + 0.017*"mymodule" + 0.017*"underscores" + 0.017*"var" + 0.017*"object"
+INFO: topic #2 (0.112): 0.144*"module" + 0.048*"config" + 0.048*"documentation" + 0.025*"single" + 0.025*"way" + 0.025*"cfg" + 0.025*"special" + 0.025*"application" + 0.025*"available" + 0.025*"canonical"
+INFO: topic #1 (0.512): 0.155*"variable" + 0.118*"global" + 0.112*"module" + 0.077*"function" + 0.052*"import" + 0.032*"assign" + 0.032*"value" + 0.028*"access" + 0.027*"local" + 0.022*"example"
+INFO: topic diff=0.112790, rho=0.296174
+DEBUG: bound: at document #0
+DEBUG: bound: at document #5
+INFO: Epoch 9: Perplexity estimate: 42.92087809351082
+DEBUG: Setting topics to those of the model: LdaModel<num_terms=208, num_topics=6, decay=0.5, chunksize=5>
+INFO: Epoch 9: Coherence estimate: -4.568198642462825
+DEBUG: starting a new internal lifecycle event log for LdaModel
+INFO: LdaModel lifecycle event {'msg': 'trained LdaModel<num_terms=208, num_topics=6, decay=0.5, chunksize=5> in 0.16s', 'datetime': '2023-04-25T06:36:18.128937', 'gensim': '4.3.1', 'python': '3.9.2 (default, Mar  4 2021, 10:15:47) \n[Clang 10.0.0 (clang-1000.10.44.4)]', 'platform': 'macOS-10.16-x86_64-i386-64bit', 'event': 'created'}
+DEBUG: starting a new internal lifecycle event log for LdaState
+INFO: LdaState lifecycle event {'fname_or_handle': 'auto-adjust_models/models/4/model_t6.state', 'separately': 'None', 'sep_limit': 10485760, 'ignore': frozenset(), 'datetime': '2023-04-25T06:36:18.129093', 'gensim': '4.3.1', 'python': '3.9.2 (default, Mar  4 2021, 10:15:47) \n[Clang 10.0.0 (clang-1000.10.44.4)]', 'platform': 'macOS-10.16-x86_64-i386-64bit', 'event': 'saving'}
+DEBUG: {'uri': 'auto-adjust_models/models/4/model_t6.state', 'mode': 'wb', 'buffering': -1, 'encoding': None, 'errors': None, 'newline': None, 'closefd': True, 'opener': None, 'compression': 'infer_from_extension', 'transport_params': None}
+INFO: saved auto-adjust_models/models/4/model_t6.state
+DEBUG: {'uri': 'auto-adjust_models/models/4/model_t6.id2word', 'mode': 'wb', 'buffering': -1, 'encoding': None, 'errors': None, 'newline': None, 'closefd': True, 'opener': None, 'compression': 'infer_from_extension', 'transport_params': None}
+INFO: LdaModel lifecycle event {'fname_or_handle': 'auto-adjust_models/models/4/model_t6', 'separately': "['expElogbeta', 'sstats']", 'sep_limit': 10485760, 'ignore': ['id2word', 'dispatcher', 'state'], 'datetime': '2023-04-25T06:36:18.131229', 'gensim': '4.3.1', 'python': '3.9.2 (default, Mar  4 2021, 10:15:47) \n[Clang 10.0.0 (clang-1000.10.44.4)]', 'platform': 'macOS-10.16-x86_64-i386-64bit', 'event': 'saving'}
+INFO: storing np array 'expElogbeta' to auto-adjust_models/models/4/model_t6.expElogbeta.npy
+INFO: not storing attribute id2word
+INFO: not storing attribute dispatcher
+INFO: not storing attribute state
+DEBUG: {'uri': 'auto-adjust_models/models/4/model_t6', 'mode': 'wb', 'buffering': -1, 'encoding': None, 'errors': None, 'newline': None, 'closefd': True, 'opener': None, 'compression': 'infer_from_extension', 'transport_params': None}
+INFO: saved auto-adjust_models/models/4/model_t6

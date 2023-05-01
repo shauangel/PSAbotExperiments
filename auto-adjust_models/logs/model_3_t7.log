@@ -1,0 +1,353 @@
+INFO: ---Start Analyzing---
+INFO: ---Train for 7 Topics---
+INFO: adding document #0 to Dictionary<0 unique tokens: []>
+INFO: built Dictionary<193 unique tokens: ['answer', 'array', 'call', 'code', 'context']...> from 9 documents (total 531 corpus positions)
+DEBUG: starting a new internal lifecycle event log for Dictionary
+INFO: Dictionary lifecycle event {'msg': "built Dictionary<193 unique tokens: ['answer', 'array', 'call', 'code', 'context']...> from 9 documents (total 531 corpus positions)", 'datetime': '2023-04-25T06:36:17.375901', 'gensim': '4.3.1', 'python': '3.9.2 (default, Mar  4 2021, 10:15:47) \n[Clang 10.0.0 (clang-1000.10.44.4)]', 'platform': 'macOS-10.16-x86_64-i386-64bit', 'event': 'created'}
+INFO: using autotuned alpha, starting with [0.14285715, 0.14285715, 0.14285715, 0.14285715, 0.14285715, 0.14285715, 0.14285715]
+INFO: using serial LDA version on this node
+INFO: running online (multi-pass) LDA training, 7 topics, 10 passes over the supplied corpus of 9 documents, updating model once every 5 documents, evaluating perplexity every 5 documents, iterating 2000x with a convergence threshold of 0.001000
+DEBUG: bound: at document #0
+INFO: -9.014 per-word bound, 517.1 perplexity estimate based on a held-out corpus of 5 documents with 209 words
+INFO: PROGRESS: pass 0, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.08752134, 0.12904175, 0.043386877, 0.089547485, 0.04339136, 0.04339906, 0.085715085]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #4 (0.043): 0.005*"lambda" + 0.005*"value" + 0.005*"function" + 0.005*"loop" + 0.005*"name" + 0.005*"code" + 0.005*"variable" + 0.005*"final" + 0.005*"parameter" + 0.005*"context"
+INFO: topic #5 (0.043): 0.005*"value" + 0.005*"lambda" + 0.005*"function" + 0.005*"loop" + 0.005*"code" + 0.005*"name" + 0.005*"variable" + 0.005*"parameter" + 0.005*"final" + 0.005*"fix"
+INFO: topic #0 (0.088): 0.119*"value" + 0.069*"function" + 0.052*"lambda" + 0.052*"time" + 0.052*"closure" + 0.035*"last" + 0.035*"loop" + 0.035*"expression" + 0.035*"late" + 0.035*"default"
+INFO: topic #3 (0.090): 0.103*"function" + 0.069*"value" + 0.058*"parameter" + 0.058*"default" + 0.035*"lambda" + 0.024*"simple" + 0.024*"way" + 0.024*"example" + 0.024*"necessary" + 0.024*"object"
+INFO: topic #1 (0.129): 0.114*"lambda" + 0.064*"loop" + 0.051*"value" + 0.039*"code" + 0.039*"context" + 0.039*"name" + 0.026*"function" + 0.026*"time" + 0.026*"last" + 0.026*"parameter"
+INFO: topic diff=5.291991, rho=1.000000
+DEBUG: bound: at document #0
+INFO: -8.054 per-word bound, 265.8 perplexity estimate based on a held-out corpus of 4 documents with 322 words
+INFO: PROGRESS: pass 0, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.101149715, 0.19872558, 0.045560014, 0.13964584, 0.04546876, 0.054368433, 0.09473493]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #4 (0.045): 0.108*"foo" + 0.066*"comprehension" + 0.024*"related" + 0.024*"print" + 0.024*"side" + 0.024*"instance" + 0.024*"early" + 0.024*"map" + 0.024*"bad" + 0.024*"pythonic"
+INFO: topic #2 (0.046): 0.042*"definition" + 0.029*"order" + 0.029*"high" + 0.015*"official" + 0.015*"notice" + 0.015*"builtin" + 0.015*"mean" + 0.015*"option" + 0.015*"local" + 0.015*"printed"
+INFO: topic #0 (0.101): 0.117*"value" + 0.090*"function" + 0.066*"time" + 0.058*"argument" + 0.057*"variable" + 0.050*"lambda" + 0.035*"default" + 0.029*"loop" + 0.021*"closure" + 0.019*"scope"
+INFO: topic #3 (0.140): 0.140*"function" + 0.082*"example" + 0.057*"value" + 0.050*"default" + 0.042*"parameter" + 0.037*"lambda" + 0.032*"way" + 0.028*"variable" + 0.023*"problem" + 0.020*"list"
+INFO: topic #1 (0.199): 0.159*"lambda" + 0.058*"loop" + 0.047*"list" + 0.040*"value" + 0.038*"time" + 0.037*"output" + 0.036*"work" + 0.028*"name" + 0.028*"answer" + 0.028*"function"
+INFO: topic diff=1.997738, rho=0.707107
+DEBUG: bound: at document #0
+DEBUG: bound: at document #5
+INFO: Epoch 0: Perplexity estimate: 40.70268685560826
+DEBUG: Setting topics to those of the model: LdaModel<num_terms=193, num_topics=7, decay=0.5, chunksize=5>
+INFO: Epoch 0: Coherence estimate: -0.6763903813264299
+DEBUG: bound: at document #0
+INFO: -5.370 per-word bound, 41.3 perplexity estimate based on a held-out corpus of 5 documents with 209 words
+INFO: PROGRESS: pass 1, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.086552694, 0.15878353, 0.039573386, 0.10781978, 0.03950602, 0.04585421, 0.08210478]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #4 (0.040): 0.074*"foo" + 0.046*"comprehension" + 0.018*"related" + 0.018*"print" + 0.018*"side" + 0.018*"instance" + 0.018*"early" + 0.018*"map" + 0.018*"bad" + 0.018*"pythonic"
+INFO: topic #2 (0.040): 0.031*"definition" + 0.022*"order" + 0.022*"high" + 0.012*"official" + 0.012*"notice" + 0.012*"builtin" + 0.012*"mean" + 0.012*"option" + 0.012*"local" + 0.012*"printed"
+INFO: topic #0 (0.087): 0.118*"value" + 0.081*"function" + 0.060*"time" + 0.051*"lambda" + 0.041*"argument" + 0.040*"variable" + 0.035*"default" + 0.035*"closure" + 0.032*"loop" + 0.025*"expression"
+INFO: topic #3 (0.108): 0.121*"function" + 0.063*"value" + 0.054*"default" + 0.052*"example" + 0.050*"parameter" + 0.036*"lambda" + 0.028*"way" + 0.020*"simple" + 0.020*"variable" + 0.018*"problem"
+INFO: topic #1 (0.159): 0.140*"lambda" + 0.061*"loop" + 0.045*"value" + 0.033*"time" + 0.033*"name" + 0.032*"output" + 0.032*"list" + 0.032*"code" + 0.027*"function" + 0.026*"work"
+INFO: topic diff=0.563492, rho=0.512989
+DEBUG: bound: at document #0
+INFO: -5.551 per-word bound, 46.9 perplexity estimate based on a held-out corpus of 4 documents with 322 words
+INFO: PROGRESS: pass 1, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.09618878, 0.21453913, 0.041463785, 0.14829859, 0.041280556, 0.05426898, 0.07701385]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #4 (0.041): 0.115*"foo" + 0.068*"comprehension" + 0.025*"full" + 0.025*"small" + 0.025*"map" + 0.025*"related" + 0.025*"instance" + 0.025*"side" + 0.025*"generate" + 0.025*"early"
+INFO: topic #2 (0.041): 0.046*"definition" + 0.032*"high" + 0.032*"order" + 0.017*"idea" + 0.017*"lambdas" + 0.017*"local" + 0.017*"notice" + 0.017*"official" + 0.017*"phone" + 0.017*"parent"
+INFO: topic #0 (0.096): 0.131*"value" + 0.096*"function" + 0.071*"variable" + 0.070*"time" + 0.063*"argument" + 0.051*"lambda" + 0.040*"default" + 0.031*"loop" + 0.025*"scope" + 0.024*"closure"
+INFO: topic #3 (0.148): 0.150*"function" + 0.091*"example" + 0.061*"value" + 0.053*"default" + 0.046*"parameter" + 0.038*"lambda" + 0.038*"way" + 0.035*"variable" + 0.024*"problem" + 0.018*"simple"
+INFO: topic #1 (0.215): 0.179*"lambda" + 0.063*"loop" + 0.054*"list" + 0.042*"value" + 0.042*"time" + 0.041*"output" + 0.038*"work" + 0.030*"name" + 0.029*"answer" + 0.029*"code"
+INFO: topic diff=0.522107, rho=0.512989
+DEBUG: bound: at document #0
+DEBUG: bound: at document #5
+INFO: Epoch 1: Perplexity estimate: 37.03721316224648
+DEBUG: Setting topics to those of the model: LdaModel<num_terms=193, num_topics=7, decay=0.5, chunksize=5>
+INFO: Epoch 1: Coherence estimate: -0.6975212138758204
+DEBUG: bound: at document #0
+INFO: -5.213 per-word bound, 37.1 perplexity estimate based on a held-out corpus of 5 documents with 209 words
+INFO: PROGRESS: pass 2, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.084544376, 0.16939324, 0.03699077, 0.114946306, 0.036846884, 0.046620455, 0.07067086]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #4 (0.037): 0.085*"foo" + 0.051*"comprehension" + 0.020*"full" + 0.020*"small" + 0.020*"map" + 0.020*"related" + 0.020*"instance" + 0.020*"side" + 0.020*"generate" + 0.020*"early"
+INFO: topic #2 (0.037): 0.038*"definition" + 0.027*"high" + 0.027*"order" + 0.015*"idea" + 0.015*"lambdas" + 0.015*"local" + 0.015*"notice" + 0.015*"official" + 0.015*"phone" + 0.015*"parent"
+INFO: topic #0 (0.085): 0.126*"value" + 0.085*"function" + 0.063*"time" + 0.051*"lambda" + 0.050*"variable" + 0.045*"argument" + 0.038*"default" + 0.035*"closure" + 0.032*"loop" + 0.026*"expression"
+INFO: topic #3 (0.115): 0.128*"function" + 0.065*"value" + 0.060*"example" + 0.055*"default" + 0.051*"parameter" + 0.036*"lambda" + 0.031*"way" + 0.024*"variable" + 0.021*"simple" + 0.019*"problem"
+INFO: topic #1 (0.169): 0.153*"lambda" + 0.063*"loop" + 0.046*"value" + 0.038*"list" + 0.036*"time" + 0.035*"output" + 0.034*"name" + 0.033*"code" + 0.028*"work" + 0.027*"function"
+INFO: topic diff=0.407196, rho=0.456435
+DEBUG: bound: at document #0
+INFO: -5.396 per-word bound, 42.1 perplexity estimate based on a held-out corpus of 4 documents with 322 words
+INFO: PROGRESS: pass 2, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.09318921, 0.21968661, 0.038711894, 0.15192187, 0.038478795, 0.054151453, 0.05918973]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #4 (0.038): 0.116*"foo" + 0.069*"comprehension" + 0.025*"full" + 0.025*"small" + 0.025*"map" + 0.025*"related" + 0.025*"instance" + 0.025*"side" + 0.025*"generate" + 0.025*"early"
+INFO: topic #2 (0.039): 0.048*"definition" + 0.033*"high" + 0.033*"order" + 0.017*"idea" + 0.017*"lambdas" + 0.017*"local" + 0.017*"notice" + 0.017*"official" + 0.017*"phone" + 0.017*"parent"
+INFO: topic #0 (0.093): 0.134*"value" + 0.101*"function" + 0.077*"variable" + 0.069*"time" + 0.062*"argument" + 0.051*"lambda" + 0.043*"scope" + 0.041*"default" + 0.032*"loop" + 0.025*"closure"
+INFO: topic #3 (0.152): 0.148*"function" + 0.095*"example" + 0.061*"value" + 0.053*"default" + 0.047*"parameter" + 0.042*"way" + 0.037*"lambda" + 0.037*"variable" + 0.024*"problem" + 0.019*"simple"
+INFO: topic #1 (0.220): 0.186*"lambda" + 0.064*"loop" + 0.057*"list" + 0.043*"value" + 0.043*"time" + 0.042*"output" + 0.038*"work" + 0.031*"name" + 0.031*"code" + 0.030*"answer"
+INFO: topic diff=0.359570, rho=0.456435
+DEBUG: bound: at document #0
+DEBUG: bound: at document #5
+INFO: Epoch 2: Perplexity estimate: 36.26575201467518
+DEBUG: Setting topics to those of the model: LdaModel<num_terms=193, num_topics=7, decay=0.5, chunksize=5>
+INFO: Epoch 2: Coherence estimate: -0.691343721339137
+DEBUG: bound: at document #0
+INFO: -5.176 per-word bound, 36.1 perplexity estimate based on a held-out corpus of 5 documents with 209 words
+INFO: PROGRESS: pass 3, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.08309701, 0.17400546, 0.035097085, 0.11884673, 0.03490729, 0.047093287, 0.056753255]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #4 (0.035): 0.090*"foo" + 0.054*"comprehension" + 0.020*"full" + 0.020*"small" + 0.020*"map" + 0.020*"related" + 0.020*"instance" + 0.020*"side" + 0.020*"generate" + 0.020*"early"
+INFO: topic #2 (0.035): 0.040*"definition" + 0.028*"high" + 0.028*"order" + 0.015*"idea" + 0.015*"lambdas" + 0.015*"local" + 0.015*"notice" + 0.015*"official" + 0.015*"phone" + 0.015*"parent"
+INFO: topic #0 (0.083): 0.128*"value" + 0.089*"function" + 0.063*"time" + 0.055*"variable" + 0.051*"lambda" + 0.046*"argument" + 0.039*"default" + 0.035*"closure" + 0.034*"scope" + 0.033*"loop"
+INFO: topic #3 (0.119): 0.129*"function" + 0.064*"value" + 0.064*"example" + 0.055*"default" + 0.051*"parameter" + 0.036*"lambda" + 0.034*"way" + 0.026*"variable" + 0.021*"simple" + 0.019*"problem"
+INFO: topic #1 (0.174): 0.160*"lambda" + 0.064*"loop" + 0.046*"value" + 0.041*"list" + 0.037*"time" + 0.036*"output" + 0.034*"name" + 0.034*"code" + 0.029*"work" + 0.027*"function"
+INFO: topic diff=0.290167, rho=0.415227
+DEBUG: bound: at document #0
+INFO: -5.349 per-word bound, 40.8 perplexity estimate based on a held-out corpus of 4 documents with 322 words
+INFO: PROGRESS: pass 3, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.09111402, 0.2207665, 0.036716416, 0.15325391, 0.03645355, 0.054028045, 0.05005878]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #4 (0.036): 0.115*"foo" + 0.069*"comprehension" + 0.025*"full" + 0.025*"small" + 0.025*"map" + 0.025*"related" + 0.025*"instance" + 0.025*"side" + 0.025*"generate" + 0.025*"early"
+INFO: topic #2 (0.037): 0.048*"definition" + 0.033*"high" + 0.033*"order" + 0.017*"idea" + 0.017*"lambdas" + 0.017*"local" + 0.017*"notice" + 0.017*"official" + 0.017*"phone" + 0.017*"parent"
+INFO: topic #0 (0.091): 0.135*"value" + 0.103*"function" + 0.078*"variable" + 0.069*"time" + 0.061*"argument" + 0.050*"lambda" + 0.047*"scope" + 0.042*"default" + 0.033*"loop" + 0.026*"closure"
+INFO: topic #3 (0.153): 0.147*"function" + 0.095*"example" + 0.061*"value" + 0.053*"default" + 0.047*"parameter" + 0.043*"way" + 0.037*"variable" + 0.037*"lambda" + 0.024*"problem" + 0.019*"simple"
+INFO: topic #1 (0.221): 0.188*"lambda" + 0.064*"loop" + 0.057*"list" + 0.044*"value" + 0.043*"time" + 0.042*"output" + 0.038*"work" + 0.032*"name" + 0.032*"code" + 0.029*"answer"
+INFO: topic diff=0.264063, rho=0.415227
+DEBUG: bound: at document #0
+DEBUG: bound: at document #5
+INFO: Epoch 3: Perplexity estimate: 36.037667581806026
+DEBUG: Setting topics to those of the model: LdaModel<num_terms=193, num_topics=7, decay=0.5, chunksize=5>
+INFO: Epoch 3: Coherence estimate: -0.69354418857901
+DEBUG: bound: at document #0
+INFO: -5.156 per-word bound, 35.6 perplexity estimate based on a held-out corpus of 5 documents with 209 words
+INFO: PROGRESS: pass 4, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.08211361, 0.17674308, 0.03367309, 0.1214332, 0.033453554, 0.047453705, 0.048966262]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #4 (0.033): 0.092*"foo" + 0.055*"comprehension" + 0.021*"small" + 0.021*"map" + 0.021*"instance" + 0.021*"related" + 0.021*"generate" + 0.021*"side" + 0.021*"full" + 0.021*"callable"
+INFO: topic #2 (0.034): 0.041*"definition" + 0.028*"high" + 0.028*"order" + 0.015*"idea" + 0.015*"lambdas" + 0.015*"local" + 0.015*"notice" + 0.015*"official" + 0.015*"phone" + 0.015*"parent"
+INFO: topic #0 (0.082): 0.130*"value" + 0.092*"function" + 0.063*"time" + 0.058*"variable" + 0.050*"lambda" + 0.047*"argument" + 0.039*"default" + 0.038*"scope" + 0.035*"closure" + 0.034*"loop"
+INFO: topic #3 (0.121): 0.129*"function" + 0.067*"example" + 0.064*"value" + 0.055*"default" + 0.051*"parameter" + 0.036*"lambda" + 0.035*"way" + 0.027*"variable" + 0.021*"simple" + 0.019*"problem"
+INFO: topic #1 (0.177): 0.163*"lambda" + 0.064*"loop" + 0.046*"value" + 0.043*"list" + 0.038*"time" + 0.036*"output" + 0.034*"name" + 0.034*"code" + 0.030*"work" + 0.027*"function"
+INFO: topic diff=0.226513, rho=0.383482
+DEBUG: bound: at document #0
+INFO: -5.330 per-word bound, 40.2 perplexity estimate based on a held-out corpus of 4 documents with 322 words
+INFO: PROGRESS: pass 4, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.089595966, 0.22046387, 0.035190817, 0.15363234, 0.034908697, 0.05390691, 0.044378925]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #4 (0.035): 0.114*"foo" + 0.069*"comprehension" + 0.025*"map" + 0.025*"side" + 0.025*"testobj(1" + 0.025*"early" + 0.025*"related" + 0.025*"effect" + 0.025*"full" + 0.025*"small"
+INFO: topic #2 (0.035): 0.048*"definition" + 0.033*"high" + 0.033*"order" + 0.017*"idea" + 0.017*"lambdas" + 0.017*"local" + 0.017*"notice" + 0.017*"official" + 0.017*"phone" + 0.017*"parent"
+INFO: topic #0 (0.090): 0.135*"value" + 0.105*"function" + 0.078*"variable" + 0.068*"time" + 0.060*"argument" + 0.049*"lambda" + 0.048*"scope" + 0.042*"default" + 0.033*"loop" + 0.026*"closure"
+INFO: topic #3 (0.154): 0.145*"function" + 0.094*"example" + 0.061*"value" + 0.053*"default" + 0.048*"parameter" + 0.044*"way" + 0.036*"variable" + 0.036*"lambda" + 0.024*"problem" + 0.019*"simple"
+INFO: topic #1 (0.220): 0.188*"lambda" + 0.064*"loop" + 0.058*"list" + 0.044*"value" + 0.043*"time" + 0.041*"output" + 0.037*"work" + 0.032*"name" + 0.032*"code" + 0.029*"answer"
+INFO: topic diff=0.218118, rho=0.383482
+DEBUG: bound: at document #0
+DEBUG: bound: at document #5
+INFO: Epoch 4: Perplexity estimate: 35.92167138112203
+DEBUG: Setting topics to those of the model: LdaModel<num_terms=193, num_topics=7, decay=0.5, chunksize=5>
+INFO: Epoch 4: Coherence estimate: -0.69354418857901
+DEBUG: bound: at document #0
+INFO: -5.140 per-word bound, 35.3 perplexity estimate based on a held-out corpus of 5 documents with 209 words
+INFO: PROGRESS: pass 5, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.08140578, 0.17854446, 0.0325539, 0.123271435, 0.032313813, 0.047734603, 0.0438957]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #4 (0.032): 0.093*"foo" + 0.057*"comprehension" + 0.021*"early" + 0.021*"callable" + 0.021*"related" + 0.021*"testobj(1" + 0.021*"side" + 0.021*"generate" + 0.021*"full" + 0.021*"effect"
+INFO: topic #2 (0.033): 0.042*"definition" + 0.029*"high" + 0.029*"order" + 0.015*"idea" + 0.015*"lambdas" + 0.015*"local" + 0.015*"notice" + 0.015*"official" + 0.015*"phone" + 0.015*"parent"
+INFO: topic #0 (0.081): 0.130*"value" + 0.094*"function" + 0.063*"time" + 0.059*"variable" + 0.050*"lambda" + 0.047*"argument" + 0.040*"default" + 0.039*"scope" + 0.034*"closure" + 0.034*"loop"
+INFO: topic #3 (0.123): 0.129*"function" + 0.068*"example" + 0.064*"value" + 0.055*"default" + 0.051*"parameter" + 0.036*"way" + 0.036*"lambda" + 0.027*"variable" + 0.021*"simple" + 0.020*"problem"
+INFO: topic #1 (0.179): 0.165*"lambda" + 0.064*"loop" + 0.046*"value" + 0.044*"list" + 0.038*"time" + 0.037*"output" + 0.034*"name" + 0.034*"code" + 0.030*"work" + 0.027*"function"
+INFO: topic diff=0.196248, rho=0.358057
+DEBUG: bound: at document #0
+INFO: -5.320 per-word bound, 39.9 perplexity estimate based on a held-out corpus of 4 documents with 322 words
+INFO: PROGRESS: pass 5, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.08843805, 0.21968685, 0.033980496, 0.15359403, 0.033685226, 0.0537918, 0.040460497]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #4 (0.034): 0.114*"foo" + 0.069*"comprehension" + 0.025*"early" + 0.025*"side" + 0.025*"small" + 0.025*"testobj(1" + 0.025*"map" + 0.025*"instance" + 0.025*"related" + 0.025*"testobj"
+INFO: topic #2 (0.034): 0.048*"definition" + 0.032*"high" + 0.032*"order" + 0.017*"idea" + 0.017*"lambdas" + 0.017*"local" + 0.017*"notice" + 0.017*"official" + 0.017*"phone" + 0.017*"parent"
+INFO: topic #0 (0.088): 0.135*"value" + 0.106*"function" + 0.078*"variable" + 0.067*"time" + 0.059*"argument" + 0.048*"scope" + 0.048*"lambda" + 0.042*"default" + 0.033*"loop" + 0.027*"closure"
+INFO: topic #3 (0.154): 0.143*"function" + 0.093*"example" + 0.061*"value" + 0.053*"default" + 0.048*"parameter" + 0.044*"way" + 0.036*"variable" + 0.036*"lambda" + 0.024*"problem" + 0.019*"simple"
+INFO: topic #1 (0.220): 0.188*"lambda" + 0.064*"loop" + 0.057*"list" + 0.044*"value" + 0.043*"time" + 0.041*"output" + 0.037*"work" + 0.032*"code" + 0.032*"name" + 0.029*"answer"
+INFO: topic diff=0.193085, rho=0.358057
+DEBUG: bound: at document #0
+DEBUG: bound: at document #5
+INFO: Epoch 5: Perplexity estimate: 35.84653606534534
+DEBUG: Setting topics to those of the model: LdaModel<num_terms=193, num_topics=7, decay=0.5, chunksize=5>
+INFO: Epoch 5: Coherence estimate: -0.704920439177181
+DEBUG: bound: at document #0
+INFO: -5.127 per-word bound, 34.9 perplexity estimate based on a held-out corpus of 5 documents with 209 words
+INFO: PROGRESS: pass 6, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.080874786, 0.17980106, 0.03164681, 0.12464987, 0.03139185, 0.047958847, 0.04029664]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #4 (0.031): 0.094*"foo" + 0.057*"comprehension" + 0.021*"side" + 0.021*"small" + 0.021*"testobj(1" + 0.021*"callable" + 0.021*"early" + 0.021*"related" + 0.021*"map" + 0.021*"effect"
+INFO: topic #2 (0.032): 0.042*"definition" + 0.029*"high" + 0.029*"order" + 0.015*"idea" + 0.015*"lambdas" + 0.015*"local" + 0.015*"notice" + 0.015*"official" + 0.015*"phone" + 0.015*"parent"
+INFO: topic #0 (0.081): 0.131*"value" + 0.095*"function" + 0.063*"time" + 0.060*"variable" + 0.049*"lambda" + 0.047*"argument" + 0.040*"default" + 0.040*"scope" + 0.034*"closure" + 0.034*"loop"
+INFO: topic #3 (0.125): 0.129*"function" + 0.069*"example" + 0.064*"value" + 0.054*"default" + 0.051*"parameter" + 0.037*"way" + 0.035*"lambda" + 0.028*"variable" + 0.021*"simple" + 0.020*"problem"
+INFO: topic #1 (0.180): 0.166*"lambda" + 0.064*"loop" + 0.046*"value" + 0.044*"list" + 0.038*"time" + 0.037*"output" + 0.034*"code" + 0.034*"name" + 0.030*"work" + 0.026*"function"
+INFO: topic diff=0.180173, rho=0.337100
+DEBUG: bound: at document #0
+INFO: -5.313 per-word bound, 39.8 perplexity estimate based on a held-out corpus of 4 documents with 322 words
+INFO: PROGRESS: pass 6, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.08752486, 0.21874061, 0.032993488, 0.1533675, 0.032688867, 0.053683866, 0.037574645]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #4 (0.033): 0.113*"foo" + 0.069*"comprehension" + 0.024*"small" + 0.024*"state" + 0.024*"callable" + 0.024*"map" + 0.024*"early" + 0.024*"instance" + 0.024*"side" + 0.024*"testobj(1"
+INFO: topic #2 (0.033): 0.048*"definition" + 0.032*"order" + 0.032*"high" + 0.017*"x0" + 0.017*"reason" + 0.017*"regular" + 0.017*"rep" + 0.017*"short" + 0.017*"phone" + 0.017*"write"
+INFO: topic #0 (0.088): 0.136*"value" + 0.108*"function" + 0.077*"variable" + 0.067*"time" + 0.059*"argument" + 0.048*"scope" + 0.048*"lambda" + 0.043*"default" + 0.034*"loop" + 0.027*"closure"
+INFO: topic #3 (0.153): 0.142*"function" + 0.093*"example" + 0.061*"value" + 0.053*"default" + 0.048*"parameter" + 0.044*"way" + 0.035*"lambda" + 0.035*"variable" + 0.024*"problem" + 0.020*"simple"
+INFO: topic #1 (0.219): 0.188*"lambda" + 0.064*"loop" + 0.057*"list" + 0.044*"value" + 0.043*"time" + 0.041*"output" + 0.037*"work" + 0.032*"code" + 0.032*"name" + 0.029*"answer"
+INFO: topic diff=0.177156, rho=0.337100
+DEBUG: bound: at document #0
+DEBUG: bound: at document #5
+INFO: Epoch 6: Perplexity estimate: 35.790641488812874
+DEBUG: Setting topics to those of the model: LdaModel<num_terms=193, num_topics=7, decay=0.5, chunksize=5>
+INFO: Epoch 6: Coherence estimate: -0.7268892575864893
+DEBUG: bound: at document #0
+INFO: -5.117 per-word bound, 34.7 perplexity estimate based on a held-out corpus of 5 documents with 209 words
+INFO: PROGRESS: pass 7, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.080466, 0.1807679, 0.03089481, 0.125746, 0.0306287, 0.04814254, 0.037594233]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #4 (0.031): 0.094*"foo" + 0.058*"comprehension" + 0.021*"callable" + 0.021*"early" + 0.021*"full" + 0.021*"testobj(1" + 0.021*"generate" + 0.021*"instance" + 0.021*"map" + 0.021*"effect"
+INFO: topic #2 (0.031): 0.042*"definition" + 0.029*"high" + 0.029*"order" + 0.015*"get_func" + 0.015*"helper" + 0.015*"great" + 0.015*"exec" + 0.015*"func" + 0.015*"def" + 0.015*"documentation"
+INFO: topic #0 (0.080): 0.131*"value" + 0.097*"function" + 0.063*"time" + 0.061*"variable" + 0.049*"lambda" + 0.048*"argument" + 0.041*"default" + 0.040*"scope" + 0.034*"loop" + 0.034*"closure"
+INFO: topic #3 (0.126): 0.129*"function" + 0.070*"example" + 0.063*"value" + 0.054*"default" + 0.051*"parameter" + 0.037*"way" + 0.035*"lambda" + 0.027*"variable" + 0.021*"simple" + 0.020*"problem"
+INFO: topic #1 (0.181): 0.167*"lambda" + 0.064*"loop" + 0.046*"value" + 0.045*"list" + 0.038*"time" + 0.037*"output" + 0.034*"code" + 0.034*"name" + 0.030*"work" + 0.026*"function"
+INFO: topic diff=0.168451, rho=0.319438
+DEBUG: bound: at document #0
+INFO: -5.308 per-word bound, 39.6 perplexity estimate based on a held-out corpus of 4 documents with 322 words
+INFO: PROGRESS: pass 7, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.0867881, 0.21781208, 0.032171626, 0.15308042, 0.03186015, 0.053584278, 0.035351317]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #4 (0.032): 0.112*"foo" + 0.068*"comprehension" + 0.024*"early" + 0.024*"related" + 0.024*"testobj(1" + 0.024*"small" + 0.024*"effect" + 0.024*"generate" + 0.024*"callable" + 0.024*"map"
+INFO: topic #2 (0.032): 0.047*"definition" + 0.032*"order" + 0.032*"high" + 0.017*"rep" + 0.017*"phone" + 0.017*"printed" + 0.017*"reason" + 0.017*"regular" + 0.017*"write" + 0.017*"class"
+INFO: topic #0 (0.087): 0.136*"value" + 0.108*"function" + 0.077*"variable" + 0.066*"time" + 0.058*"argument" + 0.048*"scope" + 0.048*"lambda" + 0.043*"default" + 0.034*"loop" + 0.027*"closure"
+INFO: topic #3 (0.153): 0.141*"function" + 0.092*"example" + 0.060*"value" + 0.053*"default" + 0.048*"parameter" + 0.044*"way" + 0.035*"lambda" + 0.035*"variable" + 0.024*"problem" + 0.020*"simple"
+INFO: topic #1 (0.218): 0.188*"lambda" + 0.063*"loop" + 0.057*"list" + 0.044*"value" + 0.043*"time" + 0.041*"output" + 0.037*"work" + 0.032*"code" + 0.032*"name" + 0.029*"answer"
+INFO: topic diff=0.165364, rho=0.319438
+DEBUG: bound: at document #0
+DEBUG: bound: at document #5
+INFO: Epoch 7: Perplexity estimate: 35.74627564911845
+DEBUG: Setting topics to those of the model: LdaModel<num_terms=193, num_topics=7, decay=0.5, chunksize=5>
+INFO: Epoch 7: Coherence estimate: -0.7268892575864893
+DEBUG: bound: at document #0
+INFO: -5.108 per-word bound, 34.5 perplexity estimate based on a held-out corpus of 5 documents with 209 words
+INFO: PROGRESS: pass 8, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.080146186, 0.18159612, 0.030260442, 0.12665361, 0.029985739, 0.048296914, 0.0354828]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #4 (0.030): 0.095*"foo" + 0.058*"comprehension" + 0.021*"callable" + 0.021*"small" + 0.021*"instance" + 0.021*"side" + 0.021*"generate" + 0.021*"full" + 0.021*"early" + 0.021*"map"
+INFO: topic #2 (0.030): 0.042*"definition" + 0.029*"order" + 0.029*"high" + 0.015*"official" + 0.015*"helper" + 0.015*"hope" + 0.015*"idea" + 0.015*"lambdas" + 0.015*"local" + 0.015*"notice"
+INFO: topic #0 (0.080): 0.131*"value" + 0.098*"function" + 0.062*"time" + 0.062*"variable" + 0.049*"lambda" + 0.048*"argument" + 0.041*"default" + 0.040*"scope" + 0.034*"loop" + 0.034*"closure"
+INFO: topic #3 (0.127): 0.129*"function" + 0.070*"example" + 0.063*"value" + 0.054*"default" + 0.051*"parameter" + 0.038*"way" + 0.035*"lambda" + 0.027*"variable" + 0.021*"simple" + 0.020*"problem"
+INFO: topic #1 (0.182): 0.168*"lambda" + 0.064*"loop" + 0.046*"value" + 0.045*"list" + 0.039*"time" + 0.037*"output" + 0.034*"code" + 0.034*"name" + 0.030*"work" + 0.026*"function"
+INFO: topic diff=0.158996, rho=0.304290
+DEBUG: bound: at document #0
+INFO: -5.305 per-word bound, 39.5 perplexity estimate based on a held-out corpus of 4 documents with 322 words
+INFO: PROGRESS: pass 8, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.086183876, 0.21699655, 0.031475972, 0.15278402, 0.031159347, 0.053493682, 0.03358092]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #4 (0.031): 0.112*"foo" + 0.068*"comprehension" + 0.024*"generate" + 0.024*"instance" + 0.024*"map" + 0.024*"effect" + 0.024*"early" + 0.024*"callable" + 0.024*"full" + 0.024*"small"
+INFO: topic #2 (0.031): 0.047*"definition" + 0.032*"order" + 0.032*"high" + 0.017*"parent" + 0.017*"helper" + 0.017*"hope" + 0.017*"idea" + 0.017*"lambdas" + 0.017*"local" + 0.017*"notice"
+INFO: topic #0 (0.086): 0.136*"value" + 0.109*"function" + 0.077*"variable" + 0.066*"time" + 0.058*"argument" + 0.048*"scope" + 0.047*"lambda" + 0.043*"default" + 0.034*"loop" + 0.027*"closure"
+INFO: topic #3 (0.153): 0.140*"function" + 0.092*"example" + 0.060*"value" + 0.052*"default" + 0.048*"parameter" + 0.044*"way" + 0.035*"lambda" + 0.034*"variable" + 0.024*"problem" + 0.020*"simple"
+INFO: topic #1 (0.217): 0.188*"lambda" + 0.063*"loop" + 0.057*"list" + 0.044*"value" + 0.043*"time" + 0.041*"output" + 0.036*"work" + 0.032*"code" + 0.032*"name" + 0.029*"answer"
+INFO: topic diff=0.155952, rho=0.304290
+DEBUG: bound: at document #0
+DEBUG: bound: at document #5
+INFO: Epoch 8: Perplexity estimate: 35.70997878519462
+DEBUG: Setting topics to those of the model: LdaModel<num_terms=193, num_topics=7, decay=0.5, chunksize=5>
+INFO: Epoch 8: Coherence estimate: -0.7268892575864893
+DEBUG: bound: at document #0
+INFO: -5.100 per-word bound, 34.3 perplexity estimate based on a held-out corpus of 5 documents with 209 words
+INFO: PROGRESS: pass 9, at document #5/9
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.07989158, 0.1822891, 0.02971756, 0.12742628, 0.029436082, 0.048429005, 0.033783153]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 9 documents
+INFO: topic #4 (0.029): 0.095*"foo" + 0.058*"comprehension" + 0.021*"testobj(1" + 0.021*"map" + 0.021*"generate" + 0.021*"full" + 0.021*"effect" + 0.021*"early" + 0.021*"callable" + 0.021*"instance"
+INFO: topic #2 (0.030): 0.043*"definition" + 0.029*"order" + 0.029*"high" + 0.016*"x0" + 0.016*"idea" + 0.016*"lambdas" + 0.016*"local" + 0.016*"notice" + 0.016*"official" + 0.016*"great"
+INFO: topic #0 (0.080): 0.132*"value" + 0.099*"function" + 0.062*"time" + 0.062*"variable" + 0.049*"lambda" + 0.048*"argument" + 0.041*"default" + 0.040*"scope" + 0.034*"loop" + 0.033*"closure"
+INFO: topic #3 (0.127): 0.129*"function" + 0.071*"example" + 0.063*"value" + 0.054*"default" + 0.051*"parameter" + 0.038*"way" + 0.035*"lambda" + 0.027*"variable" + 0.021*"simple" + 0.020*"problem"
+INFO: topic #1 (0.182): 0.169*"lambda" + 0.064*"loop" + 0.046*"value" + 0.046*"list" + 0.039*"time" + 0.037*"output" + 0.034*"code" + 0.034*"name" + 0.031*"work" + 0.026*"function"
+INFO: topic diff=0.150974, rho=0.291111
+DEBUG: bound: at document #0
+INFO: -5.301 per-word bound, 39.4 perplexity estimate based on a held-out corpus of 4 documents with 322 words
+INFO: PROGRESS: pass 9, at document #9/9
+DEBUG: performing inference on a chunk of 4 documents
+DEBUG: 4/4 documents converged within 2000 iterations
+INFO: optimized alpha [0.085679695, 0.21624449, 0.03087895, 0.1524973, 0.03055838, 0.053411208, 0.032134775]
+DEBUG: updating topics
+INFO: merging changes from 4 documents into a model of 9 documents
+INFO: topic #4 (0.031): 0.112*"foo" + 0.068*"comprehension" + 0.024*"map" + 0.024*"early" + 0.024*"callable" + 0.024*"effect" + 0.024*"full" + 0.024*"generate" + 0.024*"instance" + 0.024*"testobj(1"
+INFO: topic #2 (0.031): 0.047*"definition" + 0.032*"high" + 0.032*"order" + 0.017*"write" + 0.017*"local" + 0.017*"helper" + 0.017*"phone" + 0.017*"hope" + 0.017*"idea" + 0.017*"x0"
+INFO: topic #0 (0.086): 0.136*"value" + 0.110*"function" + 0.077*"variable" + 0.066*"time" + 0.057*"argument" + 0.047*"lambda" + 0.047*"scope" + 0.043*"default" + 0.034*"loop" + 0.027*"closure"
+INFO: topic #3 (0.152): 0.139*"function" + 0.092*"example" + 0.060*"value" + 0.052*"default" + 0.048*"parameter" + 0.044*"way" + 0.035*"lambda" + 0.034*"variable" + 0.024*"problem" + 0.020*"simple"
+INFO: topic #1 (0.216): 0.187*"lambda" + 0.063*"loop" + 0.057*"list" + 0.044*"value" + 0.043*"time" + 0.041*"output" + 0.036*"work" + 0.032*"code" + 0.032*"name" + 0.028*"answer"
+INFO: topic diff=0.148095, rho=0.291111
+DEBUG: bound: at document #0
+DEBUG: bound: at document #5
+INFO: Epoch 9: Perplexity estimate: 35.67978124104173
+DEBUG: Setting topics to those of the model: LdaModel<num_terms=193, num_topics=7, decay=0.5, chunksize=5>
+INFO: Epoch 9: Coherence estimate: -0.7303769156457532
+DEBUG: starting a new internal lifecycle event log for LdaModel
+INFO: LdaModel lifecycle event {'msg': 'trained LdaModel<num_terms=193, num_topics=7, decay=0.5, chunksize=5> in 0.17s', 'datetime': '2023-04-25T06:36:17.549420', 'gensim': '4.3.1', 'python': '3.9.2 (default, Mar  4 2021, 10:15:47) \n[Clang 10.0.0 (clang-1000.10.44.4)]', 'platform': 'macOS-10.16-x86_64-i386-64bit', 'event': 'created'}
+DEBUG: starting a new internal lifecycle event log for LdaState
+INFO: LdaState lifecycle event {'fname_or_handle': 'auto-adjust_models/models/3/model_t7.state', 'separately': 'None', 'sep_limit': 10485760, 'ignore': frozenset(), 'datetime': '2023-04-25T06:36:17.549575', 'gensim': '4.3.1', 'python': '3.9.2 (default, Mar  4 2021, 10:15:47) \n[Clang 10.0.0 (clang-1000.10.44.4)]', 'platform': 'macOS-10.16-x86_64-i386-64bit', 'event': 'saving'}
+DEBUG: {'uri': 'auto-adjust_models/models/3/model_t7.state', 'mode': 'wb', 'buffering': -1, 'encoding': None, 'errors': None, 'newline': None, 'closefd': True, 'opener': None, 'compression': 'infer_from_extension', 'transport_params': None}
+INFO: saved auto-adjust_models/models/3/model_t7.state
+DEBUG: {'uri': 'auto-adjust_models/models/3/model_t7.id2word', 'mode': 'wb', 'buffering': -1, 'encoding': None, 'errors': None, 'newline': None, 'closefd': True, 'opener': None, 'compression': 'infer_from_extension', 'transport_params': None}
+INFO: LdaModel lifecycle event {'fname_or_handle': 'auto-adjust_models/models/3/model_t7', 'separately': "['expElogbeta', 'sstats']", 'sep_limit': 10485760, 'ignore': ['id2word', 'dispatcher', 'state'], 'datetime': '2023-04-25T06:36:17.551576', 'gensim': '4.3.1', 'python': '3.9.2 (default, Mar  4 2021, 10:15:47) \n[Clang 10.0.0 (clang-1000.10.44.4)]', 'platform': 'macOS-10.16-x86_64-i386-64bit', 'event': 'saving'}
+INFO: storing np array 'expElogbeta' to auto-adjust_models/models/3/model_t7.expElogbeta.npy
+INFO: not storing attribute id2word
+INFO: not storing attribute dispatcher
+INFO: not storing attribute state
+DEBUG: {'uri': 'auto-adjust_models/models/3/model_t7', 'mode': 'wb', 'buffering': -1, 'encoding': None, 'errors': None, 'newline': None, 'closefd': True, 'opener': None, 'compression': 'infer_from_extension', 'transport_params': None}
+INFO: saved auto-adjust_models/models/3/model_t7
