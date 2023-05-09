@@ -13,6 +13,8 @@ from gensim.corpora.dictionary import Dictionary
 from gensim.models import LdaModel, EnsembleLda, CoherenceModel
 from gensim.models.callbacks import PerplexityMetric, CoherenceMetric
 from itertools import chain
+import json
+import os
 
 
 # TextAnalyze Module: pre-processing word content, ex
@@ -102,6 +104,7 @@ class TextAnalyze:
         dictionary = Dictionary(data)
         corpus = [dictionary.doc2bow(t) for t in data]
 
+
         # setup logger
         perplexity_logger = PerplexityMetric(corpus=corpus, logger='shell')
         u_mass_logger = CoherenceMetric(corpus=corpus, dictionary=dictionary,
@@ -119,12 +122,17 @@ class TextAnalyze:
     # 關聯度評分(舊方法)
     # input(question keywords, pure word of posts' question)
     def old_similarity_ranking(self, question_key, compare_list):
-        # nlp = spacy.load('en_core_web_lg')
-        nlp = spacy.load('en_core_web_sm')
+        nlp = spacy.load('en_core_web_lg')
         # pre-process text
         comp_preproc_list = [self.content_pre_process(content)[0] for content in compare_list]
         # LDA topic modeling
-        lda_model, dictionary = self.lda_topic_modeling(comp_preproc_list, 5)
+        dictionary = Dictionary(comp_preproc_list)
+        corpus = [dictionary.doc2bow(t) for t in comp_preproc_list]
+
+        lda_model = LdaModel(corpus=corpus, id2word=dictionary,
+                             num_topics=5, chunksize=config.CHUNKSIZE, update_every=1,
+                             alpha=config.ALPHA, eta=config.ETA, iterations=config.ITERATION,
+                             per_word_topics=True, eval_every=1, passes=config.PASSES)
 
         # topic prediction
         q_bow = dictionary.doc2bow(question_key)
@@ -249,25 +257,50 @@ def block_ranking(stack_items, qkey):
     ans = [items['answers'] for items in stack_items]
 
     # data pre-process
-    all_content = [[{"id": sing_ans["id"], "content": sing_ans['abstract']}
+    all_content = [[{"id": sing_ans["id"], "content": sing_ans['content']}
                     for sing_ans in q_ans_list] for q_ans_list in ans]
     all_content_flat = list(chain.from_iterable(all_content))
     raw = [t["content"] for t in all_content_flat]
 
     # similarity ranking
-    temp_result = a.similarity_ranking(qkey, raw)
+    temp_result = a.old_similarity_ranking(qkey, raw)
     for i in range(len(all_content_flat)):
         all_content_flat[i]["score"] = temp_result[i]
     rank = sorted(all_content_flat, key=lambda data: data["score"], reverse=True)
     return rank
 
 
+def get_filename():
+    with open("testQ.json", "r", encoding='utf-8') as f:
+        q = json.load(f)
+        q = q['CoreLanguage']
+    filelist = []
+    for i in os.listdir('stack_data'):
+        if "CoreLanguage" in i:
+            filelist.append(i)
+    return q, sorted(filelist)
+
+
 if __name__ == "__main__":
+
+    questions, responses = get_filename()
     analyzer = TextAnalyze()
-    text = "There is, of course, a lot more to the concept of topic model evaluation, " \
-           "and the coherence measure. However, keeping in mind the length, and purpose " \
-           "of this article, let’s apply these concepts into developing a model that is at " \
-           "least better than with the default parameters. Also, we’ll be re-purposing already " \
-           "available online pieces of code to support this exercise instead of " \
-           "re-inventing the wheel."
-    print(analyzer.content_pre_process(text)[0])
+    for idx in range(len(questions)):
+        # set loggers
+        logging.basicConfig(level=config.LOG_MODE, force=True,
+                            filename="logs/old_method/" + str(idx + 1) + "/result.log", filemode='w',
+                            format=config.FORMAT, datefmt=config.DATE_FORMAT)
+        # get parse posts
+        with open("stack_data/" + responses[idx], "r", encoding="utf-8") as raw_file:
+            data = json.load(raw_file)
+            titles = [i['question']['title'] for i in data]
+            raw_file.close()
+
+        # pre-process user question
+        key = analyzer.content_pre_process(questions[idx])[0]
+
+        # start block ranking process
+        r = block_ranking(data, key)
+        for detail in r:
+            print(detail)
+            logging.info(detail)

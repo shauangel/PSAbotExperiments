@@ -1,0 +1,441 @@
+INFO: adding document #0 to Dictionary<0 unique tokens: []>
+INFO: built Dictionary<131 unique tokens: ['code', 'function', 'module', 'order', 'variable']...> from 12 documents (total 318 corpus positions)
+DEBUG: starting a new internal lifecycle event log for Dictionary
+INFO: Dictionary lifecycle event {'msg': "built Dictionary<131 unique tokens: ['code', 'function', 'module', 'order', 'variable']...> from 12 documents (total 318 corpus positions)", 'datetime': '2023-05-09T14:34:59.790354', 'gensim': '4.3.1', 'python': '3.9.0 (tags/v3.9.0:9cf6752, Oct  5 2020, 15:34:40) [MSC v.1927 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.19041-SP0', 'event': 'created'}
+INFO: using autotuned alpha, starting with [0.2, 0.2, 0.2, 0.2, 0.2]
+INFO: using serial LDA version on this node
+INFO: running online (multi-pass) LDA training, 5 topics, 10 passes over the supplied corpus of 12 documents, updating model once every 5 documents, evaluating perplexity every 5 documents, iterating 2000x with a convergence threshold of 0.001000
+DEBUG: bound: at document #0
+INFO: -7.615 per-word bound, 196.1 perplexity estimate based on a held-out corpus of 5 documents with 88 words
+INFO: PROGRESS: pass 0, at document #5/12
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.18938482, 0.07602576, 0.23844022, 0.075968295, 0.0756733]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 12 documents
+INFO: topic #0 (0.189): 0.041*"variable" + 0.041*"import" + 0.041*"namespace" + 0.041*"constant" + 0.041*"entity" + 0.041*"level" + 0.028*"module" + 0.028*"int" + 0.028*"access" + 0.028*"override"
+INFO: topic #1 (0.076): 0.008*"database" + 0.008*"file" + 0.008*"module" + 0.008*"variable" + 0.008*"problem" + 0.008*"global" + 0.008*"import" + 0.008*"code" + 0.008*"function" + 0.008*"direction"
+INFO: topic #2 (0.238): 0.117*"global" + 0.117*"module" + 0.060*"code" + 0.060*"import" + 0.060*"variable" + 0.031*"file" + 0.031*"copy" + 0.031*"execute" + 0.031*"solution" + 0.031*"test"
+INFO: topic #3 (0.076): 0.008*"file" + 0.008*"database" + 0.008*"global" + 0.008*"import" + 0.008*"module" + 0.008*"variable" + 0.008*"code" + 0.008*"problem" + 0.008*"direction" + 0.008*"definition"
+INFO: topic #4 (0.076): 0.008*"database" + 0.008*"file" + 0.008*"module" + 0.008*"global" + 0.008*"import" + 0.008*"variable" + 0.008*"code" + 0.008*"problem" + 0.008*"function" + 0.008*"order"
+INFO: topic diff=3.474828, rho=1.000000
+DEBUG: bound: at document #0
+INFO: -7.106 per-word bound, 137.7 perplexity estimate based on a held-out corpus of 5 documents with 203 words
+INFO: PROGRESS: pass 0, at document #10/12
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.24595241, 0.059748486, 0.35372582, 0.073872335, 0.0726337]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 12 documents
+INFO: topic #0 (0.246): 0.066*"assign" + 0.065*"value" + 0.063*"variable" + 0.060*"access" + 0.044*"level" + 0.040*"import" + 0.035*"module" + 0.035*"example" + 0.034*"namespace" + 0.030*"instance"
+INFO: topic #1 (0.060): 0.008*"database" + 0.008*"file" + 0.008*"module" + 0.008*"variable" + 0.008*"problem" + 0.008*"global" + 0.008*"import" + 0.008*"code" + 0.008*"function" + 0.008*"direction"
+INFO: topic #2 (0.354): 0.176*"module" + 0.141*"function" + 0.101*"variable" + 0.049*"import" + 0.025*"var" + 0.025*"test" + 0.023*"solution" + 0.021*"name" + 0.021*"file" + 0.017*"people"
+INFO: topic #3 (0.074): 0.142*"name" + 0.037*"none" + 0.037*"class" + 0.037*"scope" + 0.037*"mymodule" + 0.025*"default" + 0.025*"store" + 0.025*"imagine" + 0.014*"object" + 0.014*"interpreter"
+INFO: topic #4 (0.073): 0.057*"object" + 0.057*"scope" + 0.030*"answer" + 0.030*"scoping" + 0.030*"bonus" + 0.030*"explicity" + 0.030*"pointer" + 0.030*"python" + 0.030*"implicit" + 0.030*"client"
+INFO: topic diff=1.438865, rho=0.707107
+DEBUG: bound: at document #0
+INFO: -7.075 per-word bound, 134.8 perplexity estimate based on a held-out corpus of 2 documents with 27 words
+INFO: PROGRESS: pass 0, at document #12/12
+DEBUG: performing inference on a chunk of 2 documents
+DEBUG: 2/2 documents converged within 2000 iterations
+INFO: optimized alpha [0.2547964, 0.07357526, 0.49310604, 0.065486774, 0.06452412]
+DEBUG: updating topics
+INFO: merging changes from 2 documents into a model of 12 documents
+INFO: topic #0 (0.255): 0.059*"example" + 0.055*"instance" + 0.048*"state" + 0.046*"assign" + 0.046*"value" + 0.045*"variable" + 0.042*"access" + 0.041*"module" + 0.037*"import" + 0.032*"level"
+INFO: topic #1 (0.074): 0.107*"documentation" + 0.056*"share" + 0.056*"program" + 0.056*"information" + 0.056*"https://docs.python.org/3/faq/programming.html#how-do-i-share-global-variables-across-module" + 0.056*"change" + 0.056*"application" + 0.011*"way" + 0.006*"object" + 0.005*"state"
+INFO: topic #2 (0.493): 0.288*"module" + 0.076*"variable" + 0.074*"function" + 0.044*"import" + 0.032*"name" + 0.025*"line" + 0.025*"code" + 0.024*"object" + 0.021*"way" + 0.014*"var"
+INFO: topic #3 (0.065): 0.109*"name" + 0.030*"mymodule" + 0.030*"none" + 0.030*"class" + 0.030*"scope" + 0.021*"default" + 0.021*"store" + 0.021*"imagine" + 0.012*"line" + 0.012*"way"
+INFO: topic #4 (0.065): 0.036*"object" + 0.036*"scope" + 0.021*"answer" + 0.021*"scoping" + 0.021*"bonus" + 0.021*"explicity" + 0.021*"pointer" + 0.021*"python" + 0.021*"implicit" + 0.021*"client"
+INFO: topic diff=0.690308, rho=0.577350
+DEBUG: bound: at document #0
+INFO: -5.646 per-word bound, 50.1 perplexity estimate based on a held-out corpus of 5 documents with 88 words
+INFO: PROGRESS: pass 1, at document #5/12
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.23668285, 0.06543063, 0.46214145, 0.059024207, 0.058249038]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 12 documents
+INFO: topic #0 (0.237): 0.043*"variable" + 0.040*"import" + 0.039*"instance" + 0.038*"level" + 0.036*"state" + 0.035*"namespace" + 0.034*"access" + 0.033*"module" + 0.032*"example" + 0.030*"constant"
+INFO: topic #1 (0.065): 0.073*"documentation" + 0.039*"share" + 0.039*"program" + 0.039*"information" + 0.039*"https://docs.python.org/3/faq/programming.html#how-do-i-share-global-variables-across-module" + 0.039*"change" + 0.039*"application" + 0.010*"way" + 0.007*"object" + 0.006*"state"
+INFO: topic #2 (0.462): 0.229*"module" + 0.070*"variable" + 0.059*"function" + 0.049*"import" + 0.045*"global" + 0.036*"code" + 0.024*"file" + 0.022*"name" + 0.019*"test" + 0.019*"solution"
+INFO: topic #3 (0.059): 0.080*"name" + 0.023*"mymodule" + 0.023*"none" + 0.023*"class" + 0.023*"scope" + 0.017*"default" + 0.017*"store" + 0.017*"imagine" + 0.011*"line" + 0.011*"way"
+INFO: topic #4 (0.058): 0.025*"object" + 0.025*"scope" + 0.016*"answer" + 0.016*"scoping" + 0.016*"bonus" + 0.016*"explicity" + 0.016*"pointer" + 0.016*"python" + 0.016*"implicit" + 0.016*"client"
+INFO: topic diff=0.458065, rho=0.476731
+DEBUG: bound: at document #0
+INFO: -5.253 per-word bound, 38.1 perplexity estimate based on a held-out corpus of 5 documents with 203 words
+INFO: PROGRESS: pass 1, at document #10/12
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.28113866, 0.05828452, 0.56982225, 0.06030571, 0.059161495]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 12 documents
+INFO: topic #0 (0.281): 0.064*"assign" + 0.062*"value" + 0.059*"access" + 0.056*"variable" + 0.045*"level" + 0.044*"import" + 0.041*"example" + 0.037*"instance" + 0.035*"namespace" + 0.030*"module"
+INFO: topic #1 (0.058): 0.047*"documentation" + 0.027*"share" + 0.027*"program" + 0.027*"information" + 0.027*"https://docs.python.org/3/faq/programming.html#how-do-i-share-global-variables-across-module" + 0.027*"change" + 0.027*"application" + 0.009*"way" + 0.007*"object" + 0.007*"state"
+INFO: topic #2 (0.570): 0.215*"module" + 0.126*"function" + 0.102*"variable" + 0.048*"import" + 0.025*"var" + 0.023*"file" + 0.021*"test" + 0.021*"solution" + 0.019*"name" + 0.018*"global"
+INFO: topic #3 (0.060): 0.134*"name" + 0.038*"mymodule" + 0.038*"none" + 0.038*"class" + 0.038*"scope" + 0.026*"default" + 0.026*"imagine" + 0.026*"store" + 0.014*"mymodule.something" + 0.014*"minimize"
+INFO: topic #4 (0.059): 0.055*"scope" + 0.042*"object" + 0.031*"client" + 0.031*"bonus" + 0.031*"explicity" + 0.031*"pointer" + 0.031*"python" + 0.031*"scoping" + 0.031*"implicit" + 0.031*"helper"
+INFO: topic diff=0.498755, rho=0.476731
+DEBUG: bound: at document #0
+INFO: -5.407 per-word bound, 42.4 perplexity estimate based on a held-out corpus of 2 documents with 27 words
+INFO: PROGRESS: pass 1, at document #12/12
+DEBUG: performing inference on a chunk of 2 documents
+DEBUG: 2/2 documents converged within 2000 iterations
+INFO: optimized alpha [0.2877781, 0.070339136, 0.7230884, 0.05630023, 0.055305805]
+DEBUG: updating topics
+INFO: merging changes from 2 documents into a model of 12 documents
+INFO: topic #0 (0.288): 0.062*"example" + 0.059*"instance" + 0.051*"state" + 0.049*"assign" + 0.049*"value" + 0.046*"access" + 0.044*"variable" + 0.041*"import" + 0.035*"level" + 0.031*"module"
+INFO: topic #1 (0.070): 0.122*"documentation" + 0.063*"share" + 0.063*"program" + 0.063*"information" + 0.063*"https://docs.python.org/3/faq/programming.html#how-do-i-share-global-variables-across-module" + 0.063*"change" + 0.063*"application" + 0.008*"way" + 0.005*"state" + 0.005*"object"
+INFO: topic #2 (0.723): 0.303*"module" + 0.082*"variable" + 0.076*"function" + 0.045*"import" + 0.031*"name" + 0.030*"object" + 0.028*"line" + 0.027*"code" + 0.026*"way" + 0.015*"var"
+INFO: topic #3 (0.056): 0.110*"name" + 0.033*"mymodule" + 0.033*"none" + 0.033*"class" + 0.032*"scope" + 0.023*"default" + 0.023*"imagine" + 0.023*"store" + 0.013*"mymodule.something" + 0.013*"minimize"
+INFO: topic #4 (0.055): 0.039*"scope" + 0.031*"object" + 0.023*"client" + 0.023*"bonus" + 0.023*"explicity" + 0.023*"pointer" + 0.023*"python" + 0.023*"scoping" + 0.023*"implicit" + 0.023*"helper"
+INFO: topic diff=0.372897, rho=0.476731
+DEBUG: bound: at document #0
+INFO: -5.496 per-word bound, 45.1 perplexity estimate based on a held-out corpus of 5 documents with 88 words
+INFO: PROGRESS: pass 2, at document #5/12
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.26536185, 0.06398863, 0.62280285, 0.05222136, 0.051369123]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 12 documents
+INFO: topic #0 (0.265): 0.042*"variable" + 0.041*"import" + 0.041*"instance" + 0.039*"level" + 0.038*"state" + 0.036*"namespace" + 0.036*"access" + 0.034*"example" + 0.030*"constant" + 0.030*"entity"
+INFO: topic #1 (0.064): 0.090*"documentation" + 0.048*"share" + 0.048*"program" + 0.048*"information" + 0.048*"https://docs.python.org/3/faq/programming.html#how-do-i-share-global-variables-across-module" + 0.048*"change" + 0.048*"application" + 0.008*"way" + 0.006*"state" + 0.006*"object"
+INFO: topic #2 (0.623): 0.246*"module" + 0.075*"variable" + 0.062*"function" + 0.049*"import" + 0.043*"global" + 0.037*"code" + 0.027*"file" + 0.022*"name" + 0.021*"object" + 0.020*"line"
+INFO: topic #3 (0.052): 0.087*"name" + 0.027*"mymodule" + 0.027*"none" + 0.027*"class" + 0.026*"scope" + 0.019*"default" + 0.019*"imagine" + 0.019*"store" + 0.012*"mymodule.something" + 0.012*"minimize"
+INFO: topic #4 (0.051): 0.029*"scope" + 0.023*"object" + 0.018*"client" + 0.018*"bonus" + 0.018*"explicity" + 0.018*"pointer" + 0.018*"python" + 0.018*"scoping" + 0.018*"implicit" + 0.018*"helper"
+INFO: topic diff=0.352330, rho=0.430331
+DEBUG: bound: at document #0
+INFO: -5.134 per-word bound, 35.1 perplexity estimate based on a held-out corpus of 5 documents with 203 words
+INFO: PROGRESS: pass 2, at document #10/12
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.30759928, 0.058095545, 0.7185554, 0.0538353, 0.052712366]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 12 documents
+INFO: topic #0 (0.308): 0.063*"assign" + 0.062*"value" + 0.059*"access" + 0.053*"variable" + 0.046*"level" + 0.046*"import" + 0.043*"example" + 0.039*"instance" + 0.036*"namespace" + 0.029*"state"
+INFO: topic #1 (0.058): 0.063*"documentation" + 0.034*"share" + 0.034*"program" + 0.034*"information" + 0.034*"https://docs.python.org/3/faq/programming.html#how-do-i-share-global-variables-across-module" + 0.034*"change" + 0.034*"application" + 0.008*"way" + 0.006*"state" + 0.006*"object"
+INFO: topic #2 (0.719): 0.224*"module" + 0.121*"function" + 0.103*"variable" + 0.048*"import" + 0.024*"file" + 0.024*"var" + 0.021*"solution" + 0.021*"object" + 0.020*"test" + 0.019*"global"
+INFO: topic #3 (0.054): 0.134*"name" + 0.039*"mymodule" + 0.039*"none" + 0.039*"class" + 0.038*"scope" + 0.026*"default" + 0.026*"imagine" + 0.026*"store" + 0.014*"mymodule.something" + 0.014*"minimize"
+INFO: topic #4 (0.053): 0.056*"scope" + 0.035*"object" + 0.030*"client" + 0.030*"bonus" + 0.030*"explicity" + 0.030*"pointer" + 0.030*"python" + 0.030*"scoping" + 0.030*"implicit" + 0.030*"helper"
+INFO: topic diff=0.418269, rho=0.430331
+DEBUG: bound: at document #0
+INFO: -5.245 per-word bound, 37.9 perplexity estimate based on a held-out corpus of 2 documents with 27 words
+INFO: PROGRESS: pass 2, at document #12/12
+DEBUG: performing inference on a chunk of 2 documents
+DEBUG: 2/2 documents converged within 2000 iterations
+INFO: optimized alpha [0.31301966, 0.06919629, 0.86807954, 0.051130176, 0.05011847]
+DEBUG: updating topics
+INFO: merging changes from 2 documents into a model of 12 documents
+INFO: topic #0 (0.313): 0.061*"example" + 0.058*"instance" + 0.051*"assign" + 0.050*"state" + 0.050*"value" + 0.047*"access" + 0.043*"variable" + 0.042*"import" + 0.037*"level" + 0.030*"namespace"
+INFO: topic #1 (0.069): 0.124*"documentation" + 0.064*"program" + 0.064*"information" + 0.064*"https://docs.python.org/3/faq/programming.html#how-do-i-share-global-variables-across-module" + 0.064*"share" + 0.064*"change" + 0.064*"application" + 0.006*"way" + 0.005*"state" + 0.005*"instance"
+INFO: topic #2 (0.868): 0.303*"module" + 0.085*"variable" + 0.079*"function" + 0.045*"import" + 0.032*"object" + 0.030*"name" + 0.028*"line" + 0.027*"code" + 0.027*"way" + 0.016*"file"
+INFO: topic #3 (0.051): 0.113*"name" + 0.034*"mymodule" + 0.034*"none" + 0.034*"class" + 0.033*"scope" + 0.023*"default" + 0.023*"imagine" + 0.023*"store" + 0.013*"mymodule.something" + 0.013*"minimize"
+INFO: topic #4 (0.050): 0.042*"scope" + 0.027*"object" + 0.024*"client" + 0.024*"bonus" + 0.024*"explicity" + 0.024*"pointer" + 0.024*"python" + 0.024*"scoping" + 0.024*"implicit" + 0.024*"helper"
+INFO: topic diff=0.301024, rho=0.430331
+DEBUG: bound: at document #0
+INFO: -5.435 per-word bound, 43.3 perplexity estimate based on a held-out corpus of 5 documents with 88 words
+INFO: PROGRESS: pass 3, at document #5/12
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.28713363, 0.06368912, 0.7233883, 0.048113856, 0.0472199]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 12 documents
+INFO: topic #0 (0.287): 0.042*"instance" + 0.042*"import" + 0.042*"variable" + 0.040*"level" + 0.038*"state" + 0.037*"access" + 0.036*"namespace" + 0.036*"example" + 0.031*"assign" + 0.031*"value"
+INFO: topic #1 (0.064): 0.095*"documentation" + 0.050*"program" + 0.050*"information" + 0.050*"https://docs.python.org/3/faq/programming.html#how-do-i-share-global-variables-across-module" + 0.050*"share" + 0.050*"change" + 0.050*"application" + 0.007*"way" + 0.006*"state" + 0.005*"instance"
+INFO: topic #2 (0.723): 0.252*"module" + 0.078*"variable" + 0.065*"function" + 0.049*"import" + 0.041*"global" + 0.036*"code" + 0.028*"file" + 0.023*"object" + 0.022*"name" + 0.021*"line"
+INFO: topic #3 (0.048): 0.092*"name" + 0.028*"mymodule" + 0.028*"none" + 0.028*"class" + 0.028*"scope" + 0.020*"default" + 0.020*"imagine" + 0.020*"store" + 0.012*"mymodule.something" + 0.012*"minimize"
+INFO: topic #4 (0.047): 0.031*"scope" + 0.021*"object" + 0.019*"client" + 0.019*"bonus" + 0.019*"explicity" + 0.019*"pointer" + 0.019*"python" + 0.019*"scoping" + 0.019*"implicit" + 0.019*"helper"
+INFO: topic diff=0.293590, rho=0.395285
+DEBUG: bound: at document #0
+INFO: -5.071 per-word bound, 33.6 perplexity estimate based on a held-out corpus of 5 documents with 203 words
+INFO: PROGRESS: pass 3, at document #10/12
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.3262374, 0.058430612, 0.8029706, 0.049732238, 0.048620768]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 12 documents
+INFO: topic #0 (0.326): 0.063*"assign" + 0.061*"value" + 0.059*"access" + 0.051*"variable" + 0.046*"level" + 0.046*"import" + 0.044*"example" + 0.040*"instance" + 0.037*"namespace" + 0.031*"state"
+INFO: topic #1 (0.058): 0.070*"documentation" + 0.038*"program" + 0.038*"information" + 0.038*"https://docs.python.org/3/faq/programming.html#how-do-i-share-global-variables-across-module" + 0.038*"share" + 0.038*"change" + 0.038*"application" + 0.007*"way" + 0.006*"state" + 0.006*"instance"
+INFO: topic #2 (0.803): 0.228*"module" + 0.118*"function" + 0.104*"variable" + 0.048*"import" + 0.025*"file" + 0.024*"var" + 0.023*"object" + 0.020*"solution" + 0.020*"test" + 0.019*"global"
+INFO: topic #3 (0.050): 0.133*"name" + 0.039*"mymodule" + 0.039*"none" + 0.039*"class" + 0.038*"scope" + 0.026*"default" + 0.026*"imagine" + 0.026*"store" + 0.014*"mymodule.something" + 0.014*"minimize"
+INFO: topic #4 (0.049): 0.056*"scope" + 0.030*"client" + 0.030*"bonus" + 0.030*"explicity" + 0.030*"pointer" + 0.030*"python" + 0.030*"scoping" + 0.030*"implicit" + 0.030*"policy" + 0.030*"helper"
+INFO: topic diff=0.360262, rho=0.395285
+DEBUG: bound: at document #0
+INFO: -5.180 per-word bound, 36.3 perplexity estimate based on a held-out corpus of 2 documents with 27 words
+INFO: PROGRESS: pass 3, at document #12/12
+DEBUG: performing inference on a chunk of 2 documents
+DEBUG: 2/2 documents converged within 2000 iterations
+INFO: optimized alpha [0.32993934, 0.06876652, 0.9429339, 0.047670618, 0.046649948]
+DEBUG: updating topics
+INFO: merging changes from 2 documents into a model of 12 documents
+INFO: topic #0 (0.330): 0.060*"example" + 0.057*"instance" + 0.052*"assign" + 0.051*"value" + 0.049*"state" + 0.048*"access" + 0.043*"import" + 0.042*"variable" + 0.038*"level" + 0.031*"namespace"
+INFO: topic #1 (0.069): 0.124*"documentation" + 0.064*"program" + 0.064*"information" + 0.064*"https://docs.python.org/3/faq/programming.html#how-do-i-share-global-variables-across-module" + 0.064*"share" + 0.064*"change" + 0.064*"application" + 0.005*"way" + 0.005*"state" + 0.005*"instance"
+INFO: topic #2 (0.943): 0.299*"module" + 0.087*"variable" + 0.080*"function" + 0.046*"import" + 0.032*"object" + 0.029*"name" + 0.027*"line" + 0.027*"code" + 0.027*"way" + 0.017*"file"
+INFO: topic #3 (0.048): 0.115*"name" + 0.034*"mymodule" + 0.034*"none" + 0.034*"class" + 0.034*"scope" + 0.024*"default" + 0.024*"imagine" + 0.024*"store" + 0.013*"mymodule.something" + 0.013*"minimize"
+INFO: topic #4 (0.047): 0.043*"scope" + 0.024*"client" + 0.024*"bonus" + 0.024*"explicity" + 0.024*"pointer" + 0.024*"python" + 0.024*"scoping" + 0.024*"implicit" + 0.024*"policy" + 0.024*"helper"
+INFO: topic diff=0.265305, rho=0.395285
+DEBUG: bound: at document #0
+INFO: -5.399 per-word bound, 42.2 perplexity estimate based on a held-out corpus of 5 documents with 88 words
+INFO: PROGRESS: pass 4, at document #5/12
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.30257773, 0.06378735, 0.7855458, 0.045269314, 0.04435004]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 12 documents
+INFO: topic #0 (0.303): 0.043*"instance" + 0.042*"import" + 0.041*"variable" + 0.040*"level" + 0.039*"state" + 0.038*"access" + 0.037*"example" + 0.037*"namespace" + 0.033*"assign" + 0.032*"value"
+INFO: topic #1 (0.064): 0.097*"documentation" + 0.051*"program" + 0.051*"information" + 0.051*"https://docs.python.org/3/faq/programming.html#how-do-i-share-global-variables-across-module" + 0.051*"share" + 0.051*"change" + 0.051*"application" + 0.006*"way" + 0.006*"state" + 0.005*"instance"
+INFO: topic #2 (0.786): 0.254*"module" + 0.080*"variable" + 0.067*"function" + 0.049*"import" + 0.040*"global" + 0.036*"code" + 0.027*"file" + 0.024*"object" + 0.022*"name" + 0.021*"line"
+INFO: topic #3 (0.045): 0.096*"name" + 0.029*"mymodule" + 0.029*"none" + 0.029*"class" + 0.029*"scope" + 0.021*"default" + 0.021*"imagine" + 0.021*"store" + 0.012*"mymodule.something" + 0.012*"minimize"
+INFO: topic #4 (0.044): 0.033*"scope" + 0.019*"client" + 0.019*"bonus" + 0.019*"explicity" + 0.019*"pointer" + 0.019*"python" + 0.019*"scoping" + 0.019*"implicit" + 0.019*"policy" + 0.019*"helper"
+INFO: topic diff=0.260869, rho=0.367607
+DEBUG: bound: at document #0
+INFO: -5.034 per-word bound, 32.8 perplexity estimate based on a held-out corpus of 5 documents with 203 words
+INFO: PROGRESS: pass 4, at document #10/12
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.33865577, 0.058929056, 0.85215366, 0.046822816, 0.045719646]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 12 documents
+INFO: topic #0 (0.339): 0.062*"assign" + 0.061*"value" + 0.058*"access" + 0.049*"variable" + 0.046*"level" + 0.045*"import" + 0.044*"example" + 0.041*"instance" + 0.037*"namespace" + 0.031*"state"
+INFO: topic #1 (0.059): 0.073*"documentation" + 0.039*"program" + 0.039*"information" + 0.039*"https://docs.python.org/3/faq/programming.html#how-do-i-share-global-variables-across-module" + 0.039*"share" + 0.039*"change" + 0.039*"application" + 0.006*"way" + 0.006*"state" + 0.006*"instance"
+INFO: topic #2 (0.852): 0.231*"module" + 0.115*"function" + 0.104*"variable" + 0.048*"import" + 0.025*"file" + 0.024*"object" + 0.023*"var" + 0.020*"solution" + 0.020*"global" + 0.020*"test"
+INFO: topic #3 (0.047): 0.133*"name" + 0.038*"mymodule" + 0.038*"none" + 0.038*"class" + 0.038*"scope" + 0.026*"default" + 0.026*"imagine" + 0.026*"store" + 0.014*"mymodule.something" + 0.014*"minimize"
+INFO: topic #4 (0.046): 0.055*"scope" + 0.030*"client" + 0.030*"bonus" + 0.030*"explicity" + 0.030*"pointer" + 0.030*"python" + 0.030*"scoping" + 0.030*"implicit" + 0.030*"policy" + 0.030*"helper"
+INFO: topic diff=0.322695, rho=0.367607
+DEBUG: bound: at document #0
+INFO: -5.142 per-word bound, 35.3 perplexity estimate based on a held-out corpus of 2 documents with 27 words
+INFO: PROGRESS: pass 4, at document #12/12
+DEBUG: performing inference on a chunk of 2 documents
+DEBUG: 2/2 documents converged within 2000 iterations
+INFO: optimized alpha [0.3409345, 0.06865229, 0.9827694, 0.045147218, 0.044121835]
+DEBUG: updating topics
+INFO: merging changes from 2 documents into a model of 12 documents
+INFO: topic #0 (0.341): 0.059*"example" + 0.056*"instance" + 0.052*"assign" + 0.051*"value" + 0.049*"access" + 0.049*"state" + 0.043*"import" + 0.041*"variable" + 0.039*"level" + 0.031*"namespace"
+INFO: topic #1 (0.069): 0.122*"documentation" + 0.063*"program" + 0.063*"information" + 0.063*"https://docs.python.org/3/faq/programming.html#how-do-i-share-global-variables-across-module" + 0.063*"share" + 0.063*"change" + 0.063*"application" + 0.005*"state" + 0.005*"way" + 0.005*"instance"
+INFO: topic #2 (0.983): 0.297*"module" + 0.088*"variable" + 0.081*"function" + 0.046*"import" + 0.032*"object" + 0.028*"name" + 0.027*"code" + 0.027*"line" + 0.026*"way" + 0.018*"file"
+INFO: topic #3 (0.045): 0.116*"name" + 0.034*"mymodule" + 0.034*"none" + 0.034*"class" + 0.034*"scope" + 0.024*"default" + 0.024*"imagine" + 0.024*"store" + 0.013*"mymodule.something" + 0.013*"minimize"
+INFO: topic #4 (0.044): 0.044*"scope" + 0.024*"client" + 0.024*"bonus" + 0.024*"explicity" + 0.024*"pointer" + 0.024*"python" + 0.024*"scoping" + 0.024*"implicit" + 0.024*"policy" + 0.024*"helper"
+INFO: topic diff=0.245666, rho=0.367607
+DEBUG: bound: at document #0
+INFO: -5.372 per-word bound, 41.4 perplexity estimate based on a held-out corpus of 5 documents with 88 words
+INFO: PROGRESS: pass 5, at document #5/12
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.31351408, 0.06405369, 0.82802683, 0.043150753, 0.04221477]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 12 documents
+INFO: topic #0 (0.314): 0.043*"instance" + 0.042*"import" + 0.041*"level" + 0.040*"variable" + 0.039*"access" + 0.039*"state" + 0.038*"example" + 0.037*"namespace" + 0.034*"assign" + 0.034*"value"
+INFO: topic #1 (0.064): 0.098*"documentation" + 0.051*"program" + 0.051*"information" + 0.051*"https://docs.python.org/3/faq/programming.html#how-do-i-share-global-variables-across-module" + 0.051*"share" + 0.051*"change" + 0.051*"application" + 0.006*"state" + 0.006*"way" + 0.005*"instance"
+INFO: topic #2 (0.828): 0.256*"module" + 0.081*"variable" + 0.068*"function" + 0.049*"import" + 0.039*"global" + 0.035*"code" + 0.027*"file" + 0.025*"object" + 0.022*"name" + 0.021*"line"
+INFO: topic #3 (0.043): 0.098*"name" + 0.030*"mymodule" + 0.030*"none" + 0.030*"class" + 0.030*"scope" + 0.021*"default" + 0.021*"imagine" + 0.021*"store" + 0.012*"mymodule.something" + 0.012*"minimize"
+INFO: topic #4 (0.042): 0.034*"scope" + 0.020*"client" + 0.020*"bonus" + 0.020*"explicity" + 0.020*"pointer" + 0.020*"python" + 0.020*"scoping" + 0.020*"implicit" + 0.020*"policy" + 0.020*"helper"
+INFO: topic diff=0.239010, rho=0.345033
+DEBUG: bound: at document #0
+INFO: -5.009 per-word bound, 32.2 perplexity estimate based on a held-out corpus of 5 documents with 203 words
+INFO: PROGRESS: pass 5, at document #10/12
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.3469679, 0.059480987, 0.88470155, 0.044626832, 0.043530278]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 12 documents
+INFO: topic #0 (0.347): 0.061*"assign" + 0.060*"value" + 0.058*"access" + 0.047*"variable" + 0.046*"level" + 0.045*"import" + 0.044*"example" + 0.041*"instance" + 0.037*"namespace" + 0.032*"state"
+INFO: topic #1 (0.059): 0.075*"documentation" + 0.040*"program" + 0.040*"information" + 0.040*"https://docs.python.org/3/faq/programming.html#how-do-i-share-global-variables-across-module" + 0.040*"share" + 0.040*"change" + 0.040*"application" + 0.006*"state" + 0.006*"way" + 0.006*"instance"
+INFO: topic #2 (0.885): 0.234*"module" + 0.113*"function" + 0.104*"variable" + 0.048*"import" + 0.025*"object" + 0.025*"file" + 0.023*"var" + 0.020*"global" + 0.020*"solution" + 0.019*"test"
+INFO: topic #3 (0.045): 0.132*"name" + 0.038*"mymodule" + 0.038*"none" + 0.038*"class" + 0.038*"scope" + 0.026*"default" + 0.026*"imagine" + 0.026*"store" + 0.014*"mymodule.something" + 0.014*"minimize"
+INFO: topic #4 (0.044): 0.055*"scope" + 0.030*"client" + 0.030*"bonus" + 0.030*"explicity" + 0.030*"pointer" + 0.030*"python" + 0.030*"scoping" + 0.030*"implicit" + 0.030*"policy" + 0.030*"helper"
+INFO: topic diff=0.296036, rho=0.345033
+DEBUG: bound: at document #0
+INFO: -5.115 per-word bound, 34.7 perplexity estimate based on a held-out corpus of 2 documents with 27 words
+INFO: PROGRESS: pass 5, at document #12/12
+DEBUG: performing inference on a chunk of 2 documents
+DEBUG: 2/2 documents converged within 2000 iterations
+INFO: optimized alpha [0.34826976, 0.06870416, 1.0071806, 0.043210294, 0.0421823]
+DEBUG: updating topics
+INFO: merging changes from 2 documents into a model of 12 documents
+INFO: topic #0 (0.348): 0.058*"example" + 0.056*"instance" + 0.052*"assign" + 0.051*"value" + 0.049*"access" + 0.048*"state" + 0.043*"import" + 0.040*"variable" + 0.039*"level" + 0.032*"namespace"
+INFO: topic #1 (0.069): 0.121*"documentation" + 0.062*"program" + 0.062*"information" + 0.062*"https://docs.python.org/3/faq/programming.html#how-do-i-share-global-variables-across-module" + 0.062*"share" + 0.062*"change" + 0.062*"application" + 0.005*"state" + 0.005*"instance" + 0.005*"way"
+INFO: topic #2 (1.007): 0.294*"module" + 0.089*"variable" + 0.082*"function" + 0.046*"import" + 0.033*"object" + 0.027*"name" + 0.027*"code" + 0.026*"line" + 0.026*"way" + 0.018*"file"
+INFO: topic #3 (0.043): 0.117*"name" + 0.034*"mymodule" + 0.034*"none" + 0.034*"class" + 0.034*"scope" + 0.024*"default" + 0.024*"imagine" + 0.024*"store" + 0.013*"mymodule.something" + 0.013*"minimize"
+INFO: topic #4 (0.042): 0.044*"scope" + 0.025*"client" + 0.025*"bonus" + 0.025*"explicity" + 0.025*"pointer" + 0.025*"python" + 0.025*"scoping" + 0.025*"implicit" + 0.025*"policy" + 0.025*"helper"
+INFO: topic diff=0.229453, rho=0.345033
+DEBUG: bound: at document #0
+INFO: -5.351 per-word bound, 40.8 perplexity estimate based on a held-out corpus of 5 documents with 88 words
+INFO: PROGRESS: pass 6, at document #5/12
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.32144988, 0.06439725, 0.8598046, 0.0414996, 0.040551823]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 12 documents
+INFO: topic #0 (0.321): 0.043*"instance" + 0.042*"import" + 0.041*"level" + 0.040*"access" + 0.040*"variable" + 0.039*"state" + 0.038*"example" + 0.037*"namespace" + 0.035*"assign" + 0.035*"value"
+INFO: topic #1 (0.064): 0.098*"documentation" + 0.051*"program" + 0.051*"information" + 0.051*"https://docs.python.org/3/faq/programming.html#how-do-i-share-global-variables-across-module" + 0.051*"share" + 0.051*"change" + 0.051*"application" + 0.006*"state" + 0.005*"instance" + 0.005*"way"
+INFO: topic #2 (0.860): 0.258*"module" + 0.083*"variable" + 0.069*"function" + 0.049*"import" + 0.038*"global" + 0.035*"code" + 0.027*"file" + 0.026*"object" + 0.021*"name" + 0.021*"line"
+INFO: topic #3 (0.041): 0.100*"name" + 0.030*"mymodule" + 0.030*"none" + 0.030*"class" + 0.030*"scope" + 0.021*"default" + 0.021*"imagine" + 0.021*"store" + 0.012*"mymodule.something" + 0.012*"minimize"
+INFO: topic #4 (0.041): 0.035*"scope" + 0.020*"client" + 0.020*"bonus" + 0.020*"explicity" + 0.020*"pointer" + 0.020*"python" + 0.020*"scoping" + 0.020*"implicit" + 0.020*"policy" + 0.020*"helper"
+INFO: topic diff=0.222702, rho=0.326164
+DEBUG: bound: at document #0
+INFO: -4.989 per-word bound, 31.8 perplexity estimate based on a held-out corpus of 5 documents with 203 words
+INFO: PROGRESS: pass 6, at document #10/12
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.3526812, 0.06004354, 0.9086697, 0.04290044, 0.041809272]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 12 documents
+INFO: topic #0 (0.353): 0.061*"assign" + 0.060*"value" + 0.058*"access" + 0.046*"variable" + 0.046*"level" + 0.045*"import" + 0.044*"example" + 0.041*"instance" + 0.037*"namespace" + 0.032*"state"
+INFO: topic #1 (0.060): 0.077*"documentation" + 0.041*"program" + 0.041*"information" + 0.041*"https://docs.python.org/3/faq/programming.html#how-do-i-share-global-variables-across-module" + 0.041*"share" + 0.041*"change" + 0.041*"application" + 0.006*"state" + 0.006*"instance" + 0.006*"way"
+INFO: topic #2 (0.909): 0.236*"module" + 0.112*"function" + 0.104*"variable" + 0.048*"import" + 0.026*"object" + 0.025*"file" + 0.022*"var" + 0.021*"global" + 0.020*"solution" + 0.019*"code"
+INFO: topic #3 (0.043): 0.132*"name" + 0.038*"mymodule" + 0.038*"none" + 0.038*"class" + 0.038*"scope" + 0.026*"default" + 0.026*"imagine" + 0.026*"store" + 0.014*"mymodule.something" + 0.014*"minimize"
+INFO: topic #4 (0.042): 0.055*"scope" + 0.029*"client" + 0.029*"bonus" + 0.029*"explicity" + 0.029*"pointer" + 0.029*"python" + 0.029*"scoping" + 0.029*"implicit" + 0.029*"policy" + 0.029*"helper"
+INFO: topic diff=0.275519, rho=0.326164
+DEBUG: bound: at document #0
+INFO: -5.093 per-word bound, 34.1 perplexity estimate based on a held-out corpus of 2 documents with 27 words
+INFO: PROGRESS: pass 6, at document #12/12
+DEBUG: performing inference on a chunk of 2 documents
+DEBUG: 2/2 documents converged within 2000 iterations
+INFO: optimized alpha [0.35326847, 0.06884872, 1.0241091, 0.041669928, 0.0406404]
+DEBUG: updating topics
+INFO: merging changes from 2 documents into a model of 12 documents
+INFO: topic #0 (0.353): 0.058*"example" + 0.055*"instance" + 0.052*"assign" + 0.051*"value" + 0.050*"access" + 0.047*"state" + 0.043*"import" + 0.040*"variable" + 0.040*"level" + 0.032*"namespace"
+INFO: topic #1 (0.069): 0.120*"documentation" + 0.062*"program" + 0.062*"information" + 0.062*"https://docs.python.org/3/faq/programming.html#how-do-i-share-global-variables-across-module" + 0.062*"share" + 0.062*"change" + 0.062*"application" + 0.005*"state" + 0.005*"instance" + 0.005*"example"
+INFO: topic #2 (1.024): 0.292*"module" + 0.090*"variable" + 0.082*"function" + 0.046*"import" + 0.033*"object" + 0.027*"code" + 0.027*"name" + 0.026*"line" + 0.026*"way" + 0.019*"file"
+INFO: topic #3 (0.042): 0.117*"name" + 0.034*"mymodule" + 0.034*"none" + 0.034*"class" + 0.034*"scope" + 0.024*"default" + 0.024*"imagine" + 0.024*"store" + 0.013*"mymodule.something" + 0.013*"minimize"
+INFO: topic #4 (0.041): 0.044*"scope" + 0.025*"client" + 0.025*"bonus" + 0.025*"explicity" + 0.025*"pointer" + 0.025*"python" + 0.025*"scoping" + 0.025*"implicit" + 0.025*"policy" + 0.025*"helper"
+INFO: topic diff=0.215259, rho=0.326164
+DEBUG: bound: at document #0
+INFO: -5.334 per-word bound, 40.3 perplexity estimate based on a held-out corpus of 5 documents with 88 words
+INFO: PROGRESS: pass 7, at document #5/12
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.3273874, 0.06477533, 0.8851256, 0.040171254, 0.039214686]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 12 documents
+INFO: topic #0 (0.327): 0.044*"instance" + 0.042*"import" + 0.041*"level" + 0.041*"access" + 0.039*"variable" + 0.039*"state" + 0.039*"example" + 0.037*"namespace" + 0.036*"assign" + 0.036*"value"
+INFO: topic #1 (0.065): 0.098*"documentation" + 0.051*"program" + 0.051*"information" + 0.051*"https://docs.python.org/3/faq/programming.html#how-do-i-share-global-variables-across-module" + 0.051*"share" + 0.051*"change" + 0.051*"application" + 0.006*"state" + 0.005*"instance" + 0.005*"example"
+INFO: topic #2 (0.885): 0.259*"module" + 0.084*"variable" + 0.070*"function" + 0.049*"import" + 0.037*"global" + 0.034*"code" + 0.026*"file" + 0.026*"object" + 0.021*"name" + 0.021*"line"
+INFO: topic #3 (0.040): 0.102*"name" + 0.031*"mymodule" + 0.031*"none" + 0.031*"class" + 0.031*"scope" + 0.022*"default" + 0.022*"imagine" + 0.022*"store" + 0.012*"mymodule.something" + 0.012*"minimize"
+INFO: topic #4 (0.039): 0.036*"scope" + 0.021*"client" + 0.021*"bonus" + 0.021*"explicity" + 0.021*"pointer" + 0.021*"python" + 0.021*"scoping" + 0.021*"implicit" + 0.021*"policy" + 0.021*"helper"
+INFO: topic diff=0.209029, rho=0.310087
+DEBUG: bound: at document #0
+INFO: -4.974 per-word bound, 31.4 perplexity estimate based on a held-out corpus of 5 documents with 203 words
+INFO: PROGRESS: pass 7, at document #10/12
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.35673803, 0.060597714, 0.9276718, 0.04150297, 0.04041622]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 12 documents
+INFO: topic #0 (0.357): 0.060*"assign" + 0.059*"value" + 0.057*"access" + 0.046*"level" + 0.045*"variable" + 0.045*"import" + 0.044*"example" + 0.042*"instance" + 0.037*"namespace" + 0.033*"state"
+INFO: topic #1 (0.061): 0.078*"documentation" + 0.042*"program" + 0.042*"information" + 0.042*"https://docs.python.org/3/faq/programming.html#how-do-i-share-global-variables-across-module" + 0.042*"share" + 0.042*"change" + 0.042*"application" + 0.006*"state" + 0.006*"instance" + 0.006*"example"
+INFO: topic #2 (0.928): 0.238*"module" + 0.110*"function" + 0.103*"variable" + 0.048*"import" + 0.026*"object" + 0.025*"file" + 0.022*"var" + 0.021*"global" + 0.020*"code" + 0.020*"solution"
+INFO: topic #3 (0.042): 0.132*"name" + 0.038*"mymodule" + 0.038*"none" + 0.038*"class" + 0.038*"scope" + 0.026*"default" + 0.026*"imagine" + 0.026*"store" + 0.014*"mymodule.something" + 0.014*"minimize"
+INFO: topic #4 (0.040): 0.054*"scope" + 0.029*"client" + 0.029*"bonus" + 0.029*"explicity" + 0.029*"pointer" + 0.029*"python" + 0.029*"scoping" + 0.029*"implicit" + 0.029*"policy" + 0.029*"helper"
+INFO: topic diff=0.258829, rho=0.310087
+DEBUG: bound: at document #0
+INFO: -5.074 per-word bound, 33.7 perplexity estimate based on a held-out corpus of 2 documents with 27 words
+INFO: PROGRESS: pass 7, at document #12/12
+DEBUG: performing inference on a chunk of 2 documents
+DEBUG: 2/2 documents converged within 2000 iterations
+INFO: optimized alpha [0.3568802, 0.06904713, 1.0370873, 0.040412854, 0.039382305]
+DEBUG: updating topics
+INFO: merging changes from 2 documents into a model of 12 documents
+INFO: topic #0 (0.357): 0.057*"example" + 0.055*"instance" + 0.052*"assign" + 0.052*"value" + 0.050*"access" + 0.047*"state" + 0.043*"import" + 0.040*"level" + 0.039*"variable" + 0.033*"namespace"
+INFO: topic #1 (0.069): 0.119*"documentation" + 0.061*"program" + 0.061*"information" + 0.061*"https://docs.python.org/3/faq/programming.html#how-do-i-share-global-variables-across-module" + 0.061*"share" + 0.061*"change" + 0.061*"application" + 0.005*"state" + 0.005*"instance" + 0.005*"example"
+INFO: topic #2 (1.037): 0.291*"module" + 0.090*"variable" + 0.083*"function" + 0.046*"import" + 0.033*"object" + 0.027*"code" + 0.026*"name" + 0.026*"line" + 0.025*"way" + 0.019*"file"
+INFO: topic #3 (0.040): 0.118*"name" + 0.034*"class" + 0.034*"mymodule" + 0.034*"none" + 0.034*"scope" + 0.024*"imagine" + 0.024*"store" + 0.024*"default" + 0.013*"identifier" + 0.013*"explicitness"
+INFO: topic #4 (0.039): 0.044*"scope" + 0.025*"client" + 0.025*"bonus" + 0.025*"explicity" + 0.025*"pointer" + 0.025*"python" + 0.025*"scoping" + 0.025*"implicit" + 0.025*"policy" + 0.025*"helper"
+INFO: topic diff=0.203028, rho=0.310087
+DEBUG: bound: at document #0
+INFO: -5.320 per-word bound, 39.9 perplexity estimate based on a held-out corpus of 5 documents with 88 words
+INFO: PROGRESS: pass 8, at document #5/12
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.3320094, 0.06516677, 0.9063068, 0.039077487, 0.03811402]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 12 documents
+INFO: topic #0 (0.332): 0.044*"instance" + 0.042*"import" + 0.041*"level" + 0.041*"access" + 0.039*"example" + 0.039*"state" + 0.039*"variable" + 0.037*"namespace" + 0.037*"assign" + 0.036*"value"
+INFO: topic #1 (0.065): 0.098*"documentation" + 0.051*"program" + 0.051*"information" + 0.051*"https://docs.python.org/3/faq/programming.html#how-do-i-share-global-variables-across-module" + 0.051*"share" + 0.051*"change" + 0.051*"application" + 0.006*"state" + 0.005*"instance" + 0.005*"example"
+INFO: topic #2 (0.906): 0.260*"module" + 0.085*"variable" + 0.071*"function" + 0.049*"import" + 0.036*"global" + 0.034*"code" + 0.026*"object" + 0.026*"file" + 0.021*"name" + 0.021*"line"
+INFO: topic #3 (0.039): 0.103*"name" + 0.031*"class" + 0.031*"mymodule" + 0.031*"none" + 0.031*"scope" + 0.022*"imagine" + 0.022*"store" + 0.022*"default" + 0.013*"identifier" + 0.013*"explicitness"
+INFO: topic #4 (0.038): 0.036*"scope" + 0.021*"assignment" + 0.021*"helper" + 0.021*"implicit" + 0.021*"bonus" + 0.021*"pointer" + 0.021*"python" + 0.021*"client" + 0.021*"policy" + 0.021*"explicity"
+INFO: topic diff=0.197406, rho=0.296174
+DEBUG: bound: at document #0
+INFO: -4.962 per-word bound, 31.2 perplexity estimate based on a held-out corpus of 5 documents with 203 words
+INFO: PROGRESS: pass 8, at document #10/12
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.3597542, 0.061135683, 0.94362736, 0.040346924, 0.039263733]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 12 documents
+INFO: topic #0 (0.360): 0.060*"assign" + 0.059*"value" + 0.057*"access" + 0.046*"level" + 0.045*"import" + 0.045*"example" + 0.044*"variable" + 0.042*"instance" + 0.037*"namespace" + 0.033*"state"
+INFO: topic #1 (0.061): 0.079*"documentation" + 0.042*"program" + 0.042*"information" + 0.042*"https://docs.python.org/3/faq/programming.html#how-do-i-share-global-variables-across-module" + 0.042*"share" + 0.042*"change" + 0.042*"application" + 0.006*"state" + 0.006*"instance" + 0.006*"example"
+INFO: topic #2 (0.944): 0.239*"module" + 0.109*"function" + 0.103*"variable" + 0.048*"import" + 0.027*"object" + 0.024*"file" + 0.022*"var" + 0.021*"global" + 0.020*"code" + 0.020*"solution"
+INFO: topic #3 (0.040): 0.131*"name" + 0.038*"mymodule" + 0.038*"class" + 0.038*"none" + 0.038*"scope" + 0.026*"store" + 0.026*"default" + 0.026*"imagine" + 0.014*"practice" + 0.014*"opinion"
+INFO: topic #4 (0.039): 0.054*"scope" + 0.029*"assignment" + 0.029*"helper" + 0.029*"implicit" + 0.029*"bonus" + 0.029*"pointer" + 0.029*"python" + 0.029*"client" + 0.029*"policy" + 0.029*"explicity"
+INFO: topic diff=0.244824, rho=0.296174
+DEBUG: bound: at document #0
+INFO: -5.059 per-word bound, 33.3 perplexity estimate based on a held-out corpus of 2 documents with 27 words
+INFO: PROGRESS: pass 8, at document #12/12
+DEBUG: performing inference on a chunk of 2 documents
+DEBUG: 2/2 documents converged within 2000 iterations
+INFO: optimized alpha [0.359581, 0.06927704, 1.0477942, 0.03936637, 0.038335]
+DEBUG: updating topics
+INFO: merging changes from 2 documents into a model of 12 documents
+INFO: topic #0 (0.360): 0.057*"example" + 0.054*"instance" + 0.052*"assign" + 0.052*"value" + 0.050*"access" + 0.046*"state" + 0.043*"import" + 0.040*"level" + 0.039*"variable" + 0.033*"namespace"
+INFO: topic #1 (0.069): 0.118*"documentation" + 0.061*"program" + 0.061*"information" + 0.061*"https://docs.python.org/3/faq/programming.html#how-do-i-share-global-variables-across-module" + 0.061*"share" + 0.061*"change" + 0.061*"application" + 0.005*"state" + 0.005*"instance" + 0.005*"example"
+INFO: topic #2 (1.048): 0.290*"module" + 0.091*"variable" + 0.083*"function" + 0.047*"import" + 0.033*"object" + 0.027*"code" + 0.026*"name" + 0.025*"line" + 0.025*"way" + 0.019*"file"
+INFO: topic #3 (0.039): 0.118*"name" + 0.035*"class" + 0.035*"mymodule" + 0.035*"none" + 0.035*"scope" + 0.024*"imagine" + 0.024*"store" + 0.024*"default" + 0.013*"identifier" + 0.013*"explicitness"
+INFO: topic #4 (0.038): 0.045*"scope" + 0.025*"pointer" + 0.025*"helper" + 0.025*"policy" + 0.025*"scoping" + 0.025*"self" + 0.025*"steveha" + 0.025*"technique" + 0.025*"python" + 0.025*"assignment"
+INFO: topic diff=0.192490, rho=0.296174
+DEBUG: bound: at document #0
+INFO: -5.308 per-word bound, 39.6 perplexity estimate based on a held-out corpus of 5 documents with 88 words
+INFO: PROGRESS: pass 9, at document #5/12
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.335749, 0.065560125, 0.92458385, 0.038160473, 0.037191324]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 12 documents
+INFO: topic #0 (0.336): 0.044*"instance" + 0.042*"import" + 0.042*"access" + 0.041*"level" + 0.040*"example" + 0.039*"state" + 0.039*"variable" + 0.037*"assign" + 0.037*"namespace" + 0.037*"value"
+INFO: topic #1 (0.066): 0.098*"documentation" + 0.051*"program" + 0.051*"information" + 0.051*"https://docs.python.org/3/faq/programming.html#how-do-i-share-global-variables-across-module" + 0.051*"share" + 0.051*"change" + 0.051*"application" + 0.006*"state" + 0.005*"instance" + 0.005*"example"
+INFO: topic #2 (0.925): 0.261*"module" + 0.085*"variable" + 0.072*"function" + 0.049*"import" + 0.036*"global" + 0.034*"code" + 0.027*"object" + 0.026*"file" + 0.021*"name" + 0.021*"line"
+INFO: topic #3 (0.038): 0.104*"name" + 0.031*"class" + 0.031*"mymodule" + 0.031*"none" + 0.031*"scope" + 0.022*"imagine" + 0.022*"store" + 0.022*"default" + 0.013*"practice" + 0.013*"read"
+INFO: topic #4 (0.037): 0.037*"scope" + 0.021*"pointer" + 0.021*"helper" + 0.021*"policy" + 0.021*"scoping" + 0.021*"self" + 0.021*"steveha" + 0.021*"technique" + 0.021*"python" + 0.021*"assignment"
+INFO: topic diff=0.187406, rho=0.283981
+DEBUG: bound: at document #0
+INFO: -4.952 per-word bound, 30.9 perplexity estimate based on a held-out corpus of 5 documents with 203 words
+INFO: PROGRESS: pass 9, at document #10/12
+DEBUG: performing inference on a chunk of 5 documents
+DEBUG: 5/5 documents converged within 2000 iterations
+INFO: optimized alpha [0.36210632, 0.061654076, 0.9575206, 0.039374094, 0.03829372]
+DEBUG: updating topics
+INFO: merging changes from 5 documents into a model of 12 documents
+INFO: topic #0 (0.362): 0.060*"assign" + 0.059*"value" + 0.057*"access" + 0.046*"level" + 0.045*"example" + 0.044*"import" + 0.043*"variable" + 0.042*"instance" + 0.037*"namespace" + 0.034*"state"
+INFO: topic #1 (0.062): 0.080*"documentation" + 0.043*"program" + 0.043*"information" + 0.043*"https://docs.python.org/3/faq/programming.html#how-do-i-share-global-variables-across-module" + 0.043*"share" + 0.043*"change" + 0.043*"application" + 0.006*"state" + 0.006*"instance" + 0.006*"example"
+INFO: topic #2 (0.958): 0.241*"module" + 0.108*"function" + 0.103*"variable" + 0.048*"import" + 0.027*"object" + 0.024*"file" + 0.022*"var" + 0.022*"global" + 0.021*"code" + 0.019*"solution"
+INFO: topic #3 (0.039): 0.131*"name" + 0.038*"mymodule" + 0.038*"class" + 0.038*"none" + 0.038*"scope" + 0.026*"store" + 0.026*"default" + 0.026*"imagine" + 0.014*"practice" + 0.014*"opinion"
+INFO: topic #4 (0.038): 0.054*"scope" + 0.029*"python" + 0.029*"client" + 0.029*"explicity" + 0.029*"helper" + 0.029*"implicit" + 0.029*"bonus" + 0.029*"pointer" + 0.029*"policy" + 0.029*"assignment"
+INFO: topic diff=0.232854, rho=0.283981
+DEBUG: bound: at document #0
+INFO: -5.045 per-word bound, 33.0 perplexity estimate based on a held-out corpus of 2 documents with 27 words
+INFO: PROGRESS: pass 9, at document #12/12
+DEBUG: performing inference on a chunk of 2 documents
+DEBUG: 2/2 documents converged within 2000 iterations
+INFO: optimized alpha [0.3616981, 0.06952498, 1.0570629, 0.038481347, 0.037449185]
+DEBUG: updating topics
+INFO: merging changes from 2 documents into a model of 12 documents
+INFO: topic #0 (0.362): 0.056*"example" + 0.054*"instance" + 0.053*"assign" + 0.052*"value" + 0.050*"access" + 0.046*"state" + 0.043*"import" + 0.041*"level" + 0.039*"variable" + 0.033*"namespace"
+INFO: topic #1 (0.070): 0.117*"documentation" + 0.060*"program" + 0.060*"information" + 0.060*"https://docs.python.org/3/faq/programming.html#how-do-i-share-global-variables-across-module" + 0.060*"share" + 0.060*"change" + 0.060*"application" + 0.005*"state" + 0.005*"instance" + 0.005*"example"
+INFO: topic #2 (1.057): 0.289*"module" + 0.091*"variable" + 0.083*"function" + 0.047*"import" + 0.033*"object" + 0.027*"code" + 0.025*"name" + 0.025*"line" + 0.025*"way" + 0.019*"file"
+INFO: topic #3 (0.038): 0.118*"name" + 0.035*"mymodule" + 0.035*"class" + 0.035*"none" + 0.035*"scope" + 0.024*"store" + 0.024*"default" + 0.024*"imagine" + 0.013*"practice" + 0.013*"opinion"
+INFO: topic #4 (0.037): 0.045*"scope" + 0.025*"python" + 0.025*"client" + 0.025*"explicity" + 0.025*"helper" + 0.025*"implicit" + 0.025*"bonus" + 0.025*"pointer" + 0.025*"policy" + 0.025*"assignment"
+INFO: topic diff=0.183341, rho=0.283981
+DEBUG: starting a new internal lifecycle event log for LdaModel
+INFO: LdaModel lifecycle event {'msg': 'trained LdaModel<num_terms=131, num_topics=5, decay=0.5, chunksize=5> in 0.07s', 'datetime': '2023-05-09T14:34:59.860418', 'gensim': '4.3.1', 'python': '3.9.0 (tags/v3.9.0:9cf6752, Oct  5 2020, 15:34:40) [MSC v.1927 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.19041-SP0', 'event': 'created'}
+INFO: {'id': 1978217, 'content': "You are falling for a subtle quirk. You cannot re-assign module-level variables inside a python function. I think this is there to stop people re-assigning stuff inside a function by accident.  You can access the module namespace, you just shouldn't try to re-assign. If your function assigns something, it automatically becomes a function variable - and python won't look in the module namespace. You can do: but you cannot re-assign __DB_NAME__ inside a function.  One workaround: Note, I'm not re-assigning __DB_NAME__, I'm just modifying its contents.", 'score': 0.9120027871088783}
+INFO: {'id': 35904211, 'content': "Explicit access to module level variables by accessing them explicity on the module In short: The technique described here is the same as in steveha's answer, except, that no artificial helper object is created to explicitly scope variables. Instead the module object itself is given a variable pointer, and therefore provides explicit scoping upon access from everywhere. (like assignments in local function scope). Think of it like self for the current module instead of the current instance ! As modules are cached and therefore import only once, you can import db.py as often on as many clients as you want, manipulating the same, universal state: As an additional bonus I find it quite pythonic overall as it nicely fits Pythons policy of Explicit is better than implicit.", 'score': 0.9088403198583684}
+INFO: {'id': 64836766, 'content': 'Import only entities, then refer to variables in its namespace to access/modify them. Note:  this pattern, modifying constants in other modules (which then, to purists, aren\'t so much constants as globals) can be justified.  I have tons of cases where I use constants, rather than magic variables, as module level configuration.  However, for example for testing, I might reach in and modify these constants.  Say to switch a cache expiry from 2 days to 0.1 seconds to test caching.  Or like you propose, to override configuration.  Tread carefully, but it can be useful. main.py: entities.py: $ python main.py Now, if FIRST_VAR wasn\'t a string, int or another type of immutable, you should I think be able to import it separately and mutate it.  Like SECOND_VAR.append("config override") in main.py.  But assigning to a global in main.py will only affect affect the main.py binding, so if you want to share actual state between main.py and entities and other modules, everyone, not just main.py needs to import entities then access entities.FIRST_VAR. Oh, and if you had: then its instance-level value of that immutable string/int would not be affected by any overrides done after an instance creation.  Mutables like lists or dictionaries would be affected because they\'re all different bindings pointing to the same variable. Last, wrt to those "tricky" namespaces.  global in your original code means: "dont consider FIRST_VAR as a variable to assign in update_consts_from_config s local namespace , instead assign it to main.py global, script-level namespace". It does not mean "assign it to some global state magically shared between entities.py and main.py".  __builtins__ might be that beast but modifying it is considered extremely bad form in Python.', 'score': 0.9039871038192194}
+INFO: {'id': 34168541, 'content': "Steveha's answer was helpful to me, but omits an important point (one that I think wisty was getting at). The global keyword is not necessary if you only access but do not assign the variable in the function. If you assign the variable without the global keyword then Python creates a new local var -- the module variable's value will now be hidden inside the function.  Use the global keyword to assign the module var inside a function. Pylint 1.3.1 under Python 2.7 enforces NOT using global if you don't assign the var.", 'score': 0.8995305042011378}
+INFO: {'id': 48870337, 'content': 'As per documentation states: The canonical way to share information across modules within a single\n  program is to create a special module (often called config or cfg).\n  Just import the config module in all modules of your application; \n  the module then becomes available as a global name. \n  Because there is only one instance of each module, any changes made to the \n  module object get reflected everywhere. You can check this documentation for example code: https://docs.python.org/3/faq/programming.html#how-do-i-share-global-variables-across-modules', 'score': 0.893687935447658}
+INFO: {'id': 66869622, 'content': 'This still does not solve my problem. the import is done after the definition of the variable. it follows the direction perfectly', 'score': 0.8883147417706656}
+INFO: {'id': 1978076, 'content': 'Here is what is going on. First, the only global variables Python really has are module-scoped variables.  You cannot make a variable that is truly global; all you can do is make a variable in a particular scope.  (If you make a variable inside the Python interpreter, and then import other modules, your variable is in the outermost scope and thus global within your Python session.) All you have to do to make a module-global variable is just assign to a name. Imagine a file called foo.py, containing this single line: Now imagine you import it. However, let\'s suppose you want to use one of your module-scope variables as a global inside a function, as in your example.  Python\'s default is to assume that function variables are local.  You simply add a global declaration in your function, before you try to use the global. By the way, for this example, the simple if not __DBNAME__ test is adequate, because any string value other than an empty string will evaluate true, so any actual database name will evaluate true.  But for variables that might contain a number value that might be 0, you can\'t just say if not variablename; in that case, you should explicitly test for None using the is operator.  I modified the example to add an explicit None test.  The explicit test for None is never wrong, so I default to using it. Finally, as others have noted on this page, two leading underscores signals to Python that you want the variable to be "private" to the module.  If you ever do an import * from mymodule, Python will not import names with two leading underscores into your name space.  But if you just do a simple import mymodule and then say dir(mymodule) you will see the "private" variables in the list, and if you explicitly refer to mymodule.__DBNAME__ Python won\'t care, it will just let you refer to it.  The double leading underscores are a major clue to users of your module that you don\'t want them rebinding that name to some value of their own. It is considered best practice in Python not to do import *, but to minimize the coupling and maximize explicitness by either using mymodule.something or by explicitly doing an import like from mymodule import something. EDIT: If, for some reason, you need to do something like this in a very old version of Python that doesn\'t have the global keyword, there is an easy workaround.  Instead of setting a module global variable directly, use a mutable type at the module global level, and store your values inside it. In your functions, the global variable name will be read-only; you won\'t be able to rebind the actual global variable name.  (If you assign to that variable name inside your function it will only affect the local variable name inside the function.)  But you can use that local variable name to access the actual global object, and store data inside it. You can use a list but your code will be ugly: A dict is better.  But the most convenient is a class instance, and you can just use a trivial class: (You don\'t really need to capitalize the database name variable.) I like the syntactic sugar of just using __m.dbname rather than __m["DBNAME"]; it seems the most convenient solution in my opinion.  But the dict solution works fine also. With a dict you can use any hashable value as a key, but when you are happy with names that are valid identifiers, you can use a trivial class like Box in the above.', 'score': 0.8861550043748361}
+INFO: {'id': 59221129, 'content': 'From Visibility of global variables in imported modules: Globals in Python are global to a module, not across all modules. (Many people are confused by this, because in, say, C, a global is the same across all implementation files unless you explicitly make it static.)  One approach to deal with it is:', 'score': 0.8844216574987607}
+INFO: {'id': 71785774, 'content': 'Globals in Python are global to a module, not across all modules. as explained in this answer Visibility of global variables in imported modules So you have to put this code inside your functions in order to work: And in your main module', 'score': 0.8683628682185901}
+INFO: {'id': 1977383, 'content': 'For this, you need to declare the variable as global. However, a global variable is also accessible from outside the module by using module_name.var_name. Add this as the first line of your module:', 'score': 0.828515029269165}
+INFO: {'id': 68153138, 'content': 'when "*importing" something, it executes the code, and copy\'s the globals in to your globals. but if globals get alterd later, it won\'t re-copy the globals. the solution is, to re-import the file after test is called file2.py: main.py:', 'score': 0.7636020211212717}
+INFO: {'id': 66869176, 'content': "You can't import two files to each other, I think you should use a database.", 'score': 0.6049671803420044}
