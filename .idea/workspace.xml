@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23998837-aa67-4342-8560-7751eb78c979" name="Changes" comment="(experiments) V0. flow + LDA">
-      <change afterPath="$PROJECT_DIR$/flow2_0.py" afterDir="false" />
+    <list default="true" id="23998837-aa67-4342-8560-7751eb78c979" name="Changes" comment="(experiments) v.2 flow">
+      <change afterPath="$PROJECT_DIR$/model/questions/1/ratings.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/PSAbotExperiments.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PSAbotExperiments.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flow2_0.py" beforeDir="false" afterPath="$PROJECT_DIR$/flow2_0.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,16 +36,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/shaua/Desktop/Angel/projects/PSAbotExperiments/logs/old_method&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/shaua/Desktop/Angel/projects/PSAbotExperiments/logs/old_method",
+    "settings.editor.selected.configurable": "File.Encoding"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\shaua\Desktop\Angel\projects\PSAbotExperiments\logs\old_method" />
@@ -179,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683614874152</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="(experiments) v.2 flow">
+      <created>1684819847831</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1684819847831</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -188,6 +198,13 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="COLUMN_ID_WIDTH">
+                <map>
+                  <entry key="Table.Default.Author.ColumnIdWidth" value="75" />
+                  <entry key="Table.Default.Date.ColumnIdWidth" value="76" />
+                  <entry key="Table.Space.CommitStatus.ColumnIdWidth" value="76" />
+                </map>
+              </option>
               <option name="FILTERS">
                 <map>
                   <entry key="branch">
@@ -197,13 +214,6 @@
                       </list>
                     </value>
                   </entry>
-                </map>
-              </option>
-              <option name="COLUMN_ID_WIDTH">
-                <map>
-                  <entry key="Table.Default.Author.ColumnIdWidth" value="75" />
-                  <entry key="Table.Default.Date.ColumnIdWidth" value="76" />
-                  <entry key="Table.Space.CommitStatus.ColumnIdWidth" value="76" />
                 </map>
               </option>
             </State>
@@ -224,17 +234,7 @@
     <MESSAGE value="add experiments graphs" />
     <MESSAGE value="add embeds" />
     <MESSAGE value="(experiments) V0. flow + LDA" />
-    <option name="LAST_COMMIT_MESSAGE" value="(experiments) V0. flow + LDA" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>21</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="(experiments) v.2 flow" />
+    <option name="LAST_COMMIT_MESSAGE" value="(experiments) v.2 flow" />
   </component>
 </project>
