@@ -20,7 +20,7 @@ import os
 # TextAnalyze Module: pre-processing word content, ex
 class TextAnalyze:
     STOPWORDS = []  # 停用詞: 可忽略的詞，沒有賦予上下文句意義的詞
-    POS_TAG = ['NOUN']  # 欲留下的詞類verb
+    POS_TAG = ['NOUN', 'PROPN']  # 欲留下的詞類noun
     WHITE_LIST = ['pandas']
 
     def __init__(self):

@@ -4,11 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23998837-aa67-4342-8560-7751eb78c979" name="Changes" comment="(experiments) v.2 flow">
-      <change afterPath="$PROJECT_DIR$/model/questions/1/ratings.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/PSAbotExperiments.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PSAbotExperiments.iml" afterDir="false" />
+    <list default="true" id="23998837-aa67-4342-8560-7751eb78c979" name="Changes" comment="git lfs upload">
+      <change afterPath="$PROJECT_DIR$/model/questions/14/ratings.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/questions/2/ratings.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TextAnalyze.py" beforeDir="false" afterPath="$PROJECT_DIR$/TextAnalyze.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flow2_0.py" beforeDir="false" afterPath="$PROJECT_DIR$/flow2_0.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/questions/1/ratings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/model/questions/1/ratings.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/questions/10/ratings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/model/questions/10/ratings.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/questions/11/ratings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/model/questions/11/ratings.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/questions/12/ratings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/model/questions/12/ratings.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/questions/13/ratings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/model/questions/13/ratings.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/questions/14/ratings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/model/questions/14/ratings.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/questions/2/ratings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/model/questions/2/ratings.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/questions/3/ratings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/model/questions/3/ratings.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/questions/4/ratings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/model/questions/4/ratings.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/questions/5/ratings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/model/questions/5/ratings.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/questions/6/ratings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/model/questions/6/ratings.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/questions/7/ratings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/model/questions/7/ratings.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/questions/8/ratings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/model/questions/8/ratings.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/questions/9/ratings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/model/questions/9/ratings.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,17 +51,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/shaua/Desktop/Angel/projects/PSAbotExperiments/logs/old_method",
-    "settings.editor.selected.configurable": "File.Encoding"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/shaua/Desktop/Angel/projects/PSAbotExperiments/logs/old_method&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\shaua\Desktop\Angel\projects\PSAbotExperiments\logs\old_method" />
@@ -198,13 +213,6 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="COLUMN_ID_WIDTH">
-                <map>
-                  <entry key="Table.Default.Author.ColumnIdWidth" value="75" />
-                  <entry key="Table.Default.Date.ColumnIdWidth" value="76" />
-                  <entry key="Table.Space.CommitStatus.ColumnIdWidth" value="76" />
-                </map>
-              </option>
               <option name="FILTERS">
                 <map>
                   <entry key="branch">
@@ -214,6 +222,13 @@
                       </list>
                     </value>
                   </entry>
+                </map>
+              </option>
+              <option name="COLUMN_ID_WIDTH">
+                <map>
+                  <entry key="Table.Default.Author.ColumnIdWidth" value="75" />
+                  <entry key="Table.Default.Date.ColumnIdWidth" value="76" />
+                  <entry key="Table.Space.CommitStatus.ColumnIdWidth" value="76" />
                 </map>
               </option>
             </State>
