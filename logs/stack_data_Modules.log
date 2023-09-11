@@ -1,0 +1,8 @@
+INFO: <<Modules>>
+INFO: __import__(‘x.y.z’) returns <module ‘x’>; how do I get z?
+INFO: ['https://stackoverflow.com/questions/65907075/add-all-functions-from-a-module-as-methods-of-an-object-without-code-duplication', 'https://stackoverflow.com/questions/4200221/forcing-immutability-on-an-object']
+DEBUG: Starting new HTTPS connection (1): api.stackexchange.com:443
+DEBUG: https://api.stackexchange.com:443 "GET /2.3/questions/65907075;4200221?page=1&site=stackoverflow&filter=withbody HTTP/1.1" 200 1761
+DEBUG: Starting new HTTPS connection (1): api.stackexchange.com:443
+DEBUG: https://api.stackexchange.com:443 "GET /2.3/questions/65907075;4200221/answers?page=1&site=stackoverflow&filter=withbody HTTP/1.1" 200 2048
+INFO: --------------------

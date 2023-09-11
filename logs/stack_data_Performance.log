@@ -1,0 +1,19 @@
+INFO: <<Performance>>
+INFO: My program is too slow. How do I speed it up?
+INFO: ['https://stackoverflow.com/questions/8624779/my-python-program-is-very-slow-how-can-i-speed-it-up-am-i-doing-something-wron', 'https://stackoverflow.com/questions/71961571/my-code-run-very-slow-how-can-i-make-it-faster', 'https://stackoverflow.com/questions/61768198/cython-what-makes-my-program-slow-and-how-to-speed-it-up', 'https://stackoverflow.com/questions/40876604/python-program-with-permutations-too-slow-any-ways-to-speed-up-the-program', 'https://stackoverflow.com/questions/16156130/why-is-my-program-so-slow', 'https://stackoverflow.com/questions/12264970/why-is-my-program-slow-when-looping-over-exactly-8192-elements', 'https://stackoverflow.com/questions/30817871/android-studio-is-slow-how-to-speed-up', 'https://stackoverflow.com/questions/41086404/computing-speed-make-programs-faster', 'https://stackoverflow.com/questions/76440408/my-code-run-very-very-slow-how-can-i-make-my-python-code-that-runs-faster', 'https://stackoverflow.com/questions/42824853/how-can-i-speed-up-my-code']
+DEBUG: Starting new HTTPS connection (1): api.stackexchange.com:443
+DEBUG: https://api.stackexchange.com:443 "GET /2.3/questions/8624779;71961571;61768198;40876604;16156130;12264970;30817871;41086404;76440408;42824853?page=1&site=stackoverflow&filter=withbody HTTP/1.1" 200 10125
+DEBUG: Starting new HTTPS connection (1): api.stackexchange.com:443
+DEBUG: https://api.stackexchange.com:443 "GET /2.3/questions/8624779;71961571;61768198;40876604;16156130;12264970;30817871;41086404;76440408;42824853/answers?page=1&site=stackoverflow&filter=withbody HTTP/1.1" 200 17197
+DEBUG: Starting new HTTPS connection (1): api.stackexchange.com:443
+DEBUG: https://api.stackexchange.com:443 "GET /2.3/questions/8624779;71961571;61768198;40876604;16156130;12264970;30817871;41086404;76440408;42824853/answers?page=2&site=stackoverflow&filter=withbody HTTP/1.1" 200 20691
+INFO: --------------------
+INFO: What is the most efficient way to concatenate many strings together?
+INFO: ['https://stackoverflow.com/questions/1316887/what-is-the-most-efficient-string-concatenation-method-in-python', 'https://stackoverflow.com/questions/36121370/most-efficient-way-to-concatenate-strings', 'https://stackoverflow.com/questions/61392258/most-efficient-method-to-concatenate-strings-in-python', 'https://stackoverflow.com/questions/72867726/most-efficient-way-to-concatenate-multiple-strings-in-c', 'https://stackoverflow.com/questions/21078/most-efficient-way-to-concatenate-strings', 'https://stackoverflow.com/questions/21880730/c-what-is-the-best-and-fastest-way-to-concatenate-strings', 'https://stackoverflow.com/questions/16696632/most-efficient-way-to-concatenate-strings-in-javascript', 'https://stackoverflow.com/questions/63388179/what-is-the-most-efficient-way-to-concatenate-strings-in-dart', 'https://stackoverflow.com/questions/69433075/the-most-efficient-way-o-3-strings-concatenation-in-java-8', 'https://stackoverflow.com/questions/64980766/fastest-way-to-concatenate-two-strings-in-python']
+DEBUG: Starting new HTTPS connection (1): api.stackexchange.com:443
+DEBUG: https://api.stackexchange.com:443 "GET /2.3/questions/1316887;36121370;61392258;72867726;21078;21880730;16696632;63388179;69433075;64980766?page=1&site=stackoverflow&filter=withbody HTTP/1.1" 200 5313
+DEBUG: Starting new HTTPS connection (1): api.stackexchange.com:443
+DEBUG: https://api.stackexchange.com:443 "GET /2.3/questions/1316887;36121370;61392258;72867726;21078;21880730;16696632;63388179;69433075;64980766/answers?page=1&site=stackoverflow&filter=withbody HTTP/1.1" 200 19845
+DEBUG: Starting new HTTPS connection (1): api.stackexchange.com:443
+DEBUG: https://api.stackexchange.com:443 "GET /2.3/questions/1316887;36121370;61392258;72867726;21078;21880730;16696632;63388179;69433075;64980766/answers?page=2&site=stackoverflow&filter=withbody HTTP/1.1" 200 14458
+INFO: --------------------
