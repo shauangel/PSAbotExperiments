@@ -32,7 +32,8 @@ def get_filename():
     for i in os.listdir('stack_data'):
         if "CoreLanguage" in i:
             filelist.append(i)
-    return q, sorted(filelist)
+    return [q[0]], [sorted(filelist)[0]]    # single example
+    # return q, sorted(filelist)
 
 
 def save_json(filename, dumpling):
@@ -42,15 +43,22 @@ def save_json(filename, dumpling):
 
 
 if __name__ == "__main__":
+    # log_dir = "logs/elda/"
+    # model_dir = "model/elda/"
+    log_dir = "example/"
+    model_dir = "example/"
+
     # Step 1. get user question
     # Step 2. outer search
     questions, responses = get_filename()
+    print(questions)
+    print(responses)
 
     for idx in range(len(questions)):
     # for idx in range(10):
         # Set loggers
         logging.basicConfig(level=config.LOG_MODE, force=True,
-                            filename="logs/elda/" + str(idx+1) + "/compare.log", filemode='w',
+                            filename=log_dir + str(idx+1) + "/compare.log", filemode='w',
                             format=config.FORMAT, datefmt=config.DATE_FORMAT)
 
         # Step 3. parse posts
@@ -85,17 +93,20 @@ if __name__ == "__main__":
             logging.info("saved")
 
     # Step 5. train lda model
-        # model = TextAnalyze.train_lda_model(my_corpus=corpus, id2word=dictionary)
         corpus, dictionary = prepare_training_data(a_data)
         training_data = [np.concatenate(ans) for ans in a_data if len(ans) > 0]
-        model = TextAnalyze.train_elda_model(training_data, 5, 5)
-        model.save("model/elda/" + str(idx+1) + "/model")
+        model = TextAnalyze.train_lda_model(training_data, config.TOPIC_NUM) # LDA modeling
+        # model = TextAnalyze.train_elda_model(training_data, 5, 5)   # testing eLDA modeling
+        model.save(model_dir + str(idx+1) + "/model")
 
         #for i in model.print_topics():
         topics = []
+        logging.info( 15*"-" + "LDA topics" + 15*"-" )
         for i in model.print_topics(config.TOPIC_TERM_NUM):
             topics.append(i)
             # print(i)
+            logging.info(i)
+        logging.info(40 * "-")
 
         # Step 6. apply word embedding
         embed = hub.KerasLayer("embeds/Wiki-words-250_2",
@@ -116,20 +127,29 @@ if __name__ == "__main__":
         abs_question_sim = [abs(1+sim) for sim in question_sim]
         # print(question_sim)
         print(abs_question_sim)
+        logging.info("-"*30)
         logging.info("Question Similarity: " + str(abs_question_sim))
 
     # Step 8. predict the topic distribution of user question & blocks
         user_q_topic_dist = model[dictionary.doc2bow(analyzer.content_pre_process(questions[idx])[0])][0]
         user_q_topic_dist = {t[0]: t[1] for t in user_q_topic_dist}
+        logging.info("-"*15 + "User Q topic dist" + "-"*15)
+        logging.info(user_q_topic_dist)
         ans_blocks_dist = []
         for ans in a_data:
             a_corpus = [dictionary.doc2bow(terms) for terms in ans]
             ans_blocks_dist.append([model[block][0] for block in a_corpus])
 
+        # log ans_dist information
+        with open(log_dir+"ans_dist.json", "w", encoding="utf-8") as f:
+            json.dump(str(ans_blocks_dist), f)
+        f.close()
+
     # Step 9. calculate the probability of the user question and block belongs to same topic
         block_prob = []
         block_terms = []
         block_count = 0
+        logging.info("-"*15 + "Block Ratings" + "-"*15)
         for d in range(len(data)):
             temp = []
             ans_score = [a['score'] for a in data[d]['answers']]
@@ -137,8 +157,14 @@ if __name__ == "__main__":
                 block_count += len(data[d]['answers'])
                 # print(data[d]['answers'][a_idx]['id'])
                 # log because the result is too small
+
+                logging.info(data[d]['answers'][a_idx]['id'])
+                logging.info(ans_blocks_dist[d][a_idx])
+                logging.info([user_q_topic_dist[t[0]]*t[1] for t in ans_blocks_dist[d][a_idx]])
+
                 prob = math.log(sum([user_q_topic_dist[t[0]]*t[1] for t in ans_blocks_dist[d][a_idx]])/3)
-                if ans_score[a_idx] >= 0 and abs_question_sim[d] >= 0.1:
+
+                if ans_score[a_idx] >= 0:
                     block_prob.append({"id": data[d]['answers'][a_idx]['id'],
                                        "prob": prob,
                                        "q_sim": str(abs_question_sim[d]),
@@ -148,7 +174,7 @@ if __name__ == "__main__":
                 temp.append(Counter(a_data[d][a_idx]))
             block_terms.append(temp)
             # print("-"*20)
-        save_json("model/elda/" + str(idx+1) + "/blocks_ranking.json", block_prob)
+        save_json(model_dir + str(idx+1) + "/blocks_ranking.json", block_prob)
         print("total block count: " + str(block_count))
         print("reduced block: " + str(len(block_prob)))
     # Step 10. Rank block

@@ -20,16 +20,17 @@ logging.basicConfig(level=config.LOG_MODE,
                     format=config.FORMAT,
                     datefmt=config.DATE_FORMAT)
 
+
 # Preparing data & Pre-process progress
 def data_preprocess(stack_data):
-    question_datasets = []
-    answer_blocks_datasets = []
+    # question_datasets = []
+    # answer_blocks_datasets = []
     q_corpus = []
     ans_corpus = []
     analyzer = TextAnalyze()
     for i in stack_data:
         print(i['question']["title"])
-        question_datasets.append(i['question']['content'])
+        # question_datasets.append(i['question']['content'])
         terms, doc = analyzer.content_pre_process(i['question']['content'])
         print("Question: " + str(terms))
         q_corpus.append(terms)
@@ -39,7 +40,7 @@ def data_preprocess(stack_data):
         logging.info("Question: " + str(terms))
 
         # answer blocks
-        answer_blocks_datasets.append([ans['content'] for ans in i['answers']])
+        # answer_blocks_datasets.append([ans['content'] for ans in i['answers']])
         temp = []
         for ans in i['answers']:
             terms, doc = analyzer.content_pre_process(ans['content'])

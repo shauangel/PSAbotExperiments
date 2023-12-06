@@ -4,31 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23998837-aa67-4342-8560-7751eb78c979" name="Changes" comment="git lfs upload">
-      <change afterPath="$PROJECT_DIR$/model/questions/14/ratings.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/questions/2/ratings.xlsx" afterDir="false" />
+    <list default="true" id="23998837-aa67-4342-8560-7751eb78c979" name="Changes" comment="test data collection">
+      <change afterPath="$PROJECT_DIR$/post_similarity.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TextAnalyze.py" beforeDir="false" afterPath="$PROJECT_DIR$/TextAnalyze.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flow2_0.py" beforeDir="false" afterPath="$PROJECT_DIR$/flow2_0.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/questions/1/ratings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/model/questions/1/ratings.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/questions/10/ratings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/model/questions/10/ratings.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/questions/11/ratings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/model/questions/11/ratings.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/questions/12/ratings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/model/questions/12/ratings.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/questions/13/ratings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/model/questions/13/ratings.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/questions/14/ratings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/model/questions/14/ratings.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/questions/2/ratings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/model/questions/2/ratings.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/questions/3/ratings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/model/questions/3/ratings.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/questions/4/ratings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/model/questions/4/ratings.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/questions/5/ratings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/model/questions/5/ratings.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/questions/6/ratings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/model/questions/6/ratings.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/questions/7/ratings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/model/questions/7/ratings.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/questions/8/ratings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/model/questions/8/ratings.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/questions/9/ratings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/model/questions/9/ratings.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flow_experiment.py" beforeDir="false" afterPath="$PROJECT_DIR$/flow_experiment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log_analyze_posts.py" beforeDir="false" afterPath="$PROJECT_DIR$/log_analyze_posts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_experiments.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_experiments.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stack_overflow_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/stack_overflow_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testQ.json" beforeDir="false" afterPath="$PROJECT_DIR$/testQ.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -58,7 +55,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/shaua/Desktop/Angel/projects/PSAbotExperiments/logs/old_method&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/shauangel/PycharmProjects/PSAbotExperiments&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;
   }
 }</component>
@@ -67,7 +64,28 @@
       <recent name="C:\Users\shaua\Desktop\Angel\projects\PSAbotExperiments\logs\old_method" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.main">
+    <configuration name="log_analyze_posts" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PSAbotExperiments" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/log_analyze_posts.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="PSAbotExperiments" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -89,6 +107,11 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.log_analyze_posts" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -204,7 +227,35 @@
       <option name="project" value="LOCAL" />
       <updated>1684819847831</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="ratings upload">
+      <created>1687416199249</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1687416199249</updated>
+    </task>
+    <task id="LOCAL-00017" summary="renew test data">
+      <created>1694407446853</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1694407446853</updated>
+    </task>
+    <task id="LOCAL-00018" summary="new logs">
+      <created>1694407464917</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1694407464917</updated>
+    </task>
+    <task id="LOCAL-00019" summary="test data collection">
+      <created>1694407500617</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1694407500617</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -250,6 +301,10 @@
     <MESSAGE value="add embeds" />
     <MESSAGE value="(experiments) V0. flow + LDA" />
     <MESSAGE value="(experiments) v.2 flow" />
-    <option name="LAST_COMMIT_MESSAGE" value="(experiments) v.2 flow" />
+    <MESSAGE value="ratings upload" />
+    <MESSAGE value="renew test data" />
+    <MESSAGE value="new logs" />
+    <MESSAGE value="test data collection" />
+    <option name="LAST_COMMIT_MESSAGE" value="test data collection" />
   </component>
 </project>

@@ -74,8 +74,8 @@ if __name__ == "__main__":
                            tick_label=posts,
                            fill=False,
                            hatch=config.BAR_FILL_STYLE[:len(posts)])
-    ax.set(ylabel="post number",
-           xlabel="average cosine similarity",
+    ax.set(ylabel="average cosine similarity",
+           xlabel="post number",
            ylim=(0.8, 1.0),
            title="Average Similarity of Different Document Amount")
     ax.bar_label(bar_container, fmt=lambda x: '{:.4f}'.format(x))

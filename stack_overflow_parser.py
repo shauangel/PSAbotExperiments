@@ -124,14 +124,3 @@ class StackData:
             json.dump(self.results, f)
 
 
-if __name__ == "__main__":
-    test_urls = ["https://stackoverflow.com/questions/28461001/python-flask-cors-issue",
-                 "https://stackoverflow.com/questions/74583218/python-flask-cors-error-set-according-to-documentation",
-                 "https://stackoverflow.com/questions/71950802/flask-cors-work-only-for-first-request-whats-the-bug-in-my-code",
-                 "https://stackoverflow.com/questions/71566073/flask-restful-and-angular-cors-error-on-post-method",
-                 "https://stackoverflow.com/questions/26980713/solve-cross-origin-resource-sharing-with-flask"]
-    parser = StackData(test_urls)
-    results = parser.get_results()
-    parser.save_results()
-
-
